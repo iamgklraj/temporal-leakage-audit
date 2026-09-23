@@ -2,8 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22907786.svg)](https://doi.org/10.5281/zenodo.22907786)
 
-Code for the paper *Temporal leakage inflates reported accuracy in clinical trial outcome
-prediction*. It provides a **temporal leakage-response instrument** for machine-learning models
+Code for the paper *Auditing temporal leakage in clinical trial outcome prediction*. It
+provides a **temporal leakage-response instrument** for machine-learning models
 that predict clinical-trial outcomes and drug phase advancement, audits of two public benchmarks
 (CTO and TrialBench), a study of training-data memorization in LLM-based prediction, an
 as-of-time-censored drug-program benchmark, and a positivity-aware causal layer.
@@ -20,7 +20,7 @@ All intervals are 95% percentile bootstrap CIs; the clustering unit is given per
 
 | Analysis | Result | Output |
 |---|---|---|
-| **CTO benchmark** (Gao et al., *Nature Health* 2026) | Against curated human labels on a temporal split (*n* = 9,705; test base rate 0.17), a start-time-only model reaches AUPRC 0.23; adding all labeling functions reaches 0.98. LAP = +0.75 [0.71, 0.79] (sponsor-clustered): ~77% of the apparent AUPRC depends on signals unavailable at trial start (during-trial +0.46, post-completion +0.30). | `outputs/cto_audit.json` |
+| **CTO labeling signals** (Gao et al., *Nature Health* 2026) | CTO distributes its labeling-function outputs with its labels. Used as features against curated human labels on a temporal split (*n* = 9,705; test base rate 0.17), all signals reach AUPRC 0.98 but start-time signals only 0.23 (AUROC 0.64). LAP = +0.75 [0.71, 0.79] (sponsor-clustered): ~77% depends on information unavailable at trial start (during-trial +0.46, post-completion +0.30). CTO's own baselines use design-time text features only (AUROC 0.55–0.62) and avoid this hazard; the start-time estimate corroborates them. | `outputs/cto_audit.json` |
 | **TrialBench** (Chen et al., *Sci. Data* 2025) | The provided split is not temporal (median start year 2011 in both train and test; one-sided Mann–Whitney *P* = 0.60, *n* = 25,972). A temporal split lowers AUPRC (mean −0.08) but *raises* AUROC (mean +0.03): the drop tracks a lower approval rate among recent trials (outcome immaturity), not inflated discrimination (trial-level CIs). | `outputs/trialbench_audit.json` |
 | **LLM memorization** (4 Claude models, *n* = 250 CTO trials) | De-identified prompts score AUPRC 0.20–0.31 (base rate 0.16). Restoring the trial identifier, title and sponsor raises AUPRC by +0.14 (Haiku 4.5), +0.21 (Sonnet 5), +0.36 (Opus 4.8) and +0.34 (Opus 5). For Opus 5 the gap is +0.37 for trials started ≤2021 (*n* = 134) and +0.08 for 2023–2024 (*n* = 37). Point estimates from a single run (see *Known limitations*). | `outputs/llm_memorization_study.json` |
 | **Censored drug-program benchmark** (control) | Built with strict as-of-time censoring (3,990 programs, 20 diseases): LAP = +0.074 [−0.07, 0.16] (target-clustered). At 41 diseases (8,357 programs), the two largest rolling-origin test blocks give +0.09 and +0.08 (CIs exclude 0). | `outputs/censored_benchmark_{20,41}disease.json` |

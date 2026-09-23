@@ -13,9 +13,10 @@ decision (trial start):
   * pvalues, results_reported, status/status2, *_ae, patient_drop, amendments,
     num_patients, update_more_recent : results-section / final-status signals.
 
-Post-hoc signals are appropriate for CTO's stated *labeling* purpose. They become
-temporal leakage when CTO is used -- as its "benchmark for drug development" framing
-invites, and as downstream outcome predictors do -- for *prospective* prediction.
+Post-hoc signals are appropriate for CTO's stated *labeling* purpose, and CTO's own
+predictive baselines use design-time text features only (reported AUROC 0.55-0.62). The LF
+outputs are, however, distributed in the same tables as the labels; this audit quantifies how
+much apparent skill they would contribute if reused as predictive features.
 
 We group the LFs by information vintage and trace the leakage-response curve: AUPRC/AUROC
 against the CURATED human labels (not CTO's own RF labels, so no circularity) as
