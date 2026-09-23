@@ -98,8 +98,9 @@ from those files. Run times were measured on the test machine above.
 release differs), ClinicalTrials.gov API v2, NCBI PubMed E-utilities; CTO from Hugging Face
 (`chufangao/CTO`); TrialBench features from Zenodo (doi:10.5281/zenodo.14975339) and labels from
 `ML2Health/ML2ClinicalTrials` at commit `0694eba`. Because the live APIs change, the processed
-tables used for the paper are deposited on Zenodo (DOI to be added on release); place them under
-`data/` to reproduce the reference outputs exactly.
+tables used for the paper are deposited on Zenodo
+([10.5281/zenodo.22907882](https://doi.org/10.5281/zenodo.22907882)); unzip them and place the
+folders under `data/` to reproduce the reference outputs exactly.
 
 **Determinism.** The gradient-boosted learner and all bootstraps use fixed seeds, so the
 reference outputs are reproduced exactly from the same data and package versions. The LLM study

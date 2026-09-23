@@ -1,7 +1,8 @@
 # --- Data are built from public APIs on demand and never committed. ---
 # The connectors (temporal_leakage_audit/data/connectors.py) pull Open Targets /
 # ClinicalTrials.gov / PubMed at build time; the CTO and TrialBench audits download their
-# tables on first use. A frozen snapshot of the processed tables is deposited on Zenodo so
+# tables on first use. A frozen snapshot of the processed tables is deposited on Zenodo
+# (doi:10.5281/zenodo.22907882) so
 # the reported numbers stay reproducible.
 /data/
 
