@@ -138,8 +138,8 @@ print(curve["total_LAP_auprc"], curve["total_LAP_auprc_ci"])
 ## Citation
 
 Archived on Zenodo: [10.5281/zenodo.22907786](https://doi.org/10.5281/zenodo.22907786) (all
-versions); v1.0.0, which produced the paper's results, is
-[10.5281/zenodo.22907787](https://doi.org/10.5281/zenodo.22907787). See `CITATION.cff` (GitHub
+versions); v1.2.0, which produced the paper's results, is
+[10.5281/zenodo.22923231](https://doi.org/10.5281/zenodo.22923231). See `CITATION.cff` (GitHub
 renders it as a "Cite this repository" button).
 
 ## License
