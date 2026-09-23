@@ -4,10 +4,11 @@ Figures follow Nature Machine Intelligence artwork guidance: sans-serif text at
 5-7 pt, width <= 180 mm, editable (TrueType) text in vector PDF, no in-panel
 titles (the legend carries the title), and a colour-blind-safe palette (Okabe-Ito).
 
-  fig_cto_leakage.pdf       CTO leakage-response (start -> during -> all labeling functions)
-  fig_trialbench.pdf        TrialBench provided vs temporal split: AUPRC (a) and AUROC (b)
-  fig_llm_memorization.pdf  LLM identified vs de-identified AUPRC by model (a), recency (b)
-  fig_causal_balance.pdf    covariate balance before/after overlap weighting (Love plot)
+  fig_instrument_validation.pdf  synthetic validation: LAP vs true leakage, detection, example curve
+  fig_cto_leakage.pdf            CTO leakage-response (start -> during -> all labeling functions)
+  fig_trialbench.pdf             TrialBench provided vs temporal split: AUPRC (a) and AUROC (b)
+  fig_llm_memorization.pdf       LLM nested prompt conditions (a), contrasts (b), recency (c)
+  fig_causal_balance.pdf         covariate balance before/after overlap weighting (Extended Data)
 
 Usage:  python scripts/make_figures.py [--out figures]
 """
@@ -56,8 +57,8 @@ def _bin_label(b):
     return lo if lo == hi else f"{lo}–{hi}"
 
 
-def _panel_label(ax, s):
-    ax.text(-0.16, 1.04, s, transform=ax.transAxes, fontsize=8, fontweight="bold", va="bottom")
+def _panel_label(ax, s, y=1.04):
+    ax.text(-0.16, y, s, transform=ax.transAxes, fontsize=8, fontweight="bold", va="bottom")
 
 
 def fig_cto(out):
@@ -119,53 +120,117 @@ def fig_trialbench(out):
     plt.close(fig)
 
 
+LLM_ORDER = ["ollama:llama3.1:8b", "claude-haiku-4-5-20251001", "claude-sonnet-5",
+             "claude-opus-4-8", "claude-opus-5"]
+LLM_NAMES = {"ollama:llama3.1:8b": "Llama 3.1 8B", "claude-haiku-4-5-20251001": "Haiku 4.5",
+             "claude-sonnet-5": "Sonnet 5", "claude-opus-4-8": "Opus 4.8", "claude-opus-5": "Opus 5"}
+COND_STYLE = [("D", "Design only (D)", "#BBBBBB"), ("D+ID", "D + identifier", SKY),
+              ("D+Tm", "D + title, intervention masked", "#009E73"), ("D+T", "D + title", BLUE),
+              ("D+T+ID+S", "D + title + identifier + sponsor", VERMILION)]
+CONTRAST_STYLE = [("D+ID - D", "Identifier recall", SKY),
+                  ("D+Tm - D", "Title design semantics", "#009E73"),
+                  ("D+T - D+Tm", "Named-intervention knowledge", VERMILION)]
+
+
 def fig_llm(out):
     d = _load("llm_memorization_study.json")
-    order = ["claude-haiku-4-5-20251001", "claude-sonnet-5", "claude-opus-4-8", "claude-opus-5"]
-    disp = {"claude-haiku-4-5-20251001": "Haiku 4.5", "claude-sonnet-5": "Sonnet 5",
-            "claude-opus-4-8": "Opus 4.8", "claude-opus-5": "Opus 5"}
-    order = [m for m in order if m in d["models"]]
-    mods = [d["models"][m] for m in order]
-    deid = [m["deident_auprc"] for m in mods]
-    iden = [m["identified_auprc"] for m in mods]
-    has_ci = all("identified_auprc_ci" in m for m in mods)
-    rec = d.get("recency") or []
-    rec = rec.get("bins", []) if isinstance(rec, dict) else rec
-
-    fig, axes = plt.subplots(1, 2, figsize=(DOUBLE * 0.75, 58 * MM),
-                             gridspec_kw={"width_ratios": [1.6, 1]})
+    order = [m for m in LLM_ORDER if m in d["models"] and "conditions" in d["models"][m]["all"]]
+    conds = [c for c in COND_STYLE if c[0] in d["models"][order[0]]["all"]["conditions"]]
+    contrasts = [c for c in CONTRAST_STYLE if c[0] in d["models"][order[0]]["all"]["contrasts"]]
+    fig, axes = plt.subplots(1, 3, figsize=(DOUBLE, 72 * MM),
+                             gridspec_kw={"width_ratios": [1.9, 1.3, 1.1]})
+    two_line = [LLM_NAMES[m].replace(" ", "\n", 1) for m in order]
+    # a: AUPRC per prompt condition
     ax = axes[0]
-    x, w = np.arange(len(order)), 0.36
-    kw = dict(capsize=2, error_kw={"lw": 0.7})
-    ax.bar(x - w / 2, deid, w, color=BLUE, label="De-identified prompt",
-           yerr=_err(deid, [m["deident_auprc_ci"] for m in mods]) if has_ci else None, **kw)
-    ax.bar(x + w / 2, iden, w, color=VERMILION, label="Identified prompt",
-           yerr=_err(iden, [m["identified_auprc_ci"] for m in mods]) if has_ci else None, **kw)
-    ax.axhline(d["test_base_rate"], ls="--", color=GREY, lw=0.8,
-               label=f"Test base rate ({d['test_base_rate']:.2f})")
+    x, w = np.arange(len(order)), 0.8 / len(conds)
+    for k, (cond, label, color) in enumerate(conds):
+        v = [d["models"][m]["all"]["conditions"][cond]["auprc"] for m in order]
+        ci = [d["models"][m]["all"]["conditions"][cond]["auprc_ci"] for m in order]
+        ax.bar(x + (k - (len(conds) - 1) / 2) * w, v, w, color=color, label=label, yerr=_err(v, ci),
+               capsize=1.5, error_kw={"lw": 0.6})
+    ax.axhline(d["base_rate"], ls="--", color=GREY, lw=0.8)
     ax.set_xticks(x)
-    ax.set_xticklabels([disp[m] for m in order])
+    ax.set_xticklabels(two_line, fontsize=6)
     ax.set_ylabel("AUPRC (curated human labels)")
-    ax.set_ylim(0, 1.0)
-    ax.legend(frameon=False, loc="upper left", fontsize=6)
+    ax.set_ylim(0, 0.75)
+    ax.legend(frameon=False, loc="lower left", bbox_to_anchor=(0, 1.02), fontsize=5.5, ncol=2,
+              handlelength=1.2, columnspacing=0.8)
     _panel_label(ax, "a")
-
+    # b: paired contrasts
     ax = axes[1]
-    if rec:
-        gaps = [r["leakage"] if "leakage" in r else r["memorization_leakage"] for r in rec]
-        ax.bar(np.arange(len(rec)), gaps, 0.6, color=VERMILION)
-        if all("memorization_leakage_ci" in r for r in rec):
-            ax.errorbar(np.arange(len(rec)), gaps,
-                        yerr=_err(gaps, [r["memorization_leakage_ci"] for r in rec]),
-                        fmt="none", ecolor="black", lw=0.7, capsize=2)
-        ax.set_xticks(np.arange(len(rec)))
-        ax.set_xticklabels([f"{_bin_label(r['bin'])}\n(n = {r['n']})" for r in rec])
-        ax.axhline(0, color="black", lw=0.6)
-        ax.set_xlabel("Trial start year")
-    ax.set_ylabel("Identified − de-identified AUPRC")
+    cw = 0.8 / len(contrasts)
+    for k, (key, label, color) in enumerate(contrasts):
+        v = [d["models"][m]["all"]["contrasts"][key]["auprc"] for m in order]
+        ci = [d["models"][m]["all"]["contrasts"][key]["auprc_ci"] for m in order]
+        ax.bar(x + (k - (len(contrasts) - 1) / 2) * cw, v, cw, color=color, label=label, yerr=_err(v, ci),
+               capsize=1.5, error_kw={"lw": 0.6})
+    ax.axhline(0, color="black", lw=0.6)
+    ax.set_xticks(x)
+    ax.set_xticklabels(two_line, fontsize=6)
+    ax.set_ylabel("Paired AUPRC difference")
+    ax.legend(frameon=False, loc="lower left", bbox_to_anchor=(0, 1.02), fontsize=5.5, ncol=1,
+              handlelength=1.2)
     _panel_label(ax, "b")
+    # c: recency (largest model), full gap by completion year
+    ax = axes[2]
+    top = order[-1]
+    bins = d["models"][top]["by_completion_year"]
+    labels = [b for b in bins if "contrasts" in bins[b]]
+    for k, (key, label, color) in enumerate(contrasts):
+        v = [bins[b]["contrasts"][key]["auprc"] for b in labels]
+        ci = [bins[b]["contrasts"][key]["auprc_ci"] for b in labels]
+        ax.bar(np.arange(len(labels)) + (k - (len(contrasts) - 1) / 2) * cw, v, cw, color=color,
+               yerr=_err(v, ci), capsize=1.5, error_kw={"lw": 0.6})
+    ax.axhline(0, color="black", lw=0.6)
+    ax.set_xticks(np.arange(len(labels)))
+    ax.set_xticklabels([f"{b}\n(n = {bins[b]['n']})" for b in labels], fontsize=5.5)
+    ax.set_xlabel(f"Completion year ({LLM_NAMES[top]})")
+    ax.set_ylabel("Paired AUPRC difference")
+    _panel_label(ax, "c")
     fig.tight_layout()
     fig.savefig(os.path.join(out, "fig_llm_memorization.pdf"))
+    plt.close(fig)
+
+
+def fig_validation(out):
+    d = _load("instrument_validation.json")
+    lv = d["levels"]
+    x = [v["leak_strength"] for v in lv]
+    fig, axes = plt.subplots(1, 3, figsize=(DOUBLE, 55 * MM))
+    ax = axes[0]
+    m = [v["mean_lap"] for v in lv]
+    ax.errorbar(x, m, yerr=_err(m, [v["lap_range_95"] for v in lv]), fmt="o-", color=BLUE,
+                ms=3, lw=0.9, capsize=2, elinewidth=0.7)
+    ax.axhline(0, color="black", lw=0.6)
+    ax.set_xlabel("True leakage (leak strength)")
+    ax.set_ylabel("Estimated LAP (AUPRC)")
+    _panel_label(ax, "a")
+    ax = axes[1]
+    ax.plot(x, [v["detection_rate"] for v in lv], "o-", color=VERMILION, ms=3, lw=0.9,
+            label="CI above 0 (detection)")
+    ax.plot(x, [v["coverage_of_mean_lap"] for v in lv], "s--", color=GREY, ms=3, lw=0.9,
+            label="CI covers mean LAP")
+    ax.axhline(0.025, ls=":", color="black", lw=0.7)
+    ax.axhline(0.95, ls=":", color="black", lw=0.7)
+    ax.set_ylim(-0.02, 1.05)
+    ax.set_xlabel("True leakage (leak strength)")
+    ax.set_ylabel("Fraction of replicates")
+    ax.legend(frameon=False, loc="center right", fontsize=5.5)
+    _panel_label(ax, "b")
+    ax = axes[2]
+    c = d["example_curve"]["curve"]
+    hs = [str(v["horizon"]) if v["horizon"] is not None else "∞" for v in c]
+    vals = [v["auprc_mean"] for v in c]
+    ax.errorbar(range(len(c)), vals, yerr=_err(vals, [v["auprc_ci"] for v in c]), fmt="o-",
+                color=BLUE, ms=3, lw=0.9, capsize=2, elinewidth=0.7)
+    ax.axhline(d["example_curve"]["test_base_rate"], ls="--", color=GREY, lw=0.8)
+    ax.set_xticks(range(len(c)))
+    ax.set_xticklabels(hs)
+    ax.set_xlabel("Hindsight horizon h (years)")
+    ax.set_ylabel("AUPRC")
+    _panel_label(ax, "c")
+    fig.tight_layout()
+    fig.savefig(os.path.join(out, "fig_instrument_validation.pdf"))
     plt.close(fig)
 
 
@@ -200,11 +265,12 @@ def main():
     ap.add_argument("--out", default="figures", help="output directory for the PDFs")
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
+    fig_validation(args.out)
     fig_cto(args.out)
     fig_trialbench(args.out)
     fig_llm(args.out)
     fig_balance(args.out)
-    print("wrote 4 figures to", args.out)
+    print("wrote 5 figures to", args.out)
 
 
 if __name__ == "__main__":

@@ -5,7 +5,8 @@ scientific argument testable end-to-end before touching real data. It encodes:
 
   1. LEAKAGE. "literature" evidence mostly carries dates AFTER a program's
      information-time (i.e. papers that appeared *because* the program later
-     succeeded) and its score/count tracks the label. A model that ignores
+     succeeded) and its score (``leak_strength``) and count (``leak_count``) track
+     the label. Setting both to 0 gives a leakage-free null. A model that ignores
      dates therefore looks strong; a time-censored model does not.
 
   2. CONFOUNDING. Whether a program has genetic support depends on sponsor tier
@@ -58,6 +59,7 @@ def generate(cfg: Dict) -> Tuple[pd.DataFrame, pd.DataFrame]:
     y0, y1 = int(s["year_min"]), int(s["year_max"])
     true_gen = float(s["true_genetic_logodds"])
     leak = float(s["leak_strength"])
+    leak_count = int(s.get("leak_count", 2))   # extra post-hoc papers attracted by success
     intercept = float(s["base_intercept"])
 
     # Fixed per-area log-odds effects (stable across a run).
@@ -129,7 +131,7 @@ def generate(cfg: Dict) -> Tuple[pd.DataFrame, pd.DataFrame]:
                 evid_rows.append((pid, etype, score, d))
 
         # --- Literature evidence: LEAKY. Mostly post-dated; score tracks the label ---
-        n_lit = int(rng.integers(0, 6)) + (2 if label == 1 else 0)  # success attracts papers
+        n_lit = int(rng.integers(0, 6)) + (leak_count if label == 1 else 0)  # success attracts papers
         for _ in range(n_lit):
             post_hoc = rng.random() < 0.80
             if post_hoc:

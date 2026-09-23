@@ -79,6 +79,20 @@ def test_overlap_weighting_balances_covariates():
     print("OK: overlap weights balance the confounders")
 
 
+def test_synthetic_null_has_no_label_dependent_literature():
+    """With leak_strength = leak_count = 0, post-decision literature is independent of the label."""
+    cfg = get_config()
+    cfg["synth"].update({"n_programs": 3000, "n_targets": 2000, "leak_strength": 0.0, "leak_count": 0})
+    cfg["seed"] = 5
+    programs, evidence = synth.generate(cfg)
+    _, Xn, y, _, _ = features.build(programs, evidence)
+    cnt = Xn["ev_literature_count"]
+    score = Xn["ev_literature_score"] / cnt.clip(lower=1)
+    assert abs(cnt[y == 1].mean() - cnt[y == 0].mean()) < 0.25
+    assert abs(score[y == 1].mean() - score[y == 0].mean()) < 0.03
+    print("OK: synthetic null has label-independent literature")
+
+
 def test_evalue():
     assert abs(causal.evalue_rr(2.0) - (2.0 + np.sqrt(2.0))) < 1e-12
     assert abs(causal.evalue_rr(0.5) - causal.evalue_rr(2.0)) < 1e-12   # symmetric

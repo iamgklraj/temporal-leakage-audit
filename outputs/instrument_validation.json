@@ -1,0 +1,181 @@
+{
+  "design": {
+    "levels_leak_strength": [
+      0.0,
+      0.25,
+      0.5,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "leak_count": 0,
+    "replicates_per_level": 100,
+    "n_programs": 2000,
+    "split": "train <= 2016, test 2017-2020, target-disjoint",
+    "bootstrap": "target-clustered paired percentile, 200 resamples"
+  },
+  "levels": [
+    {
+      "leak_strength": 0.0,
+      "replicates": 100,
+      "mean_lap": -0.0024,
+      "lap_range_95": [
+        -0.0443,
+        0.0325
+      ],
+      "mean_lap_auroc": -0.0023,
+      "detection_rate": 0.02,
+      "ci_below_zero_rate": 0.05,
+      "coverage_of_mean_lap": 0.93,
+      "mean_n_test": 244.0
+    },
+    {
+      "leak_strength": 0.25,
+      "replicates": 100,
+      "mean_lap": 0.002,
+      "lap_range_95": [
+        -0.0442,
+        0.0487
+      ],
+      "mean_lap_auroc": 0.0042,
+      "detection_rate": 0.06,
+      "ci_below_zero_rate": 0.04,
+      "coverage_of_mean_lap": 0.92,
+      "mean_n_test": 242.8
+    },
+    {
+      "leak_strength": 0.5,
+      "replicates": 100,
+      "mean_lap": 0.0147,
+      "lap_range_95": [
+        -0.0267,
+        0.0728
+      ],
+      "mean_lap_auroc": 0.0171,
+      "detection_rate": 0.06,
+      "ci_below_zero_rate": 0.0,
+      "coverage_of_mean_lap": 0.94,
+      "mean_n_test": 249.4
+    },
+    {
+      "leak_strength": 1.0,
+      "replicates": 100,
+      "mean_lap": 0.0637,
+      "lap_range_95": [
+        0.0078,
+        0.1174
+      ],
+      "mean_lap_auroc": 0.0629,
+      "detection_rate": 0.55,
+      "ci_below_zero_rate": 0.0,
+      "coverage_of_mean_lap": 0.95,
+      "mean_n_test": 245.7
+    },
+    {
+      "leak_strength": 1.5,
+      "replicates": 100,
+      "mean_lap": 0.093,
+      "lap_range_95": [
+        0.0293,
+        0.1739
+      ],
+      "mean_lap_auroc": 0.0966,
+      "detection_rate": 0.85,
+      "ci_below_zero_rate": 0.0,
+      "coverage_of_mean_lap": 0.87,
+      "mean_n_test": 243.6
+    },
+    {
+      "leak_strength": 2.0,
+      "replicates": 100,
+      "mean_lap": 0.1077,
+      "lap_range_95": [
+        0.0504,
+        0.1855
+      ],
+      "mean_lap_auroc": 0.116,
+      "detection_rate": 0.96,
+      "ci_below_zero_rate": 0.0,
+      "coverage_of_mean_lap": 0.91,
+      "mean_n_test": 244.2
+    }
+  ],
+  "example_curve": {
+    "n_train": 2805,
+    "n_test": 476,
+    "curve": [
+      {
+        "horizon": 0,
+        "auprc_mean": 0.8084,
+        "policy_mean": 0.9474,
+        "auprc_ci": [
+          0.757,
+          0.8528
+        ]
+      },
+      {
+        "horizon": 1,
+        "auprc_mean": 0.8756,
+        "policy_mean": 0.9789,
+        "auprc_ci": [
+          0.8321,
+          0.9097
+        ]
+      },
+      {
+        "horizon": 2,
+        "auprc_mean": 0.8958,
+        "policy_mean": 0.9789,
+        "auprc_ci": [
+          0.86,
+          0.926
+        ]
+      },
+      {
+        "horizon": 3,
+        "auprc_mean": 0.926,
+        "policy_mean": 0.9895,
+        "auprc_ci": [
+          0.9,
+          0.949
+        ]
+      },
+      {
+        "horizon": 5,
+        "auprc_mean": 0.9631,
+        "policy_mean": 1.0,
+        "auprc_ci": [
+          0.9462,
+          0.9773
+        ]
+      },
+      {
+        "horizon": 10,
+        "auprc_mean": 0.9631,
+        "policy_mean": 1.0,
+        "auprc_ci": [
+          0.9462,
+          0.9773
+        ]
+      },
+      {
+        "horizon": null,
+        "auprc_mean": 0.9631,
+        "policy_mean": 1.0,
+        "auprc_ci": [
+          0.9462,
+          0.9773
+        ]
+      }
+    ],
+    "test_base_rate": 0.4517,
+    "deployable_auprc": 0.8084,
+    "naive_auprc": 0.9631,
+    "total_LAP_auprc": 0.1547,
+    "total_LAP_auprc_ci": [
+      0.1169,
+      0.1985
+    ],
+    "leakage_half_life_years": 2
+  }
+}

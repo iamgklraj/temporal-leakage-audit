@@ -24,7 +24,8 @@ DEFAULTS: Dict[str, Any] = {
         "year_min": 2008,
         "year_max": 2020,
         "true_genetic_logodds": 0.35,  # the *causal* effect of genetic support (small, on purpose)
-        "leak_strength": 2.4,          # how strongly post-hoc literature tracks the label
+        "leak_strength": 2.4,          # how strongly post-hoc literature scores track the label
+        "leak_count": 2,               # extra post-hoc papers per successful program (0 = none)
         "base_intercept": -0.35,       # tunes overall base success rate
     },
 

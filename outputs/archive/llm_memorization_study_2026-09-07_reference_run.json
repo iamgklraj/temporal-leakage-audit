@@ -1,0 +1,49 @@
+{
+  "n": 250,
+  "test_base_rate": 0.164,
+  "models": {
+    "claude-haiku-4-5-20251001": {
+      "identified_auprc": 0.3414,
+      "deident_auprc": 0.1994,
+      "memorization_leakage": 0.142
+    },
+    "claude-sonnet-5": {
+      "identified_auprc": 0.4921,
+      "deident_auprc": 0.2824,
+      "memorization_leakage": 0.2097
+    },
+    "claude-opus-4-8": {
+      "identified_auprc": 0.5806,
+      "deident_auprc": 0.2205,
+      "memorization_leakage": 0.36
+    },
+    "claude-opus-5": {
+      "identified_auprc": 0.6526,
+      "deident_auprc": 0.308,
+      "memorization_leakage": 0.3446
+    }
+  },
+  "recency": [
+    {
+      "bin": "<=2021",
+      "n": 134,
+      "identified_auprc": 0.7444,
+      "deident_auprc": 0.3707,
+      "leakage": 0.3737
+    },
+    {
+      "bin": "2022-2022",
+      "n": 79,
+      "identified_auprc": 0.6234,
+      "deident_auprc": 0.2788,
+      "leakage": 0.3445
+    },
+    {
+      "bin": ">2022",
+      "n": 37,
+      "identified_auprc": 0.3333,
+      "deident_auprc": 0.25,
+      "leakage": 0.0833
+    }
+  ]
+}
