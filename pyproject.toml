@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "temporal-leakage-audit"
+version = "1.0.0"
+description = "A temporal leakage-response instrument for auditing clinical-trial-outcome prediction benchmarks"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Gokulraj Muthukumar", email = "muthukumar.g@northeastern.edu" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+    "pyyaml>=6.0",
+]
+keywords = ["temporal leakage", "benchmark integrity", "clinical trial outcome prediction",
+            "machine learning evaluation", "causal inference"]
+
+[project.urls]
+Repository = "https://github.com/iamgklraj/temporal-leakage-audit"
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+include = ["temporal_leakage_audit*"]

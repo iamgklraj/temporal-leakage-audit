@@ -1,0 +1,11 @@
+# Exact versions the reference outputs were produced and tested with (Python 3.13.5,
+# macOS 26.6). The looser minimums in pyproject.toml are expected to work as well.
+numpy==2.5.1
+pandas==3.0.3
+scikit-learn==1.9.0
+scipy==1.18.0
+matplotlib==3.11.1
+pyyaml==6.0.3
+
+# Optional: pytest (runs tests/ ; every test file also runs as a plain script)
+# pytest>=7

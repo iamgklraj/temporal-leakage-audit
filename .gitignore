@@ -1,0 +1,26 @@
+# --- Data are built from public APIs on demand and never committed. ---
+# The connectors (temporal_leakage_audit/data/connectors.py) pull Open Targets /
+# ClinicalTrials.gov / PubMed at build time; the CTO and TrialBench audits download their
+# tables on first use. A frozen snapshot of the processed tables is deposited on Zenodo so
+# the reported numbers stay reproducible.
+/data/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+
+# Regenerable demo outputs (the reference outputs in outputs/*.json are tracked)
+outputs/synth_demo/
+
+# OS / editor cruft
+.DS_Store
+*.bak
+*.prefix_bak
+
+# Local tooling / assistant config (not part of the research)
+.claude/
+.mcp.json

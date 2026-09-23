@@ -1,0 +1,26 @@
+# Six-disease pilot config (Open Targets 26.06 + ClinicalTrials.gov v2 + PubMed); not used
+# in the paper. Disease list = the defaults in temporal_leakage_audit/config.py.
+# Build: python -m temporal_leakage_audit.data.connectors config/pilot_6disease.yaml
+# Split years are set from the REAL info_time distribution (median ~2010; trials
+# span 1993-2026), not the synth defaults: train on <=2010, evaluate on the
+# target-disjoint post-2010 prospective block.
+seed: 7
+data_dir: data/pilot_6disease
+output_dir: outputs
+
+task:
+  treatment_col: has_genetic_support
+
+split:
+  train_max_year: 2010
+  test_years: [2011, 2026]
+  seal_year: 2010
+  enforce_target_disjoint: true
+
+decision:
+  budget_frac: 0.20
+  pt_for_netbenefit: 0.20
+  pt_grid: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.40, 0.50]
+
+bootstrap:
+  n_boot: 1000

@@ -1,0 +1,362 @@
+{
+  "config": "config/benchmark_20disease.yaml",
+  "data_dir": "data/benchmark_20disease",
+  "dataset": {
+    "n": 3990,
+    "label": {
+      "0": 2666,
+      "1": 1324
+    },
+    "diseases": 20,
+    "targets": 463
+  },
+  "main_split": {
+    "n_train": 2425,
+    "n_test": 200,
+    "test_dropped_shared_target": 1365,
+    "train_max_year": 2013,
+    "test_years": [
+      2014,
+      2027
+    ]
+  },
+  "leakage_response_curve": {
+    "curve": [
+      {
+        "horizon": 0,
+        "auprc_mean": 0.3592,
+        "policy_mean": 0.325,
+        "auprc_ci": [
+          0.1875,
+          0.5581
+        ]
+      },
+      {
+        "horizon": 1,
+        "auprc_mean": 0.4069,
+        "policy_mean": 0.325,
+        "auprc_ci": [
+          0.1952,
+          0.5896
+        ]
+      },
+      {
+        "horizon": 2,
+        "auprc_mean": 0.4317,
+        "policy_mean": 0.3,
+        "auprc_ci": [
+          0.2106,
+          0.6071
+        ]
+      },
+      {
+        "horizon": 3,
+        "auprc_mean": 0.3977,
+        "policy_mean": 0.275,
+        "auprc_ci": [
+          0.1874,
+          0.5757
+        ]
+      },
+      {
+        "horizon": 5,
+        "auprc_mean": 0.4454,
+        "policy_mean": 0.35,
+        "auprc_ci": [
+          0.2294,
+          0.6239
+        ]
+      },
+      {
+        "horizon": 10,
+        "auprc_mean": 0.3975,
+        "policy_mean": 0.325,
+        "auprc_ci": [
+          0.2079,
+          0.6013
+        ]
+      },
+      {
+        "horizon": null,
+        "auprc_mean": 0.4335,
+        "policy_mean": 0.375,
+        "auprc_ci": [
+          0.1857,
+          0.619
+        ]
+      }
+    ],
+    "test_base_rate": 0.16,
+    "deployable_auprc": 0.3592,
+    "deployable_lift_over_base": 0.1992,
+    "naive_auprc": 0.4335,
+    "total_LAP_auprc": 0.0743,
+    "total_LAP_auprc_ci": [
+      -0.0741,
+      0.1602
+    ],
+    "total_LAP_auprc_p_gt_0": 0.768,
+    "peak_LAP_auprc": 0.0862,
+    "peak_horizon": 5,
+    "leakage_half_life_years": 1,
+    "n_boot": 500,
+    "interpretation": "AUPRC vs. hindsight horizon h (years of post-freeze evidence admitted). h=0 is the deployable estimate; the rise toward h=inf is temporal leakage. total_LAP_auprc is the point leakage bias and total_LAP_auprc_ci its target-clustered 95% bootstrap CI; total_LAP_auprc_p_gt_0 is the bootstrap probability that LAP>0. AUPRC is read against test_base_rate."
+  },
+  "per_source_placebo_lap": {
+    "deployable_auprc": 0.3592,
+    "per_source": {
+      "other_evidence": {
+        "LAP": 0.0661,
+        "ci": [
+          0.0089,
+          0.1233
+        ],
+        "p_gt_0": 0.992
+      },
+      "literature": {
+        "LAP": 0.0144,
+        "ci": [
+          -0.1077,
+          0.126
+        ],
+        "p_gt_0": 0.598
+      },
+      "genetic": {
+        "LAP": -0.0204,
+        "ci": [
+          -0.0887,
+          0.0461
+        ],
+        "p_gt_0": 0.262
+      }
+    }
+  },
+  "rolling_origin_LAP": [
+    {
+      "cutoff": 2010,
+      "n_test": 393,
+      "test_pos": 66,
+      "test_base_rate": 0.1679,
+      "naive_auprc": 0.3858,
+      "censored_auprc": 0.3384,
+      "LAP_auprc": 0.0474,
+      "LAP_ci": {
+        "mean": 0.0402,
+        "lo": -0.0383,
+        "hi": 0.109,
+        "n": 500
+      },
+      "LAP_p_gt_0": 0.87
+    },
+    {
+      "cutoff": 2012,
+      "n_test": 269,
+      "test_pos": 43,
+      "test_base_rate": 0.1599,
+      "naive_auprc": 0.4045,
+      "censored_auprc": 0.439,
+      "LAP_auprc": -0.0345,
+      "LAP_ci": {
+        "mean": -0.0367,
+        "lo": -0.1362,
+        "hi": 0.0491,
+        "n": 500
+      },
+      "LAP_p_gt_0": 0.226
+    },
+    {
+      "cutoff": 2015,
+      "n_test": 126,
+      "test_pos": 14,
+      "test_base_rate": 0.1111,
+      "naive_auprc": 0.4064,
+      "censored_auprc": 0.4536,
+      "LAP_auprc": -0.0472,
+      "LAP_ci": {
+        "mean": -0.0644,
+        "lo": -0.2572,
+        "hi": 0.1023,
+        "n": 500
+      },
+      "LAP_p_gt_0": 0.264
+    },
+    {
+      "cutoff": 2017,
+      "n_test": 63,
+      "test_pos": 4,
+      "test_base_rate": 0.0635,
+      "naive_auprc": 0.1351,
+      "censored_auprc": 0.5613,
+      "LAP_auprc": -0.4262,
+      "LAP_ci": {
+        "mean": -0.3055,
+        "lo": -0.8604,
+        "hi": 0.0453,
+        "n": 479
+      },
+      "LAP_p_gt_0": 0.265
+    }
+  ],
+  "causal": {
+    "treatment": "has_genetic_support",
+    "n_treated": 123,
+    "n_control": 2302,
+    "naive_association_diff": 0.1403,
+    "aipw_ate": {
+      "ate": -0.0048,
+      "se": 0.0403,
+      "ci95": [
+        -0.0838,
+        0.0742
+      ],
+      "propensity_overlap": [
+        0.0,
+        0.865
+      ],
+      "po_treated": 0.4009,
+      "po_control": 0.4057,
+      "ato": 0.1188,
+      "ato_po1": 0.5381,
+      "ato_po0": 0.4193,
+      "ato_ess": 398.7,
+      "trimmed_ate": 0.1507,
+      "n_trimmed": 328,
+      "trim_range": [
+        0.1,
+        0.9
+      ],
+      "ate_ci_clustered": [
+        -0.2138,
+        0.1497
+      ],
+      "ato_ci_clustered": [
+        0.0108,
+        0.2311
+      ],
+      "trimmed_ate_ci_clustered": [
+        -0.0024,
+        0.2902
+      ],
+      "n_boot_effective": 300
+    },
+    "primary_estimand": "ATO (overlap-weighted); positivity imperfect so ATE is fragile",
+    "t_learner_ate": 0.0136,
+    "sensitivity": {
+      "risk_ratio_adjusted": 0.988,
+      "e_value_point": 1.122,
+      "e_value_lower_ci": 1.0,
+      "note": "E-value: minimum risk-ratio-scale strength an unmeasured target-disease confounder would need with BOTH genetic support and advancement to explain away the adjusted effect. e_value_lower_ci is for the CI limit nearest the null; 1.0 means the CI includes the null (not robust)."
+    },
+    "ato_sensitivity": {
+      "risk_ratio_adjusted": 1.283,
+      "e_value_point": 1.886,
+      "e_value_lower_ci": 1.188,
+      "note": "E-value for the overlap-weighted (ATO) effect: min risk-ratio-scale confounding needed to explain it away; e_value_lower_ci uses the clustered-CI limit nearest the null."
+    },
+    "covariate_balance": {
+      "max_abs_smd_unweighted": 0.525,
+      "max_abs_smd_overlap_weighted": 0.014,
+      "mean_abs_smd_unweighted": 0.345,
+      "mean_abs_smd_overlap_weighted": 0.007,
+      "n_balanced_after_weighting": 15,
+      "n_covariates": 15,
+      "per_covariate_smd_raw_then_weighted": {
+        "sponsor_tier": [
+          0.422,
+          0.014
+        ],
+        "phase_from": [
+          -0.427,
+          -0.005
+        ],
+        "info_time": [
+          0.475,
+          0.006
+        ],
+        "area_cancer_or_benign_tumor": [
+          0.477,
+          0.012
+        ],
+        "area_cardiovascular_disorder": [
+          -0.324,
+          -0.01
+        ],
+        "area_immune_system_disorder": [
+          -0.277,
+          -0.003
+        ],
+        "area_musculoskeletal_or_connective_tissue_disease": [
+          -0.213,
+          -0.003
+        ],
+        "area_nervous_system_disorder": [
+          -0.487,
+          -0.014
+        ],
+        "area_phenotype": [
+          0.211,
+          -0.007
+        ],
+        "area_psychiatric_disorder": [
+          0.089,
+          0.012
+        ],
+        "area_reproductive_system_or_breast_disease": [
+          0.333,
+          0.004
+        ],
+        "area_respiratory_or_thoracic_disease": [
+          -0.362,
+          -0.005
+        ],
+        "mod_biologic": [
+          0.525,
+          -0.003
+        ],
+        "mod_other": [
+          -0.068,
+          0.011
+        ],
+        "mod_small_molecule": [
+          -0.488,
+          -0.001
+        ]
+      }
+    },
+    "negative_control": {
+      "real_ato": 0.1188,
+      "null_mean": 0.0001,
+      "null_ci95": [
+        -0.0987,
+        0.0932
+      ],
+      "permutation_p_value": 0.0135,
+      "note": "Outcome-permutation null holding propensities fixed (null_mean ~ 0 by construction); permutation_p_value is P(|permuted ATO| >= |real ATO|)."
+    },
+    "refutations": {
+      "placebo_treatment_ate": -0.0275,
+      "random_common_cause_ate": -0.0077,
+      "subset_70pct_ate": 0.061
+    },
+    "cate_mean": 0.0136,
+    "cate_std": 0.2062,
+    "interpretation": "Compare naive_association_diff (confounded) with the adjusted estimands. ATO is the primary robust estimand (overlap-weighted, positivity-robust); ATE and trimmed_ate are shown with target-clustered bootstrap CIs. A much smaller adjusted effect means the raw association is largely confounding. placebo_treatment_ate should be near 0; the other refutations should stay near the ATE."
+  },
+  "decision": {
+    "budget_frac": 0.2,
+    "base_rate": 0.16,
+    "policy_values": {
+      "model": 0.325,
+      "heuristic_genetic": 0.275,
+      "treat_all_base_rate": 0.16
+    },
+    "chosen_model_policy": "model",
+    "gap_best_model_minus_best_trivial": 0.05,
+    "gap_ci95": [
+      -0.1428,
+      0.2771
+    ],
+    "VERDICT": "LEAN GO / UNDERPOWERED",
+    "guidance": "The point estimate favours the model but the CI includes 0; more data or a wider evaluation window is needed before acting on the model."
+  }
+}

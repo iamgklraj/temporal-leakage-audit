@@ -1,0 +1,39 @@
+# Dating-rule sensitivity arm: the SAME 20-disease programs, evidence re-dated by the
+# Open Targets publicationYear field. Built by scripts/dating_rule_sensitivity.py --build.
+# Data: Open Targets Platform 26.06, ClinicalTrials.gov API v2, NCBI PubMed.
+seed: 7
+data_dir: data/benchmark_20disease_otyear
+output_dir: outputs
+
+real:
+  disease_ids:
+    - HP_0000822      # hypertension
+    - MONDO_0002009   # major depressive disorder
+    - MONDO_0004975   # Alzheimer disease
+    - MONDO_0004979   # asthma
+    - MONDO_0004980   # atopic eczema
+    - MONDO_0004989   # breast carcinoma
+    - MONDO_0005002   # chronic obstructive pulmonary disease
+    - MONDO_0005011   # Crohn disease
+    - MONDO_0005083   # psoriasis
+    - MONDO_0005090   # schizophrenia
+    - MONDO_0005101   # ulcerative colitis
+    - MONDO_0005105   # melanoma
+    - MONDO_0005138   # lung carcinoma
+    - MONDO_0005148   # type 2 diabetes mellitus
+    - MONDO_0005159   # prostate carcinoma
+    - MONDO_0005180   # Parkinson disease
+    - MONDO_0005252   # heart failure
+    - MONDO_0005301   # multiple sclerosis
+    - MONDO_0007915   # systemic lupus erythematosus
+    - MONDO_0008383   # rheumatoid arthritis
+  literature_policy: ot_publication_year   # Open Targets publicationYear; drop nulls
+  use_pmid_year_fallback: false
+  expected_data_version: {year: "26", month: "06"}
+  check_version: true
+  drop_unmapped_targets: true
+  max_literature_per_pair: 400     # seeded random sample per (disease, target) pair
+  cache_dir: data/api_cache
+
+bootstrap:
+  n_boot: 500

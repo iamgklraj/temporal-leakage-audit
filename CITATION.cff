@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below (and the accompanying paper once published)."
+title: "temporal-leakage-audit: a temporal leakage-response instrument for clinical trial outcome prediction"
+abstract: >-
+  Software for measuring how much of a clinical-trial-outcome prediction model's reported
+  skill depends on information unavailable at decision time. Implements the temporal
+  leakage-response curve and leakage-attributable performance (LAP) with cluster-bootstrap
+  confidence intervals, an as-of-time-censored drug-program benchmark built from Open Targets,
+  ClinicalTrials.gov and PubMed, audits of the CTO and TrialBench benchmarks, a study of
+  training-data memorization in LLM-based prediction, and a positivity-aware causal layer.
+type: software
+license: MIT
+version: 1.0.0
+date-released: "2026-09-22"
+# Add the Zenodo DOI after the first release, e.g.
+#   doi: 10.5281/zenodo.XXXXXXX
+repository-code: "https://github.com/iamgklraj/temporal-leakage-audit"
+authors:
+  - family-names: Muthukumar
+    given-names: "Gokulraj"
+    affiliation: "Northeastern University"
+    email: muthukumar.g@northeastern.edu
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+keywords:
+  - temporal data leakage
+  - benchmark integrity
+  - clinical trial outcome prediction
+  - machine learning evaluation
+  - LLM training-data contamination
+  - causal inference
+  - reproducibility

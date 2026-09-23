@@ -1,0 +1,32 @@
+{
+  "pubmed_year": {
+    "evidence_rows": 672605,
+    "n_test": 200,
+    "test_base_rate": 0.16,
+    "deployable_auprc": 0.3592,
+    "naive_auprc": 0.4335,
+    "LAP": 0.0743,
+    "LAP_ci": [
+      -0.0741,
+      0.1602
+    ],
+    "LAP_p_gt_0": 0.768,
+    "peak_LAP": 0.0862
+  },
+  "ot_publication_year": {
+    "evidence_rows": 682981,
+    "n_test": 200,
+    "test_base_rate": 0.16,
+    "deployable_auprc": 0.4092,
+    "naive_auprc": 0.4594,
+    "LAP": 0.0502,
+    "LAP_ci": [
+      -0.0581,
+      0.1113
+    ],
+    "LAP_p_gt_0": 0.8,
+    "peak_LAP": 0.0502
+  },
+  "LAP_difference": 0.0241,
+  "interpretation": "Identical programs and split; only the evidence dating rule differs. A small LAP_difference with the same sign means the leakage conclusion is not an artifact of how evidence is timestamped."
+}

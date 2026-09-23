@@ -1,0 +1,269 @@
+{
+  "benchmark": "TrialBench approval forecasting (arXiv:2407.00631; Zenodo 14975339)",
+  "labels_commit": "0694eba8f3f202be8dfa3fb2c2f05eddf7e538ce",
+  "design": "provided (non-temporal) split vs NCT-ordered temporal split of equal test size; trial-level percentile bootstrap CIs (1,000 resamples)",
+  "phases": [
+    {
+      "phase": "Phase1",
+      "n": 4482,
+      "n_test": 896,
+      "base_rate": 0.4255,
+      "overlap_provided_temporal_test": 171,
+      "provided_split": {
+        "n_test": 896,
+        "test_base_rate": 0.4308,
+        "auprc": 0.723,
+        "auroc": 0.8127,
+        "auprc_lift": 0.2922,
+        "auprc_ci": [
+          0.675,
+          0.7686
+        ],
+        "auroc_ci": [
+          0.7837,
+          0.8391
+        ],
+        "auprc_lift_ci": [
+          0.2529,
+          0.3332
+        ],
+        "train_base_rate": 0.4241
+      },
+      "temporal_split": {
+        "n_test": 896,
+        "test_base_rate": 0.2042,
+        "auprc": 0.5731,
+        "auroc": 0.8417,
+        "auprc_lift": 0.3689,
+        "auprc_ci": [
+          0.5024,
+          0.6438
+        ],
+        "auroc_ci": [
+          0.813,
+          0.869
+        ],
+        "auprc_lift_ci": [
+          0.3068,
+          0.4364
+        ],
+        "train_base_rate": 0.4808
+      },
+      "provided_minus_temporal": {
+        "auprc": {
+          "point": 0.1499,
+          "ci": [
+            0.0628,
+            0.2355
+          ]
+        },
+        "auroc": {
+          "point": -0.029,
+          "ci": [
+            -0.0723,
+            0.0101
+          ]
+        },
+        "auprc_lift": {
+          "point": -0.0767,
+          "ci": [
+            -0.1538,
+            -0.0034
+          ]
+        }
+      }
+    },
+    {
+      "phase": "Phase2",
+      "n": 12494,
+      "n_test": 2514,
+      "base_rate": 0.3815,
+      "overlap_provided_temporal_test": 509,
+      "provided_split": {
+        "n_test": 2514,
+        "test_base_rate": 0.3683,
+        "auprc": 0.6708,
+        "auroc": 0.8109,
+        "auprc_lift": 0.3025,
+        "auprc_ci": [
+          0.6378,
+          0.7013
+        ],
+        "auroc_ci": [
+          0.7943,
+          0.825
+        ],
+        "auprc_lift_ci": [
+          0.2764,
+          0.3274
+        ],
+        "train_base_rate": 0.3849
+      },
+      "temporal_split": {
+        "n_test": 2514,
+        "test_base_rate": 0.2673,
+        "auprc": 0.6144,
+        "auroc": 0.8586,
+        "auprc_lift": 0.3471,
+        "auprc_ci": [
+          0.5749,
+          0.6552
+        ],
+        "auroc_ci": [
+          0.8442,
+          0.872
+        ],
+        "auprc_lift_ci": [
+          0.3131,
+          0.3826
+        ],
+        "train_base_rate": 0.4103
+      },
+      "provided_minus_temporal": {
+        "auprc": {
+          "point": 0.0564,
+          "ci": [
+            0.0001,
+            0.1038
+          ]
+        },
+        "auroc": {
+          "point": -0.0477,
+          "ci": [
+            -0.0707,
+            -0.028
+          ]
+        },
+        "auprc_lift": {
+          "point": -0.0446,
+          "ci": [
+            -0.0937,
+            -0.0048
+          ]
+        }
+      }
+    },
+    {
+      "phase": "Phase3",
+      "n": 9161,
+      "n_test": 1913,
+      "base_rate": 0.5617,
+      "overlap_provided_temporal_test": 390,
+      "provided_split": {
+        "n_test": 1913,
+        "test_base_rate": 0.5551,
+        "auprc": 0.8003,
+        "auroc": 0.7927,
+        "auprc_lift": 0.2452,
+        "auprc_ci": [
+          0.7731,
+          0.8261
+        ],
+        "auroc_ci": [
+          0.7722,
+          0.8129
+        ],
+        "auprc_lift_ci": [
+          0.222,
+          0.2694
+        ],
+        "train_base_rate": 0.5635
+      },
+      "temporal_split": {
+        "n_test": 1913,
+        "test_base_rate": 0.4956,
+        "auprc": 0.7603,
+        "auroc": 0.8176,
+        "auprc_lift": 0.2647,
+        "auprc_ci": [
+          0.7259,
+          0.7954
+        ],
+        "auroc_ci": [
+          0.7962,
+          0.838
+        ],
+        "auprc_lift_ci": [
+          0.2368,
+          0.2932
+        ],
+        "train_base_rate": 0.5792
+      },
+      "provided_minus_temporal": {
+        "auprc": {
+          "point": 0.04,
+          "ci": [
+            -0.0023,
+            0.0817
+          ]
+        },
+        "auroc": {
+          "point": -0.0249,
+          "ci": [
+            -0.0533,
+            0.0045
+          ]
+        },
+        "auprc_lift": {
+          "point": -0.0195,
+          "ci": [
+            -0.0574,
+            0.0182
+          ]
+        }
+      }
+    }
+  ],
+  "mean_provided_minus_temporal_auprc": 0.0821,
+  "mean_provided_minus_temporal_auroc": -0.0339,
+  "mean_provided_minus_temporal_auprc_lift": -0.0469,
+  "chronology": {
+    "Phase1": {
+      "n_dated": 4457,
+      "n_total": 4482,
+      "provided_train_median_start_year": 2012.0,
+      "provided_test_median_start_year": 2012.0,
+      "mann_whitney_train_earlier_p": 0.6569,
+      "approval_rate_by_start_year_quartile": {
+        "(1994.999, 2009.0]": 0.4187,
+        "(2009.0, 2012.0]": 0.5734,
+        "(2012.0, 2015.0]": 0.4972,
+        "(2015.0, 2026.0]": 0.1917
+      }
+    },
+    "Phase2": {
+      "n_dated": 12416,
+      "n_total": 12494,
+      "provided_train_median_start_year": 2011.0,
+      "provided_test_median_start_year": 2011.0,
+      "mann_whitney_train_earlier_p": 0.7214,
+      "approval_rate_by_start_year_quartile": {
+        "(1899.999, 2007.0]": 0.3936,
+        "(2007.0, 2011.0]": 0.4137,
+        "(2011.0, 2014.0]": 0.443,
+        "(2014.0, 2030.0]": 0.2873
+      }
+    },
+    "Phase3": {
+      "n_dated": 9099,
+      "n_total": 9161,
+      "provided_train_median_start_year": 2010.0,
+      "provided_test_median_start_year": 2010.0,
+      "mann_whitney_train_earlier_p": 0.2336,
+      "approval_rate_by_start_year_quartile": {
+        "(1987.999, 2006.0]": 0.5282,
+        "(2006.0, 2010.0]": 0.5662,
+        "(2010.0, 2014.0]": 0.6592,
+        "(2014.0, 2025.0]": 0.4616
+      }
+    },
+    "pooled": {
+      "n_dated": 25972,
+      "provided_train_median_start_year": 2011.0,
+      "provided_test_median_start_year": 2011.0,
+      "mann_whitney_train_earlier_p": 0.6049,
+      "spearman_nct_number_vs_start_year": 0.9607,
+      "spearman_p": 0.0
+    }
+  }
+}

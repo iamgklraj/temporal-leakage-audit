@@ -1,0 +1,62 @@
+# Synthetic demo config (mirrors temporal_leakage_audit/config.py defaults). Pass with:
+#   python scripts/run_synth_benchmark.py --config config/default.yaml
+# Only the keys you set here override the package defaults.
+
+seed: 7
+data_dir: data/synth
+output_dir: outputs
+
+synth:
+  n_programs: 4000
+  n_targets: 3500
+  n_areas: 8
+  year_min: 2008
+  year_max: 2020
+  true_genetic_logodds: 0.35   # the true causal effect (small on purpose)
+  leak_strength: 2.4           # how hard post-hoc literature tracks the label
+  base_intercept: -0.35
+
+# Real-data connectors (temporal_leakage_audit/data/connectors.py). Ignored on synthetic data.
+# The paper's datasets use config/benchmark_20disease.yaml and config/benchmark_41disease.yaml.
+real:
+  ot_graphql_url: https://api.platform.opentargets.org/api/v4/graphql
+  ctgov_v2_url: https://clinicaltrials.gov/api/v2/studies
+  pubmed_esummary_url: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi
+  ncbi_api_key: null
+  disease_ids:                  # disease ids OR names (connector resolves via OT search)
+    - MONDO_0008383             # rheumatoid arthritis (OT migrated EFO_* -> MONDO_*)
+    - MONDO_0004989             # breast carcinoma
+    - MONDO_0005148             # type 2 diabetes mellitus
+    - MONDO_0004979             # asthma
+    - Alzheimer disease         # resolved by name
+    - Crohn disease             # resolved by name
+  max_drug_rows: null           # cap drug candidates per disease (null = all)
+  expected_data_version: {year: "26", month: "06"}
+  check_version: true
+  literature_policy: pubmed_year   # pubmed_year | drop | ot_publication_year
+  use_pmid_year_fallback: true
+  drop_unmapped_targets: true
+  evidence_size: 3000              # per-page cap (hard max 3000)
+  pubmed_batch: 200
+  request_timeout: 60
+  max_retries: 5
+  backoff_base: 0.5
+  sleep_between: 0.1
+  cache_dir: data/api_cache        # null disables the on-disk JSON cache
+
+task:
+  treatment_col: has_genetic_support
+
+split:
+  train_max_year: 2016
+  test_years: [2017, 2018]
+  seal_year: 2018
+  enforce_target_disjoint: true
+
+decision:
+  budget_frac: 0.20
+  pt_for_netbenefit: 0.20
+  pt_grid: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.40, 0.50]
+
+bootstrap:
+  n_boot: 500

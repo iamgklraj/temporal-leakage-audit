@@ -1,0 +1,63 @@
+# Scaled drug-program benchmark: 41 diseases (a superset of the 20), Open Targets
+# publication-year evidence dating. Reproduces data/benchmark_41disease_otyear
+# (8,357 programs; outputs/censored_benchmark_41disease.json).
+#   python -m temporal_leakage_audit.data.connectors config/benchmark_41disease.yaml
+#   python scripts/audit_censored_benchmark.py --config config/benchmark_41disease.yaml
+# Data: Open Targets Platform 26.06, ClinicalTrials.gov API v2, NCBI PubMed.
+seed: 7
+data_dir: data/benchmark_41disease_otyear
+output_dir: outputs
+
+real:
+  disease_ids:
+    - EFO_0000768     # idiopathic pulmonary fibrosis
+    - HP_0000822      # hypertension
+    - HP_0001513      # obesity
+    - MONDO_0002009   # major depressive disorder
+    - MONDO_0004948   # B-cell chronic lymphocytic leukemia
+    - MONDO_0004950   # gastric carcinoma
+    - MONDO_0004975   # Alzheimer disease
+    - MONDO_0004976   # amyotrophic lateral sclerosis
+    - MONDO_0004979   # asthma
+    - MONDO_0004980   # atopic eczema
+    - MONDO_0004989   # breast carcinoma
+    - MONDO_0005002   # chronic obstructive pulmonary disease
+    - MONDO_0005011   # Crohn disease
+    - MONDO_0005027   # epilepsy
+    - MONDO_0005083   # psoriasis
+    - MONDO_0005090   # schizophrenia
+    - MONDO_0005101   # ulcerative colitis
+    - MONDO_0005105   # melanoma
+    - MONDO_0005109   # HIV infectious disease
+    - MONDO_0005138   # lung carcinoma
+    - MONDO_0005140   # ovarian carcinoma
+    - MONDO_0005148   # type 2 diabetes mellitus
+    - MONDO_0005159   # prostate carcinoma
+    - MONDO_0005180   # Parkinson disease
+    - MONDO_0005192   # exocrine pancreatic carcinoma
+    - MONDO_0005252   # heart failure
+    - MONDO_0005277   # migraine disorder
+    - MONDO_0005300   # chronic kidney disease
+    - MONDO_0005301   # multiple sclerosis
+    - MONDO_0005306   # ankylosing spondylitis
+    - MONDO_0005366   # chronic hepatitis B virus infection
+    - MONDO_0007027   # metabolic dysfunction-associated steatohepatitis
+    - MONDO_0007256   # hepatocellular carcinoma
+    - MONDO_0007915   # systemic lupus erythematosus
+    - MONDO_0008383   # rheumatoid arthritis
+    - MONDO_0009061   # cystic fibrosis
+    - MONDO_0009693   # plasma cell myeloma
+    - MONDO_0011849   # psoriatic arthritis
+    - MONDO_0018177   # glioblastoma
+    - MONDO_0018874   # acute myeloid leukemia
+    - MONDO_0024331   # colorectal carcinoma
+  literature_policy: ot_publication_year   # Open Targets publicationYear; drop nulls
+  use_pmid_year_fallback: false
+  expected_data_version: {year: "26", month: "06"}
+  check_version: true
+  drop_unmapped_targets: true
+  max_literature_per_pair: 400     # seeded random sample per (disease, target) pair
+  cache_dir: data/api_cache
+
+bootstrap:
+  n_boot: 500

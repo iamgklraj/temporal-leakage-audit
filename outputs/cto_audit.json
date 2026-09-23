@@ -1,0 +1,235 @@
+{
+  "benchmark": "CTO (Gao et al. 2024, arXiv:2406.10292)",
+  "eval_against": "curated human labels (human_labels_2020_2024), not CTO's RF labels",
+  "n": 9705,
+  "n_train": 7011,
+  "n_test": 2694,
+  "train_start_year_le": 2020,
+  "test_base_rate": 0.173,
+  "n_sponsors": 2457,
+  "tiers": {
+    "h0_start": {
+      "auprc": 0.2283,
+      "auroc": 0.6364,
+      "n_lfs": 5,
+      "auprc_ci": [
+        0.1848,
+        0.2757
+      ]
+    },
+    "h1_during": {
+      "auprc": 0.6859,
+      "auroc": 0.8501,
+      "n_lfs": 13,
+      "auprc_ci": [
+        0.6122,
+        0.744
+      ]
+    },
+    "h2_post_naive": {
+      "auprc": 0.9809,
+      "auroc": 0.9965,
+      "n_lfs": 22,
+      "auprc_ci": [
+        0.9719,
+        0.9881
+      ]
+    }
+  },
+  "cto_pred_proba_reference": {
+    "auprc": 0.9522,
+    "auroc": 0.9921
+  },
+  "LAP_auprc": 0.7526,
+  "LAP_auprc_ci": [
+    0.7066,
+    0.7935
+  ],
+  "LAP_p_gt_0": 1.0,
+  "leakage_fraction_of_auprc": 0.7673,
+  "LAP_components": {
+    "during_trial": {
+      "auprc": 0.4576,
+      "ci": [
+        0.4028,
+        0.5031
+      ]
+    },
+    "post_completion": {
+      "auprc": 0.295,
+      "ci": [
+        0.2362,
+        0.368
+      ]
+    }
+  },
+  "per_lf_marginal_leakage": {
+    "status": {
+      "marginal_auprc": 0.6866,
+      "ci": [
+        0.6351,
+        0.737
+      ],
+      "p_gt_0": 1.0
+    },
+    "status2": {
+      "marginal_auprc": 0.6866,
+      "ci": [
+        0.6351,
+        0.737
+      ],
+      "p_gt_0": 1.0
+    },
+    "pvalues": {
+      "marginal_auprc": 0.3369,
+      "ci": [
+        0.2828,
+        0.3966
+      ],
+      "p_gt_0": 1.0
+    },
+    "gpt": {
+      "marginal_auprc": 0.286,
+      "ci": [
+        0.2427,
+        0.3315
+      ],
+      "p_gt_0": 1.0
+    },
+    "gpt2": {
+      "marginal_auprc": 0.286,
+      "ci": [
+        0.2427,
+        0.3315
+      ],
+      "p_gt_0": 1.0
+    },
+    "num_patients": {
+      "marginal_auprc": 0.2809,
+      "ci": [
+        0.2376,
+        0.3247
+      ],
+      "p_gt_0": 1.0
+    },
+    "all_ae": {
+      "marginal_auprc": 0.2224,
+      "ci": [
+        0.1807,
+        0.2671
+      ],
+      "p_gt_0": 1.0
+    },
+    "stock_price": {
+      "marginal_auprc": 0.2181,
+      "ci": [
+        0.1286,
+        0.2917
+      ],
+      "p_gt_0": 1.0
+    },
+    "amendments": {
+      "marginal_auprc": 0.2169,
+      "ci": [
+        0.1324,
+        0.2866
+      ],
+      "p_gt_0": 1.0
+    },
+    "new_headlines": {
+      "marginal_auprc": 0.1894,
+      "ci": [
+        0.1477,
+        0.2294
+      ],
+      "p_gt_0": 1.0
+    },
+    "serious_ae": {
+      "marginal_auprc": 0.1695,
+      "ci": [
+        0.1351,
+        0.2024
+      ],
+      "p_gt_0": 1.0
+    },
+    "death_ae": {
+      "marginal_auprc": 0.1605,
+      "ci": [
+        0.1254,
+        0.1941
+      ],
+      "p_gt_0": 1.0
+    },
+    "results_reported": {
+      "marginal_auprc": 0.1589,
+      "ci": [
+        0.1279,
+        0.1882
+      ],
+      "p_gt_0": 1.0
+    },
+    "patient_drop": {
+      "marginal_auprc": 0.1407,
+      "ci": [
+        0.1068,
+        0.1756
+      ],
+      "p_gt_0": 1.0
+    },
+    "update_more_recent": {
+      "marginal_auprc": 0.0539,
+      "ci": [
+        0.0398,
+        0.0689
+      ],
+      "p_gt_0": 1.0
+    },
+    "linkage": {
+      "marginal_auprc": 0.0476,
+      "ci": [
+        0.0216,
+        0.0764
+      ],
+      "p_gt_0": 1.0
+    },
+    "linkage2": {
+      "marginal_auprc": 0.0476,
+      "ci": [
+        0.0216,
+        0.0764
+      ],
+      "p_gt_0": 1.0
+    }
+  },
+  "vintage_groups": {
+    "start": [
+      "hint_train",
+      "hint_train2",
+      "hint_train3",
+      "sites",
+      "num_sponsors"
+    ],
+    "during": [
+      "linkage",
+      "linkage2",
+      "amendments",
+      "patient_drop",
+      "num_patients",
+      "serious_ae",
+      "death_ae",
+      "all_ae"
+    ],
+    "post_completion": [
+      "status",
+      "status2",
+      "results_reported",
+      "update_more_recent",
+      "gpt",
+      "gpt2",
+      "stock_price",
+      "new_headlines",
+      "pvalues"
+    ]
+  },
+  "interpretation": "Restricting CTO's labeling functions to start-time signals collapses AUPRC 0.981 -> 0.228 (AUROC 0.997 -> 0.636); ~77% of the apparent AUPRC depends on signals unavailable at trial start (during-trial + post-completion). Legitimate for CTO's labeling purpose; severe leakage if used for prospective prediction."
+}
