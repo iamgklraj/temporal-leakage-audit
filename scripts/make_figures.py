@@ -37,6 +37,11 @@ plt.rcParams.update({
 })
 
 
+def _save(fig, path):
+    """Save without a creation timestamp so regenerated figures are byte-identical."""
+    fig.savefig(path, metadata={"CreationDate": None, "ModDate": None})
+
+
 def _load(name):
     with open(os.path.join(RES, name)) as fh:
         return json.load(fh)
@@ -85,7 +90,7 @@ def fig_cto(out):
     ax.set_ylabel("AUPRC (curated human labels)")
     ax.set_ylim(0, 1.15)
     fig.tight_layout()
-    fig.savefig(os.path.join(out, "fig_cto_leakage.pdf"))
+    _save(fig, os.path.join(out, "fig_cto_leakage.pdf"))
     plt.close(fig)
 
 
@@ -116,7 +121,7 @@ def fig_trialbench(out):
         _panel_label(ax, tag)
     axes[0].legend(frameon=False, loc="upper left", fontsize=6)
     fig.tight_layout()
-    fig.savefig(os.path.join(out, "fig_trialbench.pdf"))
+    _save(fig, os.path.join(out, "fig_trialbench.pdf"))
     plt.close(fig)
 
 
@@ -188,7 +193,7 @@ def fig_llm(out):
     ax.set_ylabel("Paired AUPRC difference")
     _panel_label(ax, "c")
     fig.tight_layout()
-    fig.savefig(os.path.join(out, "fig_llm_memorization.pdf"))
+    _save(fig, os.path.join(out, "fig_llm_memorization.pdf"))
     plt.close(fig)
 
 
@@ -230,7 +235,7 @@ def fig_validation(out):
     ax.set_ylabel("AUPRC")
     _panel_label(ax, "c")
     fig.tight_layout()
-    fig.savefig(os.path.join(out, "fig_instrument_validation.pdf"))
+    _save(fig, os.path.join(out, "fig_instrument_validation.pdf"))
     plt.close(fig)
 
 
@@ -256,7 +261,7 @@ def fig_balance(out):
     ax.set_xlabel("|Standardized mean difference|")
     ax.legend(frameon=False, loc="lower right")
     fig.tight_layout()
-    fig.savefig(os.path.join(out, "fig_causal_balance.pdf"))
+    _save(fig, os.path.join(out, "fig_causal_balance.pdf"))
     plt.close(fig)
 
 
