@@ -24,7 +24,7 @@ authors:
     given-names: "Gokulraj"
     affiliation: "Northeastern University"
     email: muthukumar.g@northeastern.edu
-    # orcid: "https://orcid.org/0000-0000-0000-0000"
+    orcid: "https://orcid.org/0009-0000-7557-7320"
 keywords:
   - temporal data leakage
   - benchmark integrity
