@@ -1,0 +1,30 @@
+{
+  "title": "temporal-leakage-audit: a temporal leakage-response instrument for clinical trial outcome prediction",
+  "upload_type": "software",
+  "description": "<p>Code and reference outputs for <em>Auditing temporal leakage in clinical trial outcome prediction</em>. Implements the temporal leakage-response curve and leakage-attributable performance (LAP) with cluster-bootstrap confidence intervals and its validation on synthetic data with known leakage; an as-of-time-censored drug-program benchmark built from Open Targets, ClinicalTrials.gov and PubMed; audits of the CTO and TrialBench benchmarks; a nested-prompt study of memorization and knowledge leakage in language-model trial predictors, with every prompt and response; and a positivity-aware causal layer.</p>",
+  "creators": [
+    {
+      "name": "Muthukumar, Gokulraj",
+      "affiliation": "Northeastern University",
+      "orcid": "0009-0000-7557-7320"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "temporal data leakage",
+    "benchmark integrity",
+    "clinical trial outcome prediction",
+    "machine learning evaluation",
+    "LLM training-data contamination",
+    "causal inference",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.22907882",
+      "relation": "isSupplementedBy",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    }
+  ]
+}

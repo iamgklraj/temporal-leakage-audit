@@ -1,0 +1,9890 @@
+{
+"(-)-Cyclophosphamide": [],
+"(11beta)-11,17,21-Trihydroxypregna-1,4-diene-3,20-dione": [],
+"(11beta)-21-(3-Carboxy-1-oxopropyl)-11,17-dihydroxypregn-4-ene-3,20-dione, Monosodium Salt": [],
+"-11,17,21-Trihydroxypregna-1,4-diene-3,20-dione": [],
+"-2-methylisoquinolin-1-one": [],
+"-5-methylsulfonylphenyl": [],
+"-Cyclophosphamide": [],
+"-Cytosine": [],
+"-D-Arabinofuranosyl-4-amino-2": [],
+"-D-Arabinofuranosylcytosine": [],
+"-D-arabinofuranosyl": [],
+"-D-arabinofuranosyl-": [],
+"-Phosphinothioylidynetrisaziridine": [],
+"-Pyrimidinone": [],
+"-Triethylenethiophosphoramide": [],
+"-arabinoside": [],
+"-deoxycytidine": [],
+"-deoxyribose": [],
+".beta.-Cytosine arabinoside": [],
+".delta.1-Hydrocortisone": [],
+"0.9% Saline": [
+{
+"chembl_id": "CHEMBL1200574",
+"pref_name": "SODIUM CHLORIDE",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"0.9% sodium chloride": [],
+"09-1978": [],
+"1, 4-Bis butane": [],
+"1, 4-Bis[methanesulfonoxy]butane": [],
+"1,1'',1''''-Phosphinothioylidynetrisaziridine": [],
+"1-.beta.-D-Arabinofuranosyl-4-amino-2 pyrimidinone": [],
+"1-.beta.-D-Arabinofuranosyl-4-amino-2(1H)pyrimidinone": [],
+"1-.beta.-D-Arabinofuranosylcytosine": [],
+"1-Beta-D-arabinofuranosyl-4-amino-2": [],
+"1-Beta-D-arabinofuranosyl-4-amino-2 pyrimidinone": [],
+"1-Beta-D-arabinofuranosyl-4-amino-2(1H)pyrimidinone": [],
+"1-Beta-D-arabinofuranosylcytosine": [],
+"1-Hydrocortisone": [],
+"1-aziridinyl": [],
+"1.beta.-D-Arabinofuranosylcytosine": [],
+"10-1074-LS": [
+{
+"chembl_id": "CHEMBL4297679",
+"pref_name": "ZINLIRVIMAB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"1000mg": [],
+"11C-MC1": [],
+"11C-PS13": [],
+"11beta": [],
+"129Xe": [],
+"14N Sodium Nitrate": [],
+"150mg": [],
+"16-213": [],
+"17-Eicosapentaenoic": [],
+"17-dihydroxypregn-4-ene-3": [],
+"177Lu-DTPA-omburtamab": [],
+"2 -Pyrimidinone, 4-Amino-1-beta-D-arabinofuranosyl-": [],
+"2 -Pyrimidinone, 4-amino-1.beta.-D-arabinofuranosyl-": [],
+"2(1H)-Pyrimidinone, 4-Amino-1-beta-D-arabinofuranosyl-": [],
+"2(1H)-Pyrimidinone, 4-amino-1.beta.-D-arabinofuranosyl-": [],
+"2-F-ara-AMP": [
+{
+"chembl_id": "CHEMBL1096882",
+"pref_name": "FLUDARABINE PHOSPHATE",
+"first_approval": 1991,
+"max_phase": "4.0"
+}
+],
+"2-Oxazaphosphorine": [],
+"2-Vector": [],
+"2-adrenoceptor": [],
+"2-amino-5-guanidinopentanoic": [],
+"2-amino-5-guanidinopentanoic acid": [],
+"2-chloroethyl": [],
+"2-fluoro-9-": [],
+"2-oxide": [],
+"20-dione": [],
+"21-Sodium": [],
+"21-Trihydroxypregna-1": [],
+"250mg": [],
+"250ml": [],
+"27-400": [
+{
+"chembl_id": "CHEMBL160",
+"pref_name": "CYCLOSPORINE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"28-day": [],
+"2C4": [],
+"2C4 Antibody": [],
+"2LHERP": [],
+"2LHERP\u00ae": [],
+"3-Carboxy-1-oxopropyl": [],
+"300Mg": [],
+"300mg": [],
+"325Mg": [],
+"3280A": [],
+"328OA": [],
+"3BNC117-LS": [
+{
+"chembl_id": "CHEMBL5095294",
+"pref_name": "TEROPAVIMAB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"4- -5-methylsulfonylphenyl)-2-methylisoquinolin-1-one": [],
+"4-(2-(Cyclopropylmethoxy)-5-methylsulfonylphenyl)-2-methylisoquinolin-1-one": [],
+"4-Amino-1-beta-D-arabinofuranosyl-": [],
+"4-Bis": [],
+"4-amino-1": [],
+"4-diene-3": [],
+"40 mg PRAX-114": [],
+"440mcg": [],
+"5 Fluorouracil": [],
+"5 Fluorouracil (5FU)": [],
+"5-AZC": [],
+"5-Aza-2": [],
+"5-Aza-2'-deoxycytidine": [],
+"5-Fluorouracil": [
+{
+"chembl_id": "CHEMBL185",
+"pref_name": "FLUOROURACIL",
+"first_approval": 1962,
+"max_phase": "4.0"
+}
+],
+"5-Fluorouracil (5-FU)": [],
+"5-Iodo-2-pyrimidinone": [],
+"5-Iodo-2-pyrimidinone 2' deoxyribonucleoside": [],
+"5-Iodo-2-pyrimidinone-2": [],
+"5-Iodo-2-pyrimidinone-2'-deoxyribose": [],
+"5-O-phosphono-": [],
+"5-aza": [],
+"5-azacytidine": [],
+"500mg": [],
+"50Mg-200Mg-25Mg": [],
+"5FU": [],
+"68-labeled": [],
+"680mg": [],
+"68Ga-HBED-CC-PSMA": [],
+"68Ga-PTF": [],
+"68Ga-PentixaFor": [],
+"75x10": [],
+"80-6946": [],
+"880mcg": [],
+"89Zr-panitumumab": [],
+"9H-Purin-6-amine": [],
+"9H-Purin-6-amine, 2-fluoro-9- -": [],
+"9H-Purin-6-amine, 2-fluoro-9-(5-O-phosphono-.beta.-D-arabinofuranosyl)-": [],
+"A PD-1 inhibitor": [],
+"A-CQ": [],
+"A-Hydrocort": [
+{
+"chembl_id": "CHEMBL1200495",
+"pref_name": "HYDROCORTISONE SODIUM SUCCINATE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"A4250": [
+{
+"chembl_id": "CHEMBL4297588",
+"pref_name": "ODEVIXIBAT",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"AAHI-SC2": [],
+"AAHI-SC2 Vaccine": [],
+"AAHI-SC3": [],
+"AAHI-SC3 Vaccine": [],
+"AAT-007": [
+{
+"chembl_id": "CHEMBL3039498",
+"pref_name": "GRAPIPRANT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"AAVCAGsCD59": [],
+"ABBV-154": [
+{
+"chembl_id": "CHEMBL5314652",
+"pref_name": "ADALIMUMAB FOSIMDESONIDE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"ABBV-157": [
+{
+"chembl_id": "CHEMBL5095174",
+"pref_name": "CEDIROGANT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"ABBV-623": [],
+"ABBV-951": [
+{
+"chembl_id": "CHEMBL4594379",
+"pref_name": "FOSLEVODOPA",
+"first_approval": 2024,
+"max_phase": "4.0"
+}
+],
+"ABBV-990": [],
+"ABBV-992": [],
+"ABP 980": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"ABSORBABLE": [],
+"ABT-199": [
+{
+"chembl_id": "CHEMBL3137309",
+"pref_name": "VENETOCLAX",
+"first_approval": 2016,
+"max_phase": "4.0"
+}
+],
+"ABT-494": [
+{
+"chembl_id": "CHEMBL3622821",
+"pref_name": "UPADACITINIB",
+"first_approval": 2019,
+"max_phase": "4.0"
+}
+],
+"ABT-888": [
+{
+"chembl_id": "CHEMBL506871",
+"pref_name": "VELIPARIB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"AC176": [],
+"ACE910": [
+{
+"chembl_id": "CHEMBL3833393",
+"pref_name": "EMICIZUMAB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"ACP-044": [
+{
+"chembl_id": "CHEMBL5095417",
+"pref_name": "EBARESDAX",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"ACP-044 Dose A": [],
+"ACP-044 Dose B": [],
+"ACT-064922": [],
+"ACZ885": [
+{
+"chembl_id": "CHEMBL1201834",
+"pref_name": "CANAKINUMAB",
+"first_approval": 2009,
+"max_phase": "4.0"
+}
+],
+"AD313": [],
+"ADCETRIS": [
+{
+"chembl_id": "CHEMBL1742994",
+"pref_name": "BRENTUXIMAB VEDOTIN",
+"first_approval": 2011,
+"max_phase": "4.0"
+}
+],
+"ADCT-301": [
+{
+"chembl_id": "CHEMBL4297237",
+"pref_name": "CAMIDANLUMAB",
+"first_approval": null,
+"max_phase": "2.0"
+},
+{
+"chembl_id": "CHEMBL4297871",
+"pref_name": "CAMIDANLUMAB TESIRINE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"ADT": [],
+"AFM24": [],
+"AFQ056": [
+{
+"chembl_id": "CHEMBL3087515",
+"pref_name": "MAVOGLURANT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"AK002": [
+{
+"chembl_id": "CHEMBL4297878",
+"pref_name": "LIRENTELIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"AK120": [],
+"AL001": [
+{
+"chembl_id": "CHEMBL4650439",
+"pref_name": "LATOZINEMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"ALG-125755": [],
+"ALT-801": [
+{
+"chembl_id": "CHEMBL5095142",
+"pref_name": "PEMVIDUTIDE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"ALT02": [],
+"AMB-05X": [],
+"AMG 160": [
+{
+"chembl_id": "CHEMBL4802258",
+"pref_name": "ACAPATAMAB",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"AMG 404": [
+{
+"chembl_id": "CHEMBL4594522",
+"pref_name": "AMG-404",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"AMR 101": [
+{
+"chembl_id": "CHEMBL2095209",
+"pref_name": "ICOSAPENT ETHYL",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"AMR101": [
+{
+"chembl_id": "CHEMBL2095209",
+"pref_name": "ICOSAPENT ETHYL",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"ANB019": [
+{
+"chembl_id": "CHEMBL4650441",
+"pref_name": "IMSIDOLIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"APD418": [
+{
+"chembl_id": "CHEMBL5314946",
+"pref_name": "VEMTOBERANT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"APD811": [
+{
+"chembl_id": "CHEMBL3301604",
+"pref_name": "RALINEPAG",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"APG-2575": [
+{
+"chembl_id": "CHEMBL4650374",
+"pref_name": "APG-2575",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"APG2575": [
+{
+"chembl_id": "CHEMBL4650374",
+"pref_name": "APG-2575",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"ARA-cell": [],
+"ARQ-151": [
+{
+"chembl_id": "CHEMBL193240",
+"pref_name": "ROFLUMILAST",
+"first_approval": 2010,
+"max_phase": "4.0"
+}
+],
+"ART": [],
+"ART-123": [
+{
+"chembl_id": "CHEMBL2108653",
+"pref_name": "THROMBOMODULIN ALFA",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"ARV-471": [
+{
+"chembl_id": "CHEMBL5095210",
+"pref_name": "VEPDEGESTRANT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"ASP8731": [],
+"ASP8731 Matching Placebo": [],
+"ASP9785": [],
+"ASTX727": [],
+"AT-001": [
+{
+"chembl_id": "CHEMBL4297455",
+"pref_name": "CAFICRESTAT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"ATG": [],
+"ATG-008": [
+{
+"chembl_id": "CHEMBL3586404",
+"pref_name": "ONATASERTIB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"ATI-2173": [
+{
+"chembl_id": "CHEMBL5095214",
+"pref_name": "FOSCLEVUDINE ALAFENAMIDE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"ATI-2173 25mg": [],
+"ATR-002": [
+{
+"chembl_id": "CHEMBL481949",
+"pref_name": "ZAPNOMETINIB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"ATROVENT": [
+{
+"chembl_id": "CHEMBL2134724",
+"pref_name": "IPRATROPIUM BROMIDE",
+"first_approval": 1986,
+"max_phase": "4.0"
+}
+],
+"ATS": [],
+"ATX-101": [
+{
+"chembl_id": "CHEMBL406393",
+"pref_name": "DEOXYCHOLIC ACID",
+"first_approval": 2015,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL514674",
+"pref_name": "SODIUM DEOXYCHOLATE",
+"first_approval": null,
+"max_phase": "-1.0"
+}
+],
+"AV-COVID-19": [],
+"AVB-S6-500": [
+{
+"chembl_id": "CHEMBL4594462",
+"pref_name": "BATIRAXCEPT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"AVD-104": [],
+"AXA1125": [],
+"AZA-CR": [],
+"AZD 2281": [
+{
+"chembl_id": "CHEMBL521686",
+"pref_name": "OLAPARIB",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"AZD-2281": [
+{
+"chembl_id": "CHEMBL521686",
+"pref_name": "OLAPARIB",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"AZD1775": [
+{
+"chembl_id": "CHEMBL1976040",
+"pref_name": "ADAVOSERTIB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"AZD2281": [
+{
+"chembl_id": "CHEMBL521686",
+"pref_name": "OLAPARIB",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"AZD5055": [],
+"AZD7442": [],
+"AZD7442 IM": [],
+"AZD7442 IV": [],
+"Abaloparatide": [
+{
+"chembl_id": "CHEMBL3301581",
+"pref_name": "ABALOPARATIDE",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Abemaciclib": [
+{
+"chembl_id": "CHEMBL3301610",
+"pref_name": "ABEMACICLIB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Abilify": [
+{
+"chembl_id": "CHEMBL1112",
+"pref_name": "ARIPIPRAZOLE",
+"first_approval": 2002,
+"max_phase": "4.0"
+}
+],
+"Abilify, Aristada": [],
+"Abiraterone": [
+{
+"chembl_id": "CHEMBL254328",
+"pref_name": "ABIRATERONE",
+"first_approval": null,
+"max_phase": "4.0"
+}
+],
+"Abiraterone Acetate": [
+{
+"chembl_id": "CHEMBL271227",
+"pref_name": "ABIRATERONE ACETATE",
+"first_approval": 2011,
+"max_phase": "4.0"
+}
+],
+"Abitrexate": [
+{
+"chembl_id": "CHEMBL3244648",
+"pref_name": "METHOTREXATE SODIUM",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"Ablative": [],
+"Abraxane": [
+{
+"chembl_id": "CHEMBL428647",
+"pref_name": "PACLITAXEL",
+"first_approval": 1992,
+"max_phase": "4.0"
+}
+],
+"Abrocitinib": [
+{
+"chembl_id": "CHEMBL3655081",
+"pref_name": "ABROCITINIB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"Acapatamab": [
+{
+"chembl_id": "CHEMBL4802258",
+"pref_name": "ACAPATAMAB",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"Acetaminophen": [
+{
+"chembl_id": "CHEMBL112",
+"pref_name": "ACETAMINOPHEN",
+"first_approval": 1968,
+"max_phase": "4.0"
+}
+],
+"Acetaminophen 1000mg": [],
+"Acetate": [],
+"Active study drug": [],
+"Adavosertib": [
+{
+"chembl_id": "CHEMBL1976040",
+"pref_name": "ADAVOSERTIB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Administration": [],
+"Adnisolone": [],
+"Adrucil": [
+{
+"chembl_id": "CHEMBL185",
+"pref_name": "FLUOROURACIL",
+"first_approval": 1962,
+"max_phase": "4.0"
+}
+],
+"Advil": [
+{
+"chembl_id": "CHEMBL521",
+"pref_name": "IBUPROFEN",
+"first_approval": 1974,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL3989408",
+"pref_name": "IBUPROFEN SODIUM",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Aerosol": [],
+"Aflibercept": [
+{
+"chembl_id": "CHEMBL1742982",
+"pref_name": "AFLIBERCEPT",
+"first_approval": 2011,
+"max_phase": "4.0"
+}
+],
+"Aimovig": [
+{
+"chembl_id": "CHEMBL3833329",
+"pref_name": "ERENUMAB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Aimovig\u00ae": [],
+"Ajovy": [
+{
+"chembl_id": "CHEMBL4297756",
+"pref_name": "FREMANEZUMAB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Ajovy\u00ae": [],
+"Alain": [],
+"Alanine": [
+{
+"chembl_id": "CHEMBL279597",
+"pref_name": "ALANINE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Alanine Nitrogen Mustard": [
+{
+"chembl_id": "CHEMBL852",
+"pref_name": "MELPHALAN",
+"first_approval": 1964,
+"max_phase": "4.0"
+}
+],
+"Albendazole": [
+{
+"chembl_id": "CHEMBL1483",
+"pref_name": "ALBENDAZOLE",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"Albuterol": [
+{
+"chembl_id": "CHEMBL714",
+"pref_name": "ALBUTEROL",
+"first_approval": 1981,
+"max_phase": "4.0"
+}
+],
+"Albuterol Sulfate HFA": [],
+"Aldesleukin": [
+{
+"chembl_id": "CHEMBL1201438",
+"pref_name": "ALDESLEUKIN",
+"first_approval": 1992,
+"max_phase": "4.0"
+}
+],
+"Alexan": [
+{
+"chembl_id": "CHEMBL803",
+"pref_name": "CYTARABINE",
+"first_approval": 1969,
+"max_phase": "4.0"
+}
+],
+"Alopecia": [],
+"Alpelisib": [
+{
+"chembl_id": "CHEMBL2396661",
+"pref_name": "ALPELISIB",
+"first_approval": 2019,
+"max_phase": "4.0"
+}
+],
+"Alpha-Methopterin": [],
+"Alternating": [],
+"Ambient": [],
+"Amcenestrant": [
+{
+"chembl_id": "CHEMBL4475463",
+"pref_name": "AMCENESTRANT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Amcenestrant-matching": [],
+"Amcenestrant-matching placebo": [],
+"Amethopterin": [
+{
+"chembl_id": "CHEMBL34259",
+"pref_name": "METHOTREXATE",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"Amivantamab": [
+{
+"chembl_id": "CHEMBL4297774",
+"pref_name": "AMIVANTAMAB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"Amlodipine": [
+{
+"chembl_id": "CHEMBL1491",
+"pref_name": "AMLODIPINE",
+"first_approval": 1992,
+"max_phase": "4.0"
+}
+],
+"Amlodipine 5mg": [],
+"Ampligen": [
+{
+"chembl_id": "CHEMBL2107862",
+"pref_name": "RINTATOLIMOD",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Analog": [],
+"Ancef": [
+{
+"chembl_id": "CHEMBL1200523",
+"pref_name": "CEFAZOLIN SODIUM",
+"first_approval": 1973,
+"max_phase": "4.0"
+}
+],
+"Androgen": [],
+"Androgen Deprivation Therapy": [],
+"Androgen receptor inhibitor": [],
+"Androgenetic": [],
+"Angiotensin": [
+{
+"chembl_id": "CHEMBL2391146",
+"pref_name": "ANGIOTENSIN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Angiotensin II": [
+{
+"chembl_id": "CHEMBL408403",
+"pref_name": "ANGIOTENSIN II",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Anidulafungin": [
+{
+"chembl_id": "CHEMBL264241",
+"pref_name": "ANIDULAFUNGIN",
+"first_approval": 2006,
+"max_phase": "4.0"
+}
+],
+"Anthracycline": [],
+"Anti-AIDS": [],
+"Anti-CD123": [],
+"Anti-CD123 ADC IMGN632": [],
+"Anti-CEA": [],
+"Anti-CEA CAR-T cells": [],
+"Anti-Human": [],
+"Anti-OX40": [],
+"Anti-PD-1": [],
+"Anti-PDCD1": [],
+"Anti-SARS-CoV-2": [],
+"Anti-Thymocyte": [],
+"Anti-Thymocyte Globulin": [],
+"Anti-Thymocyte Globulin Rabbit": [],
+"Anti-VEGF": [],
+"Anti-VEGF monoclonal antibody": [],
+"Antibody": [],
+"Anticoagulant": [],
+"Antigen": [],
+"Antiserum": [],
+"Antithymocyte": [],
+"Antithymocyte Globulin": [],
+"Antithymocyte Serum": [],
+"Apalutamide": [
+{
+"chembl_id": "CHEMBL3183409",
+"pref_name": "APALUTAMIDE",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Apomorphine": [
+{
+"chembl_id": "CHEMBL53",
+"pref_name": "APOMORPHINE",
+"first_approval": 2001,
+"max_phase": "4.0"
+}
+],
+"Apomorphine Cartridge": [],
+"Aprednislon": [],
+"Aqueous": [],
+"Aqueous gel": [],
+"Ara-C": [
+{
+"chembl_id": "CHEMBL803",
+"pref_name": "CYTARABINE",
+"first_approval": 1969,
+"max_phase": "4.0"
+}
+],
+"AraC-Daunorubicin": [],
+"Arabine": [],
+"Arabinofuranosylcytosine": [],
+"Arabinoside": [],
+"Arabinosylcytosine": [],
+"Aracytidine": [
+{
+"chembl_id": "CHEMBL803",
+"pref_name": "CYTARABINE",
+"first_approval": 1969,
+"max_phase": "4.0"
+}
+],
+"Aracytin": [
+{
+"chembl_id": "CHEMBL803",
+"pref_name": "CYTARABINE",
+"first_approval": 1969,
+"max_phase": "4.0"
+}
+],
+"Aracytine": [
+{
+"chembl_id": "CHEMBL803",
+"pref_name": "CYTARABINE",
+"first_approval": 1969,
+"max_phase": "4.0"
+}
+],
+"Arginine": [
+{
+"chembl_id": "CHEMBL1485",
+"pref_name": "ARGININE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Aripiprazole": [
+{
+"chembl_id": "CHEMBL1112",
+"pref_name": "ARIPIPRAZOLE",
+"first_approval": 2002,
+"max_phase": "4.0"
+}
+],
+"Aristada": [
+{
+"chembl_id": "CHEMBL2219425",
+"pref_name": "ARIPIPRAZOLE LAUROXIL",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"Artificial": [],
+"Artificial tears": [],
+"Ascorbic": [],
+"Ascorbic acid": [
+{
+"chembl_id": "CHEMBL196",
+"pref_name": "ASCORBIC ACID",
+"first_approval": 1985,
+"max_phase": "4.0"
+}
+],
+"Aspiration": [],
+"Aspirin": [
+{
+"chembl_id": "CHEMBL25",
+"pref_name": "ASPIRIN",
+"first_approval": 1950,
+"max_phase": "4.0"
+}
+],
+"Assessment": [],
+"Asunercept": [
+{
+"chembl_id": "CHEMBL4297886",
+"pref_name": "ASUNERCEPT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Atezolizumab": [
+{
+"chembl_id": "CHEMBL3707227",
+"pref_name": "ATEZOLIZUMAB",
+"first_approval": 2016,
+"max_phase": "4.0"
+}
+],
+"Atezolizumab SC": [],
+"Atlanta": [],
+"Atomization": [],
+"Atomoxetine": [
+{
+"chembl_id": "CHEMBL641",
+"pref_name": "ATOMOXETINE",
+"first_approval": 2002,
+"max_phase": "4.0"
+}
+],
+"Atropine": [
+{
+"chembl_id": "CHEMBL517712",
+"pref_name": "ATROPINE",
+"first_approval": 1960,
+"max_phase": "4.0"
+}
+],
+"Atropine Sulfate": [
+{
+"chembl_id": "CHEMBL2146146",
+"pref_name": "ATROPINE SULFATE",
+"first_approval": 1960,
+"max_phase": "4.0"
+}
+],
+"Atvogen": [
+{
+"chembl_id": "CHEMBL2107862",
+"pref_name": "RINTATOLIMOD",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Autologous": [],
+"Avastin": [
+{
+"chembl_id": "CHEMBL1201583",
+"pref_name": "BEVACIZUMAB",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"Avastin\u2122": [],
+"Avelumab": [
+{
+"chembl_id": "CHEMBL3833373",
+"pref_name": "AVELUMAB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Avenciguat": [
+{
+"chembl_id": "CHEMBL5314503",
+"pref_name": "AVENCIGUAT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Avexitide": [
+{
+"chembl_id": "CHEMBL4297949",
+"pref_name": "AVEXITIDE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Avigan": [
+{
+"chembl_id": "CHEMBL221722",
+"pref_name": "FAVIPIRAVIR",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Axial": [],
+"Axitinib": [
+{
+"chembl_id": "CHEMBL1289926",
+"pref_name": "AXITINIB",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Axitinib 5 MG": [],
+"Axolotl": [],
+"Axolotl Ambient": [],
+"Aza-TdC": [],
+"Azacitidine": [
+{
+"chembl_id": "CHEMBL1489",
+"pref_name": "AZACITIDINE",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"B1939": [],
+"B1939 Mesylate": [],
+"BA125608": [],
+"BAT1308": [],
+"BAT6026": [],
+"BAY 80-6946": [
+{
+"chembl_id": "CHEMBL3218576",
+"pref_name": "COPANLISIB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"BAY1817080": [
+{
+"chembl_id": "CHEMBL5095224",
+"pref_name": "ELIAPIXANT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"BAY2327949": [],
+"BBI-001": [],
+"BBT-401-1S": [],
+"BBT-401-1S or Placebo": [],
+"BCD-178": [],
+"BCG": [],
+"BCG Vaccine USP": [],
+"BCX9930": [],
+"BET Inhibitor CC-90010": [
+{
+"chembl_id": "CHEMBL4650366",
+"pref_name": "TROTABRESIB",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"BG00002": [],
+"BGB-9468": [],
+"BGB-A317": [
+{
+"chembl_id": "CHEMBL4297840",
+"pref_name": "TISLELIZUMAB",
+"first_approval": 2023,
+"max_phase": "4.0"
+}
+],
+"BHV-3500": [
+{
+"chembl_id": "CHEMBL2397415",
+"pref_name": "ZAVEGEPANT",
+"first_approval": 2023,
+"max_phase": "4.0"
+}
+],
+"BHV-3500 (zavegepant)": [],
+"BI 1358894": [],
+"BI 1701963": [],
+"BI 3006337": [],
+"BI 3011441": [],
+"BI 685509": [],
+"BI 690517": [],
+"BI 706321": [],
+"BI 767551 inhalation": [],
+"BI 767551 intravenous": [],
+"BIIB122": [],
+"BIIB122-Matching": [],
+"BIIB122-Matching Placebo": [],
+"BIIB132": [],
+"BIIB132-Matching": [],
+"BIIB132-Matching Placebo": [],
+"BIKTARVY": [],
+"BIKTARVY 50Mg-200Mg-25Mg Tablet": [],
+"BLD-2660": [
+{
+"chembl_id": "CHEMBL5095225",
+"pref_name": "DAZCAPISTAT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"BLU-701": [],
+"BMS-354825": [
+{
+"chembl_id": "CHEMBL1421",
+"pref_name": "DASATINIB ANHYDROUS",
+"first_approval": 2006,
+"max_phase": "4.0"
+}
+],
+"BMS-936558": [
+{
+"chembl_id": "CHEMBL2108738",
+"pref_name": "NIVOLUMAB",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"BMS-986165": [
+{
+"chembl_id": "CHEMBL4435170",
+"pref_name": "DEUCRAVACITINIB",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"BMS-986421": [],
+"BN301": [],
+"BNT162b2": [
+{
+"chembl_id": "CHEMBL4650429",
+"pref_name": "TOZINAMERAN",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"BNT162b2 vaccine": [],
+"BNZ-1": [],
+"BOTOX-A": [],
+"BP1.3656": [],
+"BPM31510": [
+{
+"chembl_id": "CHEMBL454801",
+"pref_name": "UBIDECARENONE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"BSVEQAb": [],
+"BUP-Inj": [],
+"BUS": [],
+"BXCL501": [],
+"Baby aspirin": [],
+"Bacillus": [],
+"Background": [],
+"Bamlanivimab": [
+{
+"chembl_id": "CHEMBL4650379",
+"pref_name": "BAMLANIVIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Bamlanivimab Etesevimab": [],
+"Baricitinib": [
+{
+"chembl_id": "CHEMBL2105759",
+"pref_name": "BARICITINIB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Baricitinib Oral Tablet": [],
+"Basal": [],
+"Batiraxcept": [
+{
+"chembl_id": "CHEMBL4594462",
+"pref_name": "BATIRAXCEPT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Bavencio": [
+{
+"chembl_id": "CHEMBL3833373",
+"pref_name": "AVELUMAB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Bavituximab": [
+{
+"chembl_id": "CHEMBL1742989",
+"pref_name": "BAVITUXIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Baxdrostat": [
+{
+"chembl_id": "CHEMBL4113975",
+"pref_name": "BAXDROSTAT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Behavior": [],
+"Behavior Therapy": [],
+"Behavioural": [],
+"Behavioural Support": [],
+"Belcesiran": [
+{
+"chembl_id": "CHEMBL4650380",
+"pref_name": "BELCESIRAN",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Belsomra": [
+{
+"chembl_id": "CHEMBL1083659",
+"pref_name": "SUVOREXANT",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Beneflur": [],
+"Benralizumab": [
+{
+"chembl_id": "CHEMBL1742991",
+"pref_name": "BENRALIZUMAB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Berinert": [
+{
+"chembl_id": "CHEMBL4297549",
+"pref_name": "HUMAN C1-ESTERASE INHIBITOR",
+"first_approval": 2011,
+"max_phase": "4.0"
+}
+],
+"Bermekimab": [
+{
+"chembl_id": "CHEMBL2109653",
+"pref_name": "BERMEKIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Beta-Cytosine": [],
+"Beta-Cytosine Arabinoside": [],
+"Betadine": [
+{
+"chembl_id": "CHEMBL1201724",
+"pref_name": "POVIDONE-IODINE",
+"first_approval": 1985,
+"max_phase": "4.0"
+}
+],
+"Bevacizumab": [
+{
+"chembl_id": "CHEMBL1201583",
+"pref_name": "BEVACIZUMAB",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"Bexsero": [],
+"Bexsero\u00ae": [],
+"Bezlotoxumab": [
+{
+"chembl_id": "CHEMBL2108670",
+"pref_name": "BEZLOTOXUMAB",
+"first_approval": 2016,
+"max_phase": "4.0"
+}
+],
+"Bi-monthly": [],
+"Biceltis": [],
+"Binimetinib": [
+{
+"chembl_id": "CHEMBL3187723",
+"pref_name": "BINIMETINIB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Biological": [],
+"Biological Sample Collection": [],
+"Biopsy": [],
+"Biosimilar": [],
+"Biospecimen": [],
+"Biospecimen Collected": [],
+"Biospecimen Collection": [],
+"Bisphosphocin": [],
+"Bivalent": [],
+"Blood": [],
+"Blood work": [],
+"Bortezomib": [
+{
+"chembl_id": "CHEMBL325041",
+"pref_name": "BORTEZOMIB",
+"first_approval": null,
+"max_phase": "4.0"
+}
+],
+"Bosentan": [
+{
+"chembl_id": "CHEMBL957",
+"pref_name": "BOSENTAN",
+"first_approval": 2001,
+"max_phase": "4.0"
+}
+],
+"Bosentan 125 mg": [],
+"Botox": [],
+"Braftovi": [
+{
+"chembl_id": "CHEMBL3301612",
+"pref_name": "ENCORAFENIB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Braftovi + Mektovi": [],
+"Branaplam": [
+{
+"chembl_id": "CHEMBL4290141",
+"pref_name": "BRANAPLAM",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Brexpiprazole": [
+{
+"chembl_id": "CHEMBL2105760",
+"pref_name": "BREXPIPRAZOLE",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"Brimexate": [],
+"Brintellix": [
+{
+"chembl_id": "CHEMBL2104993",
+"pref_name": "VORTIOXETINE",
+"first_approval": 2013,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL2107387",
+"pref_name": "VORTIOXETINE HYDROBROMIDE",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Broad-Spectrum": [],
+"Bronchodilator": [],
+"Bryophyllum": [],
+"Buccalsone": [],
+"Budesonide": [
+{
+"chembl_id": "CHEMBL1370",
+"pref_name": "BUDESONIDE",
+"first_approval": 1994,
+"max_phase": "4.0"
+}
+],
+"Bupivacaine": [
+{
+"chembl_id": "CHEMBL1098",
+"pref_name": "BUPIVACAINE",
+"first_approval": 1972,
+"max_phase": "4.0"
+}
+],
+"Bupivacaine Hydrochloride": [
+{
+"chembl_id": "CHEMBL1200396",
+"pref_name": "BUPIVACAINE HYDROCHLORIDE",
+"first_approval": 1972,
+"max_phase": "4.0"
+}
+],
+"Bupivacaine Injection": [],
+"Bupivacaine hydrochloride": [
+{
+"chembl_id": "CHEMBL1200396",
+"pref_name": "BUPIVACAINE HYDROCHLORIDE",
+"first_approval": 1972,
+"max_phase": "4.0"
+}
+],
+"Buprenorphine": [
+{
+"chembl_id": "CHEMBL511142",
+"pref_name": "BUPRENORPHINE",
+"first_approval": 1981,
+"max_phase": "4.0"
+}
+],
+"Buprenorphine injection": [],
+"Buprenorphine injection (BUP-Inj)": [],
+"Bupropion": [
+{
+"chembl_id": "CHEMBL894",
+"pref_name": "BUPROPION",
+"first_approval": 1985,
+"max_phase": "4.0"
+}
+],
+"Bupropion Hydrochloride": [
+{
+"chembl_id": "CHEMBL1698",
+"pref_name": "BUPROPION HYDROCHLORIDE",
+"first_approval": 1985,
+"max_phase": "4.0"
+}
+],
+"Bussulfam": [],
+"Busulfan": [
+{
+"chembl_id": "CHEMBL820",
+"pref_name": "BUSULFAN",
+"first_approval": 1954,
+"max_phase": "4.0"
+}
+],
+"Busulfanum": [
+{
+"chembl_id": "CHEMBL820",
+"pref_name": "BUSULFAN",
+"first_approval": 1954,
+"max_phase": "4.0"
+}
+],
+"Busulfex": [
+{
+"chembl_id": "CHEMBL820",
+"pref_name": "BUSULFAN",
+"first_approval": 1954,
+"max_phase": "4.0"
+}
+],
+"Busulfex\u2122": [],
+"Busulphan": [],
+"C1073": [],
+"CA20": [],
+"CANMab": [],
+"CAR-T": [],
+"CAR20": [],
+"CAT": [],
+"CAT Scan": [],
+"CB 2041": [],
+"CB-2041": [],
+"CB-3025": [
+{
+"chembl_id": "CHEMBL852",
+"pref_name": "MELPHALAN",
+"first_approval": 1964,
+"max_phase": "4.0"
+}
+],
+"CB-839": [
+{
+"chembl_id": "CHEMBL3639788",
+"pref_name": "TELAGLENASTAT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"CBD": [],
+"CBD-OS": [],
+"CC 90010": [
+{
+"chembl_id": "CHEMBL4650366",
+"pref_name": "TROTABRESIB",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"CC-1 and Toczilizumab": [],
+"CC-90010": [
+{
+"chembl_id": "CHEMBL4650366",
+"pref_name": "TROTABRESIB",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"CC-96673": [],
+"CC-99677": [
+{
+"chembl_id": "CHEMBL5314585",
+"pref_name": "GAMCEMETINIB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"CC90010": [
+{
+"chembl_id": "CHEMBL4650366",
+"pref_name": "TROTABRESIB",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"CD73 inhibitor": [],
+"CDK-003": [],
+"CDK-004": [],
+"CDX-1140": [
+{
+"chembl_id": "CHEMBL4297721",
+"pref_name": "CDX-1140",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"CDX-301": [
+{
+"chembl_id": "CHEMBL4650387",
+"pref_name": "CDX-301",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"CE-Iohexol": [],
+"CERC-006": [
+{
+"chembl_id": "CHEMBL3120215",
+"pref_name": "OSI-027",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"CETP inhibitor": [],
+"CHF1535": [],
+"CHF5993": [],
+"CHIKV": [],
+"CHIKV VLP/adjuvant": [],
+"CHS-006": [],
+"CHS-006 (anti-TIGIT)": [],
+"CHS-007": [
+{
+"chembl_id": "CHEMBL4297843",
+"pref_name": "TORIPALIMAB",
+"first_approval": 2023,
+"max_phase": "4.0"
+}
+],
+"CHS-007, TAB001, JS001": [],
+"CHX-3311": [],
+"CIN-107": [
+{
+"chembl_id": "CHEMBL4113975",
+"pref_name": "BAXDROSTAT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"CJ 023,423": [],
+"CJ-023": [
+{
+"chembl_id": "CHEMBL3039498",
+"pref_name": "GRAPIPRANT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"CJ-023,423": [
+{
+"chembl_id": "CHEMBL3039498",
+"pref_name": "GRAPIPRANT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"CJ023": [],
+"CJ023,423": [],
+"CK-3773274": [
+{
+"chembl_id": "CHEMBL4847050",
+"pref_name": "AFICAMTEN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"CL 14377": [
+{
+"chembl_id": "CHEMBL34259",
+"pref_name": "METHOTREXATE",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"CL-14377": [
+{
+"chembl_id": "CHEMBL34259",
+"pref_name": "METHOTREXATE",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"CMC-free": [],
+"CMR imaging": [],
+"CNP-201": [],
+"CNTO1959": [],
+"COVID-19": [],
+"COVID-19 Vaccination": [],
+"CP monohydrate": [],
+"CP-675": [],
+"CPA": [],
+"CPO102": [],
+"CPO107": [],
+"CPT-1": [],
+"CPX-351": [],
+"CR845": [
+{
+"chembl_id": "CHEMBL3989915",
+"pref_name": "DIFELIKEFALIN",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"CRESTOR": [
+{
+"chembl_id": "CHEMBL1744447",
+"pref_name": "ROSUVASTATIN CALCIUM",
+"first_approval": 2003,
+"max_phase": "4.0"
+}
+],
+"CRESTOR\u00ae": [],
+"CS-1 FPBMC": [],
+"CT Scan": [],
+"CT only": [],
+"CT-P06": [],
+"CT-P6": [],
+"CTA30X": [],
+"CTA30X UCAR-T injection": [],
+"CTL019": [
+{
+"chembl_id": "CHEMBL3301574",
+"pref_name": "TISAGENLECLEUCEL",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"CTLA4": [],
+"CTX": [
+{
+"chembl_id": "CHEMBL1569487",
+"pref_name": "LORNOXICAM",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"CUSA-081": [],
+"CYCLO-cell": [],
+"CYCOPIN": [],
+"CYT107": [
+{
+"chembl_id": "CHEMBL4297772",
+"pref_name": "INTERLEUKIN-7",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Cabometyx": [
+{
+"chembl_id": "CHEMBL2103868",
+"pref_name": "CABOZANTINIB S-MALATE",
+"first_approval": 2012,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL2105717",
+"pref_name": "CABOZANTINIB",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Cabometyx\u00ae": [],
+"Cabozantinib": [
+{
+"chembl_id": "CHEMBL2105717",
+"pref_name": "CABOZANTINIB",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Cabozantinib (Cabo)": [],
+"Calcium": [
+{
+"chembl_id": "CHEMBL1200496",
+"pref_name": "CALCIUM",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Calcium Leucovorin": [],
+"Calmette": [],
+"Camidanlumab": [
+{
+"chembl_id": "CHEMBL4297237",
+"pref_name": "CAMIDANLUMAB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Camidanlumab tesirine": [
+{
+"chembl_id": "CHEMBL4297871",
+"pref_name": "CAMIDANLUMAB TESIRINE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Camptosar": [
+{
+"chembl_id": "CHEMBL3989514",
+"pref_name": "IRINOTECAN HYDROCHLORIDE",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"Camptothecin-11": [],
+"Camrelizumab": [
+{
+"chembl_id": "CHEMBL4297715",
+"pref_name": "CAMRELIZUMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Camrelizumab and Bevacizumab": [],
+"Canakinumab": [
+{
+"chembl_id": "CHEMBL1201834",
+"pref_name": "CANAKINUMAB",
+"first_approval": 2009,
+"max_phase": "4.0"
+}
+],
+"Cancer": [],
+"Cancer Radiotherapy": [],
+"Cannabidiol": [
+{
+"chembl_id": "CHEMBL190461",
+"pref_name": "CANNABIDIOL",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Cannabidiol oral solution": [],
+"Capecitabine": [
+{
+"chembl_id": "CHEMBL1773",
+"pref_name": "CAPECITABINE",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Capsaicin": [
+{
+"chembl_id": "CHEMBL294199",
+"pref_name": "CAPSAICIN",
+"first_approval": 2009,
+"max_phase": "4.0"
+}
+],
+"Capsoid": [],
+"Captisol-Enabled": [],
+"Captisol-Enabled\u2122 Iohexol": [],
+"Carboplatin": [
+{
+"chembl_id": "CHEMBL1351",
+"pref_name": "CARBOPLATIN",
+"first_approval": 1989,
+"max_phase": "4.0"
+}
+],
+"Carboxymethylcellulose": [
+{
+"chembl_id": "CHEMBL2109000",
+"pref_name": "CARBOXYMETHYLCELLULOSE CALCIUM",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Carboxymethylcellulose Artificial Tears": [],
+"CardiolRx": [
+{
+"chembl_id": "CHEMBL190461",
+"pref_name": "CANNABIDIOL",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Cariprazine": [
+{
+"chembl_id": "CHEMBL2028019",
+"pref_name": "CARIPRAZINE",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"Carloxan": [],
+"Cartridge": [],
+"Casirivimab": [
+{
+"chembl_id": "CHEMBL4650248",
+"pref_name": "CASIRIVIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Casirivimab-Imdevimab": [],
+"Caspofungin": [
+{
+"chembl_id": "CHEMBL1630575",
+"pref_name": "CASPOFUNGIN",
+"first_approval": 2001,
+"max_phase": "4.0"
+}
+],
+"Cedazuridine": [
+{
+"chembl_id": "CHEMBL3237547",
+"pref_name": "CEDAZURIDINE",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"Cedirogant": [
+{
+"chembl_id": "CHEMBL5095174",
+"pref_name": "CEDIROGANT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Ceftolozane-Tazobactam": [],
+"Celecoxib": [
+{
+"chembl_id": "CHEMBL118",
+"pref_name": "CELECOXIB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"CellCept": [
+{
+"chembl_id": "CHEMBL1456",
+"pref_name": "MYCOPHENOLATE MOFETIL",
+"first_approval": 1995,
+"max_phase": "4.0"
+}
+],
+"Cellgram-DC": [],
+"Cenegermin": [
+{
+"chembl_id": "CHEMBL4297852",
+"pref_name": "CENEGERMIN",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Certican": [
+{
+"chembl_id": "CHEMBL1908360",
+"pref_name": "EVEROLIMUS",
+"first_approval": 2009,
+"max_phase": "4.0"
+}
+],
+"Cetuximab": [
+{
+"chembl_id": "CHEMBL1201577",
+"pref_name": "CETUXIMAB",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"ChemoRT": [],
+"Chemoradiation": [],
+"ChiRhoStim": [
+{
+"chembl_id": "CHEMBL1201488",
+"pref_name": "SECRETIN SYNTHETIC HUMAN",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"Chinese": [],
+"Chlorhexidine": [
+{
+"chembl_id": "CHEMBL790",
+"pref_name": "CHLORHEXIDINE",
+"first_approval": 1976,
+"max_phase": "4.0"
+}
+],
+"Chlorhexidine Gluconate Mouthwash": [],
+"Chlorhexidine mouthwash": [],
+"Chloride": [],
+"Chloroquine": [
+{
+"chembl_id": "CHEMBL76",
+"pref_name": "CHLOROQUINE",
+"first_approval": 1949,
+"max_phase": "4.0"
+}
+],
+"Cholbam": [
+{
+"chembl_id": "CHEMBL205596",
+"pref_name": "CHOLIC ACID",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Cholic": [],
+"Cholic Acid": [
+{
+"chembl_id": "CHEMBL205596",
+"pref_name": "CHOLIC ACID",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Ciclofosfamida": [
+{
+"chembl_id": "CHEMBL88",
+"pref_name": "CYCLOPHOSPHAMIDE ANHYDROUS",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Ciclofosfamide": [
+{
+"chembl_id": "CHEMBL1200796",
+"pref_name": "CYCLOPHOSPHAMIDE",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Ciclosporin": [
+{
+"chembl_id": "CHEMBL160",
+"pref_name": "CYCLOSPORINE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"Cicloxal": [],
+"Cinnamon": [
+{
+"chembl_id": "CHEMBL2108924",
+"pref_name": "CINNAMON",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Cis-Eicosapentaenoic": [],
+"Cisplatin": [
+{
+"chembl_id": "CHEMBL11359",
+"pref_name": "CISPLATIN",
+"first_approval": 1978,
+"max_phase": "4.0"
+}
+],
+"Cisplatin 200": [],
+"Cisplatin 240": [],
+"Cisplatin/Carboplatin": [],
+"Citrate": [
+{
+"chembl_id": "CHEMBL1261",
+"pref_name": "CITRIC ACID",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Citrovorum": [],
+"Citrovorum Factor": [],
+"Clafen": [],
+"Clamp": [],
+"Claphene": [],
+"Cleanser": [],
+"Clofarabine": [
+{
+"chembl_id": "CHEMBL1750",
+"pref_name": "CLOFARABINE",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"Clolar": [
+{
+"chembl_id": "CHEMBL1750",
+"pref_name": "CLOFARABINE",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"Clora": [],
+"Cobicistat": [
+{
+"chembl_id": "CHEMBL2095208",
+"pref_name": "COBICISTAT",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Cobicistat Oral Tablet": [],
+"Cohort": [],
+"Colgate": [],
+"Colgate Total Zero": [],
+"Colgate Total\u00ae Mouthwash": [],
+"Colgate\u00ae PerioGard\u00ae Rinse": [],
+"Collected": [],
+"Collection": [],
+"Combo": [],
+"Comirnaty": [
+{
+"chembl_id": "CHEMBL4650429",
+"pref_name": "TOZINAMERAN",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"Comirnaty Omicron XBB.1.5": [],
+"Comirnaty Original/Omicron BA.1": [],
+"Comirnaty Original/Omicron BA.4-5": [],
+"Complete": [],
+"Compound": [],
+"Compound betamethasone Injection": [],
+"Computed": [],
+"Computed Axial Tomography": [],
+"Computed Tomography": [],
+"Computerized": [],
+"Computerized Axial Tomography": [],
+"Computerized Tomography": [],
+"Computerized axial tomography": [],
+"Conjugate": [],
+"Control Gel": [],
+"Control group": [],
+"Convalescent": [],
+"Convalescent plasma": [],
+"Conventional": [],
+"Copanlisib": [
+{
+"chembl_id": "CHEMBL3218576",
+"pref_name": "COPANLISIB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Copper": [
+{
+"chembl_id": "CHEMBL55643",
+"pref_name": "COPPER",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Copper Gluconate": [
+{
+"chembl_id": "CHEMBL6068389",
+"pref_name": "COPPER GLUCONATE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Corlan": [
+{
+"chembl_id": "CHEMBL389621",
+"pref_name": "HYDROCORTISONE",
+"first_approval": 1952,
+"max_phase": "4.0"
+}
+],
+"CoronaVac": [],
+"Cortalone": [
+{
+"chembl_id": "CHEMBL131",
+"pref_name": "PREDNISOLONE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Cortef": [
+{
+"chembl_id": "CHEMBL389621",
+"pref_name": "HYDROCORTISONE",
+"first_approval": 1952,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL1549",
+"pref_name": "HYDROCORTISONE CYPIONATE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Corticosteroid": [],
+"Corticosteroids": [],
+"Cortisol": [
+{
+"chembl_id": "CHEMBL389621",
+"pref_name": "HYDROCORTISONE",
+"first_approval": 1952,
+"max_phase": "4.0"
+}
+],
+"Cortisol Sodium Succinate": [],
+"Cortisolone": [],
+"Cortop": [],
+"Cresemba": [
+{
+"chembl_id": "CHEMBL409153",
+"pref_name": "ISAVUCONAZOLE",
+"first_approval": null,
+"max_phase": "3.0"
+},
+{
+"chembl_id": "CHEMBL3137333",
+"pref_name": "ISAVUCONAZONIUM SULFATE",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"Crestor": [
+{
+"chembl_id": "CHEMBL1744447",
+"pref_name": "ROSUVASTATIN CALCIUM",
+"first_approval": 2003,
+"max_phase": "4.0"
+}
+],
+"Crystaline": [],
+"CsA": [],
+"Curently": [],
+"Currently": [],
+"Cyclin": [],
+"Cycling": [],
+"Cycloblastin": [
+{
+"chembl_id": "CHEMBL1200796",
+"pref_name": "CYCLOPHOSPHAMIDE",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Cycloblastine": [],
+"Cyclophospham": [],
+"Cyclophosphamid": [],
+"Cyclophosphamid monohydrate": [],
+"Cyclophosphamide": [
+{
+"chembl_id": "CHEMBL1200796",
+"pref_name": "CYCLOPHOSPHAMIDE",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Cyclophosphamide (Cy)": [],
+"Cyclophosphamide 50mg": [],
+"Cyclophosphamidum": [
+{
+"chembl_id": "CHEMBL1200796",
+"pref_name": "CYCLOPHOSPHAMIDE",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Cyclophosphan": [],
+"Cyclophosphane": [],
+"Cyclophosphanum": [
+{
+"chembl_id": "CHEMBL1200796",
+"pref_name": "CYCLOPHOSPHAMIDE",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Cyclopropylmethoxy": [],
+"Cyclosporin": [
+{
+"chembl_id": "CHEMBL160",
+"pref_name": "CYCLOSPORINE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"Cyclosporin A": [
+{
+"chembl_id": "CHEMBL160",
+"pref_name": "CYCLOSPORINE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"Cyclosporine": [
+{
+"chembl_id": "CHEMBL160",
+"pref_name": "CYCLOSPORINE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"Cyclostin": [
+{
+"chembl_id": "CHEMBL1200796",
+"pref_name": "CYCLOPHOSPHAMIDE",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Cyclostine": [],
+"Cyklokapron": [
+{
+"chembl_id": "CHEMBL877",
+"pref_name": "TRANEXAMIC ACID",
+"first_approval": 1986,
+"max_phase": "4.0"
+}
+],
+"Cyklokapron\u00ae": [],
+"Cytarabine": [
+{
+"chembl_id": "CHEMBL803",
+"pref_name": "CYTARABINE",
+"first_approval": 1969,
+"max_phase": "4.0"
+}
+],
+"Cytarabine-Daunorubicin": [],
+"Cytarabinum": [
+{
+"chembl_id": "CHEMBL803",
+"pref_name": "CYTARABINE",
+"first_approval": 1969,
+"max_phase": "4.0"
+}
+],
+"Cytarbel": [],
+"Cytochrome": [],
+"Cytophosphan": [
+{
+"chembl_id": "CHEMBL1200796",
+"pref_name": "CYCLOPHOSPHAMIDE",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Cytophosphane": [
+{
+"chembl_id": "CHEMBL1200796",
+"pref_name": "CYCLOPHOSPHAMIDE",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Cytosar": [
+{
+"chembl_id": "CHEMBL803",
+"pref_name": "CYTARABINE",
+"first_approval": 1969,
+"max_phase": "4.0"
+}
+],
+"Cytosine": [
+{
+"chembl_id": "CHEMBL15913",
+"pref_name": "CYTOSINE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Cytosine Arabinoside": [],
+"Cytosine-": [],
+"Cytosine-.beta.-arabinoside": [],
+"Cytosine-beta-arabinoside": [],
+"Cytoxan": [
+{
+"chembl_id": "CHEMBL1200796",
+"pref_name": "CYCLOPHOSPHAMIDE",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Cytoxan\u2122": [],
+"DARPin": [],
+"DBI-001": [],
+"DC-ATA": [],
+"DC-ATA, DCV": [],
+"DHODH": [],
+"DHODH inhibitor": [],
+"DILTIAZEM": [
+{
+"chembl_id": "CHEMBL23",
+"pref_name": "DILTIAZEM",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"DNL151": [],
+"DPX-Survivac": [
+{
+"chembl_id": "CHEMBL4594319",
+"pref_name": "MAVEROPEPIMUT-S",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"DZD2269": [],
+"Dabrafenib": [
+{
+"chembl_id": "CHEMBL2028663",
+"pref_name": "DABRAFENIB",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Dabrafenib mesylate": [
+{
+"chembl_id": "CHEMBL2105729",
+"pref_name": "DABRAFENIB MESYLATE",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Dacogen": [
+{
+"chembl_id": "CHEMBL1201129",
+"pref_name": "DECITABINE",
+"first_approval": 2006,
+"max_phase": "4.0"
+}
+],
+"Dacortin": [],
+"Dacortin H": [],
+"Dalcetrapib": [
+{
+"chembl_id": "CHEMBL313006",
+"pref_name": "DALCETRAPIB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Daniel": [],
+"Dapagliflozin": [
+{
+"chembl_id": "CHEMBL429910",
+"pref_name": "DAPAGLIFLOZIN",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Dapagliflozin 10mg": [],
+"Daratumumab": [
+{
+"chembl_id": "CHEMBL1743007",
+"pref_name": "DARATUMUMAB",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"Darolutamide": [
+{
+"chembl_id": "CHEMBL4297185",
+"pref_name": "DAROLUTAMIDE",
+"first_approval": 2019,
+"max_phase": "4.0"
+}
+],
+"Dasatinib": [
+{
+"chembl_id": "CHEMBL5416410",
+"pref_name": "DASATINIB",
+"first_approval": 2006,
+"max_phase": "4.0"
+}
+],
+"Dasatinib Hydrate": [
+{
+"chembl_id": "CHEMBL5416410",
+"pref_name": "DASATINIB",
+"first_approval": 2006,
+"max_phase": "4.0"
+}
+],
+"Dasatinib Monohydrate": [
+{
+"chembl_id": "CHEMBL5416410",
+"pref_name": "DASATINIB",
+"first_approval": 2006,
+"max_phase": "4.0"
+}
+],
+"Daunorubicin": [
+{
+"chembl_id": "CHEMBL178",
+"pref_name": "DAUNORUBICIN",
+"first_approval": 1979,
+"max_phase": "4.0"
+}
+],
+"Daunorubicin and Cytarabine": [],
+"Daunorubicin-Cytarabine": [],
+"Daxdilimab": [
+{
+"chembl_id": "CHEMBL4594330",
+"pref_name": "DAXDILIMAB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Debio": [],
+"Debio 1143": [
+{
+"chembl_id": "CHEMBL2158051",
+"pref_name": "XEVINAPANT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Decadron": [
+{
+"chembl_id": "CHEMBL384467",
+"pref_name": "DEXAMETHASONE",
+"first_approval": 1958,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL2021430",
+"pref_name": "DEXAMETHASONE SODIUM PHOSPHATE",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Decaprednil": [],
+"Decitabine": [
+{
+"chembl_id": "CHEMBL1201129",
+"pref_name": "DECITABINE",
+"first_approval": 2006,
+"max_phase": "4.0"
+}
+],
+"Decitabine for Injection": [],
+"Decitabine/Cedazuridine": [],
+"Decortin": [
+{
+"chembl_id": "CHEMBL635",
+"pref_name": "PREDNISONE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Decortin H": [],
+"Degludec": [],
+"Delta": [],
+"Delta Hydrocortisone": [],
+"Delta(1)Hydrocortisone": [],
+"Delta-": [],
+"Delta- Cortef": [],
+"Delta-Cortef": [
+{
+"chembl_id": "CHEMBL131",
+"pref_name": "PREDNISOLONE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Delta-Diona": [],
+"Delta-F": [],
+"Delta-Phoricol": [],
+"Delta1-dehydro-hydrocortisone": [],
+"DeltaRex-G": [],
+"Deltacortril": [
+{
+"chembl_id": "CHEMBL131",
+"pref_name": "PREDNISOLONE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Deltahydrocortisone": [],
+"Deltasolone": [],
+"Deltidrosol": [],
+"Demethyl": [],
+"Denosumab": [
+{
+"chembl_id": "CHEMBL1237023",
+"pref_name": "DENOSUMAB",
+"first_approval": 2010,
+"max_phase": "4.0"
+}
+],
+"Deoxyazacytidine": [],
+"Depemokimab": [
+{
+"chembl_id": "CHEMBL4650469",
+"pref_name": "DEPEMOKIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Dependent": [],
+"Deprivation": [],
+"Detection": [],
+"Deucravacitinib": [
+{
+"chembl_id": "CHEMBL4435170",
+"pref_name": "DEUCRAVACITINIB",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"Dexamethasone": [
+{
+"chembl_id": "CHEMBL384467",
+"pref_name": "DEXAMETHASONE",
+"first_approval": 1958,
+"max_phase": "4.0"
+}
+],
+"Dexmedetomidine": [
+{
+"chembl_id": "CHEMBL778",
+"pref_name": "DEXMEDETOMIDINE",
+"first_approval": 1999,
+"max_phase": "4.0"
+}
+],
+"Dextenza": [
+{
+"chembl_id": "CHEMBL384467",
+"pref_name": "DEXAMETHASONE",
+"first_approval": 1958,
+"max_phase": "4.0"
+}
+],
+"Dexycu": [
+{
+"chembl_id": "CHEMBL384467",
+"pref_name": "DEXAMETHASONE",
+"first_approval": 1958,
+"max_phase": "4.0"
+}
+],
+"Dezocitidine": [],
+"Dhasolone": [],
+"Di-Adreson-F": [],
+"Dianhydrogalactitol": [
+{
+"chembl_id": "CHEMBL3137322",
+"pref_name": "DIANHYDROGALACTITOL",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Dietary": [],
+"Dietary Nitrates": [],
+"Difelikefalin": [
+{
+"chembl_id": "CHEMBL3989915",
+"pref_name": "DIFELIKEFALIN",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"Difelikefalin Oral Tablet": [],
+"Diflucan": [
+{
+"chembl_id": "CHEMBL106",
+"pref_name": "FLUCONAZOLE",
+"first_approval": 1990,
+"max_phase": "4.0"
+}
+],
+"Dihydroxydeoxynorvinkaleukoblastine": [],
+"Dipeptidyl": [],
+"Dipeptidyl peptidase-4 inhibitors": [],
+"Dipeptiven": [],
+"Diprivan": [
+{
+"chembl_id": "CHEMBL526",
+"pref_name": "PROPOFOL",
+"first_approval": 1989,
+"max_phase": "4.0"
+}
+],
+"Dispersible": [],
+"Disulfiram": [
+{
+"chembl_id": "CHEMBL964",
+"pref_name": "DISULFIRAM",
+"first_approval": 1951,
+"max_phase": "4.0"
+}
+],
+"Docetaxel": [
+{
+"chembl_id": "CHEMBL3545252",
+"pref_name": "DOCETAXEL",
+"first_approval": 1995,
+"max_phase": "4.0"
+}
+],
+"Dontisolon": [],
+"Dontisolon D": [],
+"Dosing 1: Atomoxetine": [],
+"Dostarlimab": [
+{
+"chembl_id": "CHEMBL4298124",
+"pref_name": "DOSTARLIMAB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"Double-blind": [],
+"Double-blind imsidolimab": [],
+"Doxorubicin": [
+{
+"chembl_id": "CHEMBL53463",
+"pref_name": "DOXORUBICIN",
+"first_approval": 1974,
+"max_phase": "4.0"
+}
+],
+"Drug GC4711": [],
+"Dupilumab": [
+{
+"chembl_id": "CHEMBL2108675",
+"pref_name": "DUPILUMAB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Durvalumab": [
+{
+"chembl_id": "CHEMBL3301587",
+"pref_name": "DURVALUMAB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"E-Caprolactone-L-Lactide": [],
+"E7389": [
+{
+"chembl_id": "CHEMBL1683544",
+"pref_name": "ERIBULIN MESYLATE",
+"first_approval": 2010,
+"max_phase": "4.0"
+}
+],
+"EAA": [],
+"EBC-46": [
+{
+"chembl_id": "CHEMBL3989916",
+"pref_name": "TIGILANOL TIGLATE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"EBRT": [],
+"ECHP-THP": [],
+"ECHP-THP regimen group": [],
+"EDP1815": [],
+"EDP2939": [],
+"EG12014": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"EG1206A": [],
+"ELU001": [
+{
+"chembl_id": "CHEMBL6068463",
+"pref_name": "PASIFOLATE EXATECAN",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"EMB-001": [],
+"EMS association": [],
+"ENERGY": [],
+"ENERGY_TYPE": [],
+"ENTO": [],
+"EPEG": [],
+"EPI-7386": [
+{
+"chembl_id": "CHEMBL5095106",
+"pref_name": "MASOFANITEN",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"EPIDIOLEX": [
+{
+"chembl_id": "CHEMBL190461",
+"pref_name": "CANNABIDIOL",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"ER-086526": [
+{
+"chembl_id": "CHEMBL1683590",
+"pref_name": "ERIBULIN",
+"first_approval": 2010,
+"max_phase": "4.0"
+}
+],
+"ERBITUX": [
+{
+"chembl_id": "CHEMBL1201577",
+"pref_name": "CETUXIMAB",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"ESTRACE": [
+{
+"chembl_id": "CHEMBL135",
+"pref_name": "ESTRADIOL",
+"first_approval": 1975,
+"max_phase": "4.0"
+}
+],
+"EXL01": [],
+"EXL01-strain": [],
+"Echinocandin": [],
+"Eculizumab": [
+{
+"chembl_id": "CHEMBL1201828",
+"pref_name": "ECULIZUMAB",
+"first_approval": 2007,
+"max_phase": "4.0"
+}
+],
+"Efcortelan": [],
+"Efsitora": [],
+"Elobixibat": [
+{
+"chembl_id": "CHEMBL3039515",
+"pref_name": "ELOBIXIBAT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Elobixibat 10mg": [],
+"Eloxatin": [
+{
+"chembl_id": "CHEMBL414804",
+"pref_name": "OXALIPLATIN",
+"first_approval": 2002,
+"max_phase": "4.0"
+}
+],
+"EltaMD": [],
+"Emapalumab": [
+{
+"chembl_id": "CHEMBL3989977",
+"pref_name": "EMAPALUMAB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Emergent-EZ": [],
+"Emgality": [
+{
+"chembl_id": "CHEMBL3707328",
+"pref_name": "GALCANEZUMAB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Emgality\u00ae": [],
+"Emicizumab": [
+{
+"chembl_id": "CHEMBL3833393",
+"pref_name": "EMICIZUMAB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Emicizumab Injection": [],
+"Emission": [],
+"Empagliflozin": [
+{
+"chembl_id": "CHEMBL2107830",
+"pref_name": "EMPAGLIFLOZIN",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Emtexate": [],
+"Emthexat": [],
+"Emthexate": [],
+"Emtricitabine": [
+{
+"chembl_id": "CHEMBL885",
+"pref_name": "EMTRICITABINE",
+"first_approval": 2003,
+"max_phase": "4.0"
+}
+],
+"Emtricitabine/Tenofovir disoproxil": [],
+"Emtricitabine/Tenofovir disoproxil fumarate": [],
+"Enanthate": [],
+"Encoding": [],
+"Encorafenib": [
+{
+"chembl_id": "CHEMBL3301612",
+"pref_name": "ENCORAFENIB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Encorafenib + Binimetinib": [],
+"Endari": [
+{
+"chembl_id": "CHEMBL930",
+"pref_name": "GLUTAMINE",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"Endogenously": [],
+"Endometrial": [],
+"Endometrial biopsy": [],
+"Energy": [],
+"Energy Type": [],
+"Enobosarm": [
+{
+"chembl_id": "CHEMBL1738889",
+"pref_name": "ENOBOSARM",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Enteral": [],
+"Entospletinib": [
+{
+"chembl_id": "CHEMBL3265032",
+"pref_name": "ENTOSPLETINIB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Enzalutamide": [
+{
+"chembl_id": "CHEMBL1082407",
+"pref_name": "ENZALUTAMIDE",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Enzyme": [],
+"Epidiolex": [
+{
+"chembl_id": "CHEMBL190461",
+"pref_name": "CANNABIDIOL",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Epipodophyllotoxin": [],
+"Epirubicin": [
+{
+"chembl_id": "CHEMBL417",
+"pref_name": "EPIRUBICIN",
+"first_approval": 1999,
+"max_phase": "4.0"
+}
+],
+"Eptinezumab": [
+{
+"chembl_id": "CHEMBL3833320",
+"pref_name": "EPTINEZUMAB",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"EqAb-COV-19": [],
+"Equine": [],
+"Equine COVID-19 Antiserum": [],
+"Erbitux": [
+{
+"chembl_id": "CHEMBL1201577",
+"pref_name": "CETUXIMAB",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"Erenumab": [
+{
+"chembl_id": "CHEMBL3833329",
+"pref_name": "ERENUMAB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Eribulin": [
+{
+"chembl_id": "CHEMBL1683590",
+"pref_name": "ERIBULIN",
+"first_approval": 2010,
+"max_phase": "4.0"
+}
+],
+"Eribulin Mesylate": [
+{
+"chembl_id": "CHEMBL1683544",
+"pref_name": "ERIBULIN MESYLATE",
+"first_approval": 2010,
+"max_phase": "4.0"
+}
+],
+"Erpalfa": [],
+"Escalation": [],
+"Esketamine": [
+{
+"chembl_id": "CHEMBL395091",
+"pref_name": "ESKETAMINE",
+"first_approval": 2019,
+"max_phase": "4.0"
+}
+],
+"Essential": [],
+"Essential amino acids": [],
+"Ester": [],
+"Estilsona": [],
+"Estradiol": [
+{
+"chembl_id": "CHEMBL135",
+"pref_name": "ESTRADIOL",
+"first_approval": 1975,
+"max_phase": "4.0"
+}
+],
+"Estradiol Tablets": [],
+"Etesevimab": [
+{
+"chembl_id": "CHEMBL4650488",
+"pref_name": "ETESEVIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Ethyl": [],
+"Ethyl Icosapentate": [
+{
+"chembl_id": "CHEMBL2095209",
+"pref_name": "ICOSAPENT ETHYL",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Ethylidine": [],
+"Etonogestrel": [
+{
+"chembl_id": "CHEMBL1531",
+"pref_name": "ETONOGESTREL",
+"first_approval": 2001,
+"max_phase": "4.0"
+}
+],
+"Etonogestrel 68mg implant": [],
+"Etonogestrel implant": [],
+"Etoposide": [
+{
+"chembl_id": "CHEMBL44657",
+"pref_name": "ETOPOSIDE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"Everolimus": [
+{
+"chembl_id": "CHEMBL1908360",
+"pref_name": "EVEROLIMUS",
+"first_approval": 2009,
+"max_phase": "4.0"
+}
+],
+"Evkeeza": [
+{
+"chembl_id": "CHEMBL3545191",
+"pref_name": "EVINACUMAB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"Evkeeza\u2122": [],
+"Exclusive": [],
+"Exclusive Enteral Nutrition": [],
+"Exemestane": [
+{
+"chembl_id": "CHEMBL1200374",
+"pref_name": "EXEMESTANE",
+"first_approval": 1999,
+"max_phase": "4.0"
+}
+],
+"Exendin-9": [],
+"Exendin-9,39": [],
+"Experimental": [],
+"Experimental Group": [],
+"Experimental group": [],
+"Experimental vaccine 1": [],
+"Experimental vaccine 2": [],
+"Experimental vaccine 3": [],
+"Eylea": [
+{
+"chembl_id": "CHEMBL1742982",
+"pref_name": "AFLIBERCEPT",
+"first_approval": 2011,
+"max_phase": "4.0"
+}
+],
+"Ezetimibe": [
+{
+"chembl_id": "CHEMBL1138",
+"pref_name": "EZETIMIBE",
+"first_approval": 2002,
+"max_phase": "4.0"
+}
+],
+"Ezetimibe 10mg": [],
+"Ezetimibe placebo": [],
+"F(ab)2, BSVEQAb, EqAb-COV-19": [],
+"FDA-approved": [],
+"FDY-5301": [
+{
+"chembl_id": "CHEMBL1644695",
+"pref_name": "SODIUM IODIDE",
+"first_approval": 1976,
+"max_phase": "4.0"
+}
+],
+"FG-3019": [
+{
+"chembl_id": "CHEMBL2109377",
+"pref_name": "PAMREVLUMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"FK 506": [
+{
+"chembl_id": "CHEMBL269732",
+"pref_name": "TACROLIMUS ANHYDROUS",
+"first_approval": 1994,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL3989887",
+"pref_name": "TACROLIMUS",
+"first_approval": 1994,
+"max_phase": "4.0"
+}
+],
+"FL-101": [],
+"FLT3 Ligand": [],
+"FLT3 Ligand (CDX-301)": [],
+"FOSTER": [],
+"FOSTER\u00ae": [],
+"FPBMC": [],
+"FPV+CT": [],
+"FSD201": [],
+"FT536": [],
+"FTC/TDF": [],
+"FX-345": [],
+"Facial": [],
+"Factor": [],
+"Faecalibacterium": [],
+"Faecalibacterium prausnitzii EXL01-strain": [],
+"Faricimab": [
+{
+"chembl_id": "CHEMBL4297750",
+"pref_name": "FARICIMAB",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"Farmitrexat": [],
+"Fauldexato": [],
+"Favipiravir": [
+{
+"chembl_id": "CHEMBL221722",
+"pref_name": "FAVIPIRAVIR",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Fecal": [],
+"Fecal Microbiota Transplantation": [],
+"Felzartamab": [
+{
+"chembl_id": "CHEMBL4594579",
+"pref_name": "FELZARTAMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Femdophilus": [],
+"Femdophilus probiotic": [],
+"Fentanyl": [
+{
+"chembl_id": "CHEMBL596",
+"pref_name": "FENTANYL",
+"first_approval": 1968,
+"max_phase": "4.0"
+}
+],
+"Ferinject": [],
+"Ferinject\u00ae": [],
+"Ferric": [],
+"Ferric carboxymaltose": [
+{
+"chembl_id": "CHEMBL2108597",
+"pref_name": "FERRIC CARBOXYMALTOSE",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Fibre": [],
+"Fibrin": [
+{
+"chembl_id": "CHEMBL2108390",
+"pref_name": "FIBRIN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Fibrin Glue": [],
+"Fisopred": [],
+"Fixed": [],
+"Flebocortid": [],
+"Flu": [],
+"Fluarix": [],
+"Flublok": [],
+"Fluconazole": [
+{
+"chembl_id": "CHEMBL106",
+"pref_name": "FLUCONAZOLE",
+"first_approval": 1990,
+"max_phase": "4.0"
+}
+],
+"Fludara": [
+{
+"chembl_id": "CHEMBL1096882",
+"pref_name": "FLUDARABINE PHOSPHATE",
+"first_approval": 1991,
+"max_phase": "4.0"
+}
+],
+"Fludarabine": [
+{
+"chembl_id": "CHEMBL1568",
+"pref_name": "FLUDARABINE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Fludarabine Phosphate": [
+{
+"chembl_id": "CHEMBL1096882",
+"pref_name": "FLUDARABINE PHOSPHATE",
+"first_approval": 1991,
+"max_phase": "4.0"
+}
+],
+"Fludara\u2122": [],
+"Fluorouracil": [
+{
+"chembl_id": "CHEMBL185",
+"pref_name": "FLUOROURACIL",
+"first_approval": 1962,
+"max_phase": "4.0"
+}
+],
+"Fluoxetine": [
+{
+"chembl_id": "CHEMBL41",
+"pref_name": "FLUOXETINE",
+"first_approval": 1987,
+"max_phase": "4.0"
+}
+],
+"Flurpiridaz": [],
+"Flurpiridaz (18F) Injection": [],
+"Flurpiridaz Injection": [],
+"Fluvoxamine": [
+{
+"chembl_id": "CHEMBL814",
+"pref_name": "FLUVOXAMINE",
+"first_approval": 1994,
+"max_phase": "4.0"
+}
+],
+"Folex": [
+{
+"chembl_id": "CHEMBL3244648",
+"pref_name": "METHOTREXATE SODIUM",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"Folex PFS": [
+{
+"chembl_id": "CHEMBL3244648",
+"pref_name": "METHOTREXATE SODIUM",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"Folinic": [],
+"Folinic Acid": [
+{
+"chembl_id": "CHEMBL1679",
+"pref_name": "LEUCOVORIN",
+"first_approval": 1952,
+"max_phase": "4.0"
+}
+],
+"Follitropin": [
+{
+"chembl_id": "CHEMBL4297955",
+"pref_name": "FOLLITROPIN",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Follitropin alfa": [
+{
+"chembl_id": "CHEMBL1201692",
+"pref_name": "FOLLITROPIN ALFA",
+"first_approval": 1995,
+"max_phase": "4.0"
+}
+],
+"Foralumab": [
+{
+"chembl_id": "CHEMBL1743020",
+"pref_name": "FORALUMAB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Fosfaseron": [],
+"Fosfomycin": [
+{
+"chembl_id": "CHEMBL1757",
+"pref_name": "FOSFOMYCIN",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"Foslevodopa": [
+{
+"chembl_id": "CHEMBL4594379",
+"pref_name": "FOSLEVODOPA",
+"first_approval": 2024,
+"max_phase": "4.0"
+}
+],
+"Foslevodopa/foscarbidopa": [],
+"Fostamatinib": [
+{
+"chembl_id": "CHEMBL2103830",
+"pref_name": "FOSTAMATINIB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Fostamatinib disodium": [
+{
+"chembl_id": "CHEMBL3989516",
+"pref_name": "FOSTAMATINIB DISODIUM",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Fraction": [],
+"Fremanezumab": [
+{
+"chembl_id": "CHEMBL4297756",
+"pref_name": "FREMANEZUMAB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Frisolona": [],
+"Fujimycin": [
+{
+"chembl_id": "CHEMBL269732",
+"pref_name": "TACROLIMUS ANHYDROUS",
+"first_approval": 1994,
+"max_phase": "4.0"
+}
+],
+"Fulvestrant": [
+{
+"chembl_id": "CHEMBL1358",
+"pref_name": "FULVESTRANT",
+"first_approval": 2002,
+"max_phase": "4.0"
+}
+],
+"Furabid": [],
+"Fycompa": [
+{
+"chembl_id": "CHEMBL1214124",
+"pref_name": "PERAMPANEL",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"GBT021601": [
+{
+"chembl_id": "CHEMBL5314424",
+"pref_name": "OSIVELOTOR",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"GC4711": [
+{
+"chembl_id": "CHEMBL4650307",
+"pref_name": "RUCOSOPASEM MANGANESE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"GDC-0199": [
+{
+"chembl_id": "CHEMBL3137309",
+"pref_name": "VENETOCLAX",
+"first_approval": 2016,
+"max_phase": "4.0"
+}
+],
+"GDKM-100": [],
+"GDKM-100 injection": [],
+"GEM00220": [],
+"GFB-887": [],
+"GLP-1": [
+{
+"chembl_id": "CHEMBL1240772",
+"pref_name": "GLP-1",
+"first_approval": null,
+"max_phase": "2.0"
+},
+{
+"chembl_id": "CHEMBL4594475",
+"pref_name": "GLUCAGON-LIKE PEPTIDE 1",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"GLP-1 receptor agonist": [],
+"GM-CSF": [
+{
+"chembl_id": "CHEMBL2107881",
+"pref_name": "REGRAMOSTIM",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"GNC-035": [],
+"GNR-038": [],
+"GS-2872": [
+{
+"chembl_id": "CHEMBL4297679",
+"pref_name": "ZINLIRVIMAB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"GS-5423": [
+{
+"chembl_id": "CHEMBL5095294",
+"pref_name": "TEROPAVIMAB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"GS-6207": [
+{
+"chembl_id": "CHEMBL4594438",
+"pref_name": "LENACAPAVIR",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"GS-9973": [
+{
+"chembl_id": "CHEMBL3265032",
+"pref_name": "ENTOSPLETINIB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"GSK 4182136": [],
+"GSK-4182136": [
+{
+"chembl_id": "CHEMBL4650524",
+"pref_name": "SOTROVIMAB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"GSK1120212B": [
+{
+"chembl_id": "CHEMBL2103875",
+"pref_name": "TRAMETINIB",
+"first_approval": 2013,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL2105741",
+"pref_name": "TRAMETINIB DIMETHYL SULFOXIDE",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"GSK2118436A": [
+{
+"chembl_id": "CHEMBL2028663",
+"pref_name": "DABRAFENIB",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"GSK2118436A (free base)": [],
+"GSK2118436B": [
+{
+"chembl_id": "CHEMBL2105729",
+"pref_name": "DABRAFENIB MESYLATE",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"GSK3511294": [
+{
+"chembl_id": "CHEMBL4650469",
+"pref_name": "DEPEMOKIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"GSK3511294 (Depemokimab)": [],
+"GSK3745417": [],
+"GSK4057190": [
+{
+"chembl_id": "CHEMBL4298124",
+"pref_name": "DOSTARLIMAB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"GSK4182136": [
+{
+"chembl_id": "CHEMBL4650524",
+"pref_name": "SOTROVIMAB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"GT 41": [],
+"GT-41": [],
+"GT0918": [
+{
+"chembl_id": "CHEMBL4594417",
+"pref_name": "PRUXELUTAMIDE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"GW-1000-02": [],
+"GWP42003-P": [
+{
+"chembl_id": "CHEMBL190461",
+"pref_name": "CANNABIDIOL",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Ga-68-PSMA-11": [],
+"Gabapentin": [
+{
+"chembl_id": "CHEMBL940",
+"pref_name": "GABAPENTIN",
+"first_approval": 1993,
+"max_phase": "4.0"
+}
+],
+"Galcanezumab": [
+{
+"chembl_id": "CHEMBL3707328",
+"pref_name": "GALCANEZUMAB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Gallium": [
+{
+"chembl_id": "CHEMBL1201200",
+"pref_name": "GALLIUM",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Gamifant": [
+{
+"chembl_id": "CHEMBL3989977",
+"pref_name": "EMAPALUMAB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Gamifant\u00ae": [],
+"Gamma": [],
+"Ganaxolone": [
+{
+"chembl_id": "CHEMBL1568698",
+"pref_name": "GANAXOLONE",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"Ganglioside-Monosialic": [],
+"Ganglioside-Monosialic Acid": [],
+"Garlique": [],
+"Gemcitabin": [],
+"Gemcitabine": [
+{
+"chembl_id": "CHEMBL888",
+"pref_name": "GEMCITABINE",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"Gemcitabine (GEM)": [],
+"Gemzar": [
+{
+"chembl_id": "CHEMBL888",
+"pref_name": "GEMCITABINE",
+"first_approval": 1996,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL1637",
+"pref_name": "GEMCITABINE HYDROCHLORIDE",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"Gengraf": [
+{
+"chembl_id": "CHEMBL160",
+"pref_name": "CYCLOSPORINE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"Genoxal": [],
+"Gentamicin": [
+{
+"chembl_id": "CHEMBL6067485",
+"pref_name": "GENTAMICIN",
+"first_approval": 1970,
+"max_phase": "4.0"
+}
+],
+"Gentle": [],
+"Genuxal": [],
+"Giapreza": [
+{
+"chembl_id": "CHEMBL3989932",
+"pref_name": "ANGIOTENSIN II ACETATE",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Gifrer": [],
+"Girostan": [],
+"Glargine": [
+{
+"chembl_id": "CHEMBL1201497",
+"pref_name": "INSULIN GLARGINE",
+"first_approval": 2000,
+"max_phase": "4.0"
+}
+],
+"Globulin": [],
+"Glucocorticoid": [],
+"Gluconate": [],
+"Glucoside": [],
+"Glutaminase": [],
+"Glutaminase inhibitor": [],
+"Gluteal": [],
+"Glycerin": [
+{
+"chembl_id": "CHEMBL692",
+"pref_name": "GLYCERIN",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Glycerin(e)": [],
+"Glycerol": [
+{
+"chembl_id": "CHEMBL692",
+"pref_name": "GLYCERIN",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Glyzophrol": [],
+"Goserelin": [
+{
+"chembl_id": "CHEMBL1201247",
+"pref_name": "GOSERELIN",
+"first_approval": 1989,
+"max_phase": "4.0"
+}
+],
+"Govitecan-hziy": [],
+"Grafalon": [],
+"Granexin": [
+{
+"chembl_id": "CHEMBL4297964",
+"pref_name": "ACT-1 PEPTIDE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Granexin\u00ae gel": [],
+"Grapiprant": [
+{
+"chembl_id": "CHEMBL3039498",
+"pref_name": "GRAPIPRANT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Green": [],
+"Group A": [],
+"Group B": [],
+"Group C": [],
+"Guerin": [],
+"Guided": [],
+"Guided mindfulness exercises": [],
+"Gupisone": [],
+"Guselkumab": [
+{
+"chembl_id": "CHEMBL2364648",
+"pref_name": "GUSELKUMAB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"HAT": [],
+"HB-301": [],
+"HB-302": [],
+"HBI-8000": [
+{
+"chembl_id": "CHEMBL3621988",
+"pref_name": "TUCIDINOSTAT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"HBM9161": [
+{
+"chembl_id": "CHEMBL4650514",
+"pref_name": "BATOCLIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"HBM9161 Injection": [],
+"HBM9161 Injection (680mg)": [],
+"HCQ01": [],
+"HCT": [],
+"HEMLIBRA": [
+{
+"chembl_id": "CHEMBL3833393",
+"pref_name": "EMICIZUMAB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"HH-003": [
+{
+"chembl_id": "CHEMBL6068129",
+"pref_name": "LIBEVITUG",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"HH-003 /kg": [],
+"HH-003 20mg/kg": [],
+"HH-003 3mg/kg": [],
+"HIV": [],
+"HLX01": [],
+"HLX02": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"HLX11": [],
+"HLX23": [],
+"HMR59": [],
+"HMWHA": [],
+"HOE901-U300": [],
+"HP 129Xe": [
+{
+"chembl_id": "CHEMBL4594411",
+"pref_name": "XENON XE-129, HYPERPOLARIZED",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"HS627": [],
+"HSCT": [],
+"HST5040": [],
+"HZN-001": [
+{
+"chembl_id": "CHEMBL1743079",
+"pref_name": "TEPROTUMUMAB",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"Hafnium": [],
+"Halaven": [
+{
+"chembl_id": "CHEMBL1683544",
+"pref_name": "ERIBULIN MESYLATE",
+"first_approval": 2010,
+"max_phase": "4.0"
+}
+],
+"Halichondrin": [],
+"Halichondrin B Analog": [],
+"Hard collar immobilization": [],
+"Hecoria": [],
+"Hematopoietic": [],
+"Hematopoietic Cell Transplantation": [],
+"Hemlibra": [
+{
+"chembl_id": "CHEMBL3833393",
+"pref_name": "EMICIZUMAB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Hemlibra (R)": [],
+"Heparin": [
+{
+"chembl_id": "CHEMBL4650299",
+"pref_name": "HEPARIN",
+"first_approval": 2023,
+"max_phase": "4.0"
+}
+],
+"Herbal": [],
+"Herceptin": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Herceptin Biosimilar PF-05280014": [],
+"Herclon": [],
+"Hertraz": [],
+"Herzuma": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Hidroc": [],
+"Hidroc Clora": [],
+"High Dose Lidocaine": [],
+"High-Dose": [],
+"High-dose": [],
+"Hostacortin": [],
+"Hostacortin H": [],
+"Hot environment": [],
+"Hu-5F9-G4": [],
+"Hu5F9-G4": [
+{
+"chembl_id": "CHEMBL4297985",
+"pref_name": "MAGROLIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Human": [],
+"Human platelet extract": [],
+"Hycorace": [],
+"Hydeltra": [
+{
+"chembl_id": "CHEMBL131",
+"pref_name": "PREDNISOLONE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Hydeltrasol": [
+{
+"chembl_id": "CHEMBL1201014",
+"pref_name": "PREDNISOLONE SODIUM PHOSPHATE",
+"first_approval": 1973,
+"max_phase": "4.0"
+}
+],
+"Hydrate": [],
+"Hydro-Adreson": [],
+"Hydrochloride": [
+{
+"chembl_id": "CHEMBL5081624",
+"pref_name": null,
+"first_approval": null,
+"max_phase": null
+}
+],
+"Hydrocodone": [
+{
+"chembl_id": "CHEMBL1457",
+"pref_name": "HYDROCODONE",
+"first_approval": 1943,
+"max_phase": "4.0"
+}
+],
+"Hydrocort": [],
+"Hydrocortisone": [
+{
+"chembl_id": "CHEMBL389621",
+"pref_name": "HYDROCORTISONE",
+"first_approval": 1952,
+"max_phase": "4.0"
+}
+],
+"Hydrocortisone 21-Sodium Succinate": [
+{
+"chembl_id": "CHEMBL1200495",
+"pref_name": "HYDROCORTISONE SODIUM SUCCINATE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Hydrocortisone Na Succinate": [],
+"Hydrocortisone Sodium Succinate": [
+{
+"chembl_id": "CHEMBL1200495",
+"pref_name": "HYDROCORTISONE SODIUM SUCCINATE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Hydroxychloroquine": [
+{
+"chembl_id": "CHEMBL1535",
+"pref_name": "HYDROXYCHLOROQUINE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Hydroxychloroquine Pill": [],
+"Hydroxychloroquine sulfate": [
+{
+"chembl_id": "CHEMBL1690",
+"pref_name": "HYDROXYCHLOROQUINE SULFATE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Hyperglycemic": [],
+"Hyperglycemic Clamp": [],
+"Hyperpolarized": [],
+"Hyperpolarized Xe129": [],
+"Hypochlorous": [],
+"IBI 308": [],
+"IBI188": [
+{
+"chembl_id": "CHEMBL4594553",
+"pref_name": "IBI-188",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"IBI302": [],
+"IBI308": [
+{
+"chembl_id": "CHEMBL4297829",
+"pref_name": "SINTILIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"IBI314": [],
+"IC14": [
+{
+"chembl_id": "CHEMBL2109330",
+"pref_name": "IC14",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"IC265": [],
+"IL-2": [],
+"IL-7-hyFc": [],
+"IMC-001": [
+{
+"chembl_id": "CHEMBL4650423",
+"pref_name": "DANBURSTOTUG",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"IMFINZI": [
+{
+"chembl_id": "CHEMBL3301587",
+"pref_name": "DURVALUMAB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"IMGN632": [
+{
+"chembl_id": "CHEMBL4297991",
+"pref_name": "PIVEKIMAB SUNIRINE",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"IMPT": [],
+"IMRT": [],
+"IMU-935": [],
+"INCB053914": [],
+"INCB053914 BID": [],
+"INCB086550": [
+{
+"chembl_id": "CHEMBL4802209",
+"pref_name": "INCB-086550",
+"first_approval": null,
+"max_phase": "2.0"
+},
+{
+"chembl_id": "CHEMBL5401026",
+"pref_name": null,
+"first_approval": null,
+"max_phase": null
+}
+],
+"INCB18424": [
+{
+"chembl_id": "CHEMBL1789941",
+"pref_name": "RUXOLITINIB",
+"first_approval": 2011,
+"max_phase": "4.0"
+}
+],
+"INCB18424 cream": [],
+"INH": [
+{
+"chembl_id": "CHEMBL64",
+"pref_name": "ISONIAZID",
+"first_approval": 1952,
+"max_phase": "4.0"
+}
+],
+"INNA-051": [],
+"INQOVI": [],
+"INSI": [],
+"IPRALEV": [],
+"IPdR": [
+{
+"chembl_id": "CHEMBL2103821",
+"pref_name": "ROPIDOXURIDINE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"ITM": [],
+"IV Tylenol": [],
+"Ibrexafungerp": [
+{
+"chembl_id": "CHEMBL4297513",
+"pref_name": "IBREXAFUNGERP",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"Ibuprofen": [
+{
+"chembl_id": "CHEMBL521",
+"pref_name": "IBUPROFEN",
+"first_approval": 1974,
+"max_phase": "4.0"
+}
+],
+"Ibuprofen 400 mg": [],
+"Icosapent": [
+{
+"chembl_id": "CHEMBL460026",
+"pref_name": "ICOSAPENT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Icosapent Ethyl": [
+{
+"chembl_id": "CHEMBL2095209",
+"pref_name": "ICOSAPENT ETHYL",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Icosapentate": [],
+"Imaging": [],
+"Imatinib": [
+{
+"chembl_id": "CHEMBL941",
+"pref_name": "IMATINIB",
+"first_approval": 2001,
+"max_phase": "4.0"
+}
+],
+"Imatinib Mesylate": [
+{
+"chembl_id": "CHEMBL941",
+"pref_name": "IMATINIB",
+"first_approval": 2001,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL1642",
+"pref_name": "IMATINIB MESYLATE",
+"first_approval": 2001,
+"max_phase": "4.0"
+}
+],
+"Imdevimab": [
+{
+"chembl_id": "CHEMBL4650249",
+"pref_name": "IMDEVIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Imgatuzumab": [
+{
+"chembl_id": "CHEMBL2109389",
+"pref_name": "IMGATUZUMAB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Immune": [],
+"Impentri": [],
+"Implant": [],
+"Impregnated": [],
+"Imsidolimab": [
+{
+"chembl_id": "CHEMBL4650441",
+"pref_name": "IMSIDOLIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Imsidolimab IV/ SC": [],
+"Inactivated": [],
+"Inactive": [],
+"Inactive drug": [],
+"Inclisiran": [
+{
+"chembl_id": "CHEMBL3990033",
+"pref_name": "INCLISIRAN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Indapamide": [
+{
+"chembl_id": "CHEMBL406",
+"pref_name": "INDAPAMIDE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"Indapamide SR Placebo": [],
+"Indivior": [],
+"Indocyanine": [],
+"Indocyanine Green": [
+{
+"chembl_id": "CHEMBL1646",
+"pref_name": "INDOCYANINE GREEN",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Indocyanine Green (ICG)": [],
+"Induction": [],
+"Induction Therapy": [],
+"Inert": [],
+"Infliximab": [
+{
+"chembl_id": "CHEMBL1201581",
+"pref_name": "INFLIXIMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Inhalation": [],
+"Inhaler": [],
+"Inhibitor": [],
+"Injectable": [],
+"Inositol": [
+{
+"chembl_id": "CHEMBL1222251",
+"pref_name": "INOSITOL",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Insulin": [
+{
+"chembl_id": "CHEMBL1201631",
+"pref_name": "INSULIN HUMAN",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Insulin Degludec": [
+{
+"chembl_id": "CHEMBL2107869",
+"pref_name": "INSULIN DEGLUDEC",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Insulin Efsitora Alfa": [
+{
+"chembl_id": "CHEMBL5095357",
+"pref_name": "INSULIN EFSITORA ALFA",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Insulin Glargine 100U/mL": [],
+"Insulin Glargine 300U/mL": [],
+"Insulin icodec": [
+{
+"chembl_id": "CHEMBL4594581",
+"pref_name": "INSULIN ICODEC",
+"first_approval": 2024,
+"max_phase": "4.0"
+}
+],
+"Insulin-FC": [],
+"Intensity": [],
+"Intensity Modulated RT": [],
+"Intensity-Modulated": [],
+"Intensity-Modulated Proton Therapy": [],
+"Intensity-Modulated Radiation Therapy": [],
+"Intensity-Modulated Radiotherapy": [],
+"Interaction": [],
+"Interleukin-2": [
+{
+"chembl_id": "CHEMBL1201438",
+"pref_name": "ALDESLEUKIN",
+"first_approval": 1992,
+"max_phase": "4.0"
+}
+],
+"Interleukin-7": [
+{
+"chembl_id": "CHEMBL4297772",
+"pref_name": "INTERLEUKIN-7",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Intervention": [],
+"Intervention 1": [],
+"Intervention 2": [],
+"Intranasal": [],
+"Intranasal Foralumab Solution": [],
+"Intrathecal": [],
+"Intrathecal Morphine": [],
+"Intraurethral": [],
+"Intravenous acetaminophen": [],
+"Intravitreal": [],
+"Intravitreal AAVCAGsCD59": [],
+"Intravitreal Sham Injection": [],
+"Intravitreal injection": [],
+"Intravitreal injection 440mcg": [],
+"Iohexol": [
+{
+"chembl_id": "CHEMBL1200455",
+"pref_name": "IOHEXOL",
+"first_approval": 1985,
+"max_phase": "4.0"
+}
+],
+"Ipatasertib": [
+{
+"chembl_id": "CHEMBL2177390",
+"pref_name": "IPATASERTIB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Ipilimumab": [
+{
+"chembl_id": "CHEMBL1789844",
+"pref_name": "IPILIMUMAB",
+"first_approval": 2011,
+"max_phase": "4.0"
+}
+],
+"Ipratropium": [
+{
+"chembl_id": "CHEMBL1621597",
+"pref_name": "IPRATROPIUM",
+"first_approval": 1986,
+"max_phase": "4.0"
+}
+],
+"Irinotecan": [
+{
+"chembl_id": "CHEMBL481",
+"pref_name": "IRINOTECAN",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"Irradiate": [],
+"Irradiated": [],
+"Irradiation": [],
+"Irrigation": [],
+"Isavuconazole": [
+{
+"chembl_id": "CHEMBL409153",
+"pref_name": "ISAVUCONAZOLE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Isavuconazonium": [
+{
+"chembl_id": "CHEMBL1183349",
+"pref_name": "ISAVUCONAZONIUM",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"Isavuconazonium Injection": [],
+"Isavuconazonium Injection [Cresemba]": [],
+"Islatravir": [
+{
+"chembl_id": "CHEMBL517231",
+"pref_name": "ISLATRAVIR",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Isoniazid": [
+{
+"chembl_id": "CHEMBL64",
+"pref_name": "ISONIAZID",
+"first_approval": 1952,
+"max_phase": "4.0"
+}
+],
+"Isotonic": [],
+"Isotonic saline 0.9%": [],
+"Itraconazole": [
+{
+"chembl_id": "CHEMBL64391",
+"pref_name": "ITRACONAZOLE",
+"first_approval": 1992,
+"max_phase": "4.0"
+}
+],
+"Ivermectin": [
+{
+"chembl_id": "CHEMBL6067487",
+"pref_name": "IVERMECTIN",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"Ivermectin and": [],
+"JMT601": [],
+"JNJ-67896062": [],
+"JNJ-69095897": [],
+"JNJ-70075200": [],
+"JNJ-77474462": [],
+"JNJ-78436735": [],
+"JNJ-78436735 Vaccine": [],
+"JS001": [
+{
+"chembl_id": "CHEMBL4297843",
+"pref_name": "TORIPALIMAB",
+"first_approval": 2023,
+"max_phase": "4.0"
+}
+],
+"JS006": [],
+"JTP-74057": [
+{
+"chembl_id": "CHEMBL2103875",
+"pref_name": "TRAMETINIB",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"JTP-75303": [],
+"JTP-78296": [],
+"Jakafi": [
+{
+"chembl_id": "CHEMBL1789941",
+"pref_name": "RUXOLITINIB",
+"first_approval": 2011,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL1795071",
+"pref_name": "RUXOLITINIB PHOSPHATE",
+"first_approval": 2011,
+"max_phase": "4.0"
+}
+],
+"Jakavi": [
+{
+"chembl_id": "CHEMBL1789941",
+"pref_name": "RUXOLITINIB",
+"first_approval": 2011,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL1795071",
+"pref_name": "RUXOLITINIB PHOSPHATE",
+"first_approval": 2011,
+"max_phase": "4.0"
+}
+],
+"Joacamine": [],
+"K171355": [],
+"KB407": [],
+"KB407 (Nebulization)": [],
+"KEYTRUDA": [
+{
+"chembl_id": "CHEMBL3137343",
+"pref_name": "PEMBROLIZUMAB",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"KEYTRUDA\u00ae": [],
+"KEYTRUDA\u00ae or generic": [],
+"KIO-101": [],
+"KM-819": [],
+"KN046": [
+{
+"chembl_id": "CHEMBL4650483",
+"pref_name": "ERFONRILIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"KN046 \uff08PD-L1/CTLA4 BsAb\uff09": [],
+"KORLYM": [
+{
+"chembl_id": "CHEMBL1276308",
+"pref_name": "MIFEPRISTONE",
+"first_approval": 2000,
+"max_phase": "4.0"
+}
+],
+"KORLYM\u00ae, C1073, RU486": [],
+"KRT-232": [
+{
+"chembl_id": "CHEMBL3125702",
+"pref_name": "NAVTEMADLIN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"KU-0059436": [
+{
+"chembl_id": "CHEMBL521686",
+"pref_name": "OLAPARIB",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Kanjinti": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Ketalar": [
+{
+"chembl_id": "CHEMBL742",
+"pref_name": "KETAMINE",
+"first_approval": 1970,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL1714",
+"pref_name": "KETAMINE HYDROCHLORIDE",
+"first_approval": 1970,
+"max_phase": "4.0"
+}
+],
+"Ketamine": [
+{
+"chembl_id": "CHEMBL742",
+"pref_name": "KETAMINE",
+"first_approval": 1970,
+"max_phase": "4.0"
+}
+],
+"Ketamine 100 MG/ML": [],
+"Ketamine Hydrochloride": [
+{
+"chembl_id": "CHEMBL1714",
+"pref_name": "KETAMINE HYDROCHLORIDE",
+"first_approval": 1970,
+"max_phase": "4.0"
+}
+],
+"Ketanest": [],
+"Ketoprofen": [
+{
+"chembl_id": "CHEMBL571",
+"pref_name": "KETOPROFEN",
+"first_approval": 1986,
+"max_phase": "4.0"
+}
+],
+"Keytruda": [
+{
+"chembl_id": "CHEMBL3137343",
+"pref_name": "PEMBROLIZUMAB",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Keytruda\u00ae": [],
+"Kinase": [],
+"Kinogen": [],
+"Kisspeptin-10": [
+{
+"chembl_id": "CHEMBL376756",
+"pref_name": "KISSPEPTIN-10",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Klismacort": [],
+"Kristalose": [],
+"Kuhlprednon": [],
+"L-Arginine": [
+{
+"chembl_id": "CHEMBL1485",
+"pref_name": "ARGININE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"L-Arginine Powder": [],
+"L-PAM": [
+{
+"chembl_id": "CHEMBL852",
+"pref_name": "MELPHALAN",
+"first_approval": 1964,
+"max_phase": "4.0"
+}
+],
+"L-Phenylalanine": [
+{
+"chembl_id": "CHEMBL301523",
+"pref_name": "PHENYLALANINE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"L-Phenylalanine Mustard": [
+{
+"chembl_id": "CHEMBL852",
+"pref_name": "MELPHALAN",
+"first_approval": 1964,
+"max_phase": "4.0"
+}
+],
+"L-Sarcolysin": [
+{
+"chembl_id": "CHEMBL852",
+"pref_name": "MELPHALAN",
+"first_approval": 1964,
+"max_phase": "4.0"
+}
+],
+"L-Sarcolysin Phenylalanine mustard": [],
+"L-Sarcolysine": [],
+"L-alanyl-L-glutamine": [
+{
+"chembl_id": "CHEMBL3707366",
+"pref_name": "ALANYL GLUTAMINE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"L-alanyl-L-glutamine dipeptide": [],
+"L-citrulline": [
+{
+"chembl_id": "CHEMBL444814",
+"pref_name": "L-CITRULLINE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"L-citrulline 3 g": [],
+"L-glutamine": [
+{
+"chembl_id": "CHEMBL930",
+"pref_name": "GLUTAMINE",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"L01BC05": [],
+"L01BC05 Gemcitabine": [],
+"L01XA01": [],
+"L01XA01 Cisplatin": [],
+"LDN": [],
+"LDX": [],
+"LENINGRADO": [],
+"LENINGRADO association": [],
+"LIV-GAMMA": [],
+"LIV-GAMMA SN Inj.": [],
+"LMI070": [
+{
+"chembl_id": "CHEMBL4290141",
+"pref_name": "BRANAPLAM",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"LMWHA": [],
+"LTP001": [],
+"LXI-15028": [
+{
+"chembl_id": "CHEMBL4297583",
+"pref_name": "TEGOPRAZAN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"LXI-15028 50mg group": [],
+"LXI-15028 group": [],
+"LY3209590": [
+{
+"chembl_id": "CHEMBL5095357",
+"pref_name": "INSULIN EFSITORA ALFA",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"LY333013": [
+{
+"chembl_id": "CHEMBL2105659",
+"pref_name": "VARESPLADIB METHYL",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"LY3462817": [
+{
+"chembl_id": "CHEMBL5095360",
+"pref_name": "PERESOLIMAB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"LY3650150": [],
+"Laboratory": [],
+"Laboratory Testing": [],
+"Lactulose": [
+{
+"chembl_id": "CHEMBL296306",
+"pref_name": "LACTULOSE",
+"first_approval": 1976,
+"max_phase": "4.0"
+}
+],
+"Ladakamycin": [
+{
+"chembl_id": "CHEMBL1489",
+"pref_name": "AZACITIDINE",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"Ladarixin": [
+{
+"chembl_id": "CHEMBL189475",
+"pref_name": "LADARIXIN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Lambrolizumab": [
+{
+"chembl_id": "CHEMBL3137343",
+"pref_name": "PEMBROLIZUMAB",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Lamisil": [
+{
+"chembl_id": "CHEMBL822",
+"pref_name": "TERBINAFINE",
+"first_approval": 1992,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL1200832",
+"pref_name": "TERBINAFINE HYDROCHLORIDE",
+"first_approval": 1992,
+"max_phase": "4.0"
+}
+],
+"Lamivudine": [
+{
+"chembl_id": "CHEMBL141",
+"pref_name": "LAMIVUDINE",
+"first_approval": 1995,
+"max_phase": "4.0"
+}
+],
+"Lamivudine 300 MG": [],
+"Lansoprazole": [
+{
+"chembl_id": "CHEMBL480",
+"pref_name": "LANSOPRAZOLE",
+"first_approval": 1995,
+"max_phase": "4.0"
+}
+],
+"Lansoprazole 30mg group": [],
+"Lansoprazole group": [],
+"Lantarel": [],
+"Laparoscopic": [],
+"Lapine": [],
+"Lastet": [],
+"Lebrikizumab": [
+{
+"chembl_id": "CHEMBL1743035",
+"pref_name": "LEBRIKIZUMAB",
+"first_approval": 2023,
+"max_phase": "4.0"
+}
+],
+"Ledaga": [
+{
+"chembl_id": "CHEMBL427",
+"pref_name": "MECHLORETHAMINE",
+"first_approval": 1949,
+"max_phase": "4.0"
+}
+],
+"Ledaga\u00ae": [],
+"Ledertrexate": [],
+"Ledoxina": [],
+"Lenacapavir": [
+{
+"chembl_id": "CHEMBL4594438",
+"pref_name": "LENACAPAVIR",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"Lenalidomide": [
+{
+"chembl_id": "CHEMBL848",
+"pref_name": "LENALIDOMIDE",
+"first_approval": 2005,
+"max_phase": "4.0"
+}
+],
+"Lenalidomide Pill": [],
+"Leningrado": [],
+"Leningrado association Placebo": [],
+"Lenisolone": [],
+"Lepi-Cortinolo": [],
+"Lerociclib": [
+{
+"chembl_id": "CHEMBL3904602",
+"pref_name": "LEROCICLIB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Letrozole": [
+{
+"chembl_id": "CHEMBL1444",
+"pref_name": "LETROZOLE",
+"first_approval": 1997,
+"max_phase": "4.0"
+}
+],
+"Letrozole , hCG": [],
+"Letrozole 2.5mg, hCG": [],
+"Leucovorin": [
+{
+"chembl_id": "CHEMBL1679",
+"pref_name": "LEUCOVORIN",
+"first_approval": 1952,
+"max_phase": "4.0"
+}
+],
+"Leucovorin (LV)": [],
+"Levamlodipine": [
+{
+"chembl_id": "CHEMBL2111097",
+"pref_name": "LEVAMLODIPINE",
+"first_approval": 2019,
+"max_phase": "4.0"
+}
+],
+"Levamlodipine 2.5/": [],
+"Levamlodipine placebo": [],
+"Levofloxacin": [
+{
+"chembl_id": "CHEMBL5315124",
+"pref_name": "LEVOFLOXACIN",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"Levofloxacin Ocular Implant": [],
+"Levomethadone": [
+{
+"chembl_id": "CHEMBL159659",
+"pref_name": "LEVOMETHADONE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Levomethadone HCl": [],
+"Levosalbutamol": [
+{
+"chembl_id": "CHEMBL1002",
+"pref_name": "LEVOSALBUTAMOL",
+"first_approval": 1999,
+"max_phase": "4.0"
+}
+],
+"Lidocaine": [
+{
+"chembl_id": "CHEMBL79",
+"pref_name": "LIDOCAINE",
+"first_approval": 1948,
+"max_phase": "4.0"
+}
+],
+"Lidocaine patch": [],
+"Lifitegrast": [
+{
+"chembl_id": "CHEMBL2048028",
+"pref_name": "LIFITEGRAST",
+"first_approval": 2016,
+"max_phase": "4.0"
+}
+],
+"Ligand": [],
+"Linola-H": [],
+"Linola-H N": [],
+"Linola-H-Fett": [],
+"Linola-H-Fett N": [],
+"Liposomal": [],
+"Liposomal AraC-Daunorubicin CPX-351": [],
+"Liposomal Cytarabine-Daunorubicin": [],
+"Liposomal Irinotecan": [],
+"Liposomal Irinotecan (nal-IRI)": [],
+"Liposome": [],
+"Liposome-encapsulated": [],
+"Liposome-encapsulated Daunorubicin-Cytarabine": [],
+"Liquid": [],
+"Liquid S95014": [],
+"Liquid Stored Platelets": [],
+"Lirentelimab": [
+{
+"chembl_id": "CHEMBL4297878",
+"pref_name": "LIRENTELIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Local": [],
+"Local SOC support": [],
+"Longiprednil": [],
+"Lonsurf": [],
+"Lortab": [],
+"Losartan": [
+{
+"chembl_id": "CHEMBL191",
+"pref_name": "LOSARTAN",
+"first_approval": 1995,
+"max_phase": "4.0"
+}
+],
+"Lotion": [],
+"Lovaza": [
+{
+"chembl_id": "CHEMBL1200711",
+"pref_name": "OMEGA-3-ACID ETHYL ESTERS",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"Low Dose Lidocaine": [],
+"Low-Dose": [],
+"Low-dose": [],
+"Low-dose naltrexone": [],
+"LstCAR019": [],
+"Lumakras": [
+{
+"chembl_id": "CHEMBL4535757",
+"pref_name": "SOTORASIB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"Lumexon": [],
+"Lurasidone": [
+{
+"chembl_id": "CHEMBL1237021",
+"pref_name": "LURASIDONE",
+"first_approval": 2010,
+"max_phase": "4.0"
+}
+],
+"Lutropin": [],
+"Lutropin alfa": [
+{
+"chembl_id": "CHEMBL1201419",
+"pref_name": "LUTROPIN ALFA",
+"first_approval": 2000,
+"max_phase": "4.0"
+}
+],
+"Lymphoseek": [
+{
+"chembl_id": "CHEMBL2108726",
+"pref_name": "TECHNETIUM TC 99M TILMANOCEPT",
+"first_approval": 2013,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL5315077",
+"pref_name": "TILMANOCEPT",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Lynparza": [
+{
+"chembl_id": "CHEMBL521686",
+"pref_name": "OLAPARIB",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Lyophilized": [],
+"Lyophilized S95014": [],
+"M1069": [],
+"M5049": [
+{
+"chembl_id": "CHEMBL4802159",
+"pref_name": "ENPATORAN",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"M7824": [
+{
+"chembl_id": "CHEMBL4298024",
+"pref_name": "BINTRAFUSP ALFA",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"M9241": [
+{
+"chembl_id": "CHEMBL4298056",
+"pref_name": "IMMUNOCYTOKINE NHS-IL12",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"MASE-T": [],
+"MDV3100": [
+{
+"chembl_id": "CHEMBL1082407",
+"pref_name": "ENZALUTAMIDE",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"MEDI4736": [
+{
+"chembl_id": "CHEMBL3301587",
+"pref_name": "DURVALUMAB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"MEDI4736, IMFINZI": [],
+"MET-4": [],
+"MK-3475": [
+{
+"chembl_id": "CHEMBL3137343",
+"pref_name": "PEMBROLIZUMAB",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"MK-8591": [
+{
+"chembl_id": "CHEMBL517231",
+"pref_name": "ISLATRAVIR",
+"first_approval": null,
+"max_phase": "3.0"
+},
+{
+"chembl_id": "CHEMBL5095163",
+"pref_name": "ISLATRAVIR HYDRATE",
+"first_approval": null,
+"max_phase": "-1.0"
+}
+],
+"MLN4924": [
+{
+"chembl_id": "CHEMBL1231160",
+"pref_name": "PEVONEDISTAT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"MMF": [],
+"MOR202": [
+{
+"chembl_id": "CHEMBL4594579",
+"pref_name": "FELZARTAMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"MP0317": [],
+"MP1032": [],
+"MPDL 3280A": [],
+"MPDL 328OA": [],
+"MPDL-3280A": [
+{
+"chembl_id": "CHEMBL3707227",
+"pref_name": "ATEZOLIZUMAB",
+"first_approval": 2016,
+"max_phase": "4.0"
+}
+],
+"MPDL3280A": [
+{
+"chembl_id": "CHEMBL3707227",
+"pref_name": "ATEZOLIZUMAB",
+"first_approval": 2016,
+"max_phase": "4.0"
+}
+],
+"MPDL328OA": [],
+"MPH966": [
+{
+"chembl_id": "CHEMBL3617964",
+"pref_name": "ALVELESTAT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"MR Imaging": [],
+"MRI": [],
+"MRI Scan": [],
+"MRI scan": [],
+"MTX": [],
+"MVA-SARS-2-ST": [],
+"MVC+CT": [],
+"MVC+FPV+CT": [],
+"MVC-101": [],
+"MVC-101 + Nivolumab": [],
+"MVP-S": [],
+"MYOBLOC": [
+{
+"chembl_id": "CHEMBL1201569",
+"pref_name": "RIMABOTULINUMTOXINB",
+"first_approval": 2000,
+"max_phase": "4.0"
+}
+],
+"MYOBLOC High Dose": [],
+"MYOBLOC Low Dose": [],
+"Macitentan": [
+{
+"chembl_id": "CHEMBL2103873",
+"pref_name": "MACITENTAN",
+"first_approval": 2010,
+"max_phase": "4.0"
+}
+],
+"Macro-aggregated": [],
+"Magnetic": [],
+"Magnetic Resonance": [],
+"Magnetic Resonance Imaging": [],
+"Magnetic resonance imaging": [],
+"Magrolimab": [
+{
+"chembl_id": "CHEMBL4297985",
+"pref_name": "MAGROLIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Malignant": [],
+"Malignant Neoplasms": [],
+"Maltodextrin": [
+{
+"chembl_id": "CHEMBL2107951",
+"pref_name": "MALTODEXTRIN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Maprotiline": [
+{
+"chembl_id": "CHEMBL21731",
+"pref_name": "MAPROTILINE",
+"first_approval": 1980,
+"max_phase": "4.0"
+}
+],
+"Maraviroc": [
+{
+"chembl_id": "CHEMBL256907",
+"pref_name": "MARAVIROC",
+"first_approval": 2007,
+"max_phase": "4.0"
+}
+],
+"Maraviroc+Favipiravir+CT": [],
+"Marcain": [
+{
+"chembl_id": "CHEMBL1200396",
+"pref_name": "BUPIVACAINE HYDROCHLORIDE",
+"first_approval": 1972,
+"max_phase": "4.0"
+}
+],
+"Marcaine": [
+{
+"chembl_id": "CHEMBL1200396",
+"pref_name": "BUPIVACAINE HYDROCHLORIDE",
+"first_approval": 1972,
+"max_phase": "4.0"
+}
+],
+"Maribavir": [
+{
+"chembl_id": "CHEMBL515408",
+"pref_name": "MARIBAVIR",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"Marrow": [],
+"Matched": [],
+"Matched placebo": [],
+"Matching Placebo": [],
+"Matching placebo": [],
+"Maveropepimut-S": [
+{
+"chembl_id": "CHEMBL4594319",
+"pref_name": "MAVEROPEPIMUT-S",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Maxtrex": [
+{
+"chembl_id": "CHEMBL34259",
+"pref_name": "METHOTREXATE",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"Medical": [],
+"Medicine": [],
+"Meditation": [],
+"Medsatrexate": [],
+"Mefenamic": [],
+"Mefenamic acid": [
+{
+"chembl_id": "CHEMBL686",
+"pref_name": "MEFENAMIC ACID",
+"first_approval": 1967,
+"max_phase": "4.0"
+}
+],
+"Megestrol": [
+{
+"chembl_id": "CHEMBL1201139",
+"pref_name": "MEGESTROL ACETATE",
+"first_approval": 1971,
+"max_phase": "4.0"
+}
+],
+"Megestrol Acetate": [
+{
+"chembl_id": "CHEMBL1201139",
+"pref_name": "MEGESTROL ACETATE",
+"first_approval": 1971,
+"max_phase": "4.0"
+}
+],
+"Mekinist": [
+{
+"chembl_id": "CHEMBL2103875",
+"pref_name": "TRAMETINIB",
+"first_approval": 2013,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL2105741",
+"pref_name": "TRAMETINIB DIMETHYL SULFOXIDE",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Mekinist\u00ae": [],
+"Mektovi": [
+{
+"chembl_id": "CHEMBL3187723",
+"pref_name": "BINIMETINIB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Meloxicam": [
+{
+"chembl_id": "CHEMBL599",
+"pref_name": "MELOXICAM",
+"first_approval": 2000,
+"max_phase": "4.0"
+}
+],
+"Melphalan": [
+{
+"chembl_id": "CHEMBL852",
+"pref_name": "MELPHALAN",
+"first_approval": 1964,
+"max_phase": "4.0"
+}
+],
+"Melphalanum": [],
+"MenACYW": [],
+"MenB": [],
+"MenQuadfi": [
+{
+"chembl_id": "CHEMBL6068498",
+"pref_name": "NEISSERIA MENINGITIDIS POLYSACCHARIDE CONJUGATED TO TETANUS TOXOID",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"MenQuadfi\u2122": [],
+"Meningococcal": [],
+"Meropenem": [
+{
+"chembl_id": "CHEMBL127",
+"pref_name": "MEROPENEM",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"Mesenchymal": [],
+"Mesenchymal Stem Cells": [],
+"Mestane": [],
+"Mesylate": [],
+"Metacortandralone": [],
+"Metamucil": [],
+"Metex": [],
+"Metformin": [
+{
+"chembl_id": "CHEMBL1431",
+"pref_name": "METFORMIN",
+"first_approval": 1995,
+"max_phase": "4.0"
+}
+],
+"Metformin XR": [],
+"Methacholine": [
+{
+"chembl_id": "CHEMBL978",
+"pref_name": "METHACHOLINE",
+"first_approval": 1986,
+"max_phase": "4.0"
+}
+],
+"Methacholine Chloride": [
+{
+"chembl_id": "CHEMBL1200764",
+"pref_name": "METHACHOLINE CHLORIDE",
+"first_approval": 1986,
+"max_phase": "4.0"
+}
+],
+"Methadone": [
+{
+"chembl_id": "CHEMBL651",
+"pref_name": "METHADONE",
+"first_approval": 1947,
+"max_phase": "4.0"
+}
+],
+"Methanesulfonic": [],
+"Methoblastin": [],
+"Methotrexate": [
+{
+"chembl_id": "CHEMBL34259",
+"pref_name": "METHOTREXATE",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"Methotrexate LPF": [
+{
+"chembl_id": "CHEMBL3244648",
+"pref_name": "METHOTREXATE SODIUM",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"Methotrexate Methylaminopterin": [],
+"Methotrexatum": [
+{
+"chembl_id": "CHEMBL34259",
+"pref_name": "METHOTREXATE",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"Methylaminopterin": [
+{
+"chembl_id": "CHEMBL34259",
+"pref_name": "METHOTREXATE",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"Meti Derm": [],
+"Meticortelone": [
+{
+"chembl_id": "CHEMBL1152",
+"pref_name": "PREDNISOLONE ACETATE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Metoprolol": [
+{
+"chembl_id": "CHEMBL13",
+"pref_name": "METOPROLOL",
+"first_approval": 1978,
+"max_phase": "4.0"
+}
+],
+"Metoprolol Succinate": [
+{
+"chembl_id": "CHEMBL2356097",
+"pref_name": "METOPROLOL SUCCINATE",
+"first_approval": 1992,
+"max_phase": "4.0"
+}
+],
+"Metotrexato": [
+{
+"chembl_id": "CHEMBL34259",
+"pref_name": "METHOTREXATE",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"Metrotex": [],
+"Mexate": [
+{
+"chembl_id": "CHEMBL3244648",
+"pref_name": "METHOTREXATE SODIUM",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"Mexate-AQ": [
+{
+"chembl_id": "CHEMBL3244648",
+"pref_name": "METHOTREXATE SODIUM",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"Micafungin": [
+{
+"chembl_id": "CHEMBL457547",
+"pref_name": "MICAFUNGIN",
+"first_approval": 2005,
+"max_phase": "4.0"
+}
+],
+"Microbiota": [],
+"Mielucin": [],
+"Mifepristone": [
+{
+"chembl_id": "CHEMBL1276308",
+"pref_name": "MIFEPRISTONE",
+"first_approval": 2000,
+"max_phase": "4.0"
+}
+],
+"Milademetan": [
+{
+"chembl_id": "CHEMBL4292264",
+"pref_name": "MILADEMETAN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Mim8 B, /mL": [],
+"Mim8 B, placebo": [],
+"Mindfulness": [],
+"Minocycline": [
+{
+"chembl_id": "CHEMBL1434",
+"pref_name": "MINOCYCLINE",
+"first_approval": 1971,
+"max_phase": "4.0"
+}
+],
+"Minocycline Group": [],
+"Misulban": [],
+"Misulfan": [],
+"Mitosan": [],
+"Mitoxan": [],
+"Mitoxantrone": [
+{
+"chembl_id": "CHEMBL58",
+"pref_name": "MITOXANTRONE",
+"first_approval": 1987,
+"max_phase": "4.0"
+}
+],
+"MoAb 2C4": [],
+"Mock inhaler": [],
+"Model1102": [],
+"Moderna": [],
+"Moderna COVID-19 Vaccine": [],
+"Moderna mRNA-1273 vaccine": [],
+"Modulated": [],
+"Module": [],
+"Mofetil": [],
+"Moisturizer": [],
+"Monoclonal": [],
+"Monoclonal Antibody 2C4": [],
+"Monohydrate": [],
+"Monosodium": [],
+"Monovalent": [],
+"Monthly": [],
+"Morphine": [
+{
+"chembl_id": "CHEMBL70",
+"pref_name": "MORPHINE",
+"first_approval": 1984,
+"max_phase": "4.0"
+}
+],
+"Morphine Sulfate": [
+{
+"chembl_id": "CHEMBL2103744",
+"pref_name": "MORPHINE SULFATE",
+"first_approval": 1984,
+"max_phase": "4.0"
+}
+],
+"Motrin": [
+{
+"chembl_id": "CHEMBL521",
+"pref_name": "IBUPROFEN",
+"first_approval": 1974,
+"max_phase": "4.0"
+}
+],
+"Mouth": [],
+"Mouthwash": [],
+"Mozobil": [
+{
+"chembl_id": "CHEMBL18442",
+"pref_name": "PLERIXAFOR",
+"first_approval": 2008,
+"max_phase": "4.0"
+}
+],
+"Mucosal": [],
+"Mucosal Atomization Device": [],
+"Multicomponent": [],
+"Mustard": [],
+"Mycophenolate": [
+{
+"chembl_id": "CHEMBL866",
+"pref_name": "MYCOPHENOLIC ACID",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"Mycophenolate Mofetil": [
+{
+"chembl_id": "CHEMBL1456",
+"pref_name": "MYCOPHENOLATE MOFETIL",
+"first_approval": 1995,
+"max_phase": "4.0"
+}
+],
+"Mycophenolate mofetil": [
+{
+"chembl_id": "CHEMBL1456",
+"pref_name": "MYCOPHENOLATE MOFETIL",
+"first_approval": 1995,
+"max_phase": "4.0"
+}
+],
+"Mycophenolate mofetil (MMF)": [],
+"Myeleukon": [],
+"Myeloleukon": [],
+"Myelosan": [
+{
+"chembl_id": "CHEMBL820",
+"pref_name": "BUSULFAN",
+"first_approval": 1954,
+"max_phase": "4.0"
+}
+],
+"Mylecytan": [],
+"Myleran": [
+{
+"chembl_id": "CHEMBL820",
+"pref_name": "BUSULFAN",
+"first_approval": 1954,
+"max_phase": "4.0"
+}
+],
+"Myoinositol": [],
+"N,N'', N''''-Triethylenethiophosphoramide": [],
+"NBI-98854": [
+{
+"chembl_id": "CHEMBL2364639",
+"pref_name": "VALBENAZINE",
+"first_approval": 2017,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL3707248",
+"pref_name": "VALBENAZINE TOSYLATE",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"NBTXR3": [
+{
+"chembl_id": "CHEMBL4298051",
+"pref_name": "HAFNIUM OXIDE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"NHS-IL12": [
+{
+"chembl_id": "CHEMBL4298056",
+"pref_name": "IMMUNOCYTOKINE NHS-IL12",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"NI-0501": [
+{
+"chembl_id": "CHEMBL3989977",
+"pref_name": "EMAPALUMAB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"NIS793": [
+{
+"chembl_id": "CHEMBL4298057",
+"pref_name": "NISEVOKITUG",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"NIVO": [],
+"NK Cell Therapy": [],
+"NLIR+FU/FA": [],
+"NMR Imaging": [],
+"NMRI": [],
+"NN0365-3769": [],
+"NNC0487-0111": [],
+"NNC0487-0111 A": [],
+"NNC0487-0111 B": [],
+"NOLVADEX": [
+{
+"chembl_id": "CHEMBL786",
+"pref_name": "TAMOXIFEN CITRATE",
+"first_approval": 1977,
+"max_phase": "4.0"
+}
+],
+"NOMAC-E2": [],
+"NOMAC-E2 COC": [],
+"NOX66": [],
+"NPB11L": [],
+"NSC 763093": [],
+"NSC 763760": [],
+"NSC-10281": [],
+"NT-I7": [
+{
+"chembl_id": "CHEMBL4594590",
+"pref_name": "EFINEPTAKIN ALFA",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"NX-13": [],
+"NX-13 250mg IR": [],
+"NX-13 500mg IR": [],
+"NX-13 500mg MR": [],
+"NX-13 IR": [],
+"NX-13 MR": [],
+"NYX-783": [
+{
+"chembl_id": "CHEMBL5314589",
+"pref_name": "RISEVISTINEL",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"NaCl 0.9%": [
+{
+"chembl_id": "CHEMBL1200574",
+"pref_name": "SODIUM CHLORIDE",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Nab paclitaxel": [],
+"Nabilone": [
+{
+"chembl_id": "CHEMBL2218896",
+"pref_name": "NABILONE",
+"first_approval": 1985,
+"max_phase": "4.0"
+}
+],
+"Nabiximols": [
+{
+"chembl_id": "CHEMBL3833333",
+"pref_name": "NABIXIMOLS",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Nalmefene": [
+{
+"chembl_id": "CHEMBL982",
+"pref_name": "NALMEFENE",
+"first_approval": 1995,
+"max_phase": "4.0"
+}
+],
+"Nalmefene Hydrochloride Injection": [],
+"Naloxone": [
+{
+"chembl_id": "CHEMBL80",
+"pref_name": "NALOXONE",
+"first_approval": 1971,
+"max_phase": "4.0"
+}
+],
+"Naloxone Hydrochloride Injection": [],
+"Naltrexone": [
+{
+"chembl_id": "CHEMBL19019",
+"pref_name": "NALTREXONE",
+"first_approval": 1984,
+"max_phase": "4.0"
+}
+],
+"Nanoparticles": [],
+"Narcan": [
+{
+"chembl_id": "CHEMBL1718",
+"pref_name": "NALOXONE HYDROCHLORIDE",
+"first_approval": 1971,
+"max_phase": "4.0"
+}
+],
+"Narcan nasal spray": [],
+"Naropin": [
+{
+"chembl_id": "CHEMBL1889140",
+"pref_name": "ROPIVACAINE HYDROCHLORIDE",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"Nasal": [],
+"Natalizumab": [
+{
+"chembl_id": "CHEMBL1201607",
+"pref_name": "NATALIZUMAB",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"Nebulization": [],
+"Nedd8-Activating": [],
+"NeilMed": [],
+"Neoplasms": [],
+"Neoprobe": [],
+"Neoral": [
+{
+"chembl_id": "CHEMBL160",
+"pref_name": "CYCLOSPORINE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"Neosar": [
+{
+"chembl_id": "CHEMBL1200796",
+"pref_name": "CYCLOPHOSPHAMIDE",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Netarsudil": [
+{
+"chembl_id": "CHEMBL4594250",
+"pref_name": "NETARSUDIL",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Netarsudil Ophthalmic": [],
+"Nexplanon": [
+{
+"chembl_id": "CHEMBL1531",
+"pref_name": "ETONOGESTREL",
+"first_approval": 2001,
+"max_phase": "4.0"
+}
+],
+"Niclosamide": [
+{
+"chembl_id": "CHEMBL1448",
+"pref_name": "NICLOSAMIDE",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Ningetinib": [
+{
+"chembl_id": "CHEMBL3984441",
+"pref_name": "NINGETINIB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Ningetinib Tosylate\uff08multi-target TKI\uff09": [],
+"Niraparib": [
+{
+"chembl_id": "CHEMBL1094636",
+"pref_name": "NIRAPARIB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Nitrate": [],
+"Nitrates": [],
+"Nitric": [],
+"Nitric Oxide Gas": [],
+"Nitric Oxide inhalation": [],
+"Nitrofurantoin": [
+{
+"chembl_id": "CHEMBL572",
+"pref_name": "NITROFURANTOIN",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"Nitrogen": [
+{
+"chembl_id": "CHEMBL142438",
+"pref_name": "NITROGEN",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"Nivolumab": [
+{
+"chembl_id": "CHEMBL2108738",
+"pref_name": "NIVOLUMAB",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"Nivolumab and Chemotherapy": [],
+"Nomegestrol": [
+{
+"chembl_id": "CHEMBL2105722",
+"pref_name": "NOMEGESTROL",
+"first_approval": null,
+"max_phase": "4.0"
+}
+],
+"Norco": [],
+"Nordicort": [],
+"Norepinephrine": [
+{
+"chembl_id": "CHEMBL1437",
+"pref_name": "NOREPINEPHRINE",
+"first_approval": 1950,
+"max_phase": "4.0"
+}
+],
+"Normal": [],
+"Norvasc": [
+{
+"chembl_id": "CHEMBL1491",
+"pref_name": "AMLODIPINE",
+"first_approval": 1992,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL1200402",
+"pref_name": "AMLODIPINE BESYLATE",
+"first_approval": 1992,
+"max_phase": "4.0"
+}
+],
+"Nositrol": [],
+"Novatrex": [],
+"Nuclear": [],
+"Nutrition": [],
+"Nuwiq": [
+{
+"chembl_id": "CHEMBL2108319",
+"pref_name": "SIMOCTOCOG ALFA",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Nuwiq (Atlanta protocol)": [],
+"OC-01": [],
+"OC-01 Nasal Spray": [],
+"OH2 injection": [],
+"OL 27-400": [],
+"ORTD-1": [],
+"ORTD-1 high dose": [],
+"ORTD-1 low dose": [],
+"ORTD-1 mid dose": [],
+"OTO-313": [
+{
+"chembl_id": "CHEMBL3989791",
+"pref_name": "GACYCLIDINE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Obicetrapib": [
+{
+"chembl_id": "CHEMBL3785197",
+"pref_name": "OBICETRAPIB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Obicetrapib placebo": [],
+"Obinutuzumab": [
+{
+"chembl_id": "CHEMBL1743048",
+"pref_name": "OBINUTUZUMAB",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Ocular": [],
+"Odevixibat": [
+{
+"chembl_id": "CHEMBL4297588",
+"pref_name": "ODEVIXIBAT",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"Ogivri": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Olaparib": [
+{
+"chembl_id": "CHEMBL521686",
+"pref_name": "OLAPARIB",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"OligoG": [],
+"Olumiant": [
+{
+"chembl_id": "CHEMBL2105759",
+"pref_name": "BARICITINIB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Omega-3": [
+{
+"chembl_id": "CHEMBL4298065",
+"pref_name": "OMEGA-3 FATTY ACIDS",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Omega-3 (EPA+DHA)": [],
+"Omicron": [],
+"Omnipaque": [
+{
+"chembl_id": "CHEMBL1200455",
+"pref_name": "IOHEXOL",
+"first_approval": 1985,
+"max_phase": "4.0"
+}
+],
+"Omnipaque\u2122": [],
+"Omnipaque\u2122 (Iohexol)": [],
+"Omnitarg": [
+{
+"chembl_id": "CHEMBL2007641",
+"pref_name": "PERTUZUMAB",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Onabotulinumtoxin-A": [],
+"OnabotulinumtoxinA": [
+{
+"chembl_id": "CHEMBL1201574",
+"pref_name": "ONABOTULINUMTOXINA",
+"first_approval": 1991,
+"max_phase": "4.0"
+}
+],
+"OncoTICE": [],
+"Oncotiotepa": [],
+"Onivyde": [
+{
+"chembl_id": "CHEMBL3989514",
+"pref_name": "IRINOTECAN HYDROCHLORIDE",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"Ontruzant": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Opdivo": [
+{
+"chembl_id": "CHEMBL2108738",
+"pref_name": "NIVOLUMAB",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"Opdivo\u00ae": [],
+"Open-label": [],
+"Open-label ST266": [],
+"Open-label imsidolimab": [],
+"Ophthalmic": [],
+"Opredsone": [],
+"Oral Estradiol tablets": [],
+"Oral Lenacapavir": [],
+"Oral semaglutide": [],
+"Original": [],
+"Original Fibre Metamucil": [],
+"Osanetant": [
+{
+"chembl_id": "CHEMBL346178",
+"pref_name": "OSANETANT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Otilimab": [
+{
+"chembl_id": "CHEMBL2109433",
+"pref_name": "OTILIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Oxaliplatin": [
+{
+"chembl_id": "CHEMBL414804",
+"pref_name": "OXALIPLATIN",
+"first_approval": 2002,
+"max_phase": "4.0"
+}
+],
+"Oxandrolone": [
+{
+"chembl_id": "CHEMBL1200436",
+"pref_name": "OXANDROLONE",
+"first_approval": 1964,
+"max_phase": "4.0"
+}
+],
+"Oxervate": [
+{
+"chembl_id": "CHEMBL4297852",
+"pref_name": "CENEGERMIN",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Oxide": [],
+"Oxide-containing": [],
+"OxyContin": [
+{
+"chembl_id": "CHEMBL1200890",
+"pref_name": "OXYCODONE HYDROCHLORIDE",
+"first_approval": 1950,
+"max_phase": "4.0"
+}
+],
+"Oxycodone": [
+{
+"chembl_id": "CHEMBL656",
+"pref_name": "OXYCODONE",
+"first_approval": 1950,
+"max_phase": "4.0"
+}
+],
+"Ozanimod": [
+{
+"chembl_id": "CHEMBL3707247",
+"pref_name": "OZANIMOD",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"Ozurdex": [
+{
+"chembl_id": "CHEMBL384467",
+"pref_name": "DEXAMETHASONE",
+"first_approval": 1958,
+"max_phase": "4.0"
+}
+],
+"PARP Inhibitor AZD2281": [],
+"PBO": [],
+"PBO-Inj": [],
+"PBPC transplantation": [],
+"PBSCT": [],
+"PCS12852": [],
+"PD-1 inhibitor": [],
+"PD-L1": [
+{
+"chembl_id": "CHEMBL4298070",
+"pref_name": "PROGRAMMED CELL DEATH 1 LIGAND 1",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"PF-05280014": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"PF-07263689": [],
+"PF-07291177": [],
+"PF-07850327": [
+{
+"chembl_id": "CHEMBL5095210",
+"pref_name": "VEPDEGESTRANT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"PF-07901801": [
+{
+"chembl_id": "CHEMBL4802185",
+"pref_name": "MAPLIRPACEPT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"PF-07923568": [
+{
+"chembl_id": "CHEMBL4297497",
+"pref_name": "SISUNATOVIR",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"PF-07923568, RV521": [],
+"PH94B": [
+{
+"chembl_id": "CHEMBL5095042",
+"pref_name": "FASEDIENOL",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"PLD": [],
+"PPIs IV infusion": [],
+"PRAX-114": [],
+"PRAX-114 or PRAX-114": [],
+"PRP injection dose": [],
+"PSMA targeted therapy": [],
+"PSMA-11": [
+{
+"chembl_id": "CHEMBL3578202",
+"pref_name": "GOZETOTIDE",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"PUNCTAL": [],
+"PVP-I": [],
+"Paclitaxel": [
+{
+"chembl_id": "CHEMBL428647",
+"pref_name": "PACLITAXEL",
+"first_approval": 1992,
+"max_phase": "4.0"
+}
+],
+"Palbociclib": [
+{
+"chembl_id": "CHEMBL189963",
+"pref_name": "PALBOCICLIB",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"Pamrevlumab": [
+{
+"chembl_id": "CHEMBL2109377",
+"pref_name": "PAMREVLUMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Panafcortelone": [],
+"Pantoprazole": [
+{
+"chembl_id": "CHEMBL1502",
+"pref_name": "PANTOPRAZOLE",
+"first_approval": 2000,
+"max_phase": "4.0"
+}
+],
+"Paraplatin": [
+{
+"chembl_id": "CHEMBL1351",
+"pref_name": "CARBOPLATIN",
+"first_approval": 1989,
+"max_phase": "4.0"
+}
+],
+"Part 1": [],
+"Part 1 (STI-6129)": [],
+"Part 2": [],
+"Part 2 (STI-6129)": [],
+"PedvaxHIB": [
+{
+"chembl_id": "CHEMBL4298071",
+"pref_name": "HAEMOPHILUS INFLUENZAE TYPE B CAPSULAR POLYSACCHARIDE MENINGOCOCCAL OUTER MEMBRANE PROTEIN CONJUGATE ANTIGEN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Pegenzileukin": [
+{
+"chembl_id": "CHEMBL4650426",
+"pref_name": "PEGENZILEUKIN",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Pegylated": [],
+"Pegylated Liposomal Doxorubicin": [],
+"Pembrolizumab": [
+{
+"chembl_id": "CHEMBL3137343",
+"pref_name": "PEMBROLIZUMAB",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Pemetrexed": [
+{
+"chembl_id": "CHEMBL225072",
+"pref_name": "PEMETREXED",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"Pemvidutide": [
+{
+"chembl_id": "CHEMBL5095142",
+"pref_name": "PEMVIDUTIDE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Pepcid": [
+{
+"chembl_id": "CHEMBL902",
+"pref_name": "FAMOTIDINE",
+"first_approval": 1986,
+"max_phase": "4.0"
+}
+],
+"Perampanel": [
+{
+"chembl_id": "CHEMBL1214124",
+"pref_name": "PERAMPANEL",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"PerioGard": [
+{
+"chembl_id": "CHEMBL4297088",
+"pref_name": "CHLORHEXIDINE GLUCONATE",
+"first_approval": 1976,
+"max_phase": "4.0"
+}
+],
+"Period": [],
+"Periogard": [
+{
+"chembl_id": "CHEMBL4297088",
+"pref_name": "CHLORHEXIDINE GLUCONATE",
+"first_approval": 1976,
+"max_phase": "4.0"
+}
+],
+"Peripheral": [],
+"Perjeta": [
+{
+"chembl_id": "CHEMBL2007641",
+"pref_name": "PERTUZUMAB",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Peroxyl": [
+{
+"chembl_id": "CHEMBL71595",
+"pref_name": "HYDROGEN PEROXIDE",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Pertuzumab": [
+{
+"chembl_id": "CHEMBL2007641",
+"pref_name": "PERTUZUMAB",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Pertuzumab Biosimilar BCD-178": [],
+"Pertuzumab Biosimilar EG1206A": [],
+"Pertuzumab Biosimilar HLX11": [],
+"Pertuzumab Biosimilar HS627": [],
+"Pertuzumab Biosimilar TQB2440": [],
+"Pevonedistat": [
+{
+"chembl_id": "CHEMBL1231160",
+"pref_name": "PEVONEDISTAT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Pfizer-BioNTech": [],
+"Pfizer-BioNTech COVID-19 Vaccine": [],
+"Phenelzine": [
+{
+"chembl_id": "CHEMBL1089",
+"pref_name": "PHENELZINE",
+"first_approval": 1961,
+"max_phase": "4.0"
+}
+],
+"Phenobarbital": [
+{
+"chembl_id": "CHEMBL40",
+"pref_name": "PHENOBARBITAL",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"Phenobarbital Sodium Injection": [],
+"Phenylalanine": [
+{
+"chembl_id": "CHEMBL301523",
+"pref_name": "PHENYLALANINE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Phenylalanine Mustard": [
+{
+"chembl_id": "CHEMBL852",
+"pref_name": "MELPHALAN",
+"first_approval": 1964,
+"max_phase": "4.0"
+}
+],
+"Phenylalanine Nitrogen Mustard": [],
+"Phenylephrine": [
+{
+"chembl_id": "CHEMBL1215",
+"pref_name": "PHENYLEPHRINE",
+"first_approval": 1952,
+"max_phase": "4.0"
+}
+],
+"Phosphate": [],
+"Photon": [],
+"Physical": [],
+"Physical therapy": [],
+"Placebo (NNC0487-0111)": [],
+"Placebo (Normal Saline)": [],
+"Placebo (semaglutide)": [],
+"Placebo (vehicle)": [],
+"Placebo A": [],
+"Placebo Administration": [],
+"Placebo B": [],
+"Placebo Group": [],
+"Placebo Mouthwash": [],
+"Placebo Ophthalmic Solution": [],
+"Placebo Oral Tablet": [],
+"Placebo Topical Gel": [],
+"Placebo film": [],
+"Placebo for ABBV-990": [],
+"Placebo for BAY1817080": [],
+"Placebo for Pregabalin": [],
+"Placebo for anti-CD14": [],
+"Placebo inhalation": [],
+"Placebo injection": [],
+"Placebo injection (PBO-Inj)": [],
+"Placebo intravenous": [],
+"Placebo oral capsule": [],
+"Placebo patch": [],
+"Placebo pill": [],
+"Placebo to FTC/TDF": [],
+"Placebo to ISL": [],
+"Placebo to empagliflozin": [],
+"Placebo/Vehicle": [],
+"Placebos": [],
+"Plant": [],
+"Plaquenil": [
+{
+"chembl_id": "CHEMBL1690",
+"pref_name": "HYDROXYCHLOROQUINE SULFATE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Platelets": [
+{
+"chembl_id": "CHEMBL2108632",
+"pref_name": "PLATELETS",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Platinol": [
+{
+"chembl_id": "CHEMBL11359",
+"pref_name": "CISPLATIN",
+"first_approval": 1978,
+"max_phase": "4.0"
+}
+],
+"Plerixafor": [
+{
+"chembl_id": "CHEMBL18442",
+"pref_name": "PLERIXAFOR",
+"first_approval": 2008,
+"max_phase": "4.0"
+}
+],
+"Plerixafor 20 MG/ML": [],
+"Plitidepsin": [
+{
+"chembl_id": "CHEMBL451930",
+"pref_name": "PLITIDEPSIN",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Polysaccharide": [],
+"Pomalidomide": [
+{
+"chembl_id": "CHEMBL43452",
+"pref_name": "POMALIDOMIDE",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Pomalyst": [
+{
+"chembl_id": "CHEMBL43452",
+"pref_name": "POMALIDOMIDE",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Post Induction Surgery": [],
+"Post Induction XRT": [],
+"Povidone-iodine": [
+{
+"chembl_id": "CHEMBL1201724",
+"pref_name": "POVIDONE-IODINE",
+"first_approval": 1985,
+"max_phase": "4.0"
+}
+],
+"Povidone-iodine 0.5%": [],
+"Powder": [],
+"Precedex": [
+{
+"chembl_id": "CHEMBL2106195",
+"pref_name": "DEXMEDETOMIDINE HYDROCHLORIDE",
+"first_approval": 1999,
+"max_phase": "4.0"
+}
+],
+"Precision": [],
+"Precortisyl": [
+{
+"chembl_id": "CHEMBL131",
+"pref_name": "PREDNISOLONE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Pred-Clysma": [],
+"Predeltilone": [],
+"Predni-Coelin": [],
+"Predni-Helvacort": [],
+"Prednicortelone": [],
+"Prednisolone": [
+{
+"chembl_id": "CHEMBL131",
+"pref_name": "PREDNISOLONE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Prednisolonum": [],
+"Prednisone": [
+{
+"chembl_id": "CHEMBL635",
+"pref_name": "PREDNISONE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Prednisone or Prednisolone": [],
+"Prefilled": [],
+"Pregabalin": [
+{
+"chembl_id": "CHEMBL1059",
+"pref_name": "PREGABALIN",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"Pregabalin 150mg": [],
+"Pregabalin 300mg": [],
+"Pregabalin 75mg": [],
+"Pregabalin with oxycodone": [],
+"Prelone": [
+{
+"chembl_id": "CHEMBL131",
+"pref_name": "PREDNISOLONE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Prenilone": [],
+"Preservative": [],
+"Preservative Free Lidocaine": [],
+"Preservative-free": [],
+"Prilosec": [
+{
+"chembl_id": "CHEMBL1503",
+"pref_name": "OMEPRAZOLE",
+"first_approval": 1989,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL1567328",
+"pref_name": "OMEPRAZOLE MAGNESIUM",
+"first_approval": 2003,
+"max_phase": "4.0"
+}
+],
+"Probiotic": [],
+"Procytox": [
+{
+"chembl_id": "CHEMBL1200796",
+"pref_name": "CYCLOPHOSPHAMIDE",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Progenitor": [],
+"Progesterone": [
+{
+"chembl_id": "CHEMBL103",
+"pref_name": "PROGESTERONE",
+"first_approval": 1976,
+"max_phase": "4.0"
+}
+],
+"Prograf": [
+{
+"chembl_id": "CHEMBL269732",
+"pref_name": "TACROLIMUS ANHYDROUS",
+"first_approval": 1994,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL3989887",
+"pref_name": "TACROLIMUS",
+"first_approval": 1994,
+"max_phase": "4.0"
+}
+],
+"Proleukin": [
+{
+"chembl_id": "CHEMBL1201438",
+"pref_name": "ALDESLEUKIN",
+"first_approval": 1992,
+"max_phase": "4.0"
+}
+],
+"Proleukin (Aldesleukin)": [],
+"Propofol": [
+{
+"chembl_id": "CHEMBL526",
+"pref_name": "PROPOFOL",
+"first_approval": 1989,
+"max_phase": "4.0"
+}
+],
+"Protein": [],
+"Proton": [],
+"Protopic": [
+{
+"chembl_id": "CHEMBL3989887",
+"pref_name": "TACROLIMUS",
+"first_approval": 1994,
+"max_phase": "4.0"
+}
+],
+"Proxalutamide": [
+{
+"chembl_id": "CHEMBL4594417",
+"pref_name": "PRUXELUTAMIDE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Pulmicort": [
+{
+"chembl_id": "CHEMBL1370",
+"pref_name": "BUDESONIDE",
+"first_approval": 1994,
+"max_phase": "4.0"
+}
+],
+"Purified": [],
+"QIV": [],
+"QL 1701": [],
+"QL-1701": [],
+"QL1701": [],
+"Quadratus": [],
+"Quadratus lumborum block": [],
+"Quadrivalent": [],
+"Quadrivalent influenza vaccine": [],
+"Quality": [],
+"Quality-of-Life": [],
+"Quality-of-Life Assessment": [],
+"Questionnaire": [],
+"Questionnaire Administration": [],
+"RAIN-32": [
+{
+"chembl_id": "CHEMBL4292264",
+"pref_name": "MILADEMETAN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"REACT": [],
+"REGEN-COV": [],
+"REGEN-COV\u2122": [],
+"REGN-COV2": [],
+"REGN10933": [
+{
+"chembl_id": "CHEMBL4650248",
+"pref_name": "CASIRIVIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"REGN10987": [
+{
+"chembl_id": "CHEMBL4650249",
+"pref_name": "IMDEVIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"REGN1500": [
+{
+"chembl_id": "CHEMBL3545191",
+"pref_name": "EVINACUMAB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"REGN1908-1909": [],
+"REGN5713": [],
+"REGN5714": [
+{
+"chembl_id": "CHEMBL5095374",
+"pref_name": "UMESOLERBART",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"REGN5715": [],
+"RESP301": [],
+"RG7446": [
+{
+"chembl_id": "CHEMBL3707227",
+"pref_name": "ATEZOLIZUMAB",
+"first_approval": 2016,
+"max_phase": "4.0"
+}
+],
+"RG7716": [
+{
+"chembl_id": "CHEMBL4297750",
+"pref_name": "FARICIMAB",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"RIF": [],
+"RINVOQ": [
+{
+"chembl_id": "CHEMBL5315119",
+"pref_name": "UPADACITINIB HEMIHYDRATE",
+"first_approval": 2019,
+"max_phase": "4.0"
+}
+],
+"RIST4721": [
+{
+"chembl_id": "CHEMBL5095217",
+"pref_name": "VIMNERIXIN",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"RO0452317": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"RO4368451": [],
+"RO5534262": [],
+"RO5541267": [],
+"RO6867461": [
+{
+"chembl_id": "CHEMBL4297750",
+"pref_name": "FARICIMAB",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"RPT193": [],
+"RPTR-168": [],
+"RQ-00000007": [
+{
+"chembl_id": "CHEMBL3039498",
+"pref_name": "GRAPIPRANT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"RQ-07": [],
+"RSVPreF3": [],
+"RT 50 Gy": [],
+"RT 54 GY": [],
+"RT 60 GY": [],
+"RU486": [
+{
+"chembl_id": "CHEMBL1276308",
+"pref_name": "MIFEPRISTONE",
+"first_approval": 2000,
+"max_phase": "4.0"
+}
+],
+"RUTF": [],
+"RUTI\u00ae vaccine": [],
+"RV521": [
+{
+"chembl_id": "CHEMBL4297497",
+"pref_name": "SISUNATOVIR",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"RVM-V001": [],
+"RVM-V001 10 \u00b5g": [],
+"RVM-V001 30 \u00b5g": [],
+"RVM-V001 60 \u00b5g": [],
+"RVM-V002": [],
+"RVM-V002 30 \u00b5g": [],
+"RXC004": [],
+"Rabbit": [],
+"Rabbit ATG": [],
+"Rabbit Anti-Thymocyte Globulin": [],
+"Rabbit Antithymocyte Globulin": [],
+"Radiation Therapy": [],
+"Radiation Therapy, NOS": [],
+"Radiation, Intensity-Modulated Radiotherapy": [],
+"Radiotherapeutics": [],
+"Radiotherapy": [],
+"Ralinepag": [
+{
+"chembl_id": "CHEMBL3301604",
+"pref_name": "RALINEPAG",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Rasigiline": [],
+"Ready-to-use": [],
+"Ready-to-use therapeutic food": [],
+"Recifercept": [
+{
+"chembl_id": "CHEMBL4650420",
+"pref_name": "RECIFERCEPT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Recombinant": [],
+"Recombinant human IL-7-hyFc": [],
+"Recombinant influenza vaccine": [],
+"Reference": [],
+"Reference double dose": [],
+"Reference product": [],
+"Reference single dose": [],
+"Refresh": [],
+"Refresh Plus": [],
+"RegenerEyes": [],
+"Reglan": [
+{
+"chembl_id": "CHEMBL1200940",
+"pref_name": "METOCLOPRAMIDE HYDROCHLORIDE",
+"first_approval": 1979,
+"max_phase": "4.0"
+}
+],
+"Regorafenib": [
+{
+"chembl_id": "CHEMBL1946170",
+"pref_name": "REGORAFENIB",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Regorafenib 40 MG": [],
+"Reldesemtiv": [
+{
+"chembl_id": "CHEMBL4297600",
+"pref_name": "RELDESEMTIV",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Remdesivir": [
+{
+"chembl_id": "CHEMBL4065616",
+"pref_name": "REMDESIVIR",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"Remimazolam": [
+{
+"chembl_id": "CHEMBL4297526",
+"pref_name": "REMIMAZOLAM",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"Renal": [],
+"Research": [],
+"Research blood draw": [],
+"Resection": [],
+"Resonance": [],
+"Retroviral": [],
+"Revatio": [
+{
+"chembl_id": "CHEMBL1737",
+"pref_name": "SILDENAFIL CITRATE",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Revimmune": [
+{
+"chembl_id": "CHEMBL1200796",
+"pref_name": "CYCLOPHOSPHAMIDE",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Rheumatrex": [],
+"Rhumab": [],
+"Rhumab 2C4": [
+{
+"chembl_id": "CHEMBL2007641",
+"pref_name": "PERTUZUMAB",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Ribavirin": [
+{
+"chembl_id": "CHEMBL1643",
+"pref_name": "RIBAVIRIN",
+"first_approval": 1985,
+"max_phase": "4.0"
+}
+],
+"Rifampin": [
+{
+"chembl_id": "CHEMBL374478",
+"pref_name": "RIFAMPIN",
+"first_approval": 1971,
+"max_phase": "4.0"
+}
+],
+"Rilsodotin": [],
+"Rinse": [],
+"Rintatolimod": [
+{
+"chembl_id": "CHEMBL2107862",
+"pref_name": "RINTATOLIMOD",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Risankizumab": [
+{
+"chembl_id": "CHEMBL3990029",
+"pref_name": "RISANKIZUMAB",
+"first_approval": 2019,
+"max_phase": "4.0"
+}
+],
+"Rituxan": [
+{
+"chembl_id": "CHEMBL1201576",
+"pref_name": "RITUXIMAB",
+"first_approval": 1997,
+"max_phase": "4.0"
+}
+],
+"Rituxan\u00ae": [],
+"Rituximab": [
+{
+"chembl_id": "CHEMBL1201576",
+"pref_name": "RITUXIMAB",
+"first_approval": 1997,
+"max_phase": "4.0"
+}
+],
+"Rituximab Biosimilar HLX01": [],
+"Ro 09-1978/000": [
+{
+"chembl_id": "CHEMBL1773",
+"pref_name": "CAPECITABINE",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Roche": [
+{
+"chembl_id": "CHEMBL1622",
+"pref_name": "FOLIC ACID",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Roche DPM Module": [],
+"Roflumilast": [
+{
+"chembl_id": "CHEMBL193240",
+"pref_name": "ROFLUMILAST",
+"first_approval": 2010,
+"max_phase": "4.0"
+}
+],
+"Roflumilast Cream 0.15%": [],
+"Ronapreve": [],
+"Ronapreve\u2122": [],
+"Ropidoxuridine": [
+{
+"chembl_id": "CHEMBL2103821",
+"pref_name": "ROPIDOXURIDINE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Ropivacaine": [
+{
+"chembl_id": "CHEMBL1077896",
+"pref_name": "ROPIVACAINE",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"Rosuvastatin": [
+{
+"chembl_id": "CHEMBL1496",
+"pref_name": "ROSUVASTATIN",
+"first_approval": 2003,
+"max_phase": "4.0"
+}
+],
+"Rozanolixizumab": [
+{
+"chembl_id": "CHEMBL4297820",
+"pref_name": "ROZANOLIXIZUMAB",
+"first_approval": 2023,
+"max_phase": "4.0"
+}
+],
+"Ruxolitinib": [
+{
+"chembl_id": "CHEMBL1789941",
+"pref_name": "RUXOLITINIB",
+"first_approval": 2011,
+"max_phase": "4.0"
+}
+],
+"Ruxolitinib cream": [],
+"Rybrevant": [
+{
+"chembl_id": "CHEMBL4297774",
+"pref_name": "AMIVANTAMAB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"S-protein": [],
+"S95014": [],
+"SABR": [],
+"SAF312": [
+{
+"chembl_id": "CHEMBL3544953",
+"pref_name": "SAF312",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"SAF312 Placebo": [],
+"SAR408701": [
+{
+"chembl_id": "CHEMBL4298098",
+"pref_name": "TUSAMITAMAB RAVTANSINE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"SARS-CoV-2": [],
+"SB3": [],
+"SBRT": [],
+"SCB-2019": [],
+"SCB-2023": [],
+"SCH 900475": [],
+"SCTA01": [
+{
+"chembl_id": "CHEMBL4802216",
+"pref_name": "UPANOVIMAB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"SCTA01 and SCTA01C": [],
+"SCTA01C": [],
+"SCY-078": [
+{
+"chembl_id": "CHEMBL4297513",
+"pref_name": "IBREXAFUNGERP",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"SEP-363856": [
+{
+"chembl_id": "CHEMBL4650337",
+"pref_name": "ULOTARONT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"SGN-ALPV": [],
+"SGN-STNV": [],
+"SH T 586": [],
+"SHP620": [],
+"SHR-1703": [],
+"SIBP-01": [],
+"SII B.1.351": [],
+"SII B.1.617.2": [],
+"SII Bivalent": [],
+"SIM0417": [
+{
+"chembl_id": "CHEMBL5570561",
+"pref_name": "SIMNOTRELVIR",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"SLAMF7": [],
+"SLAMF7 FPBMC": [],
+"SNK01": [
+{
+"chembl_id": "CHEMBL5314888",
+"pref_name": "TROCULEUCEL",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"SP-2577": [
+{
+"chembl_id": "CHEMBL4297641",
+"pref_name": "SECLIDEMSTAT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"SPECT": [],
+"SPI-62": [
+{
+"chembl_id": "CHEMBL5314513",
+"pref_name": "CLOFUTRIBEN",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"SQZ-AAC-HPV": [],
+"ST266": [],
+"STEPA": [],
+"STI-3031": [
+{
+"chembl_id": "CHEMBL4650423",
+"pref_name": "DANBURSTOTUG",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"STI-3258": [],
+"STI-6129": [],
+"STRO-001": [
+{
+"chembl_id": "CHEMBL5314812",
+"pref_name": "BEZETABART DEBOTANSINE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"STSG-0002": [],
+"STSG-0002 Injection": [],
+"SYD-985": [
+{
+"chembl_id": "CHEMBL4298178",
+"pref_name": "TRASTUZUMAB DUOCARMAZINE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"SYD985": [
+{
+"chembl_id": "CHEMBL4298178",
+"pref_name": "TRASTUZUMAB DUOCARMAZINE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"SYNB1934v1": [],
+"SYNTHETIC": [],
+"Sabizabulin": [
+{
+"chembl_id": "CHEMBL2163631",
+"pref_name": "SABIZABULIN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Sabizabulin/Sacituzumab govitecan-hziy Combo": [],
+"Sacituzumab": [
+{
+"chembl_id": "CHEMBL3707405",
+"pref_name": "SACITUZUMAB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Sacituzumab Govitecan-hziy": [
+{
+"chembl_id": "CHEMBL3545262",
+"pref_name": "SACITUZUMAB GOVITECAN",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"Safety": [],
+"Salbutamol": [
+{
+"chembl_id": "CHEMBL714",
+"pref_name": "ALBUTEROL",
+"first_approval": 1981,
+"max_phase": "4.0"
+}
+],
+"Salbutamol sulfate": [
+{
+"chembl_id": "CHEMBL1441059",
+"pref_name": "ALBUTEROL SULFATE",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Saline Injection": [],
+"Saline Irrigation": [],
+"Saline injection control": [],
+"Saline solution": [
+{
+"chembl_id": "CHEMBL1200574",
+"pref_name": "SODIUM CHLORIDE",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Salt water": [],
+"Sample": [],
+"Sandimmune": [
+{
+"chembl_id": "CHEMBL160",
+"pref_name": "CYCLOSPORINE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"SangCya": [
+{
+"chembl_id": "CHEMBL160",
+"pref_name": "CYCLOSPORINE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"Sarcoclorin": [],
+"Sarilumab": [
+{
+"chembl_id": "CHEMBL2108730",
+"pref_name": "SARILUMAB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Sarilumab Prefilled Syringe": [],
+"Sarkolysin": [],
+"Sasanlimab": [
+{
+"chembl_id": "CHEMBL4298191",
+"pref_name": "SASANLIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Sativex": [
+{
+"chembl_id": "CHEMBL3833333",
+"pref_name": "NABIXIMOLS",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Self-administered": [],
+"Self-administered aromatherapy": [],
+"Semaglutide": [
+{
+"chembl_id": "CHEMBL2108724",
+"pref_name": "SEMAGLUTIDE",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Semaglutide B": [],
+"Semaglutide J": [],
+"Serogroups": [],
+"Serum": [],
+"Setmelanotide": [
+{
+"chembl_id": "CHEMBL3301624",
+"pref_name": "SETMELANOTIDE",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"Sham Comparator": [],
+"Sham Procedure": [],
+"Short": [],
+"Short course ChemoRT": [],
+"Signatera": [],
+"Signatera ctDNA assay": [],
+"Sildenafil": [
+{
+"chembl_id": "CHEMBL192",
+"pref_name": "SILDENAFIL",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Sildenafil 100 mg": [],
+"Sildenafil Citrate ODF": [],
+"Simoctocog": [],
+"Simoctocog alfa": [
+{
+"chembl_id": "CHEMBL2108319",
+"pref_name": "SIMOCTOCOG ALFA",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Simvastatin": [
+{
+"chembl_id": "CHEMBL1064",
+"pref_name": "SIMVASTATIN",
+"first_approval": 1991,
+"max_phase": "4.0"
+}
+],
+"Sing2016": [],
+"Sing2016 M2SR H3N2": [],
+"Sinsurrene": [],
+"Sintilimab": [
+{
+"chembl_id": "CHEMBL4297829",
+"pref_name": "SINTILIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Sisunatovir": [
+{
+"chembl_id": "CHEMBL4297497",
+"pref_name": "SISUNATOVIR",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Sitravatinib": [
+{
+"chembl_id": "CHEMBL3989926",
+"pref_name": "SITRAVATINIB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Skyrizi": [
+{
+"chembl_id": "CHEMBL3990029",
+"pref_name": "RISANKIZUMAB",
+"first_approval": 2019,
+"max_phase": "4.0"
+}
+],
+"SoC": [],
+"Sodium": [],
+"Sodium chloride": [
+{
+"chembl_id": "CHEMBL1200574",
+"pref_name": "SODIUM CHLORIDE",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Sodium hydrocortisone succinate": [],
+"Sofosbuvir": [
+{
+"chembl_id": "CHEMBL1259059",
+"pref_name": "SOFOSBUVIR",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Soliris": [
+{
+"chembl_id": "CHEMBL1201828",
+"pref_name": "ECULIZUMAB",
+"first_approval": 2007,
+"max_phase": "4.0"
+}
+],
+"Solu-Cortef": [
+{
+"chembl_id": "CHEMBL1200495",
+"pref_name": "HYDROCORTISONE SODIUM SUCCINATE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Solu-Glyc": [],
+"Soticlestat": [
+{
+"chembl_id": "CHEMBL4298172",
+"pref_name": "SOTICLESTAT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Sotorasib": [
+{
+"chembl_id": "CHEMBL4535757",
+"pref_name": "SOTORASIB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"Sotrovimab": [
+{
+"chembl_id": "CHEMBL4650524",
+"pref_name": "SOTROVIMAB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"Specific": [],
+"Specimen": [],
+"Specimen Collection": [],
+"Spesolimab": [
+{
+"chembl_id": "CHEMBL4297911",
+"pref_name": "SPESOLIMAB",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"Spike": [],
+"Spikevax": [],
+"Spikevax Omicron XBB.1.5": [],
+"Spirit1": [],
+"Spironolactone": [
+{
+"chembl_id": "CHEMBL1393",
+"pref_name": "SPIRONOLACTONE",
+"first_approval": 1960,
+"max_phase": "4.0"
+}
+],
+"Spironolactone 50 mg": [],
+"Sport": [],
+"Spravato": [
+{
+"chembl_id": "CHEMBL2364609",
+"pref_name": "ESKETAMINE HYDROCHLORIDE",
+"first_approval": 2019,
+"max_phase": "4.0"
+}
+],
+"Spravato , Ketanest": [],
+"Sprycel": [
+{
+"chembl_id": "CHEMBL5416410",
+"pref_name": "DASATINIB",
+"first_approval": 2006,
+"max_phase": "4.0"
+}
+],
+"Stabilized": [],
+"Stabilized hypochlorous acid": [],
+"Starasid": [],
+"Stem Cell Transplant": [],
+"Sterane": [
+{
+"chembl_id": "CHEMBL131",
+"pref_name": "PREDNISOLONE",
+"first_approval": 1955,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL1152",
+"pref_name": "PREDNISOLONE ACETATE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"Stereotactic": [],
+"Stereotactic Body Radiotherapy": [],
+"Stereotactic body radiotherapy": [],
+"Sterile": [],
+"Sterile Water": [
+{
+"chembl_id": "CHEMBL1098659",
+"pref_name": "WATER",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Sterol": [
+{
+"chembl_id": "CHEMBL2108864",
+"pref_name": "SOYSTEROL",
+"first_approval": null,
+"max_phase": "-1.0"
+}
+],
+"Stivarga": [
+{
+"chembl_id": "CHEMBL1946170",
+"pref_name": "REGORAFENIB",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Stored": [],
+"Stromal": [],
+"Stromal Cells Injection": [],
+"Subacromial": [],
+"Subcutaneous Lenacapavir": [],
+"Sublingual": [],
+"Sublingual estradiol tablets": [],
+"SublocadeTM": [],
+"SublocadeTM, Indivior": [],
+"Succinate": [],
+"Sulfabutin": [],
+"Sulfate": [],
+"Supemtek": [],
+"Support": [],
+"Supra-threshold": [],
+"SureFire": [],
+"Surgical": [],
+"Surgical Resection": [],
+"Suspension": [],
+"Sustained": [],
+"Sustained Release Dexamethasone,": [],
+"Suvorexant": [
+{
+"chembl_id": "CHEMBL1083659",
+"pref_name": "SUVOREXANT",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Suvorexant Placebo": [],
+"Switch": [],
+"Switch to Certican": [],
+"Syklofosfamid": [],
+"Syringe": [],
+"Systane": [],
+"Systane Complete": [],
+"Systane Ultra PF": [],
+"System": [],
+"T-Guard": [],
+"T-Lymphocyte": [],
+"TAB001": [
+{
+"chembl_id": "CHEMBL4297843",
+"pref_name": "TORIPALIMAB",
+"first_approval": 2023,
+"max_phase": "4.0"
+}
+],
+"TAK-186": [
+{
+"chembl_id": "CHEMBL5315000",
+"pref_name": "TAK-186",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"TAK-426": [],
+"TAK-620": [],
+"TAK-935": [
+{
+"chembl_id": "CHEMBL4298172",
+"pref_name": "SOTICLESTAT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"TBI": [],
+"TCK-276": [],
+"TCK-276 Placebo": [],
+"TCbHP": [],
+"TCbHP regimen group": [],
+"TECENTRIQ": [
+{
+"chembl_id": "CHEMBL3707227",
+"pref_name": "ATEZOLIZUMAB",
+"first_approval": 2016,
+"max_phase": "4.0"
+}
+],
+"TEI-T01276": [],
+"TEPEZZA": [
+{
+"chembl_id": "CHEMBL1743079",
+"pref_name": "TEPROTUMUMAB",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"TESPA": [],
+"THB001": [],
+"THOR-707": [
+{
+"chembl_id": "CHEMBL4650426",
+"pref_name": "PEGENZILEUKIN",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"TIO TEF": [],
+"TJ202": [
+{
+"chembl_id": "CHEMBL4594579",
+"pref_name": "FELZARTAMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"TJ202 injection": [],
+"TMT": [],
+"TMT212-NXA": [],
+"TMX": [],
+"TMZ": [],
+"TN-C200M2": [],
+"TN-C200M2 oral capsules": [],
+"TN-TC11M2": [],
+"TN-TC11M2 oral capsules": [],
+"TNG348": [],
+"TQB 2440": [],
+"TQB-2440": [],
+"TQB2440": [],
+"TQB2858": [],
+"TQB2858 injection": [],
+"TRIMBOW": [],
+"TRIMBOW\u00ae": [],
+"TRUVADA": [],
+"TRUVADA\u2122": [],
+"TSPA": [],
+"TSR-042": [
+{
+"chembl_id": "CHEMBL4298124",
+"pref_name": "DOSTARLIMAB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"TT-816": [],
+"TTI-622": [
+{
+"chembl_id": "CHEMBL4802185",
+"pref_name": "MAPLIRPACEPT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"TXA": [],
+"Tacrolimus": [
+{
+"chembl_id": "CHEMBL269732",
+"pref_name": "TACROLIMUS ANHYDROUS",
+"first_approval": 1994,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL3989887",
+"pref_name": "TACROLIMUS",
+"first_approval": 1994,
+"max_phase": "4.0"
+}
+],
+"Tacrolimus (or cyclosporine)": [],
+"Tafinlar": [
+{
+"chembl_id": "CHEMBL2028663",
+"pref_name": "DABRAFENIB",
+"first_approval": 2013,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL2105729",
+"pref_name": "DABRAFENIB MESYLATE",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Tafinlar\u00ae": [],
+"Tagrisso": [
+{
+"chembl_id": "CHEMBL3353410",
+"pref_name": "OSIMERTINIB",
+"first_approval": 2015,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL3545063",
+"pref_name": "OSIMERTINIB MESYLATE",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"Talazoparib": [
+{
+"chembl_id": "CHEMBL3137320",
+"pref_name": "TALAZOPARIB",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Talazoparib Oral Capsule": [],
+"Talzenna": [
+{
+"chembl_id": "CHEMBL3137318",
+"pref_name": "TALAZOPARIB TOSYLATE",
+"first_approval": 2018,
+"max_phase": "4.0"
+}
+],
+"Tamibarotene": [
+{
+"chembl_id": "CHEMBL25202",
+"pref_name": "TAMIBAROTENE",
+"first_approval": null,
+"max_phase": "4.0"
+}
+],
+"Tamoxifen": [
+{
+"chembl_id": "CHEMBL83",
+"pref_name": "TAMOXIFEN",
+"first_approval": 1977,
+"max_phase": "4.0"
+}
+],
+"Tamoxifen-matching": [],
+"Tamoxifen-matching placebo": [],
+"Tamsulosin": [
+{
+"chembl_id": "CHEMBL836",
+"pref_name": "TAMSULOSIN",
+"first_approval": 1997,
+"max_phase": "4.0"
+}
+],
+"Tapering": [],
+"Tarabine": [],
+"Tarabine PFS": [
+{
+"chembl_id": "CHEMBL803",
+"pref_name": "CYTARABINE",
+"first_approval": 1969,
+"max_phase": "4.0"
+}
+],
+"Tartrate": [
+{
+"chembl_id": "CHEMBL1236315",
+"pref_name": "TARTARIC ACID",
+"first_approval": 1985,
+"max_phase": "4.0"
+}
+],
+"Taxol": [
+{
+"chembl_id": "CHEMBL428647",
+"pref_name": "PACLITAXEL",
+"first_approval": 1992,
+"max_phase": "4.0"
+}
+],
+"Tears": [],
+"Tecentriq": [
+{
+"chembl_id": "CHEMBL3707227",
+"pref_name": "ATEZOLIZUMAB",
+"first_approval": 2016,
+"max_phase": "4.0"
+}
+],
+"Telotristat": [
+{
+"chembl_id": "CHEMBL2103855",
+"pref_name": "TELOTRISTAT",
+"first_approval": null,
+"max_phase": "4.0"
+}
+],
+"Telotristat (High-Dose)": [],
+"Telotristat (Low-Dose)": [],
+"Temelimab": [
+{
+"chembl_id": "CHEMBL4594547",
+"pref_name": "TEMELIMAB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Temelimab /kg": [],
+"Temelimab 18 mg/kg": [],
+"Temelimab 36mg/kg": [],
+"Temelimab 54 mg/kg": [],
+"Temozolomide": [
+{
+"chembl_id": "CHEMBL810",
+"pref_name": "TEMOZOLOMIDE",
+"first_approval": 1999,
+"max_phase": "4.0"
+}
+],
+"Temozolomide, Tamoxifen, Maprotiline": [],
+"Tenofovir": [
+{
+"chembl_id": "CHEMBL3989702",
+"pref_name": "TENOFOVIR",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Tepadina": [
+{
+"chembl_id": "CHEMBL671",
+"pref_name": "THIOTEPA",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Terbinafine": [
+{
+"chembl_id": "CHEMBL822",
+"pref_name": "TERBINAFINE",
+"first_approval": 1992,
+"max_phase": "4.0"
+}
+],
+"Terbinafine Tablets": [],
+"Teropavimab": [
+{
+"chembl_id": "CHEMBL5095294",
+"pref_name": "TEROPAVIMAB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Tesomet": [],
+"Tespamin": [],
+"Tespamine": [],
+"Test double dose": [],
+"Test single dose": [],
+"Testing": [],
+"Testosterone": [
+{
+"chembl_id": "CHEMBL386630",
+"pref_name": "TESTOSTERONE",
+"first_approval": 1972,
+"max_phase": "4.0"
+}
+],
+"Testosterone Enanthate": [
+{
+"chembl_id": "CHEMBL1200335",
+"pref_name": "TESTOSTERONE ENANTHATE",
+"first_approval": 1953,
+"max_phase": "4.0"
+}
+],
+"Tetanus": [],
+"Tetra": [],
+"Tetramethylene": [],
+"Tetramethylene Bis": [],
+"Tetramethylene Bis(methanesulfonate)": [],
+"Tetramethylene bis": [],
+"Tetramethylene bis[methanesulfonate]": [],
+"Texate": [],
+"Therapeutic": [],
+"Therapeutic Conventional Surgery": [],
+"Therapy, Radiation": [],
+"Thio-Tepa": [],
+"Thiofosfamide": [],
+"Thiofozil": [],
+"Thiophosphamide": [],
+"Thiophosphoramide": [],
+"Thiotef": [],
+"Thiotepa": [
+{
+"chembl_id": "CHEMBL671",
+"pref_name": "THIOTEPA",
+"first_approval": 1959,
+"max_phase": "4.0"
+}
+],
+"Thrombosomes": [],
+"Thymocyte": [],
+"Thymoglobulin": [],
+"Tifosyl": [],
+"Tio-tef": [],
+"Tipiracil": [
+{
+"chembl_id": "CHEMBL235668",
+"pref_name": "TIPIRACIL",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"Tislelizumab": [
+{
+"chembl_id": "CHEMBL4297840",
+"pref_name": "TISLELIZUMAB",
+"first_approval": 2023,
+"max_phase": "4.0"
+}
+],
+"Tisseel": [],
+"Tisseel Injectable Product": [],
+"TmPSMA-02": [],
+"Toczilizumab": [],
+"Tolebrutininb": [],
+"Tomography": [],
+"Topical Corticosteroid": [],
+"Topical minoxidil 5%": [],
+"Toposar": [
+{
+"chembl_id": "CHEMBL44657",
+"pref_name": "ETOPOSIDE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"Toradol": [
+{
+"chembl_id": "CHEMBL1201124",
+"pref_name": "KETOROLAC TROMETHAMINE",
+"first_approval": 1989,
+"max_phase": "4.0"
+}
+],
+"Tosylate": [],
+"Total": [],
+"Total Body Irradiation": [],
+"Total-Body": [],
+"Total-Body Irradiation": [],
+"Toujeo": [
+{
+"chembl_id": "CHEMBL1201497",
+"pref_name": "INSULIN GLARGINE",
+"first_approval": 2000,
+"max_phase": "4.0"
+}
+],
+"Toxoid": [],
+"Tracleer": [
+{
+"chembl_id": "CHEMBL957",
+"pref_name": "BOSENTAN",
+"first_approval": 2001,
+"max_phase": "4.0"
+}
+],
+"Tramadol": [
+{
+"chembl_id": "CHEMBL1237044",
+"pref_name": "TRAMADOL",
+"first_approval": 1995,
+"max_phase": "4.0"
+}
+],
+"Trametinib": [
+{
+"chembl_id": "CHEMBL2103875",
+"pref_name": "TRAMETINIB",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Trametinib dimethyl sulfoxide": [
+{
+"chembl_id": "CHEMBL2103875",
+"pref_name": "TRAMETINIB",
+"first_approval": 2013,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL2105741",
+"pref_name": "TRAMETINIB DIMETHYL SULFOXIDE",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Tranexamic": [],
+"Tranexamic Acid": [
+{
+"chembl_id": "CHEMBL877",
+"pref_name": "TRANEXAMIC ACID",
+"first_approval": 1986,
+"max_phase": "4.0"
+}
+],
+"Tranexamic Acid (TXA)": [],
+"Tranexamic Acid Irrigation": [],
+"Tranexamic acid": [
+{
+"chembl_id": "CHEMBL877",
+"pref_name": "TRANEXAMIC ACID",
+"first_approval": 1986,
+"max_phase": "4.0"
+}
+],
+"Transdermal": [],
+"Transdermal estradiol patch": [],
+"Transdermal patch": [],
+"Transplant": [],
+"Transplantation": [],
+"Trastuzumab": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Trastuzumab Biosimilar ALT02": [],
+"Trastuzumab Biosimilar CT-P6": [],
+"Trastuzumab Biosimilar HLX02": [],
+"Trastuzumab Biosimilar PF-05280014": [],
+"Trastuzumab Biosimilar QL1701": [],
+"Trastuzumab Biosimilar SB3": [],
+"Trastuzumab Biosimilar SIBP-01": [],
+"Trastuzumab-anns": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Trastuzumab-dkst": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Trastuzumab-dttb": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Trastuzumab-pkrb": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Trastuzumab-qyyp": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Trazimera": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Tremelimumab": [
+{
+"chembl_id": "CHEMBL2108658",
+"pref_name": "TREMELIMUMAB",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"Tremetex": [],
+"Tremfya": [
+{
+"chembl_id": "CHEMBL2364648",
+"pref_name": "GUSELKUMAB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Tresiba": [
+{
+"chembl_id": "CHEMBL2107869",
+"pref_name": "INSULIN DEGLUDEC",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Trexeron": [],
+"TriSalus": [],
+"TriSalus PEDD": [],
+"Triethylene": [],
+"Triethylene Thiophosphoramide": [],
+"Triethylenethiophosphoramide": [],
+"Trifluridine": [
+{
+"chembl_id": "CHEMBL1129",
+"pref_name": "TRIFLURIDINE",
+"first_approval": 1980,
+"max_phase": "4.0"
+}
+],
+"Trifluridine/Tipiracil": [],
+"Trintellix": [
+{
+"chembl_id": "CHEMBL2107387",
+"pref_name": "VORTIOXETINE HYDROBROMIDE",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Triptorelin": [
+{
+"chembl_id": "CHEMBL1201334",
+"pref_name": "TRIPTORELIN",
+"first_approval": 2000,
+"max_phase": "4.0"
+}
+],
+"Triptorelin pamoate": [
+{
+"chembl_id": "CHEMBL1200554",
+"pref_name": "TRIPTORELIN PAMOATE",
+"first_approval": 2000,
+"max_phase": "4.0"
+}
+],
+"Triptorelin pamoate 15mg": [],
+"Tris phosphine sulfide": [],
+"Tris(1-aziridinyl)phosphine sulfide": [],
+"Trixilem": [],
+"Trotabresib": [
+{
+"chembl_id": "CHEMBL4650366",
+"pref_name": "TROTABRESIB",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"Trumenba": [
+{
+"chembl_id": "CHEMBL6068499",
+"pref_name": "NEISSERIA MENINGITIDIS FACTOR H BINDING PROTEIN",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Trumenba\u00ae": [],
+"Turmeric": [],
+"Tusamitamab": [
+{
+"chembl_id": "CHEMBL5095460",
+"pref_name": "TUSAMITAMAB",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"Tusamitamab ravtansine": [
+{
+"chembl_id": "CHEMBL4298098",
+"pref_name": "TUSAMITAMAB RAVTANSINE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Tylenol": [
+{
+"chembl_id": "CHEMBL112",
+"pref_name": "ACETAMINOPHEN",
+"first_approval": 1968,
+"max_phase": "4.0"
+}
+],
+"Tylenol, Advil, OxyContin": [],
+"Tylenol/Acetaminophen": [],
+"Tymlos": [
+{
+"chembl_id": "CHEMBL3301581",
+"pref_name": "ABALOPARATIDE",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Tyrvaya": [
+{
+"chembl_id": "CHEMBL6067972",
+"pref_name": "VARENICLINE TARTRATE",
+"first_approval": 2006,
+"max_phase": "4.0"
+}
+],
+"Tyrvaya Nasal Pump": [],
+"Tysabri": [
+{
+"chembl_id": "CHEMBL1201607",
+"pref_name": "NATALIZUMAB",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"U 19920": [],
+"U-19920": [
+{
+"chembl_id": "CHEMBL803",
+"pref_name": "CYTARABINE",
+"first_approval": 1969,
+"max_phase": "4.0"
+}
+],
+"U-CAR-T": [],
+"U-CAR-T Cells": [],
+"U-CAR-T Cells (LstCAR019)": [],
+"UB-612": [],
+"UCAR-T": [],
+"UCB7665": [
+{
+"chembl_id": "CHEMBL4297820",
+"pref_name": "ROZANOLIXIZUMAB",
+"first_approval": 2023,
+"max_phase": "4.0"
+}
+],
+"Udicil": [],
+"Ultra": [],
+"Ultrasound": [],
+"UpRi": [],
+"Upadacitinib": [
+{
+"chembl_id": "CHEMBL3622821",
+"pref_name": "UPADACITINIB",
+"first_approval": 2019,
+"max_phase": "4.0"
+}
+],
+"Upifitamab": [],
+"Uproleselan": [
+{
+"chembl_id": "CHEMBL3989971",
+"pref_name": "UPROLESELAN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Urinalysis": [],
+"Usual": [],
+"V116": [],
+"VABYSMO": [
+{
+"chembl_id": "CHEMBL4297750",
+"pref_name": "FARICIMAB",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"VABYSMO\u00ae": [],
+"VAL-083": [
+{
+"chembl_id": "CHEMBL3137322",
+"pref_name": "DIANHYDROGALACTITOL",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"VAL-083, Dianhydrogalactitol": [],
+"VENTOL": [],
+"VERU-024": [],
+"VH3739937": [
+{
+"chembl_id": "CHEMBL6067965",
+"pref_name": "ZEGRUVIRIMAT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"VIR 7831": [],
+"VIR-2482": [
+{
+"chembl_id": "CHEMBL6068464",
+"pref_name": "SONAVIBART",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"VIR-2482 (1200 mg)": [],
+"VIR-2482 (450 mg)": [],
+"VIR-7831": [
+{
+"chembl_id": "CHEMBL4650524",
+"pref_name": "SOTROVIMAB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"VIR7831": [
+{
+"chembl_id": "CHEMBL4650524",
+"pref_name": "SOTROVIMAB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"VP 16": [],
+"VP 16-213": [],
+"VP-16": [
+{
+"chembl_id": "CHEMBL1200645",
+"pref_name": "ETOPOSIDE PHOSPHATE",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"VP-16-213": [
+{
+"chembl_id": "CHEMBL44657",
+"pref_name": "ETOPOSIDE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"VP16": [
+{
+"chembl_id": "CHEMBL1200645",
+"pref_name": "ETOPOSIDE PHOSPHATE",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"VRAYLAR": [
+{
+"chembl_id": "CHEMBL2024517",
+"pref_name": "CARIPRAZINE HYDROCHLORIDE",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"Vaccine sequence 1": [],
+"Vaccine sequence 2": [],
+"Valbenazine": [
+{
+"chembl_id": "CHEMBL2364639",
+"pref_name": "VALBENAZINE",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Vancomycin": [
+{
+"chembl_id": "CHEMBL262777",
+"pref_name": "VANCOMYCIN",
+"first_approval": 1964,
+"max_phase": "4.0"
+}
+],
+"Vancomycin oral": [],
+"Vanicream": [],
+"Vanicream Lite Lotion": [],
+"Varenicline": [
+{
+"chembl_id": "CHEMBL1076903",
+"pref_name": "VARENICLINE",
+"first_approval": 2006,
+"max_phase": "4.0"
+}
+],
+"Varespladib": [
+{
+"chembl_id": "CHEMBL148674",
+"pref_name": "VARESPLADIB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Vascepa": [
+{
+"chembl_id": "CHEMBL2095209",
+"pref_name": "ICOSAPENT ETHYL",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Vascular": [],
+"Vasopressin": [
+{
+"chembl_id": "CHEMBL373742",
+"pref_name": "VASOPRESSIN",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Vasostrict": [
+{
+"chembl_id": "CHEMBL373742",
+"pref_name": "VASOPRESSIN",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"Vaxelis": [],
+"Vebicorvir": [
+{
+"chembl_id": "CHEMBL4650324",
+"pref_name": "VEBICORVIR",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Vebicorvir 300mg": [],
+"Vector": [],
+"Vectored": [],
+"Vehicle Cream": [],
+"Vehicle control": [],
+"Vehicle gel": [],
+"Veklury": [
+{
+"chembl_id": "CHEMBL4065616",
+"pref_name": "REMDESIVIR",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"Veklury\u00ae": [],
+"Velcade": [
+{
+"chembl_id": "CHEMBL5315122",
+"pref_name": "BORTEZOMIB D-MANNITOL",
+"first_approval": 2003,
+"max_phase": "4.0"
+}
+],
+"Velcade\u00ae": [],
+"Veliparib": [
+{
+"chembl_id": "CHEMBL506871",
+"pref_name": "VELIPARIB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Veliparib, capsule": [],
+"Veliparib, tablet": [],
+"Velpatasvir": [
+{
+"chembl_id": "CHEMBL3545062",
+"pref_name": "VELPATASVIR",
+"first_approval": 2016,
+"max_phase": "4.0"
+}
+],
+"Venetoclax": [
+{
+"chembl_id": "CHEMBL3137309",
+"pref_name": "VENETOCLAX",
+"first_approval": 2016,
+"max_phase": "4.0"
+}
+],
+"Ventolin": [
+{
+"chembl_id": "CHEMBL714",
+"pref_name": "ALBUTEROL",
+"first_approval": 1981,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL1441059",
+"pref_name": "ALBUTEROL SULFATE",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Vepesid": [
+{
+"chembl_id": "CHEMBL44657",
+"pref_name": "ETOPOSIDE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"Versed": [
+{
+"chembl_id": "CHEMBL1200420",
+"pref_name": "MIDAZOLAM HYDROCHLORIDE",
+"first_approval": 1985,
+"max_phase": "4.0"
+}
+],
+"Veru-111": [
+{
+"chembl_id": "CHEMBL2163631",
+"pref_name": "SABIZABULIN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Verzenio": [
+{
+"chembl_id": "CHEMBL3301610",
+"pref_name": "ABEMACICLIB",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Viagra": [
+{
+"chembl_id": "CHEMBL1737",
+"pref_name": "SILDENAFIL CITRATE",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Viagra Tablet": [],
+"Viagra, Revatio": [],
+"Vic-trastuzumab": [],
+"Vicadrostat": [
+{
+"chembl_id": "CHEMBL6068035",
+"pref_name": "VICADROSTAT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Vicodin": [],
+"Vidaza": [
+{
+"chembl_id": "CHEMBL1489",
+"pref_name": "AZACITIDINE",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"Vidaza\u2122": [],
+"Vinorelbine": [
+{
+"chembl_id": "CHEMBL553025",
+"pref_name": "VINORELBINE",
+"first_approval": 1994,
+"max_phase": "4.0"
+}
+],
+"Viread": [
+{
+"chembl_id": "CHEMBL1486",
+"pref_name": "TENOFOVIR DISOPROXIL FUMARATE",
+"first_approval": 2001,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL1538",
+"pref_name": "TENOFOVIR DISOPROXIL",
+"first_approval": 2001,
+"max_phase": "4.0"
+}
+],
+"Viread 300Mg Tablet": [],
+"Virus": [],
+"Vitamin": [],
+"Vitamin C": [],
+"Voltaren": [
+{
+"chembl_id": "CHEMBL1034",
+"pref_name": "DICLOFENAC SODIUM",
+"first_approval": 1988,
+"max_phase": "4.0"
+}
+],
+"Vonoprazan": [
+{
+"chembl_id": "CHEMBL2079130",
+"pref_name": "VONOPRAZAN",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"Vortioxetine": [
+{
+"chembl_id": "CHEMBL2104993",
+"pref_name": "VORTIOXETINE",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"Voxilaprevir": [
+{
+"chembl_id": "CHEMBL3707372",
+"pref_name": "VOXILAPREVIR",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Vyepti": [
+{
+"chembl_id": "CHEMBL3833320",
+"pref_name": "EPTINEZUMAB",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"Vyxeos": [],
+"WR 45312": [],
+"WR- 138719": [],
+"WR-19039": [],
+"WR-19508": [],
+"WR-19813": [],
+"WR-28453": [],
+"WVE-004": [],
+"WVE-004 Q12W": [],
+"Water": [
+{
+"chembl_id": "CHEMBL1098659",
+"pref_name": "WATER",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Whole-Body": [],
+"Whole-Body Irradiation": [],
+"XAV-19": [],
+"XL114": [],
+"XMT-1536": [
+{
+"chembl_id": "CHEMBL4297851",
+"pref_name": "XMT-1536",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"XMT-1536 (Upifitamab Rilsodotin)": [],
+"Xe129": [],
+"Xeloda": [
+{
+"chembl_id": "CHEMBL1773",
+"pref_name": "CAPECITABINE",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"Xenon": [
+{
+"chembl_id": "CHEMBL1236802",
+"pref_name": "XENON",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"Xermelo": [
+{
+"chembl_id": "CHEMBL2105695",
+"pref_name": "TELOTRISTAT ETHYL",
+"first_approval": 2017,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL3348963",
+"pref_name": "TELOTRISTAT ETIPRATE",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Xevinapant": [
+{
+"chembl_id": "CHEMBL2158051",
+"pref_name": "XEVINAPANT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Xtandi": [
+{
+"chembl_id": "CHEMBL1082407",
+"pref_name": "ENZALUTAMIDE",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"Xylocaine": [
+{
+"chembl_id": "CHEMBL79",
+"pref_name": "LIDOCAINE",
+"first_approval": 1948,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL1200409",
+"pref_name": "LIDOCAINE HYDROCHLORIDE",
+"first_approval": 1948,
+"max_phase": "4.0"
+}
+],
+"Yasmin": [],
+"Yasmin\u00ae": [],
+"Yeast": [
+{
+"chembl_id": "CHEMBL2108815",
+"pref_name": "YEAST, DRIED",
+"first_approval": null,
+"max_phase": "-1.0"
+}
+],
+"Yohimbine": [
+{
+"chembl_id": "CHEMBL15245",
+"pref_name": "YOHIMBINE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Yohimbine HCl": [
+{
+"chembl_id": "CHEMBL537669",
+"pref_name": "YOHIMBINE HYDROCHLORIDE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"Yohimbine hydrochloride, yohimbine": [],
+"ZOCOR": [
+{
+"chembl_id": "CHEMBL1064",
+"pref_name": "SIMVASTATIN",
+"first_approval": 1991,
+"max_phase": "4.0"
+}
+],
+"Zejula": [
+{
+"chembl_id": "CHEMBL1094636",
+"pref_name": "NIRAPARIB",
+"first_approval": 2017,
+"max_phase": "4.0"
+},
+{
+"chembl_id": "CHEMBL3989922",
+"pref_name": "NIRAPARIB TOSYLATE MONOHYDRATE",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"Zinlirvimab": [
+{
+"chembl_id": "CHEMBL4297679",
+"pref_name": "ZINLIRVIMAB",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"Zofran": [
+{
+"chembl_id": "CHEMBL3186492",
+"pref_name": "ONDANSETRON HYDROCHLORIDE",
+"first_approval": 1991,
+"max_phase": "4.0"
+}
+],
+"[14C]Adavosertib": [],
+"[vic-] trastuzumab duocarmazine": [],
+"abdominal": [],
+"abdominal x-ray": [],
+"according": [],
+"acetaminophen": [
+{
+"chembl_id": "CHEMBL112",
+"pref_name": "ACETAMINOPHEN",
+"first_approval": 1968,
+"max_phase": "4.0"
+}
+],
+"acetate": [],
+"acetominophen": [],
+"acetominophen, ibuprofen, oxycodone": [],
+"acetylsalicylic": [],
+"acetylsalicylic acid": [
+{
+"chembl_id": "CHEMBL25",
+"pref_name": "ASPIRIN",
+"first_approval": 1950,
+"max_phase": "4.0"
+}
+],
+"acetylsalicylic acid (ASA)": [],
+"acids": [],
+"activation": [],
+"adjuvant": [],
+"administration": [],
+"adsorbed": [],
+"advanced": [],
+"against": [],
+"agents": [],
+"agonist": [],
+"albumin": [
+{
+"chembl_id": "CHEMBL1201451",
+"pref_name": "ALBUMIN HUMAN",
+"first_approval": 1997,
+"max_phase": "4.0"
+}
+],
+"all-Z": [],
+"alpelisib": [
+{
+"chembl_id": "CHEMBL2396661",
+"pref_name": "ALPELISIB",
+"first_approval": 2019,
+"max_phase": "4.0"
+}
+],
+"alvelestat": [
+{
+"chembl_id": "CHEMBL3617964",
+"pref_name": "ALVELESTAT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"amino": [],
+"ancestral": [],
+"anesthesia": [],
+"anti-CD14": [],
+"anti-CD40": [],
+"anti-CD40 antibody": [],
+"anti-CD40 antibody (CDX-1140)": [],
+"anti-PD-1": [],
+"anti-TIGIT": [],
+"anti-TRBC1": [],
+"anti-Trop2-SN38": [],
+"antibodies": [],
+"antibody": [],
+"anticancer": [],
+"antigen": [],
+"anyway": [],
+"approved": [],
+"arabinoside": [],
+"aromatherapy": [],
+"arterial": [],
+"ascorbic": [],
+"ascorbic acid": [
+{
+"chembl_id": "CHEMBL196",
+"pref_name": "ASCORBIC ACID",
+"first_approval": 1985,
+"max_phase": "4.0"
+}
+],
+"aspirin": [
+{
+"chembl_id": "CHEMBL25",
+"pref_name": "ASPIRIN",
+"first_approval": 1950,
+"max_phase": "4.0"
+}
+],
+"assay": [],
+"association": [],
+"atomoxetine": [
+{
+"chembl_id": "CHEMBL641",
+"pref_name": "ATOMOXETINE",
+"first_approval": 2002,
+"max_phase": "4.0"
+}
+],
+"atomoxetine dronabinol": [],
+"axial": [],
+"bamlanivimab": [
+{
+"chembl_id": "CHEMBL4650379",
+"pref_name": "BAMLANIVIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"batiraxcept": [
+{
+"chembl_id": "CHEMBL4594462",
+"pref_name": "BATIRAXCEPT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"betamethasone": [
+{
+"chembl_id": "CHEMBL632",
+"pref_name": "BETAMETHASONE",
+"first_approval": 1961,
+"max_phase": "4.0"
+}
+],
+"between": [],
+"billion": [],
+"bintrafusp": [],
+"bintrafusp alfa": [
+{
+"chembl_id": "CHEMBL4298024",
+"pref_name": "BINTRAFUSP ALFA",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"biopsy": [],
+"biosimilar": [],
+"bivalent": [],
+"block": [],
+"blocking": [],
+"blood": [],
+"blood tests": [],
+"boost": [],
+"bottle": [],
+"brentuximab": [],
+"brentuximab vedotin": [
+{
+"chembl_id": "CHEMBL1742994",
+"pref_name": "BRENTUXIMAB VEDOTIN",
+"first_approval": 2011,
+"max_phase": "4.0"
+}
+],
+"bupivacaine": [
+{
+"chembl_id": "CHEMBL1098",
+"pref_name": "BUPIVACAINE",
+"first_approval": 1972,
+"max_phase": "4.0"
+}
+],
+"butane": [
+{
+"chembl_id": "CHEMBL134702",
+"pref_name": "BUTANE",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"cancer": [],
+"candidate": [],
+"capsaicin": [
+{
+"chembl_id": "CHEMBL294199",
+"pref_name": "CAPSAICIN",
+"first_approval": 2009,
+"max_phase": "4.0"
+}
+],
+"carbidopa": [
+{
+"chembl_id": "CHEMBL1200748",
+"pref_name": "CARBIDOPA",
+"first_approval": 1975,
+"max_phase": "4.0"
+}
+],
+"carbidopa-levodopa": [],
+"carboplatin": [
+{
+"chembl_id": "CHEMBL1351",
+"pref_name": "CARBOPLATIN",
+"first_approval": 1989,
+"max_phase": "4.0"
+}
+],
+"carboxymaltose": [],
+"casirivimab": [
+{
+"chembl_id": "CHEMBL4650248",
+"pref_name": "CASIRIVIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"casirivimab+imdevimab": [],
+"cetuximab": [
+{
+"chembl_id": "CHEMBL1201577",
+"pref_name": "CETUXIMAB",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"chemoembolization": [],
+"chewable": [],
+"chloride": [],
+"chlormethine": [
+{
+"chembl_id": "CHEMBL427",
+"pref_name": "MECHLORETHAMINE",
+"first_approval": 1949,
+"max_phase": "4.0"
+}
+],
+"chlormethine gel": [],
+"clinical": [],
+"co-administration": [],
+"collar": [],
+"combinations": [],
+"combo": [],
+"component": [],
+"composed": [],
+"conjugate": [],
+"copolymer": [],
+"corticosteroid": [],
+"cosmetic": [],
+"counter": [],
+"course": [],
+"ctDNA": [],
+"cycle": [],
+"cyclosporine": [
+{
+"chembl_id": "CHEMBL160",
+"pref_name": "CYCLOSPORINE",
+"first_approval": 1983,
+"max_phase": "4.0"
+}
+],
+"cytosine": [
+{
+"chembl_id": "CHEMBL15913",
+"pref_name": "CYTOSINE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"cytosine arabinoside": [],
+"d-cycloserine": [
+{
+"chembl_id": "CHEMBL771",
+"pref_name": "CYCLOSERINE",
+"first_approval": 1964,
+"max_phase": "4.0"
+}
+],
+"dabrafenib": [
+{
+"chembl_id": "CHEMBL2028663",
+"pref_name": "DABRAFENIB",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"degludec": [],
+"delivery": [],
+"delta": [],
+"dendritic": [],
+"deoxyribonucleic": [],
+"deoxyribonucleoside": [],
+"depression": [],
+"derived": [],
+"diazepam": [
+{
+"chembl_id": "CHEMBL12",
+"pref_name": "DIAZEPAM",
+"first_approval": 1963,
+"max_phase": "4.0"
+}
+],
+"diazepam 20 mg": [],
+"diluted": [],
+"dimethyl": [],
+"dipeptide": [],
+"disodium": [],
+"disoproxil": [],
+"dosimeter-controlled": [],
+"double": [],
+"draws": [],
+"dronabinol": [
+{
+"chembl_id": "CHEMBL465",
+"pref_name": "DRONABINOL",
+"first_approval": 1985,
+"max_phase": "4.0"
+}
+],
+"drugs": [],
+"duocarmazine": [
+{
+"chembl_id": "CHEMBL4298143",
+"pref_name": "DUOCARMAZINE",
+"first_approval": null,
+"max_phase": "1.0"
+}
+],
+"empagliflozin": [
+{
+"chembl_id": "CHEMBL2107830",
+"pref_name": "EMPAGLIFLOZIN",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"encoding": [],
+"environment": [],
+"epinephrine": [
+{
+"chembl_id": "CHEMBL679",
+"pref_name": "EPINEPHRINE",
+"first_approval": 1965,
+"max_phase": "4.0"
+}
+],
+"epithelial": [],
+"ester": [],
+"esterase": [],
+"esters": [],
+"estradiol": [
+{
+"chembl_id": "CHEMBL135",
+"pref_name": "ESTRADIOL",
+"first_approval": 1975,
+"max_phase": "4.0"
+}
+],
+"estrogen": [
+{
+"chembl_id": "CHEMBL592868",
+"pref_name": "ESTROGEN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"ethyl": [],
+"everolimus": [
+{
+"chembl_id": "CHEMBL1908360",
+"pref_name": "EVEROLIMUS",
+"first_approval": 2009,
+"max_phase": "4.0"
+}
+],
+"every": [],
+"evinacumab": [
+{
+"chembl_id": "CHEMBL3545191",
+"pref_name": "EVINACUMAB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"exemestane": [
+{
+"chembl_id": "CHEMBL1200374",
+"pref_name": "EXEMESTANE",
+"first_approval": 1999,
+"max_phase": "4.0"
+}
+],
+"exemestane plus everolimus": [],
+"exercises": [],
+"exoASO-STAT6": [],
+"expansion": [],
+"extended-release": [],
+"extended-release levomethadone": [],
+"extract": [],
+"faricimab-svoa": [
+{
+"chembl_id": "CHEMBL4297750",
+"pref_name": "FARICIMAB",
+"first_approval": 2022,
+"max_phase": "4.0"
+}
+],
+"fatty": [],
+"female": [],
+"fibroblast": [],
+"fish oil": [
+{
+"chembl_id": "CHEMBL3833369",
+"pref_name": "FISH OIL",
+"first_approval": 2016,
+"max_phase": "4.0"
+}
+],
+"formerly": [],
+"formerly CP-675,206": [],
+"foscarbidopa": [
+{
+"chembl_id": "CHEMBL4802240",
+"pref_name": "FOSCARBIDOPA",
+"first_approval": 2024,
+"max_phase": "4.0"
+}
+],
+"fulvestrant": [
+{
+"chembl_id": "CHEMBL1358",
+"pref_name": "FULVESTRANT",
+"first_approval": 2002,
+"max_phase": "4.0"
+}
+],
+"fumarate": [],
+"gabapentin": [
+{
+"chembl_id": "CHEMBL940",
+"pref_name": "GABAPENTIN",
+"first_approval": 1993,
+"max_phase": "4.0"
+}
+],
+"gabapentin 1200 mg": [],
+"gabapentin 1800 mg": [],
+"gabapentin 600 mg": [],
+"gallium": [
+{
+"chembl_id": "CHEMBL1201200",
+"pref_name": "GALLIUM",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"gamma": [],
+"gemcitabine": [
+{
+"chembl_id": "CHEMBL888",
+"pref_name": "GEMCITABINE",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"gemcitabine/nab paclitaxel": [],
+"generic": [],
+"glargine": [
+{
+"chembl_id": "CHEMBL1201497",
+"pref_name": "INSULIN GLARGINE",
+"first_approval": 2000,
+"max_phase": "4.0"
+}
+],
+"govitecan-hziy": [],
+"greater": [],
+"hLB-001": [],
+"handheld": [],
+"heparin": [
+{
+"chembl_id": "CHEMBL4650299",
+"pref_name": "HEPARIN",
+"first_approval": 2023,
+"max_phase": "4.0"
+}
+],
+"human": [],
+"hyaluronic": [],
+"hydrea": [
+{
+"chembl_id": "CHEMBL467",
+"pref_name": "HYDROXYUREA",
+"first_approval": 1967,
+"max_phase": "4.0"
+}
+],
+"hydrochloride": [
+{
+"chembl_id": "CHEMBL5081624",
+"pref_name": null,
+"first_approval": null,
+"max_phase": null
+}
+],
+"hydrocortisone": [
+{
+"chembl_id": "CHEMBL389621",
+"pref_name": "HYDROCORTISONE",
+"first_approval": 1952,
+"max_phase": "4.0"
+}
+],
+"hydroxyurea": [
+{
+"chembl_id": "CHEMBL467",
+"pref_name": "HYDROXYUREA",
+"first_approval": 1967,
+"max_phase": "4.0"
+}
+],
+"hydroxyurea (20mg/kg/day)": [],
+"hypochlorous": [],
+"ibuprofen": [
+{
+"chembl_id": "CHEMBL521",
+"pref_name": "IBUPROFEN",
+"first_approval": 1974,
+"max_phase": "4.0"
+}
+],
+"icodec": [],
+"imaging": [],
+"imdevimab": [
+{
+"chembl_id": "CHEMBL4650249",
+"pref_name": "IMDEVIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"immobilization": [],
+"immune": [],
+"implant": [],
+"imsidolimab": [
+{
+"chembl_id": "CHEMBL4650441",
+"pref_name": "IMSIDOLIMAB",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"influenza": [],
+"inhalation": [],
+"inhalations": [],
+"inhaler": [],
+"inhibition": [],
+"inhibitor": [],
+"inhibitors": [],
+"intensity-modulated": [],
+"intensity-modulated radiation therapy": [],
+"intervention": [],
+"intramuscular": [],
+"intraurethral": [],
+"investigational": [],
+"irradiation": [],
+"itraconazole": [
+{
+"chembl_id": "CHEMBL64391",
+"pref_name": "ITRACONAZOLE",
+"first_approval": 1992,
+"max_phase": "4.0"
+}
+],
+"levomethadone": [
+{
+"chembl_id": "CHEMBL159659",
+"pref_name": "LEVOMETHADONE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"lidocaine": [
+{
+"chembl_id": "CHEMBL79",
+"pref_name": "LIDOCAINE",
+"first_approval": 1948,
+"max_phase": "4.0"
+}
+],
+"lipid": [],
+"liquid": [],
+"loaded": [],
+"lowering": [],
+"lumborum": [],
+"mFOLFIRINOX": [],
+"mRNA-1273": [
+{
+"chembl_id": "CHEMBL4650491",
+"pref_name": "ELASOMERAN",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"manteinance": [],
+"maplirpacept": [
+{
+"chembl_id": "CHEMBL4802185",
+"pref_name": "MAPLIRPACEPT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"maplirpacept (PF-07901801)": [],
+"matching placebo": [],
+"matrix": [],
+"maximum": [],
+"mental": [],
+"mental training": [],
+"mesylate": [],
+"metformin": [
+{
+"chembl_id": "CHEMBL1431",
+"pref_name": "METFORMIN",
+"first_approval": 1995,
+"max_phase": "4.0"
+}
+],
+"metformin ER": [],
+"metformin XR": [],
+"methadone": [
+{
+"chembl_id": "CHEMBL651",
+"pref_name": "METHADONE",
+"first_approval": 1947,
+"max_phase": "4.0"
+}
+],
+"methanesulfonate": [],
+"methanesulfonoxy": [],
+"metoprolol": [
+{
+"chembl_id": "CHEMBL13",
+"pref_name": "METOPROLOL",
+"first_approval": 1978,
+"max_phase": "4.0"
+}
+],
+"micronized": [],
+"micronized Progesterone": [],
+"midazolam": [
+{
+"chembl_id": "CHEMBL655",
+"pref_name": "MIDAZOLAM",
+"first_approval": 1985,
+"max_phase": "4.0"
+}
+],
+"milligram": [],
+"mindfulness": [],
+"minoxidil": [
+{
+"chembl_id": "CHEMBL802",
+"pref_name": "MINOXIDIL",
+"first_approval": 1979,
+"max_phase": "4.0"
+}
+],
+"modulator": [],
+"mofetil": [],
+"molecular": [],
+"monoclonal": [],
+"monohydrate": [],
+"monotherapy": [],
+"monovalent": [],
+"morphine": [
+{
+"chembl_id": "CHEMBL70",
+"pref_name": "MORPHINE",
+"first_approval": 1984,
+"max_phase": "4.0"
+}
+],
+"mouthwash": [],
+"multi-target": [],
+"muscle": [],
+"mustard": [],
+"nal-IRI": [],
+"naloxone": [
+{
+"chembl_id": "CHEMBL80",
+"pref_name": "NALOXONE",
+"first_approval": 1971,
+"max_phase": "4.0"
+}
+],
+"naltrexone": [
+{
+"chembl_id": "CHEMBL19019",
+"pref_name": "NALTREXONE",
+"first_approval": 1984,
+"max_phase": "4.0"
+}
+],
+"nasal": [],
+"navtemadlin": [
+{
+"chembl_id": "CHEMBL3125702",
+"pref_name": "NAVTEMADLIN",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"nebulizer": [],
+"neuroprotective": [],
+"neuroprotective agents": [],
+"nhaler": [],
+"non-critical": [],
+"non-enteric-coated": [],
+"non-steroidal": [],
+"normal": [],
+"omega-3": [
+{
+"chembl_id": "CHEMBL4298065",
+"pref_name": "OMEGA-3 FATTY ACIDS",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"omega-3 fatty acids": [
+{
+"chembl_id": "CHEMBL4298065",
+"pref_name": "OMEGA-3 FATTY ACIDS",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"omega-3-acid": [],
+"omega-3-acid ethyl esters": [
+{
+"chembl_id": "CHEMBL1200711",
+"pref_name": "OMEGA-3-ACID ETHYL ESTERS",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"or Atomoxetine": [],
+"oral methadone": [],
+"oral sitagliptin supplementation": [],
+"orally": [],
+"osimertinib": [
+{
+"chembl_id": "CHEMBL3353410",
+"pref_name": "OSIMERTINIB",
+"first_approval": 2015,
+"max_phase": "4.0"
+}
+],
+"ovarian": [],
+"oxycodone": [
+{
+"chembl_id": "CHEMBL656",
+"pref_name": "OXYCODONE",
+"first_approval": 1950,
+"max_phase": "4.0"
+}
+],
+"oxycodone 20 mg": [],
+"paclitaxel": [
+{
+"chembl_id": "CHEMBL428647",
+"pref_name": "PACLITAXEL",
+"first_approval": 1992,
+"max_phase": "4.0"
+}
+],
+"pamoate": [],
+"pan-PIM": [],
+"pan-PIM Kinase Inhibitor": [],
+"paraffinl": [],
+"participants": [],
+"pembrolizumab": [
+{
+"chembl_id": "CHEMBL3137343",
+"pref_name": "PEMBROLIZUMAB",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"pemetrexed": [
+{
+"chembl_id": "CHEMBL225072",
+"pref_name": "PEMETREXED",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"peptidase-4": [],
+"perimenopausal": [],
+"pharmaceutically": [],
+"phosphine": [],
+"plasma": [],
+"platelet": [],
+"platelets": [
+{
+"chembl_id": "CHEMBL2108632",
+"pref_name": "PLATELETS",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"powder": [],
+"pp65-flLAMP": [],
+"prausnitzii": [],
+"pre-specified": [],
+"prednisone": [
+{
+"chembl_id": "CHEMBL635",
+"pref_name": "PREDNISONE",
+"first_approval": 1955,
+"max_phase": "4.0"
+}
+],
+"pregabalin": [
+{
+"chembl_id": "CHEMBL1059",
+"pref_name": "PREGABALIN",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"pregabalin 450 mg": [],
+"pregabalin with oxycodone": [],
+"preservative-free": [],
+"probiotic": [],
+"produced": [],
+"progressive": [],
+"protein": [],
+"protocol": [],
+"punctal": [],
+"pyrimidinone": [],
+"rATG": [],
+"radiotherapy": [],
+"radiotracer": [],
+"ravtansine": [],
+"receptor": [],
+"recombinant": [],
+"recurrent": [],
+"regimen": [],
+"remdesivir": [
+{
+"chembl_id": "CHEMBL4065616",
+"pref_name": "REMDESIVIR",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"resonance": [],
+"results": [],
+"reteplase": [
+{
+"chembl_id": "CHEMBL2107885",
+"pref_name": "RETEPLASE",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"rhuMAb": [],
+"rhuMAb HER2": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"rhuMAb-VEGF": [
+{
+"chembl_id": "CHEMBL1201583",
+"pref_name": "BEVACIZUMAB",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"rhuMAb2C4": [
+{
+"chembl_id": "CHEMBL2007641",
+"pref_name": "PERTUZUMAB",
+"first_approval": 2012,
+"max_phase": "4.0"
+}
+],
+"rifampicin": [
+{
+"chembl_id": "CHEMBL374478",
+"pref_name": "RIFAMPIN",
+"first_approval": 1971,
+"max_phase": "4.0"
+}
+],
+"rimabotulinumtoxinB": [
+{
+"chembl_id": "CHEMBL1201569",
+"pref_name": "RIMABOTULINUMTOXINB",
+"first_approval": 2000,
+"max_phase": "4.0"
+}
+],
+"ritonavir": [
+{
+"chembl_id": "CHEMBL163",
+"pref_name": "RITONAVIR",
+"first_approval": 1996,
+"max_phase": "4.0"
+}
+],
+"secretin": [
+{
+"chembl_id": "CHEMBL6067494",
+"pref_name": "SECRETIN",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"selected": [],
+"selective": [],
+"semaglutide": [
+{
+"chembl_id": "CHEMBL2108724",
+"pref_name": "SEMAGLUTIDE",
+"first_approval": 2017,
+"max_phase": "4.0"
+}
+],
+"sequence": [],
+"sesame": [
+{
+"chembl_id": "CHEMBL2108113",
+"pref_name": "SESAME OIL",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"sirolimus": [
+{
+"chembl_id": "CHEMBL413",
+"pref_name": "SIROLIMUS",
+"first_approval": 1999,
+"max_phase": "4.0"
+}
+],
+"sitagliptin": [
+{
+"chembl_id": "CHEMBL1422",
+"pref_name": "SITAGLIPTIN",
+"first_approval": 2006,
+"max_phase": "4.0"
+}
+],
+"sodium": [],
+"sotrovimab": [
+{
+"chembl_id": "CHEMBL4650524",
+"pref_name": "SOTROVIMAB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"squeeze": [],
+"stage": [],
+"stem cell transplantation": [],
+"sterile": [],
+"steroidal": [],
+"strain": [],
+"subunit": [],
+"succinate": [],
+"sulfate": [],
+"sulfide": [],
+"sulfoxide": [],
+"supplementation": [],
+"support": [],
+"synthetic": [],
+"synthetic human secretin": [
+{
+"chembl_id": "CHEMBL1201488",
+"pref_name": "SECRETIN SYNTHETIC HUMAN",
+"first_approval": 2004,
+"max_phase": "4.0"
+}
+],
+"system": [],
+"targeted": [],
+"tears": [],
+"technetium": [
+{
+"chembl_id": "CHEMBL1201315",
+"pref_name": "TECHNETIUM",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"tepotinib": [
+{
+"chembl_id": "CHEMBL3402762",
+"pref_name": "TEPOTINIB",
+"first_approval": 2021,
+"max_phase": "4.0"
+}
+],
+"tepotinib plus osimertinib": [],
+"teprotumumab-trbw": [
+{
+"chembl_id": "CHEMBL1743079",
+"pref_name": "TEPROTUMUMAB",
+"first_approval": 2020,
+"max_phase": "4.0"
+}
+],
+"tesirine": [],
+"tesofensine": [
+{
+"chembl_id": "CHEMBL3989690",
+"pref_name": "TESOFENSINE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"tests": [],
+"tetrahydro-": [],
+"tetramethylene": [],
+"therapeutic": [],
+"thrombomodulin": [],
+"thrombomodulin alfa": [
+{
+"chembl_id": "CHEMBL2108653",
+"pref_name": "THROMBOMODULIN ALFA",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"tigilanol": [],
+"tigilanol tiglate": [
+{
+"chembl_id": "CHEMBL3989916",
+"pref_name": "TIGILANOL TIGLATE",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"tiglate": [],
+"tilmanocept": [
+{
+"chembl_id": "CHEMBL5315077",
+"pref_name": "TILMANOCEPT",
+"first_approval": 2014,
+"max_phase": "4.0"
+}
+],
+"tolerated": [],
+"tomography": [],
+"toripalimab": [
+{
+"chembl_id": "CHEMBL4297843",
+"pref_name": "TORIPALIMAB",
+"first_approval": 2023,
+"max_phase": "4.0"
+}
+],
+"toripalimab (anti-PD-1)": [],
+"trametinib": [
+{
+"chembl_id": "CHEMBL2103875",
+"pref_name": "TRAMETINIB",
+"first_approval": 2013,
+"max_phase": "4.0"
+}
+],
+"trans": [],
+"trans arterial chemoembolization": [],
+"transmission": [],
+"transplantation": [],
+"trastuzumab": [
+{
+"chembl_id": "CHEMBL1201585",
+"pref_name": "TRASTUZUMAB",
+"first_approval": 1998,
+"max_phase": "4.0"
+}
+],
+"trastuzumab biosimilar EG12014": [],
+"trastuzumab duocarmazine": [
+{
+"chembl_id": "CHEMBL4298178",
+"pref_name": "TRASTUZUMAB DUOCARMAZINE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"tri-specific": [],
+"trimeric": [],
+"trivalent": [],
+"tucidinostat": [
+{
+"chembl_id": "CHEMBL3621988",
+"pref_name": "TUCIDINOSTAT",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"varenicline": [
+{
+"chembl_id": "CHEMBL1076903",
+"pref_name": "VARENICLINE",
+"first_approval": 2006,
+"max_phase": "4.0"
+}
+],
+"variant": [],
+"vedotin": [
+{
+"chembl_id": "CHEMBL4594216",
+"pref_name": "VEDOTIN",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"vitamin": [],
+"water": [
+{
+"chembl_id": "CHEMBL1098659",
+"pref_name": "WATER",
+"first_approval": 1982,
+"max_phase": "4.0"
+}
+],
+"weight": [],
+"whole": [],
+"whole body irradiation": [],
+"without": [],
+"x-ray": [],
+"yohimbine": [
+{
+"chembl_id": "CHEMBL15245",
+"pref_name": "YOHIMBINE",
+"first_approval": null,
+"max_phase": "3.0"
+}
+],
+"zamaporvint": [
+{
+"chembl_id": "CHEMBL5314431",
+"pref_name": "ZAMAPORVINT",
+"first_approval": null,
+"max_phase": "2.0"
+}
+],
+"zavegepant": [
+{
+"chembl_id": "CHEMBL2397415",
+"pref_name": "ZAVEGEPANT",
+"first_approval": 2023,
+"max_phase": "4.0"
+}
+],
+"\u03b22-adrenoceptor agonist": []
+}

@@ -7,7 +7,7 @@ titles (the legend carries the title), and a colour-blind-safe palette (Okabe-It
   fig_instrument_validation.pdf  synthetic validation: LAP vs true leakage, detection, example curve
   fig_cto_leakage.pdf            CTO leakage-response (start -> during -> all labeling functions)
   fig_trialbench.pdf             TrialBench provided vs temporal split: AUPRC (a) and AUROC (b)
-  fig_llm_memorization.pdf       LLM nested prompt conditions (a), contrasts (b), recency (c)
+  fig_llm_memorization.pdf       LLM nested prompt conditions (a), contrasts (b), dating by approval (c)
   fig_causal_balance.pdf         covariate balance before/after overlap weighting (Extended Data)
 
 Usage:  python scripts/make_figures.py [--out figures]
@@ -177,20 +177,30 @@ def fig_llm(out):
               handlelength=1.2)
     _panel_label(ax, "b")
     # c: recency (largest model), full gap by completion year
+    # c: named-intervention knowledge by the drug's approval history (Claude models)
     ax = axes[2]
-    top = order[-1]
-    bins = d["models"][top]["by_completion_year"]
-    labels = [b for b in bins if "contrasts" in bins[b]]
-    for k, (key, label, color) in enumerate(contrasts):
-        v = [bins[b]["contrasts"][key]["auprc"] for b in labels]
-        ci = [bins[b]["contrasts"][key]["auprc_ci"] for b in labels]
-        ax.bar(np.arange(len(labels)) + (k - (len(contrasts) - 1) / 2) * cw, v, cw, color=color,
-               yerr=_err(v, ci), capsize=1.5, error_kw={"lw": 0.6})
+    dating = _load("llm_knowledge_dating.json")
+    strata = [("approved_before_start", "Approved\nbefore"),
+              ("never_approved_code", "Never\napproved"),
+              ("approved_after_start", "Approved\nafter")]
+    claude = [m for m in order if m.startswith("claude")]
+    shades = ["#9ECAE1", "#6BAED6", "#2171B5", "#08306B"]
+    sw = 0.8 / len(claude)
+    for k, m in enumerate(claude):
+        cs = [dating["models"][m][st]["D+T - D+Tm"] for st, _ in strata]
+        v = [c["auprc"] for c in cs]
+        ax.bar(np.arange(len(strata)) + (k - (len(claude) - 1) / 2) * sw, v, sw,
+               color=shades[k % len(shades)], label=LLM_NAMES[m],
+               yerr=_err(v, [c["auprc_ci"] for c in cs]), capsize=1.2, error_kw={"lw": 0.5})
+    first = dating["models"][claude[0]]
     ax.axhline(0, color="black", lw=0.6)
-    ax.set_xticks(np.arange(len(labels)))
-    ax.set_xticklabels([f"{b}\n(n = {bins[b]['n']})" for b in labels], fontsize=5.5)
-    ax.set_xlabel(f"Completion year ({LLM_NAMES[top]})")
-    ax.set_ylabel("Paired AUPRC difference")
+    ax.set_xticks(np.arange(len(strata)))
+    ax.set_xticklabels([f"{lab}\nn = {first[st]['D+T - D+Tm']['n']}" for st, lab in strata],
+                       fontsize=5.5)
+    ax.set_xlabel("Drug approval vs trial start")
+    ax.set_ylabel("Named-intervention knowledge\n(AUPRC difference)")
+    ax.legend(frameon=False, loc="lower left", bbox_to_anchor=(0, 1.02), fontsize=5.2, ncol=2,
+              handlelength=1.0, columnspacing=0.6)
     _panel_label(ax, "c")
     fig.tight_layout()
     _save(fig, os.path.join(out, "fig_llm_memorization.pdf"))
@@ -211,16 +221,21 @@ def fig_validation(out):
     ax.set_ylabel("Estimated LAP (AUPRC)")
     _panel_label(ax, "a")
     ax = axes[1]
-    ax.plot(x, [v["detection_rate"] for v in lv], "o-", color=VERMILION, ms=3, lw=0.9,
-            label="CI above 0 (detection)")
-    ax.plot(x, [v["coverage_of_mean_lap"] for v in lv], "s--", color=GREY, ms=3, lw=0.9,
-            label="CI covers mean LAP")
-    ax.axhline(0.025, ls=":", color="black", lw=0.7)
-    ax.axhline(0.95, ls=":", color="black", lw=0.7)
+    series = [("Score mechanism", lv, VERMILION, "o")]
+    if d.get("count_levels"):
+        series.append(("Count mechanism", d["count_levels"], BLUE, "s"))
+    for label, levels, color, marker in series:
+        mx = [v["mean_lap"] for v in levels]
+        ax.plot(mx, [v["detection_rate"] for v in levels], marker + "-", color=color, ms=3, lw=0.9,
+                label=f"{label}: detection")
+        ax.plot(mx, [v["coverage_of_mean_lap"] for v in levels], marker + ":", color=color, ms=3,
+                lw=0.8, mfc="white", label=f"{label}: coverage")
+    ax.axhline(0.025, ls=":", color="black", lw=0.6)
+    ax.axhline(0.95, ls=":", color="black", lw=0.6)
     ax.set_ylim(-0.02, 1.05)
-    ax.set_xlabel("True leakage (leak strength)")
+    ax.set_xlabel("Mean estimated LAP (effect size)")
     ax.set_ylabel("Fraction of replicates")
-    ax.legend(frameon=False, loc="center right", fontsize=5.5)
+    ax.legend(frameon=False, loc="center right", fontsize=5)
     _panel_label(ax, "b")
     ax = axes[2]
     c = d["example_curve"]["curve"]

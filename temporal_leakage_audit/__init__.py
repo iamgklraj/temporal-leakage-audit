@@ -5,4 +5,4 @@ curve and LAP), ``causal`` (positivity-aware causal layer), ``decision`` (policy
 ``splits``, ``metrics``, ``models``, ``config``, ``report``; ``data.connectors`` builds the
 drug-program benchmark from public APIs and ``data.synth`` generates the synthetic testbed.
 """
-__version__ = "1.1.0"
+__version__ = "1.2.0"

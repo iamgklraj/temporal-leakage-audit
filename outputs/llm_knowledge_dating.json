@@ -1,0 +1,662 @@
+{
+  "strata_counts": {
+    "approved_before_start": 316,
+    "never_approved_code": 172,
+    "other": 94,
+    "approved_after_start": 18
+  },
+  "chembl_match_rate": 0.7267,
+  "definition": "The nested-prompt study (scripts/llm_memorization_study.py) finds that revealing the\nnamed intervention (full title vs masked title, \"D+T - D+Tm\") raises AUPRC. That knowledge\nmay be legitimate (what was public about the drug when the trial started) or hindsight\n(what became known later, e.g. the programme's fate). This script stratifies trials by how\nmuch could have been public at trial start and recomputes the gain within each stratum:",
+  "models": {
+    "claude-haiku-4-5-20251001": {
+      "approved_before_start": {
+        "D+T - D+Tm": {
+          "n": 316,
+          "n_pos": 55,
+          "auprc": 0.0761,
+          "auprc_ci": [
+            -0.0082,
+            0.1555
+          ],
+          "auprc_p_gt_0": 0.962,
+          "auroc": 0.0725,
+          "auroc_ci": [
+            -0.009,
+            0.1463
+          ]
+        },
+        "D+ID - D": {
+          "n": 316,
+          "n_pos": 55,
+          "auprc": -0.0404,
+          "auprc_ci": [
+            -0.1232,
+            0.0309
+          ],
+          "auprc_p_gt_0": 0.142,
+          "auroc": -0.0045,
+          "auroc_ci": [
+            -0.0597,
+            0.0479
+          ]
+        }
+      },
+      "approved_after_start": {
+        "D+T - D+Tm": {
+          "n": 18,
+          "n_pos": 7,
+          "auprc": 0.1347,
+          "auprc_ci": [
+            -0.2847,
+            0.4755
+          ],
+          "auprc_p_gt_0": 0.731,
+          "auroc": 0.0649,
+          "auroc_ci": [
+            -0.377,
+            0.4778
+          ]
+        },
+        "D+ID - D": {
+          "n": 18,
+          "n_pos": 7,
+          "auprc": 0.051,
+          "auprc_ci": [
+            -0.1495,
+            0.2863
+          ],
+          "auprc_p_gt_0": 0.643,
+          "auroc": 0.0065,
+          "auroc_ci": [
+            -0.2923,
+            0.284
+          ]
+        }
+      },
+      "never_approved_code": {
+        "D+T - D+Tm": {
+          "n": 172,
+          "n_pos": 28,
+          "auprc": 0.0526,
+          "auprc_ci": [
+            -0.0851,
+            0.1682
+          ],
+          "auprc_p_gt_0": 0.775,
+          "auroc": 0.0425,
+          "auroc_ci": [
+            -0.0762,
+            0.1676
+          ]
+        },
+        "D+ID - D": {
+          "n": 172,
+          "n_pos": 28,
+          "auprc": 0.0474,
+          "auprc_ci": [
+            -0.0024,
+            0.1382
+          ],
+          "auprc_p_gt_0": 0.971,
+          "auroc": 0.1001,
+          "auroc_ci": [
+            -0.0112,
+            0.2194
+          ]
+        }
+      },
+      "other": {
+        "D+T - D+Tm": {
+          "n": 94,
+          "n_pos": 18,
+          "auprc": 0.1213,
+          "auprc_ci": [
+            -0.0273,
+            0.2387
+          ],
+          "auprc_p_gt_0": 0.936,
+          "auroc": 0.0398,
+          "auroc_ci": [
+            -0.0838,
+            0.152
+          ]
+        },
+        "D+ID - D": {
+          "n": 94,
+          "n_pos": 18,
+          "auprc": 0.0782,
+          "auprc_ci": [
+            -0.0299,
+            0.1608
+          ],
+          "auprc_p_gt_0": 0.882,
+          "auroc": 0.0365,
+          "auroc_ci": [
+            -0.0435,
+            0.1177
+          ]
+        }
+      }
+    },
+    "claude-sonnet-5": {
+      "approved_before_start": {
+        "D+T - D+Tm": {
+          "n": 316,
+          "n_pos": 55,
+          "auprc": 0.1489,
+          "auprc_ci": [
+            0.0756,
+            0.2169
+          ],
+          "auprc_p_gt_0": 1.0,
+          "auroc": 0.1194,
+          "auroc_ci": [
+            0.0638,
+            0.1802
+          ]
+        },
+        "D+ID - D": {
+          "n": 316,
+          "n_pos": 55,
+          "auprc": -0.005,
+          "auprc_ci": [
+            -0.0494,
+            0.0356
+          ],
+          "auprc_p_gt_0": 0.369,
+          "auroc": -0.0257,
+          "auroc_ci": [
+            -0.0737,
+            0.019
+          ]
+        }
+      },
+      "approved_after_start": {
+        "D+T - D+Tm": {
+          "n": 18,
+          "n_pos": 7,
+          "auprc": 0.1655,
+          "auprc_ci": [
+            -0.0584,
+            0.4445
+          ],
+          "auprc_p_gt_0": 0.922,
+          "auroc": 0.1688,
+          "auroc_ci": [
+            0.0065,
+            0.3637
+          ]
+        },
+        "D+ID - D": {
+          "n": 18,
+          "n_pos": 7,
+          "auprc": -0.0039,
+          "auprc_ci": [
+            -0.2286,
+            0.1761
+          ],
+          "auprc_p_gt_0": 0.486,
+          "auroc": 0.0455,
+          "auroc_ci": [
+            -0.0982,
+            0.2188
+          ]
+        }
+      },
+      "never_approved_code": {
+        "D+T - D+Tm": {
+          "n": 172,
+          "n_pos": 28,
+          "auprc": -0.0203,
+          "auprc_ci": [
+            -0.111,
+            0.0418
+          ],
+          "auprc_p_gt_0": 0.294,
+          "auroc": 0.0103,
+          "auroc_ci": [
+            -0.0507,
+            0.0663
+          ]
+        },
+        "D+ID - D": {
+          "n": 172,
+          "n_pos": 28,
+          "auprc": 0.0259,
+          "auprc_ci": [
+            -0.078,
+            0.1555
+          ],
+          "auprc_p_gt_0": 0.73,
+          "auroc": 0.0635,
+          "auroc_ci": [
+            -0.0086,
+            0.1406
+          ]
+        }
+      },
+      "other": {
+        "D+T - D+Tm": {
+          "n": 94,
+          "n_pos": 18,
+          "auprc": 0.065,
+          "auprc_ci": [
+            -0.0456,
+            0.193
+          ],
+          "auprc_p_gt_0": 0.876,
+          "auroc": 0.0493,
+          "auroc_ci": [
+            -0.0556,
+            0.1458
+          ]
+        },
+        "D+ID - D": {
+          "n": 94,
+          "n_pos": 18,
+          "auprc": 0.0238,
+          "auprc_ci": [
+            -0.059,
+            0.1065
+          ],
+          "auprc_p_gt_0": 0.735,
+          "auroc": 0.0501,
+          "auroc_ci": [
+            -0.0258,
+            0.135
+          ]
+        }
+      }
+    },
+    "claude-opus-4-8": {
+      "approved_before_start": {
+        "D+T - D+Tm": {
+          "n": 316,
+          "n_pos": 55,
+          "auprc": 0.1013,
+          "auprc_ci": [
+            0.0344,
+            0.1723
+          ],
+          "auprc_p_gt_0": 0.998,
+          "auroc": 0.0936,
+          "auroc_ci": [
+            0.0406,
+            0.1505
+          ]
+        },
+        "D+ID - D": {
+          "n": 316,
+          "n_pos": 55,
+          "auprc": 0.0068,
+          "auprc_ci": [
+            -0.0415,
+            0.0535
+          ],
+          "auprc_p_gt_0": 0.556,
+          "auroc": -0.0191,
+          "auroc_ci": [
+            -0.053,
+            0.0191
+          ]
+        }
+      },
+      "approved_after_start": {
+        "D+T - D+Tm": {
+          "n": 18,
+          "n_pos": 7,
+          "auprc": 0.172,
+          "auprc_ci": [
+            0.0091,
+            0.397
+          ],
+          "auprc_p_gt_0": 0.983,
+          "auroc": 0.1623,
+          "auroc_ci": [
+            0.0,
+            0.3542
+          ]
+        },
+        "D+ID - D": {
+          "n": 18,
+          "n_pos": 7,
+          "auprc": 0.1204,
+          "auprc_ci": [
+            -0.0575,
+            0.3036
+          ],
+          "auprc_p_gt_0": 0.812,
+          "auroc": 0.0455,
+          "auroc_ci": [
+            -0.065,
+            0.2
+          ]
+        }
+      },
+      "never_approved_code": {
+        "D+T - D+Tm": {
+          "n": 172,
+          "n_pos": 28,
+          "auprc": 0.0711,
+          "auprc_ci": [
+            -0.0161,
+            0.1373
+          ],
+          "auprc_p_gt_0": 0.941,
+          "auroc": 0.0496,
+          "auroc_ci": [
+            -0.0105,
+            0.1041
+          ]
+        },
+        "D+ID - D": {
+          "n": 172,
+          "n_pos": 28,
+          "auprc": 0.0463,
+          "auprc_ci": [
+            -0.0367,
+            0.138
+          ],
+          "auprc_p_gt_0": 0.757,
+          "auroc": -0.0091,
+          "auroc_ci": [
+            -0.0621,
+            0.0473
+          ]
+        }
+      },
+      "other": {
+        "D+T - D+Tm": {
+          "n": 94,
+          "n_pos": 18,
+          "auprc": 0.0662,
+          "auprc_ci": [
+            -0.0252,
+            0.1515
+          ],
+          "auprc_p_gt_0": 0.928,
+          "auroc": 0.0515,
+          "auroc_ci": [
+            -0.0538,
+            0.1523
+          ]
+        },
+        "D+ID - D": {
+          "n": 94,
+          "n_pos": 18,
+          "auprc": 0.0234,
+          "auprc_ci": [
+            -0.1012,
+            0.1277
+          ],
+          "auprc_p_gt_0": 0.629,
+          "auroc": 0.015,
+          "auroc_ci": [
+            -0.0529,
+            0.0859
+          ]
+        }
+      }
+    },
+    "claude-opus-5": {
+      "approved_before_start": {
+        "D+T - D+Tm": {
+          "n": 316,
+          "n_pos": 55,
+          "auprc": 0.0998,
+          "auprc_ci": [
+            0.0255,
+            0.1732
+          ],
+          "auprc_p_gt_0": 0.999,
+          "auroc": 0.0881,
+          "auroc_ci": [
+            0.0243,
+            0.1563
+          ]
+        },
+        "D+ID - D": {
+          "n": 316,
+          "n_pos": 55,
+          "auprc": 0.0121,
+          "auprc_ci": [
+            -0.0149,
+            0.0391
+          ],
+          "auprc_p_gt_0": 0.793,
+          "auroc": 0.0209,
+          "auroc_ci": [
+            -0.0207,
+            0.0649
+          ]
+        }
+      },
+      "approved_after_start": {
+        "D+T - D+Tm": {
+          "n": 18,
+          "n_pos": 7,
+          "auprc": 0.1421,
+          "auprc_ci": [
+            0.0,
+            0.3667
+          ],
+          "auprc_p_gt_0": 0.937,
+          "auroc": 0.1753,
+          "auroc_ci": [
+            0.0,
+            0.4167
+          ]
+        },
+        "D+ID - D": {
+          "n": 18,
+          "n_pos": 7,
+          "auprc": -0.0092,
+          "auprc_ci": [
+            -0.1714,
+            0.107
+          ],
+          "auprc_p_gt_0": 0.447,
+          "auroc": 0.0065,
+          "auroc_ci": [
+            -0.0778,
+            0.0983
+          ]
+        }
+      },
+      "never_approved_code": {
+        "D+T - D+Tm": {
+          "n": 172,
+          "n_pos": 28,
+          "auprc": 0.0703,
+          "auprc_ci": [
+            0.0047,
+            0.1355
+          ],
+          "auprc_p_gt_0": 0.98,
+          "auroc": -0.0026,
+          "auroc_ci": [
+            -0.0617,
+            0.0538
+          ]
+        },
+        "D+ID - D": {
+          "n": 172,
+          "n_pos": 28,
+          "auprc": 0.0162,
+          "auprc_ci": [
+            -0.0748,
+            0.0933
+          ],
+          "auprc_p_gt_0": 0.642,
+          "auroc": 0.0439,
+          "auroc_ci": [
+            -0.0031,
+            0.0928
+          ]
+        }
+      },
+      "other": {
+        "D+T - D+Tm": {
+          "n": 94,
+          "n_pos": 18,
+          "auprc": 0.0806,
+          "auprc_ci": [
+            -0.0334,
+            0.1985
+          ],
+          "auprc_p_gt_0": 0.92,
+          "auroc": 0.0874,
+          "auroc_ci": [
+            0.0022,
+            0.1763
+          ]
+        },
+        "D+ID - D": {
+          "n": 94,
+          "n_pos": 18,
+          "auprc": 0.0756,
+          "auprc_ci": [
+            0.0057,
+            0.1713
+          ],
+          "auprc_p_gt_0": 0.985,
+          "auroc": 0.1184,
+          "auroc_ci": [
+            0.0407,
+            0.199
+          ]
+        }
+      }
+    },
+    "ollama:llama3.1:8b": {
+      "approved_before_start": {
+        "D+T - D+Tm": {
+          "n": 316,
+          "n_pos": 55,
+          "auprc": 0.0299,
+          "auprc_ci": [
+            -0.0486,
+            0.111
+          ],
+          "auprc_p_gt_0": 0.787,
+          "auroc": 0.0456,
+          "auroc_ci": [
+            -0.0288,
+            0.1161
+          ]
+        },
+        "D+ID - D": {
+          "n": 316,
+          "n_pos": 55,
+          "auprc": 0.0284,
+          "auprc_ci": [
+            -0.0566,
+            0.1146
+          ],
+          "auprc_p_gt_0": 0.76,
+          "auroc": 0.0373,
+          "auroc_ci": [
+            -0.027,
+            0.1121
+          ]
+        }
+      },
+      "approved_after_start": {
+        "D+T - D+Tm": {
+          "n": 18,
+          "n_pos": 7,
+          "auprc": 0.0588,
+          "auprc_ci": [
+            -0.0766,
+            0.2769
+          ],
+          "auprc_p_gt_0": 0.818,
+          "auroc": 0.0714,
+          "auroc_ci": [
+            -0.1494,
+            0.2662
+          ]
+        },
+        "D+ID - D": {
+          "n": 18,
+          "n_pos": 7,
+          "auprc": -0.1484,
+          "auprc_ci": [
+            -0.3909,
+            -0.0111
+          ],
+          "auprc_p_gt_0": 0.015,
+          "auroc": -0.2338,
+          "auroc_ci": [
+            -0.4723,
+            -0.0519
+          ]
+        }
+      },
+      "never_approved_code": {
+        "D+T - D+Tm": {
+          "n": 172,
+          "n_pos": 28,
+          "auprc": -0.0225,
+          "auprc_ci": [
+            -0.0915,
+            0.0779
+          ],
+          "auprc_p_gt_0": 0.314,
+          "auroc": -0.0759,
+          "auroc_ci": [
+            -0.1796,
+            0.0272
+          ]
+        },
+        "D+ID - D": {
+          "n": 172,
+          "n_pos": 28,
+          "auprc": 0.0074,
+          "auprc_ci": [
+            -0.0583,
+            0.1086
+          ],
+          "auprc_p_gt_0": 0.632,
+          "auroc": -0.0016,
+          "auroc_ci": [
+            -0.0839,
+            0.0866
+          ]
+        }
+      },
+      "other": {
+        "D+T - D+Tm": {
+          "n": 94,
+          "n_pos": 18,
+          "auprc": -0.1456,
+          "auprc_ci": [
+            -0.2493,
+            -0.023
+          ],
+          "auprc_p_gt_0": 0.012,
+          "auroc": -0.027,
+          "auroc_ci": [
+            -0.1005,
+            0.0477
+          ]
+        },
+        "D+ID - D": {
+          "n": 94,
+          "n_pos": 18,
+          "auprc": 0.0057,
+          "auprc_ci": [
+            -0.1568,
+            0.1655
+          ],
+          "auprc_p_gt_0": 0.581,
+          "auroc": 0.091,
+          "auroc_ci": [
+            -0.0697,
+            0.2603
+          ]
+        }
+      }
+    }
+  }
+}

@@ -58,6 +58,8 @@ RAW_DIR = "outputs/llm_raw"
 CONDITIONS = ["D", "D+ID", "D+Tm", "D+T", "D+T+ID+S"]
 CONTRASTS = [("D+ID", "D"), ("D+Tm", "D"), ("D+T", "D+Tm"), ("D+T", "D"), ("D+T+ID+S", "D"),
              ("D+T+ID+S", "D+T")]
+# Pre-specified primary contrasts (Holm-corrected across models); all others are exploratory.
+PRIMARY = ["D+ID - D", "D+T - D+Tm"]
 INTERVENTIONS_CACHE = "outputs/llm_sample_interventions.json"  # tracked: offline reproducibility
 # Generic comparator terms are design information, not identities, so they are never masked.
 GENERIC = {"placebo", "saline", "vehicle", "sham", "control", "standard of care", "usual care",
@@ -358,6 +360,35 @@ def summarize(w, seed=SEED):
     return out
 
 
+def holm(pvals):
+    """Holm step-down adjusted p-values (same order as input)."""
+    order = np.argsort(pvals)
+    m, adj, running = len(pvals), np.empty(len(pvals)), 0.0
+    for rank, i in enumerate(order):
+        running = max(running, min(1.0, (m - rank) * pvals[i]))
+        adj[i] = running
+    return adj
+
+
+def primary_tests(models_out):
+    """Two-sided bootstrap p-values for the primary contrasts, Holm-adjusted across models."""
+    rows = []
+    for model, res in models_out.items():
+        for key in PRIMARY:
+            c = res["all"].get("contrasts", {}).get(key)
+            if c is None:
+                continue
+            p_gt = c["auprc_p_gt_0"]
+            p = max(min(1.0, 2 * min(p_gt, 1 - p_gt)), 1.0 / N_BOOT)
+            rows.append({"model": model, "contrast": key, "auprc": c["auprc"],
+                         "auprc_ci": c["auprc_ci"], "p_two_sided": round(p, 4)})
+    adj = holm(np.array([r["p_two_sided"] for r in rows])) if rows else []
+    for r, a in zip(rows, adj):
+        r["p_holm"] = round(float(a), 4)
+        r["significant_holm_0.05"] = bool(a < 0.05)
+    return rows
+
+
 def analyze(preds, run_meta):
     out = {"run": run_meta, "design": {"conditions": CONDITIONS,
                                        "contrasts": [f"{a} - {b}" for a, b in CONTRASTS]},
@@ -389,6 +420,15 @@ def analyze(preds, run_meta):
                   f"ID-gain {c['D+ID - D']['auprc']:+.3f} {c['D+ID - D']['auprc_ci']}  "
                   f"full-gap {c['D+T+ID+S - D']['auprc']:+.3f} {c['D+T+ID+S - D']['auprc_ci']}",
                   flush=True)
+    out["primary_tests"] = primary_tests(out["models"])
+    out["primary_note"] = ("Primary contrasts pre-specified: identifier recall (D+ID - D) and "
+                           "named-intervention knowledge (D+T - D+Tm) per model; two-sided "
+                           "bootstrap p-values (floor 1/1000), Holm-adjusted across all primary "
+                           "tests. Other contrasts and strata are exploratory.")
+    for r in out["primary_tests"]:
+        print(f"  primary {r['model']:28s} {r['contrast']:11s} {r['auprc']:+.3f} "
+              f"p={r['p_two_sided']:.4f} Holm={r['p_holm']:.4f} "
+              f"{'*' if r['significant_holm_0.05'] else ''}", flush=True)
     return out
 
 

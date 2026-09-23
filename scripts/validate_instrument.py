@@ -5,6 +5,10 @@ mostly after each program's decision time. ``leak_strength`` sets how strongly t
 post-decision scores track the label; with ``leak_strength = 0`` and ``leak_count = 0`` the
 post-decision evidence is independent of the label, so there is no leakage to find.
 
+A second, independent mechanism (``leak_count``: successful programs attract 1-4 extra
+post-decision papers whose scores carry no signal) checks that the instrument's behaviour
+does not depend on how leakage arises.
+
 For each leak level we draw independent replicates (new data, new split, new models) and
 compute LAP = AUPRC(naive) - AUPRC(deployable) with its target-clustered, paired percentile
 bootstrap CI, exactly as in the paper. Reported per level:
@@ -37,7 +41,8 @@ from temporal_leakage_audit import features, leakage, metrics, models, splits  #
 from temporal_leakage_audit.config import get_config  # noqa: E402
 from temporal_leakage_audit.data import synth  # noqa: E402
 
-LEVELS = [0.0, 0.25, 0.5, 1.0, 1.5, 2.0]
+LEVELS = [0.0, 0.25, 0.5, 1.0, 1.5, 2.0]          # "score" mechanism: leak_strength
+COUNT_LEVELS = [0, 1, 2, 3, 4]                     # "count" mechanism: extra papers if success
 N_BOOT = 200
 
 
@@ -50,8 +55,11 @@ def _cfg(leak_strength, leak_count, seed, n_programs=2000):
 
 
 def replicate(args):
-    level, rep = args
-    cfg = _cfg(level, 0, seed=10_000 + 1_000 * LEVELS.index(level) + rep)
+    mechanism, level, rep = args
+    if mechanism == "score":   # post-decision literature scores track the label
+        cfg = _cfg(level, 0, seed=10_000 + 1_000 * LEVELS.index(level) + rep)
+    else:                      # successful programs attract extra post-decision papers
+        cfg = _cfg(0.0, int(level), seed=50_000 + 1_000 * COUNT_LEVELS.index(level) + rep)
     programs, evidence = synth.generate(cfg)
     Xc, Xn, y, meta, _ = features.build(programs, evidence)
     tr, te, info = splits.temporal_split(meta, 2016, (2017, 2020), enforce_target_disjoint=True)
@@ -63,21 +71,21 @@ def replicate(args):
     s = leakage._clustered_auprc_samples(yte, p, meta.loc[te, "target_id"].values,
                                          n_boot=N_BOOT, seed=rep)
     draws = np.array(s["naive"]) - np.array(s["cens"])
-    return {"level": level, "rep": rep, "n_test": int(len(te)),
+    return {"mechanism": mechanism, "level": level, "rep": rep, "n_test": int(len(te)),
             "lap": float(metrics.auprc(yte, p["naive"]) - metrics.auprc(yte, p["cens"])),
             "lap_auroc": float(metrics.auroc(yte, p["naive"]) - metrics.auroc(yte, p["cens"])),
             "lo": float(np.quantile(draws, 0.025)), "hi": float(np.quantile(draws, 0.975))}
 
 
-def summarize(rows):
+def summarize(rows, mechanism, levels):
     out = []
-    for level in LEVELS:
-        r = [x for x in rows if x["level"] == level]
+    for level in levels:
+        r = [x for x in rows if x["mechanism"] == mechanism and x["level"] == level]
         lap = np.array([x["lap"] for x in r])
         lo, hi = np.array([x["lo"] for x in r]), np.array([x["hi"] for x in r])
         mean = float(lap.mean())
         out.append({
-            "leak_strength": level, "replicates": len(r),
+            "leak_strength" if mechanism == "score" else "leak_count": level, "replicates": len(r),
             "mean_lap": round(mean, 4),
             "lap_range_95": [round(float(np.quantile(lap, .025)), 4), round(float(np.quantile(lap, .975)), 4)],
             "mean_lap_auroc": round(float(np.mean([x["lap_auroc"] for x in r])), 4),
@@ -107,18 +115,25 @@ def main():
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--out", default="outputs/instrument_validation.json")
     args = ap.parse_args()
-    jobs = [(lv, r) for lv in LEVELS for r in range(args.reps)]
+    jobs = ([("score", lv, r) for lv in LEVELS for r in range(args.reps)] +
+            [("count", lv, r) for lv in COUNT_LEVELS for r in range(args.reps)])
     with cf.ProcessPoolExecutor(max_workers=args.workers) as ex:
         rows = list(ex.map(replicate, jobs, chunksize=4))
-    summary = summarize(rows)
+    summary = summarize(rows, "score", LEVELS)
+    count_summary = summarize(rows, "count", COUNT_LEVELS)
     out = {"design": {"levels_leak_strength": LEVELS, "leak_count": 0,
+                      "count_mechanism_levels": COUNT_LEVELS,
                       "replicates_per_level": args.reps, "n_programs": 2000,
                       "split": "train <= 2016, test 2017-2020, target-disjoint",
                       "bootstrap": f"target-clustered paired percentile, {N_BOOT} resamples"},
-           "levels": summary, "example_curve": example_curve()}
+           "levels": summary, "count_levels": count_summary, "example_curve": example_curve()}
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     with open(args.out, "w") as fh:
         json.dump(out, fh, indent=2)
+    for s in count_summary:
+        print(f"count {s['leak_count']}: mean LAP {s['mean_lap']:+.3f} {s['lap_range_95']}  "
+              f"detect {s['detection_rate']:.2f}  CI<0 {s['ci_below_zero_rate']:.2f}  "
+              f"coverage {s['coverage_of_mean_lap']:.2f}")
     for s in summary:
         print(f"leak {s['leak_strength']:>4}: mean LAP {s['mean_lap']:+.3f} {s['lap_range_95']}  "
               f"detect {s['detection_rate']:.2f}  CI<0 {s['ci_below_zero_rate']:.2f}  "

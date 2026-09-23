@@ -3320,5 +3320,128 @@
         }
       }
     }
-  }
+  },
+  "primary_tests": [
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "contrast": "D+ID - D",
+      "auprc": 0.0107,
+      "auprc_ci": [
+        -0.042,
+        0.0521
+      ],
+      "p_two_sided": 0.74,
+      "p_holm": 1.0,
+      "significant_holm_0.05": false
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "contrast": "D+T - D+Tm",
+      "auprc": 0.0873,
+      "auprc_ci": [
+        0.0313,
+        0.1451
+      ],
+      "p_two_sided": 0.002,
+      "p_holm": 0.016,
+      "significant_holm_0.05": true
+    },
+    {
+      "model": "claude-sonnet-5",
+      "contrast": "D+ID - D",
+      "auprc": 0.0084,
+      "auprc_ci": [
+        -0.0289,
+        0.0427
+      ],
+      "p_two_sided": 0.65,
+      "p_holm": 1.0,
+      "significant_holm_0.05": false
+    },
+    {
+      "model": "claude-sonnet-5",
+      "contrast": "D+T - D+Tm",
+      "auprc": 0.0672,
+      "auprc_ci": [
+        0.0171,
+        0.1116
+      ],
+      "p_two_sided": 0.008,
+      "p_holm": 0.056,
+      "significant_holm_0.05": false
+    },
+    {
+      "model": "claude-opus-4-8",
+      "contrast": "D+ID - D",
+      "auprc": 0.0202,
+      "auprc_ci": [
+        -0.0142,
+        0.0552
+      ],
+      "p_two_sided": 0.266,
+      "p_holm": 1.0,
+      "significant_holm_0.05": false
+    },
+    {
+      "model": "claude-opus-4-8",
+      "contrast": "D+T - D+Tm",
+      "auprc": 0.1265,
+      "auprc_ci": [
+        0.0734,
+        0.1705
+      ],
+      "p_two_sided": 0.001,
+      "p_holm": 0.01,
+      "significant_holm_0.05": true
+    },
+    {
+      "model": "claude-opus-5",
+      "contrast": "D+ID - D",
+      "auprc": 0.0267,
+      "auprc_ci": [
+        0.0012,
+        0.0538
+      ],
+      "p_two_sided": 0.038,
+      "p_holm": 0.228,
+      "significant_holm_0.05": false
+    },
+    {
+      "model": "claude-opus-5",
+      "contrast": "D+T - D+Tm",
+      "auprc": 0.1176,
+      "auprc_ci": [
+        0.0682,
+        0.1634
+      ],
+      "p_two_sided": 0.001,
+      "p_holm": 0.01,
+      "significant_holm_0.05": true
+    },
+    {
+      "model": "ollama:llama3.1:8b",
+      "contrast": "D+ID - D",
+      "auprc": 0.0095,
+      "auprc_ci": [
+        -0.0393,
+        0.0598
+      ],
+      "p_two_sided": 0.696,
+      "p_holm": 1.0,
+      "significant_holm_0.05": false
+    },
+    {
+      "model": "ollama:llama3.1:8b",
+      "contrast": "D+T - D+Tm",
+      "auprc": 0.0177,
+      "auprc_ci": [
+        -0.0268,
+        0.0641
+      ],
+      "p_two_sided": 0.42,
+      "p_holm": 1.0,
+      "significant_holm_0.05": false
+    }
+  ],
+  "primary_note": "Primary contrasts pre-specified: identifier recall (D+ID - D) and named-intervention knowledge (D+T - D+Tm) per model; two-sided bootstrap p-values (floor 1/1000), Holm-adjusted across all primary tests. Other contrasts and strata are exploratory."
 }
