@@ -12,8 +12,12 @@ type: software
 license: MIT
 version: 1.0.0
 date-released: "2026-09-22"
-# Add the Zenodo DOI after the first release, e.g.
-#   doi: 10.5281/zenodo.XXXXXXX
+# Concept DOI (resolves to the latest release). v1.0.0 = 10.5281/zenodo.22907787
+doi: 10.5281/zenodo.22907786
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22907787
+    description: "Version 1.0.0 (the release that produced the paper's results)"
 repository-code: "https://github.com/iamgklraj/temporal-leakage-audit"
 authors:
   - family-names: Muthukumar

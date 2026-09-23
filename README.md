@@ -1,5 +1,7 @@
 # temporal-leakage-audit
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22907786.svg)](https://doi.org/10.5281/zenodo.22907786)
+
 Code for the paper *Temporal leakage inflates reported accuracy in clinical trial outcome
 prediction*. It provides a **temporal leakage-response instrument** for machine-learning models
 that predict clinical-trial outcomes and drug phase advancement, audits of two public benchmarks
@@ -129,7 +131,10 @@ print(curve["total_LAP_auprc"], curve["total_LAP_auprc_ci"])
 
 ## Citation
 
-See `CITATION.cff` (GitHub renders it as a "Cite this repository" button).
+Archived on Zenodo: [10.5281/zenodo.22907786](https://doi.org/10.5281/zenodo.22907786) (all
+versions); v1.0.0, which produced the paper's results, is
+[10.5281/zenodo.22907787](https://doi.org/10.5281/zenodo.22907787). See `CITATION.cff` (GitHub
+renders it as a "Cite this repository" button).
 
 ## License
 
