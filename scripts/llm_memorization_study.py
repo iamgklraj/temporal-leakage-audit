@@ -236,8 +236,20 @@ def mask_title(title, info):
 
 
 # --------------------------------------------------------------------------- querying
+def _ensure_human_labels():
+    """Download CTO's public human-label table (Hugging Face) if it is not present."""
+    path = os.path.join(CTO, "human_labels_2020_2024.csv")
+    if not os.path.exists(path):
+        os.makedirs(CTO, exist_ok=True)
+        print("  downloading CTO human labels from Hugging Face ...", flush=True)
+        urllib.request.urlretrieve(
+            "https://huggingface.co/datasets/chufangao/CTO/resolve/main/"
+            "human_labels_2020_2024/human_labels_2020_2024.csv", path)
+    return path
+
+
 def load_sample(n=N):
-    hl = pd.read_csv(os.path.join(CTO, "human_labels_2020_2024.csv"), low_memory=False)
+    hl = pd.read_csv(_ensure_human_labels(), low_memory=False)
     hl = hl[hl["labels"].isin([0.0, 1.0])].copy()
     hl["labels"] = hl["labels"].astype(int)
     hl["start_year"] = pd.to_datetime(hl["start_date"], errors="coerce").dt.year
