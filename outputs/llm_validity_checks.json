@@ -1,0 +1,5084 @@
+{
+ "note": "Offline re-analysis of saved predictions; no language model was queried.",
+ "provenance": {
+  "claude-haiku-4-5-20251001": {
+   "prompt_lines_checked": 3000,
+   "mismatches": 0
+  },
+  "claude-sonnet-5": {
+   "prompt_lines_checked": 3000,
+   "mismatches": 0
+  },
+  "claude-opus-4-8": {
+   "prompt_lines_checked": 3000,
+   "mismatches": 0
+  },
+  "claude-opus-5": {
+   "prompt_lines_checked": 3000,
+   "mismatches": 0
+  },
+  "ollama:llama3.1:8b": {
+   "prompt_lines_checked": 3000,
+   "mismatches": 0
+  }
+ },
+ "claims": {
+  "L1_enrollment_type": {
+   "ACTUAL": 591,
+   "ESTIMATED": 9
+  },
+  "L1_withdrawn_zero_enrolment": 178,
+  "L1_enroll_bucket_by_status": {
+   "COMPLETED": {
+    "200-500": 16,
+    "50-200": 41,
+    "<50": 44,
+    ">=500": 17
+   },
+   "SUSPENDED": {
+    "200-500": 4,
+    "50-200": 1,
+    "<50": 5,
+    ">=500": 0
+   },
+   "TERMINATED": {
+    "200-500": 11,
+    "50-200": 41,
+    "<50": 236,
+    ">=500": 6
+   },
+   "WITHDRAWN": {
+    "200-500": 0,
+    "50-200": 0,
+    "<50": 178,
+    ">=500": 0
+   }
+  },
+  "L2_tabular_design_only": {
+   "cv": "5-fold stratified, shuffled; one-hot encoding; pooled out-of-fold predictions",
+   "results": {
+    "all_D_fields|logistic_regression": {
+     "seed0_auroc": 0.7723,
+     "seed0_auprc": 0.4342,
+     "mean5seeds_auroc": 0.7759,
+     "mean5seeds_auprc": 0.4498
+    },
+    "all_D_fields|gradient_boosting": {
+     "seed0_auroc": 0.758,
+     "seed0_auprc": 0.4412,
+     "mean5seeds_auroc": 0.7531,
+     "mean5seeds_auprc": 0.4414
+    },
+    "without_enrol_bin|logistic_regression": {
+     "seed0_auroc": 0.676,
+     "seed0_auprc": 0.2747,
+     "mean5seeds_auroc": 0.6734,
+     "mean5seeds_auprc": 0.2753
+    },
+    "without_enrol_bin|gradient_boosting": {
+     "seed0_auroc": 0.6664,
+     "seed0_auprc": 0.2644,
+     "mean5seeds_auroc": 0.6538,
+     "mean5seeds_auprc": 0.2597
+    },
+    "enrol_bin_only|logistic_regression": {
+     "seed0_auroc": 0.7337,
+     "seed0_auprc": 0.4093,
+     "mean5seeds_auroc": 0.7313,
+     "mean5seeds_auprc": 0.4124
+    },
+    "enrol_bin_only|gradient_boosting": {
+     "seed0_auroc": 0.7337,
+     "seed0_auprc": 0.4094,
+     "mean5seeds_auroc": 0.7309,
+     "mean5seeds_auprc": 0.4111
+    }
+   }
+  },
+  "L2_llm_design_only": {
+   "claude-haiku-4-5-20251001": {
+    "auprc": 0.231,
+    "auroc": 0.5676
+   },
+   "claude-sonnet-5": {
+    "auprc": 0.2157,
+    "auroc": 0.5895
+   },
+   "claude-opus-4-8": {
+    "auprc": 0.2277,
+    "auroc": 0.5967
+   },
+   "claude-opus-5": {
+    "auprc": 0.2032,
+    "auroc": 0.5585
+   },
+   "ollama:llama3.1:8b": {
+    "auprc": 0.2854,
+    "auroc": 0.6271
+   }
+  },
+  "L3_label_by_status": {
+   "COMPLETED": {
+    "n": 118,
+    "label_1": 108
+   },
+   "TERMINATED": {
+    "n": 294,
+    "label_1": 0
+   },
+   "WITHDRAWN": {
+    "n": 178,
+    "label_1": 0
+   },
+   "SUSPENDED": {
+    "n": 10,
+    "label_1": 0
+   }
+  },
+  "L3_non_completed": 482,
+  "L5_completion_date_range": [
+   "2021-03-20",
+   "2024-12-31"
+  ],
+  "L5_completion_date_type": {
+   "ACTUAL": 466,
+   "ESTIMATED": 134
+  },
+  "L5_trials_completed_after_documented_cutoff": {
+   "claude-haiku-4-5-20251001": {
+    "cutoff": "2025-07",
+    "source": "https://platform.claude.com/docs/en/models/haiku-4-5/overview",
+    "n_after": 0
+   },
+   "claude-sonnet-5": {
+    "cutoff": "2026-01",
+    "source": "https://platform.claude.com/docs/en/models/sonnet-5/overview",
+    "n_after": 0
+   },
+   "claude-opus-4-8": {
+    "cutoff": "2026-01",
+    "source": "https://platform.claude.com/docs/en/models/opus-4-8/overview",
+    "n_after": 0
+   },
+   "claude-opus-5": {
+    "cutoff": "2026-05",
+    "source": "https://platform.claude.com/docs/en/models/opus-5/overview",
+    "n_after": 0
+   },
+   "ollama:llama3.1:8b": {
+    "cutoff": "2023-12",
+    "source": "llm_memorization_study.CUTOFFS",
+    "n_after": 148
+   }
+  },
+  "n_covid_trials": 68,
+  "n_covid_successes": 8,
+  "L7_id_sponsor_increment": {
+   "claude-haiku-4-5-20251001": {
+    "auprc": -0.0334,
+    "auprc_ci": [
+     -0.0961,
+     0.0382
+    ],
+    "auprc_p_gt_0": 0.181,
+    "auroc": -0.0,
+    "auroc_ci": [
+     -0.0606,
+     0.0588
+    ]
+   },
+   "claude-sonnet-5": {
+    "auprc": 0.0462,
+    "auprc_ci": [
+     0.0079,
+     0.0841
+    ],
+    "auprc_p_gt_0": 0.99,
+    "auroc": 0.004,
+    "auroc_ci": [
+     -0.0205,
+     0.0291
+    ]
+   },
+   "claude-opus-4-8": {
+    "auprc": -0.008,
+    "auprc_ci": [
+     -0.0437,
+     0.0336
+    ],
+    "auprc_p_gt_0": 0.389,
+    "auroc": 0.0175,
+    "auroc_ci": [
+     -0.0042,
+     0.0404
+    ]
+   },
+   "claude-opus-5": {
+    "auprc": 0.0835,
+    "auprc_ci": [
+     0.0391,
+     0.1259
+    ],
+    "auprc_p_gt_0": 1.0,
+    "auroc": 0.0252,
+    "auroc_ci": [
+     0.0061,
+     0.0433
+    ]
+   },
+   "ollama:llama3.1:8b": {
+    "auprc": -0.0221,
+    "auprc_ci": [
+     -0.0835,
+     0.0418
+    ],
+    "auprc_p_gt_0": 0.264,
+    "auroc": -0.0091,
+    "auroc_ci": [
+     -0.0758,
+     0.0535
+    ]
+   }
+  }
+ },
+ "masking_audit": {
+  "traced_masker_reproduces_saved_masks": "600/600",
+  "unchanged_titles": 75,
+  "unchanged_titles_first150": 75,
+  "automated_scan": {
+   "definition": "masked title (first 150 characters, as sent) scanned for the trial's own CT.gov intervention names/aliases/short codes, the ChEMBL synonyms and preferred names they resolve to (cache), close misspellings (difflib ratio >= 0.85), an abbreviation left in parentheses after [INTERVENTION], clinical-stage ChEMBL names from any trial, and INN stems; target/biomarker/class words excluded",
+   "n_flagged_strict_listed_identity": 27,
+   "n_flagged_any_named_drug": 38,
+   "rate_any": 0.0633,
+   "rate_any_ci95_wilson": [
+    0.0465,
+    0.0857
+   ],
+   "rule_counts": {
+    "ctgov_name": 16,
+    "chembl_own": 3,
+    "misspelling": 6,
+    "abbreviation": 2,
+    "chembl_any_trial": 12,
+    "inn_stem": 7
+   },
+   "flagged": [
+    {
+     "nct_id": "NCT04644029",
+     "masked": "Oral ISL QM as PrEP in Cisgender Women at High Risk for HIV-1 Infection ([INTERVENTION]-022)",
+     "hits": {
+      "ctgov_name": [
+       "ISL"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05494866",
+     "masked": "A Trial of [INTERVENTION] and Gemcitabine and Nab-[INTERVENTION] in Patients With Advanced Stage or Metastatic Pancreatic Ductal Adenocarcinoma",
+     "hits": {
+      "chembl_any_trial": [
+       "GEMCITABINE"
+      ],
+      "inn_stem": [
+       "Gemcitabine"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05077085",
+     "masked": "[INTERVENTION] Versus FMT for Multiple Recurrent CDI",
+     "hits": {
+      "ctgov_name": [
+       "FMT"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05420077",
+     "masked": "Safety and Immunogenicity of [INTERVENTION] in Healthy Individuals Previously Vaccinated With [INTERVENTION] and mRNA-1273",
+     "hits": {
+      "chembl_any_trial": [
+       "mRNA-1273"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04637698",
+     "masked": "OH2 Oncolytic Viral Therapy in Pancreatic Cancer",
+     "hits": {
+      "ctgov_name": [
+       "OH2"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05238844",
+     "masked": "A Study of Safety and Efficacy of [INTERVENTION] and [INTERVENTION] in Combination With Tenofovir Disoproxil Fumarate in Subjects With Chronic Hepatit",
+     "hits": {
+      "chembl_own": [
+       "TENOFOVIR DISOPROXIL",
+       "TENOFOVIR DISOPROXIL FUMARATE"
+      ],
+      "chembl_any_trial": [
+       "Tenofovir"
+      ],
+      "inn_stem": [
+       "Tenofovir"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05198843",
+     "masked": "Testing an Omega-3 Fatty Acid-Based Anti-Cancer Therapy for Patients With Triple-Negative Inflammatory Breast Cancer That Has Spread to Other Parts of",
+     "hits": {
+      "chembl_any_trial": [
+       "omega-3"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT03928275",
+     "masked": "The Response to Intralesional IL-2 and/or BCG Treatment for Cutaneous Metastatic Melanoma",
+     "hits": {
+      "ctgov_name": [
+       "BCG"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04731051",
+     "masked": "The Potential Use of Inhaled Hydroxychloroquine for the Treatment of [INTERVENTION] in Cancer Patients",
+     "hits": {
+      "chembl_any_trial": [
+       "Hydroxychloroquine"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05283304",
+     "masked": "Monthly Injectable BUP for MA Use Disorder (MURB) Trial",
+     "hits": {
+      "ctgov_name": [
+       "BUP"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05276401",
+     "masked": "Nu-3 Topical Gel for Treatment of Diabetic Foot Ulcer",
+     "hits": {
+      "ctgov_name": [
+       "Nu-3"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05127473",
+     "masked": "A Research Study of How a New Medicine [INTERVENTION]-3769 (Mim8) Works in the Body of Healthy People",
+     "hits": {
+      "ctgov_name": [
+       "Mim8"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05029856",
+     "masked": "Evaluation of the Safety and Immunogenicity of SII Vaccine Constructs Based on the SARS-CoV-2 ([INTERVENTION]) [INTERVENTION] in Adults",
+     "hits": {
+      "ctgov_name": [
+       "SII"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04833959",
+     "masked": "Pilot Study of 89-Zr Panitumumab in Pancreas Cancer",
+     "hits": {
+      "ctgov_name": [
+       "panitumumab"
+      ],
+      "inn_stem": [
+       "Panitumumab"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04771143",
+     "masked": "Study to Assess Safety, Tolerability, and Interactions of Cocaine and Oral [INTERVENTION]",
+     "hits": {
+      "inn_stem": [
+       "Cocaine"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04496674",
+     "masked": "Bispecific PSMAxCD3 Antibody CC-1 in Patients With Squamous Cell Carcinoma of the Lung",
+     "hits": {
+      "ctgov_name": [
+       "CC-1"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04873895",
+     "masked": "TACE Plus [INTERVENTION] and Hydroxychlorquine for Liver-Dominant Metastatic Colorectal Cancer (CRC)",
+     "hits": {
+      "misspelling": [
+       "Hydroxychlorquine~HYDROXYCHLOROQUINE",
+       "Hydroxychlorquine~Hydroxychloroquine"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04566133",
+     "masked": "Combination of [INTERVENTION] (MEK Inhibitor) and [INTERVENTION] (HCQ) (Autophagy Inhibitor) in Patients With KRAS Mutation Refractory Bile Tract Carc",
+     "hits": {
+      "abbreviation": [
+       "HCQ"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04601610",
+     "masked": "[INTERVENTION] Combined With Ningatinib in the Treatment of Advanced Hepatocellular Carcinoma",
+     "hits": {
+      "misspelling": [
+       "Ningatinib~NINGETINIB",
+       "Ningatinib~Ningetinib"
+      ],
+      "inn_stem": [
+       "Ningatinib"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04707352",
+     "masked": "Impact on Atrial Remodeling of Dapaglifozin in Patients With Heart Failure .",
+     "hits": {
+      "misspelling": [
+       "Dapaglifozin~DAPAGLIFLOZIN",
+       "Dapaglifozin~Dapagliflozin"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05132569",
+     "masked": "Efficacy and Safety of Tolebrutinib ([INTERVENTION]) Tablets in Adult Participants With Generalized Myasthenia Gravis",
+     "hits": {
+      "misspelling": [
+       "Tolebrutinib~Tolebrutininb"
+      ],
+      "inn_stem": [
+       "Tolebrutinib"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04933240",
+     "masked": "[INTERVENTION] Versus [INTERVENTION] for Unscheduled Bleeding in Etonogestrel Implant Users, a Randomized Pilot Trial",
+     "hits": {
+      "chembl_any_trial": [
+       "ETONOGESTREL"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT06102174",
+     "masked": "A Study to Learn About the Amount of the Study Medicine (Sisunatovir) in Blood and Its Safety in Infants and Children With Pneumonia Caused by RSV",
+     "hits": {
+      "chembl_own": [
+       "SISUNATOVIR"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04648189",
+     "masked": "Cetuxibab to Reduce Circulating Tumor Cells in Early Stage NSCLC",
+     "hits": {
+      "misspelling": [
+       "Cetuxibab~CETUXIMAB",
+       "Cetuxibab~Cetuximab"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05502081",
+     "masked": "Clinical Study to Compare Efficacy and Safety of [INTERVENTION] and [INTERVENTION] Combination, [INTERVENTION] and Favipravir in Hospitalized [INTERVE",
+     "hits": {
+      "misspelling": [
+       "Favipravir~FAVIPIRAVIR",
+       "Favipravir~Favipiravir"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05330689",
+     "masked": "How Does Platelet Dose Impact Clinical Outcomes After PRP Treatment?",
+     "hits": {
+      "ctgov_name": [
+       "PRP"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05492695",
+     "masked": "Tandem OnabotulinumtoxinA [INTERVENTION] Emerging Therapeutic Headache Elimination Research Study",
+     "hits": {
+      "chembl_any_trial": [
+       "ONABOTULINUMTOXINA"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05457491",
+     "masked": "Novel Antiaging Regenerative Skin Care Regimen Containing [INTERVENTION] (HPE)",
+     "hits": {
+      "abbreviation": [
+       "HPE"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04492436",
+     "masked": "A Trial Measuring [INTERVENTION] Ability to Prevent Sensory Neuropathy in Unresectable mCRC Subjects w/Oxaliplatin-based Chemo",
+     "hits": {
+      "chembl_any_trial": [
+       "Oxaliplatin"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05412706",
+     "masked": "[INTERVENTION] Maintenance Treatment in mCRC With a Partial o Complete Response After Oxaliplatin-based Induction Therapy",
+     "hits": {
+      "chembl_any_trial": [
+       "Oxaliplatin"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05227456",
+     "masked": "Failed Endometrial Ablation Treatment With Implantable Progesterone (FEAT) Study",
+     "hits": {
+      "chembl_any_trial": [
+       "PROGESTERONE"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05136833",
+     "masked": "Evaluation of Efficacy and Safety of the Concomitant of RUTI\u00ae Immunotherapy With the Standard Treatment in TB Patients",
+     "hits": {
+      "ctgov_name": [
+       "RUTI"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04732169",
+     "masked": "Cannabidiol for Treatment Resistant Depression",
+     "hits": {
+      "chembl_any_trial": [
+       "CANNABIDIOL"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04560309",
+     "masked": "Role of Glutamine as Myocardial Protector in Elective On-Pump CABG Surgery With Low EF",
+     "hits": {
+      "ctgov_name": [
+       "glutamine"
+      ],
+      "chembl_any_trial": [
+       "GLUTAMINE"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT04161118",
+     "masked": "TisaGenlecleucel in Elderly Patients With First-Relapsed or Primary Refractory Aggressive B-cell Non-Hodgkin Lymphoma",
+     "hits": {
+      "chembl_own": [
+       "TISAGENLECLEUCEL"
+      ],
+      "inn_stem": [
+       "TisaGenlecleucel"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05456854",
+     "masked": "Evaluation of Kisspeptin Stimulated Insulin Secretion With [INTERVENTION]",
+     "hits": {
+      "ctgov_name": [
+       "Kisspeptin"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05222269",
+     "masked": "[68Ga]Ga-PentixaFor PET Imaging in CNS Lymphoma Patients",
+     "hits": {
+      "ctgov_name": [
+       "PentixaFor"
+      ]
+     }
+    },
+    {
+     "nct_id": "NCT05625347",
+     "masked": "Study to Compare the Pharmacokinetics and Pharmacodynamics of ASA Powder for Oral Inhalation With [INTERVENTION] in Adult Subjects With Obstructive or",
+     "hits": {
+      "ctgov_name": [
+       "ASA",
+       "of ASA"
+      ]
+     }
+    }
+   ]
+  },
+  "manual_review": {
+   "sample": "samp.sample(n=100, random_state=0)",
+   "n": 100,
+   "listed_intervention_name_visible": 3,
+   "listed_rate_ci95_wilson": [
+    0.0103,
+    0.0845
+   ],
+   "any_named_drug_visible": 5,
+   "any_rate_ci95_wilson": [
+    0.0215,
+    0.1118
+   ],
+   "trial_name_or_protocol_visible": 4,
+   "class_or_mechanism_only": 13,
+   "over_masked_any": 23,
+   "over_masked_any_ci95": [
+    0.1584,
+    0.3215
+   ],
+   "over_masked_disease_or_target": 15,
+   "over_masked_disease_or_target_ci95": [
+    0.0931,
+    0.2328
+   ],
+   "automated_scan_vs_manual": {
+    "manual_any_named": 5,
+    "auto_flagged": 4,
+    "both": 4,
+    "missed_by_scan": [
+     "NCT05552859"
+    ],
+    "auto_only": []
+   },
+   "leak_examples": [
+    {
+     "nct_id": "NCT04566133",
+     "original": "Combination of Trametinib (MEK Inhibitor) and Hydroxychloroquine (HCQ) (Autophagy Inhibitor) in Patients With KRAS Mutation Refractory Bile Tract Carc",
+     "masked": "Combination of [INTERVENTION] (MEK Inhibitor) and [INTERVENTION] (HCQ) (Autophagy Inhibitor) in Patients With KRAS Mutation Refractory Bile Tract Carc",
+     "leak": "listed",
+     "detail": "'(HCQ)' abbreviation of hydroxychloroquine left after '[INTERVENTION]'"
+    },
+    {
+     "nct_id": "NCT05552859",
+     "original": "Gla-300 and IDeg-100 in Insulin-Na\u00efve People With Type 2 Diabetes Mellitus and Renal Impairment",
+     "masked": "Gla-300 and IDeg-100 in [INTERVENTION]-Na\u00efve People With Type 2 Diabetes Mellitus and Renal Impairment",
+     "leak": "listed",
+     "detail": "'Gla-300 and IDeg-100' (insulin glargine 300 U/mL, insulin degludec 100 U/mL)",
+     "over": "Insulin(-Naive)"
+    },
+    {
+     "nct_id": "NCT04873895",
+     "original": "TACE Plus Axitinib and Hydroxychlorquine for Liver-Dominant Metastatic Colorectal Cancer (CRC)",
+     "masked": "TACE Plus [INTERVENTION] and Hydroxychlorquine for Liver-Dominant Metastatic Colorectal Cancer (CRC)",
+     "leak": "listed",
+     "detail": "'Hydroxychlorquine' (misspelling escapes exact matching)"
+    },
+    {
+     "nct_id": "NCT05492695",
+     "original": "Tandem OnabotulinumtoxinA Galcanezumab Emerging Therapeutic Headache Elimination Research Study",
+     "masked": "Tandem OnabotulinumtoxinA [INTERVENTION] Emerging Therapeutic Headache Elimination Research Study",
+     "leak": "unlisted",
+     "detail": "'OnabotulinumtoxinA' (background therapy, not a listed intervention)"
+    },
+    {
+     "nct_id": "NCT04771143",
+     "original": "Study to Assess Safety, Tolerability, and Interactions of Cocaine and Oral AFQ056",
+     "masked": "Study to Assess Safety, Tolerability, and Interactions of Cocaine and Oral [INTERVENTION]",
+     "leak": "unlisted",
+     "detail": "'Cocaine' (challenge agent)"
+    }
+   ],
+   "labels": {
+    "NCT04566133": {
+     "leak": "listed",
+     "detail": "'(HCQ)' abbreviation of hydroxychloroquine left after '[INTERVENTION]'"
+    },
+    "NCT05362058": {
+     "over": "Basal Insulin"
+    },
+    "NCT05156645": {
+     "over": "COVID-19"
+    },
+    "NCT06484881": {
+     "over": "Androgenetic Alopecia (disease)"
+    },
+    "NCT05977127": {
+     "class_only": "mRNA vaccine",
+     "over": "COVID-19"
+    },
+    "NCT04386252": {
+     "class_only": "dendritic cell vaccine",
+     "over": "COVID-19"
+    },
+    "NCT05251233": {
+     "class_only": "proton pump inhibitors"
+    },
+    "NCT05292755": {
+     "over": "Artificial Tears"
+    },
+    "NCT05717400": {
+     "class_only": "immunotherapy; direct-acting antiviral"
+    },
+    "NCT04290871": {
+     "over": "COVID-19"
+    },
+    "NCT06178367": {
+     "over": "Molecular"
+    },
+    "NCT05283954": {
+     "over": "Regimen; COVID-19"
+    },
+    "NCT04911790": {
+     "class_only": "inactivated SARS-CoV-2 vaccine",
+     "over": "COVID-19"
+    },
+    "NCT04963413": {
+     "class_only": "CMV RNA-pulsed dendritic cell vaccine"
+    },
+    "NCT05021484": {
+     "over": "Antibody(-Mediated Rejection) (disease)"
+    },
+    "NCT05281562": {
+     "class_only": "immunonutrition"
+    },
+    "NCT04894474": {
+     "over": "COVID-19"
+    },
+    "NCT03550352": {
+     "class_only": "cannabinoids"
+    },
+    "NCT05993143": {
+     "over": "COVID-19"
+    },
+    "NCT05060276": {
+     "class_only": "anti-Trop2",
+     "over": "Antibody; Conjugate"
+    },
+    "NCT06056310": {
+     "trial_name": "HyperlynX"
+    },
+    "NCT05015972": {
+     "over": "CD19"
+    },
+    "NCT04584034": {
+     "class_only": "bronchodilators"
+    },
+    "NCT05065411": {
+     "over": "Combo"
+    },
+    "NCT04598321": {
+     "trial_name": "BrUOG 390"
+    },
+    "NCT05477498": {
+     "class_only": "iron"
+    },
+    "NCT06329687": {
+     "over": "Nasal (route)"
+    },
+    "NCT06065059": {
+     "class_only": "PARP inhibitor"
+    },
+    "NCT04602117": {
+     "trial_name": "ISPY-P1.01"
+    },
+    "NCT05152849": {
+     "over": "COVID-19"
+    },
+    "NCT04773067": {
+     "over": "COVID-19"
+    },
+    "NCT05552859": {
+     "leak": "listed",
+     "detail": "'Gla-300 and IDeg-100' (insulin glargine 300 U/mL, insulin degludec 100 U/mL)",
+     "over": "Insulin(-Naive)"
+    },
+    "NCT04873895": {
+     "leak": "listed",
+     "detail": "'Hydroxychlorquine' (misspelling escapes exact matching)"
+    },
+    "NCT05492695": {
+     "leak": "unlisted",
+     "detail": "'OnabotulinumtoxinA' (background therapy, not a listed intervention)"
+    },
+    "NCT04615949": {
+     "over": "COVID-19"
+    },
+    "NCT04795466": {
+     "class_only": "anti-inflammatory agents"
+    },
+    "NCT04766996": {
+     "trial_name": "PROUD"
+    },
+    "NCT04771143": {
+     "leak": "unlisted",
+     "detail": "'Cocaine' (challenge agent)"
+    },
+    "NCT03125187": {
+     "over": "Administration"
+    },
+    "NCT05554627": {
+     "over": "Depression (disease)"
+    }
+   }
+  },
+  "over_masking_rules_all600": {
+   "titles_containing_covid": 64,
+   "covid_term_masked": 61,
+   "titles_with_target_or_biomarker_masked_by_code_rule": 10,
+   "target_examples": [
+    "BRAFV600",
+    "CD19",
+    "CD20",
+    "CD38",
+    "CD40",
+    "CD74",
+    "HPV-16",
+    "HPV16",
+    "V600E"
+   ],
+   "titles_with_disease_or_word_masked_by_acronym_rule": 6,
+   "acronym_examples": [
+    "ALL",
+    "BRCA",
+    "Capacity",
+    "MG",
+    "SARS",
+    "SARS-CoV-2"
+   ],
+   "titles_overmasked_by_code_or_acronym_rule": 73
+  }
+ },
+ "contrasts": {
+  "a_as_published": {
+   "n_trials": 600,
+   "models": {
+    "claude-haiku-4-5-20251001": {
+     "n": 600,
+     "n_pos": 108,
+     "conditions": {
+      "D": {
+       "auprc": 0.231,
+       "auroc": 0.5676
+      },
+      "D+Tm": {
+       "auprc": 0.2504,
+       "auroc": 0.6175
+      },
+      "D+T": {
+       "auprc": 0.3377,
+       "auroc": 0.6711
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0873,
+      "auprc_ci": [
+       0.0313,
+       0.1451
+      ],
+      "auprc_p_gt_0": 0.999,
+      "auroc": 0.0536,
+      "auroc_ci": [
+       -0.002,
+       0.109
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0194,
+      "auprc_ci": [
+       -0.0376,
+       0.0728
+      ],
+      "auprc_p_gt_0": 0.759,
+      "auroc": 0.0499,
+      "auroc_ci": [
+       -0.0055,
+       0.1085
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0107,
+      "auprc_ci": [
+       -0.042,
+       0.0521
+      ],
+      "auprc_p_gt_0": 0.63,
+      "auroc": 0.0275,
+      "auroc_ci": [
+       -0.0187,
+       0.0713
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.0334,
+      "auprc_ci": [
+       -0.0961,
+       0.0382
+      ],
+      "auprc_p_gt_0": 0.181,
+      "auroc": -0.0,
+      "auroc_ci": [
+       -0.0606,
+       0.0588
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.74,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.002,
+       "p_holm": 0.016
+      }
+     }
+    },
+    "claude-sonnet-5": {
+     "n": 600,
+     "n_pos": 108,
+     "conditions": {
+      "D": {
+       "auprc": 0.2157,
+       "auroc": 0.5895
+      },
+      "D+Tm": {
+       "auprc": 0.2655,
+       "auroc": 0.6449
+      },
+      "D+T": {
+       "auprc": 0.3327,
+       "auroc": 0.7279
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0672,
+      "auprc_ci": [
+       0.0171,
+       0.1116
+      ],
+      "auprc_p_gt_0": 0.996,
+      "auroc": 0.083,
+      "auroc_ci": [
+       0.0457,
+       0.1225
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0498,
+      "auprc_ci": [
+       -0.0022,
+       0.1075
+      ],
+      "auprc_p_gt_0": 0.967,
+      "auroc": 0.0554,
+      "auroc_ci": [
+       0.0033,
+       0.1099
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0084,
+      "auprc_ci": [
+       -0.0289,
+       0.0427
+      ],
+      "auprc_p_gt_0": 0.675,
+      "auroc": 0.0117,
+      "auroc_ci": [
+       -0.0212,
+       0.0465
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.0462,
+      "auprc_ci": [
+       0.0079,
+       0.0841
+      ],
+      "auprc_p_gt_0": 0.99,
+      "auroc": 0.004,
+      "auroc_ci": [
+       -0.0205,
+       0.0291
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.65,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.008,
+       "p_holm": 0.056
+      }
+     }
+    },
+    "claude-opus-4-8": {
+     "n": 600,
+     "n_pos": 108,
+     "conditions": {
+      "D": {
+       "auprc": 0.2277,
+       "auroc": 0.5967
+      },
+      "D+Tm": {
+       "auprc": 0.3213,
+       "auroc": 0.6728
+      },
+      "D+T": {
+       "auprc": 0.4478,
+       "auroc": 0.7526
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.1265,
+      "auprc_ci": [
+       0.0734,
+       0.1705
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0798,
+      "auroc_ci": [
+       0.0442,
+       0.1165
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0936,
+      "auprc_ci": [
+       0.0379,
+       0.1588
+      ],
+      "auprc_p_gt_0": 0.997,
+      "auroc": 0.0762,
+      "auroc_ci": [
+       0.0219,
+       0.124
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0202,
+      "auprc_ci": [
+       -0.0142,
+       0.0552
+      ],
+      "auprc_p_gt_0": 0.867,
+      "auroc": -0.0064,
+      "auroc_ci": [
+       -0.0304,
+       0.0183
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.008,
+      "auprc_ci": [
+       -0.0437,
+       0.0336
+      ],
+      "auprc_p_gt_0": 0.389,
+      "auroc": 0.0175,
+      "auroc_ci": [
+       -0.0042,
+       0.0404
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.266,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.001,
+       "p_holm": 0.01
+      }
+     }
+    },
+    "claude-opus-5": {
+     "n": 600,
+     "n_pos": 108,
+     "conditions": {
+      "D": {
+       "auprc": 0.2032,
+       "auroc": 0.5585
+      },
+      "D+Tm": {
+       "auprc": 0.361,
+       "auroc": 0.6998
+      },
+      "D+T": {
+       "auprc": 0.4786,
+       "auroc": 0.7658
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.1176,
+      "auprc_ci": [
+       0.0682,
+       0.1634
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0659,
+      "auroc_ci": [
+       0.0256,
+       0.1145
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.1578,
+      "auprc_ci": [
+       0.0967,
+       0.236
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.1413,
+      "auroc_ci": [
+       0.0905,
+       0.1911
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0267,
+      "auprc_ci": [
+       0.0012,
+       0.0538
+      ],
+      "auprc_p_gt_0": 0.981,
+      "auroc": 0.0366,
+      "auroc_ci": [
+       0.0067,
+       0.0618
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.0835,
+      "auprc_ci": [
+       0.0391,
+       0.1259
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0252,
+      "auroc_ci": [
+       0.0061,
+       0.0433
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.038,
+       "p_holm": 0.228
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.001,
+       "p_holm": 0.01
+      }
+     }
+    },
+    "ollama:llama3.1:8b": {
+     "n": 600,
+     "n_pos": 108,
+     "conditions": {
+      "D": {
+       "auprc": 0.2854,
+       "auroc": 0.6271
+      },
+      "D+Tm": {
+       "auprc": 0.2353,
+       "auroc": 0.5847
+      },
+      "D+T": {
+       "auprc": 0.253,
+       "auroc": 0.5891
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0177,
+      "auprc_ci": [
+       -0.0268,
+       0.0641
+      ],
+      "auprc_p_gt_0": 0.79,
+      "auroc": 0.0043,
+      "auroc_ci": [
+       -0.0408,
+       0.0504
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": -0.0501,
+      "auprc_ci": [
+       -0.11,
+       0.0076
+      ],
+      "auprc_p_gt_0": 0.047,
+      "auroc": -0.0423,
+      "auroc_ci": [
+       -0.0981,
+       0.0169
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0095,
+      "auprc_ci": [
+       -0.0393,
+       0.0598
+      ],
+      "auprc_p_gt_0": 0.652,
+      "auroc": 0.0264,
+      "auroc_ci": [
+       -0.0224,
+       0.0772
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.0221,
+      "auprc_ci": [
+       -0.0835,
+       0.0418
+      ],
+      "auprc_p_gt_0": 0.264,
+      "auroc": -0.0091,
+      "auroc_ci": [
+       -0.0758,
+       0.0535
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.696,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.42,
+       "p_holm": 1.0
+      }
+     }
+    }
+   }
+  },
+  "b_excl_covid": {
+   "n_trials": 532,
+   "models": {
+    "claude-haiku-4-5-20251001": {
+     "n": 532,
+     "n_pos": 100,
+     "conditions": {
+      "D": {
+       "auprc": 0.2325,
+       "auroc": 0.5555
+      },
+      "D+Tm": {
+       "auprc": 0.2378,
+       "auroc": 0.5956
+      },
+      "D+T": {
+       "auprc": 0.3181,
+       "auroc": 0.6569
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0803,
+      "auprc_ci": [
+       0.0199,
+       0.1439
+      ],
+      "auprc_p_gt_0": 0.995,
+      "auroc": 0.0613,
+      "auroc_ci": [
+       0.0015,
+       0.1197
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0052,
+      "auprc_ci": [
+       -0.0543,
+       0.0581
+      ],
+      "auprc_p_gt_0": 0.592,
+      "auroc": 0.0401,
+      "auroc_ci": [
+       -0.0207,
+       0.1008
+      ]
+     },
+     "D+ID - D": {
+      "auprc": -0.0165,
+      "auprc_ci": [
+       -0.0634,
+       0.0257
+      ],
+      "auprc_p_gt_0": 0.263,
+      "auroc": 0.0155,
+      "auroc_ci": [
+       -0.0308,
+       0.0645
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.0038,
+      "auprc_ci": [
+       -0.0651,
+       0.0658
+      ],
+      "auprc_p_gt_0": 0.468,
+      "auroc": 0.0105,
+      "auroc_ci": [
+       -0.0497,
+       0.0716
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.526,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.01,
+       "p_holm": 0.07
+      }
+     }
+    },
+    "claude-sonnet-5": {
+     "n": 532,
+     "n_pos": 100,
+     "conditions": {
+      "D": {
+       "auprc": 0.2238,
+       "auroc": 0.5793
+      },
+      "D+Tm": {
+       "auprc": 0.2681,
+       "auroc": 0.64
+      },
+      "D+T": {
+       "auprc": 0.3337,
+       "auroc": 0.7236
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0656,
+      "auprc_ci": [
+       0.018,
+       0.1126
+      ],
+      "auprc_p_gt_0": 0.997,
+      "auroc": 0.0836,
+      "auroc_ci": [
+       0.044,
+       0.1226
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0443,
+      "auprc_ci": [
+       -0.0114,
+       0.1068
+      ],
+      "auprc_p_gt_0": 0.935,
+      "auroc": 0.0608,
+      "auroc_ci": [
+       0.0021,
+       0.1193
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0018,
+      "auprc_ci": [
+       -0.0396,
+       0.0367
+      ],
+      "auprc_p_gt_0": 0.523,
+      "auroc": 0.012,
+      "auroc_ci": [
+       -0.0247,
+       0.0458
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.0517,
+      "auprc_ci": [
+       0.0091,
+       0.0892
+      ],
+      "auprc_p_gt_0": 0.995,
+      "auroc": 0.0086,
+      "auroc_ci": [
+       -0.0182,
+       0.0337
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.954,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.006,
+       "p_holm": 0.048
+      }
+     }
+    },
+    "claude-opus-4-8": {
+     "n": 532,
+     "n_pos": 100,
+     "conditions": {
+      "D": {
+       "auprc": 0.222,
+       "auroc": 0.5798
+      },
+      "D+Tm": {
+       "auprc": 0.3274,
+       "auroc": 0.6644
+      },
+      "D+T": {
+       "auprc": 0.4529,
+       "auroc": 0.7494
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.1255,
+      "auprc_ci": [
+       0.0727,
+       0.1734
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.085,
+      "auroc_ci": [
+       0.0469,
+       0.1224
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.1054,
+      "auprc_ci": [
+       0.0425,
+       0.1786
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0846,
+      "auroc_ci": [
+       0.0323,
+       0.1362
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0097,
+      "auprc_ci": [
+       -0.0177,
+       0.0394
+      ],
+      "auprc_p_gt_0": 0.734,
+      "auroc": -0.0024,
+      "auroc_ci": [
+       -0.0277,
+       0.0227
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.0046,
+      "auprc_ci": [
+       -0.0447,
+       0.0432
+      ],
+      "auprc_p_gt_0": 0.454,
+      "auroc": 0.0227,
+      "auroc_ci": [
+       -0.0032,
+       0.048
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.532,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.001,
+       "p_holm": 0.01
+      }
+     }
+    },
+    "claude-opus-5": {
+     "n": 532,
+     "n_pos": 100,
+     "conditions": {
+      "D": {
+       "auprc": 0.1997,
+       "auroc": 0.5413
+      },
+      "D+Tm": {
+       "auprc": 0.3645,
+       "auroc": 0.6963
+      },
+      "D+T": {
+       "auprc": 0.4878,
+       "auroc": 0.77
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.1233,
+      "auprc_ci": [
+       0.0701,
+       0.1673
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0737,
+      "auroc_ci": [
+       0.028,
+       0.1204
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.1648,
+      "auprc_ci": [
+       0.0993,
+       0.2431
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.155,
+      "auroc_ci": [
+       0.1041,
+       0.2071
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0199,
+      "auprc_ci": [
+       -0.0036,
+       0.0406
+      ],
+      "auprc_p_gt_0": 0.955,
+      "auroc": 0.0358,
+      "auroc_ci": [
+       0.0077,
+       0.0644
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.0833,
+      "auprc_ci": [
+       0.0387,
+       0.1301
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0279,
+      "auroc_ci": [
+       0.007,
+       0.05
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.09,
+       "p_holm": 0.54
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.001,
+       "p_holm": 0.01
+      }
+     }
+    },
+    "ollama:llama3.1:8b": {
+     "n": 532,
+     "n_pos": 100,
+     "conditions": {
+      "D": {
+       "auprc": 0.291,
+       "auroc": 0.6201
+      },
+      "D+Tm": {
+       "auprc": 0.2411,
+       "auroc": 0.5848
+      },
+      "D+T": {
+       "auprc": 0.2626,
+       "auroc": 0.5859
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0216,
+      "auprc_ci": [
+       -0.0333,
+       0.0766
+      ],
+      "auprc_p_gt_0": 0.782,
+      "auroc": 0.0011,
+      "auroc_ci": [
+       -0.0498,
+       0.0486
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": -0.05,
+      "auprc_ci": [
+       -0.1174,
+       0.011
+      ],
+      "auprc_p_gt_0": 0.063,
+      "auroc": -0.0353,
+      "auroc_ci": [
+       -0.098,
+       0.0287
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0117,
+      "auprc_ci": [
+       -0.0441,
+       0.0702
+      ],
+      "auprc_p_gt_0": 0.661,
+      "auroc": 0.0296,
+      "auroc_ci": [
+       -0.0205,
+       0.0842
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.0312,
+      "auprc_ci": [
+       -0.0979,
+       0.0306
+      ],
+      "auprc_p_gt_0": 0.147,
+      "auroc": -0.0137,
+      "auroc_ci": [
+       -0.0813,
+       0.0532
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.678,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.436,
+       "p_holm": 1.0
+      }
+     }
+    }
+   }
+  },
+  "c_excl_masked_title_leak": {
+   "n_trials": 562,
+   "models": {
+    "claude-haiku-4-5-20251001": {
+     "n": 562,
+     "n_pos": 104,
+     "conditions": {
+      "D": {
+       "auprc": 0.2408,
+       "auroc": 0.5771
+      },
+      "D+Tm": {
+       "auprc": 0.2535,
+       "auroc": 0.6164
+      },
+      "D+T": {
+       "auprc": 0.3423,
+       "auroc": 0.6774
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0887,
+      "auprc_ci": [
+       0.0298,
+       0.1493
+      ],
+      "auprc_p_gt_0": 0.998,
+      "auroc": 0.061,
+      "auroc_ci": [
+       0.0069,
+       0.1163
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0128,
+      "auprc_ci": [
+       -0.0508,
+       0.0664
+      ],
+      "auprc_p_gt_0": 0.675,
+      "auroc": 0.0394,
+      "auroc_ci": [
+       -0.0183,
+       0.0991
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0118,
+      "auprc_ci": [
+       -0.0396,
+       0.0552
+      ],
+      "auprc_p_gt_0": 0.665,
+      "auroc": 0.0255,
+      "auroc_ci": [
+       -0.0199,
+       0.0696
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.0275,
+      "auprc_ci": [
+       -0.0858,
+       0.0412
+      ],
+      "auprc_p_gt_0": 0.21,
+      "auroc": -0.0013,
+      "auroc_ci": [
+       -0.053,
+       0.0494
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.67,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.004,
+       "p_holm": 0.028
+      }
+     }
+    },
+    "claude-sonnet-5": {
+     "n": 562,
+     "n_pos": 104,
+     "conditions": {
+      "D": {
+       "auprc": 0.2234,
+       "auroc": 0.5907
+      },
+      "D+Tm": {
+       "auprc": 0.2683,
+       "auroc": 0.6484
+      },
+      "D+T": {
+       "auprc": 0.3461,
+       "auroc": 0.7354
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0777,
+      "auprc_ci": [
+       0.0321,
+       0.1268
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0871,
+      "auroc_ci": [
+       0.0471,
+       0.1258
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0449,
+      "auprc_ci": [
+       -0.0084,
+       0.1034
+      ],
+      "auprc_p_gt_0": 0.951,
+      "auroc": 0.0577,
+      "auroc_ci": [
+       0.0044,
+       0.1113
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0043,
+      "auprc_ci": [
+       -0.0336,
+       0.0388
+      ],
+      "auprc_p_gt_0": 0.595,
+      "auroc": 0.0057,
+      "auroc_ci": [
+       -0.0281,
+       0.0403
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.046,
+      "auprc_ci": [
+       0.0059,
+       0.0864
+      ],
+      "auprc_p_gt_0": 0.988,
+      "auroc": 0.0014,
+      "auroc_ci": [
+       -0.0254,
+       0.0279
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.81,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.001,
+       "p_holm": 0.01
+      }
+     }
+    },
+    "claude-opus-4-8": {
+     "n": 562,
+     "n_pos": 104,
+     "conditions": {
+      "D": {
+       "auprc": 0.2343,
+       "auroc": 0.5956
+      },
+      "D+Tm": {
+       "auprc": 0.33,
+       "auroc": 0.6765
+      },
+      "D+T": {
+       "auprc": 0.4584,
+       "auroc": 0.7579
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.1285,
+      "auprc_ci": [
+       0.0736,
+       0.1717
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0814,
+      "auroc_ci": [
+       0.0414,
+       0.1197
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0957,
+      "auprc_ci": [
+       0.0368,
+       0.1685
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0809,
+      "auroc_ci": [
+       0.0283,
+       0.133
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0123,
+      "auprc_ci": [
+       -0.0212,
+       0.0476
+      ],
+      "auprc_p_gt_0": 0.768,
+      "auroc": -0.0071,
+      "auroc_ci": [
+       -0.0338,
+       0.0166
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.0093,
+      "auprc_ci": [
+       -0.0448,
+       0.0297
+      ],
+      "auprc_p_gt_0": 0.357,
+      "auroc": 0.0126,
+      "auroc_ci": [
+       -0.0087,
+       0.0333
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.464,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.001,
+       "p_holm": 0.01
+      }
+     }
+    },
+    "claude-opus-5": {
+     "n": 562,
+     "n_pos": 104,
+     "conditions": {
+      "D": {
+       "auprc": 0.2081,
+       "auroc": 0.5545
+      },
+      "D+Tm": {
+       "auprc": 0.3669,
+       "auroc": 0.6969
+      },
+      "D+T": {
+       "auprc": 0.4827,
+       "auroc": 0.7642
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.1158,
+      "auprc_ci": [
+       0.0658,
+       0.1628
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0673,
+      "auroc_ci": [
+       0.0224,
+       0.1131
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.1588,
+      "auprc_ci": [
+       0.0944,
+       0.2388
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.1424,
+      "auroc_ci": [
+       0.0891,
+       0.1924
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0277,
+      "auprc_ci": [
+       -0.0006,
+       0.0606
+      ],
+      "auprc_p_gt_0": 0.974,
+      "auroc": 0.0379,
+      "auroc_ci": [
+       0.0128,
+       0.0666
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.0859,
+      "auprc_ci": [
+       0.0382,
+       0.1288
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0261,
+      "auroc_ci": [
+       0.0061,
+       0.0446
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.052,
+       "p_holm": 0.312
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.001,
+       "p_holm": 0.01
+      }
+     }
+    },
+    "ollama:llama3.1:8b": {
+     "n": 562,
+     "n_pos": 104,
+     "conditions": {
+      "D": {
+       "auprc": 0.2952,
+       "auroc": 0.6249
+      },
+      "D+Tm": {
+       "auprc": 0.2473,
+       "auroc": 0.5895
+      },
+      "D+T": {
+       "auprc": 0.2654,
+       "auroc": 0.5908
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0181,
+      "auprc_ci": [
+       -0.0288,
+       0.0685
+      ],
+      "auprc_p_gt_0": 0.743,
+      "auroc": 0.0013,
+      "auroc_ci": [
+       -0.0448,
+       0.0525
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": -0.0479,
+      "auprc_ci": [
+       -0.1177,
+       0.0151
+      ],
+      "auprc_p_gt_0": 0.058,
+      "auroc": -0.0354,
+      "auroc_ci": [
+       -0.0977,
+       0.0236
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0048,
+      "auprc_ci": [
+       -0.0509,
+       0.0594
+      ],
+      "auprc_p_gt_0": 0.54,
+      "auroc": 0.0286,
+      "auroc_ci": [
+       -0.0242,
+       0.0825
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.0276,
+      "auprc_ci": [
+       -0.0885,
+       0.0388
+      ],
+      "auprc_p_gt_0": 0.223,
+      "auroc": -0.0098,
+      "auroc_ci": [
+       -0.078,
+       0.0571
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.92,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.514,
+       "p_holm": 1.0
+      }
+     }
+    }
+   }
+  },
+  "c2_excl_leak_strict_listed_only": {
+   "n_trials": 573,
+   "models": {
+    "claude-haiku-4-5-20251001": {
+     "n": 573,
+     "n_pos": 104,
+     "conditions": {
+      "D": {
+       "auprc": 0.2354,
+       "auroc": 0.5729
+      },
+      "D+Tm": {
+       "auprc": 0.2493,
+       "auroc": 0.6153
+      },
+      "D+T": {
+       "auprc": 0.3345,
+       "auroc": 0.675
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0852,
+      "auprc_ci": [
+       0.0311,
+       0.1437
+      ],
+      "auprc_p_gt_0": 0.997,
+      "auroc": 0.0597,
+      "auroc_ci": [
+       0.0032,
+       0.1182
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0138,
+      "auprc_ci": [
+       -0.0481,
+       0.0683
+      ],
+      "auprc_p_gt_0": 0.688,
+      "auroc": 0.0424,
+      "auroc_ci": [
+       -0.0152,
+       0.1002
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0101,
+      "auprc_ci": [
+       -0.047,
+       0.0584
+      ],
+      "auprc_p_gt_0": 0.613,
+      "auroc": 0.0253,
+      "auroc_ci": [
+       -0.0198,
+       0.0711
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.0249,
+      "auprc_ci": [
+       -0.0879,
+       0.0383
+      ],
+      "auprc_p_gt_0": 0.239,
+      "auroc": 0.0004,
+      "auroc_ci": [
+       -0.0571,
+       0.0528
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.774,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.006,
+       "p_holm": 0.042
+      }
+     }
+    },
+    "claude-sonnet-5": {
+     "n": 573,
+     "n_pos": 104,
+     "conditions": {
+      "D": {
+       "auprc": 0.2178,
+       "auroc": 0.5876
+      },
+      "D+Tm": {
+       "auprc": 0.264,
+       "auroc": 0.6486
+      },
+      "D+T": {
+       "auprc": 0.3423,
+       "auroc": 0.7358
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0783,
+      "auprc_ci": [
+       0.0303,
+       0.1265
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0872,
+      "auroc_ci": [
+       0.0473,
+       0.1255
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0463,
+      "auprc_ci": [
+       -0.0068,
+       0.1018
+      ],
+      "auprc_p_gt_0": 0.962,
+      "auroc": 0.061,
+      "auroc_ci": [
+       0.0108,
+       0.1143
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0049,
+      "auprc_ci": [
+       -0.0329,
+       0.0351
+      ],
+      "auprc_p_gt_0": 0.582,
+      "auroc": 0.0075,
+      "auroc_ci": [
+       -0.0255,
+       0.0387
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.0467,
+      "auprc_ci": [
+       0.0055,
+       0.0847
+      ],
+      "auprc_p_gt_0": 0.988,
+      "auroc": 0.0014,
+      "auroc_ci": [
+       -0.0237,
+       0.0267
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.836,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.001,
+       "p_holm": 0.01
+      }
+     }
+    },
+    "claude-opus-4-8": {
+     "n": 573,
+     "n_pos": 104,
+     "conditions": {
+      "D": {
+       "auprc": 0.2287,
+       "auroc": 0.5928
+      },
+      "D+Tm": {
+       "auprc": 0.3271,
+       "auroc": 0.678
+      },
+      "D+T": {
+       "auprc": 0.4564,
+       "auroc": 0.7594
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.1294,
+      "auprc_ci": [
+       0.0745,
+       0.1709
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0814,
+      "auroc_ci": [
+       0.0441,
+       0.1167
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0983,
+      "auprc_ci": [
+       0.041,
+       0.1684
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0852,
+      "auroc_ci": [
+       0.0374,
+       0.1377
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0092,
+      "auprc_ci": [
+       -0.0218,
+       0.0395
+      ],
+      "auprc_p_gt_0": 0.707,
+      "auroc": -0.0076,
+      "auroc_ci": [
+       -0.0334,
+       0.0155
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.0096,
+      "auprc_ci": [
+       -0.0482,
+       0.0344
+      ],
+      "auprc_p_gt_0": 0.378,
+      "auroc": 0.012,
+      "auroc_ci": [
+       -0.0106,
+       0.0339
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.586,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.001,
+       "p_holm": 0.01
+      }
+     }
+    },
+    "claude-opus-5": {
+     "n": 573,
+     "n_pos": 104,
+     "conditions": {
+      "D": {
+       "auprc": 0.2039,
+       "auroc": 0.5527
+      },
+      "D+Tm": {
+       "auprc": 0.3639,
+       "auroc": 0.6989
+      },
+      "D+T": {
+       "auprc": 0.4814,
+       "auroc": 0.7657
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.1175,
+      "auprc_ci": [
+       0.0654,
+       0.1616
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0668,
+      "auroc_ci": [
+       0.0216,
+       0.1105
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.16,
+      "auprc_ci": [
+       0.0963,
+       0.2382
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.1462,
+      "auroc_ci": [
+       0.0992,
+       0.1962
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0273,
+      "auprc_ci": [
+       -0.0005,
+       0.0562
+      ],
+      "auprc_p_gt_0": 0.973,
+      "auroc": 0.0387,
+      "auroc_ci": [
+       0.0082,
+       0.0666
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.0837,
+      "auprc_ci": [
+       0.0359,
+       0.1337
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0247,
+      "auroc_ci": [
+       0.0052,
+       0.0445
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.054,
+       "p_holm": 0.324
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.001,
+       "p_holm": 0.01
+      }
+     }
+    },
+    "ollama:llama3.1:8b": {
+     "n": 573,
+     "n_pos": 104,
+     "conditions": {
+      "D": {
+       "auprc": 0.2928,
+       "auroc": 0.6274
+      },
+      "D+Tm": {
+       "auprc": 0.2414,
+       "auroc": 0.5878
+      },
+      "D+T": {
+       "auprc": 0.2635,
+       "auroc": 0.5935
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0221,
+      "auprc_ci": [
+       -0.0243,
+       0.0775
+      ],
+      "auprc_p_gt_0": 0.812,
+      "auroc": 0.0057,
+      "auroc_ci": [
+       -0.0443,
+       0.0565
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": -0.0514,
+      "auprc_ci": [
+       -0.1171,
+       0.0043
+      ],
+      "auprc_p_gt_0": 0.04,
+      "auroc": -0.0396,
+      "auroc_ci": [
+       -0.0985,
+       0.0161
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.004,
+      "auprc_ci": [
+       -0.0498,
+       0.057
+      ],
+      "auprc_p_gt_0": 0.56,
+      "auroc": 0.0256,
+      "auroc_ci": [
+       -0.0265,
+       0.0774
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.029,
+      "auprc_ci": [
+       -0.0986,
+       0.0311
+      ],
+      "auprc_p_gt_0": 0.198,
+      "auroc": -0.0122,
+      "auroc_ci": [
+       -0.0804,
+       0.0549
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.88,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.376,
+       "p_holm": 1.0
+      }
+     }
+    }
+   }
+  },
+  "d_excl_withdrawn": {
+   "n_trials": 422,
+   "models": {
+    "claude-haiku-4-5-20251001": {
+     "n": 422,
+     "n_pos": 108,
+     "conditions": {
+      "D": {
+       "auprc": 0.3215,
+       "auroc": 0.5569
+      },
+      "D+Tm": {
+       "auprc": 0.3246,
+       "auroc": 0.6021
+      },
+      "D+T": {
+       "auprc": 0.4108,
+       "auroc": 0.6501
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0862,
+      "auprc_ci": [
+       0.0195,
+       0.1436
+      ],
+      "auprc_p_gt_0": 0.994,
+      "auroc": 0.048,
+      "auroc_ci": [
+       -0.0126,
+       0.1101
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.003,
+      "auprc_ci": [
+       -0.0596,
+       0.0697
+      ],
+      "auprc_p_gt_0": 0.539,
+      "auroc": 0.0452,
+      "auroc_ci": [
+       -0.0138,
+       0.1019
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0055,
+      "auprc_ci": [
+       -0.0487,
+       0.0532
+      ],
+      "auprc_p_gt_0": 0.575,
+      "auroc": 0.0258,
+      "auroc_ci": [
+       -0.0193,
+       0.0745
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.0209,
+      "auprc_ci": [
+       -0.0774,
+       0.0537
+      ],
+      "auprc_p_gt_0": 0.282,
+      "auroc": 0.0029,
+      "auroc_ci": [
+       -0.055,
+       0.0604
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.85,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.012,
+       "p_holm": 0.084
+      }
+     }
+    },
+    "claude-sonnet-5": {
+     "n": 422,
+     "n_pos": 108,
+     "conditions": {
+      "D": {
+       "auprc": 0.3043,
+       "auroc": 0.5906
+      },
+      "D+Tm": {
+       "auprc": 0.342,
+       "auroc": 0.6308
+      },
+      "D+T": {
+       "auprc": 0.4101,
+       "auroc": 0.7151
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.068,
+      "auprc_ci": [
+       0.0186,
+       0.1154
+      ],
+      "auprc_p_gt_0": 0.996,
+      "auroc": 0.0844,
+      "auroc_ci": [
+       0.0459,
+       0.1249
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0378,
+      "auprc_ci": [
+       -0.027,
+       0.0986
+      ],
+      "auprc_p_gt_0": 0.865,
+      "auroc": 0.0402,
+      "auroc_ci": [
+       -0.0192,
+       0.0983
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0129,
+      "auprc_ci": [
+       -0.0348,
+       0.0581
+      ],
+      "auprc_p_gt_0": 0.701,
+      "auroc": 0.0153,
+      "auroc_ci": [
+       -0.0221,
+       0.0507
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.0567,
+      "auprc_ci": [
+       0.0148,
+       0.097
+      ],
+      "auprc_p_gt_0": 0.997,
+      "auroc": 0.0139,
+      "auroc_ci": [
+       -0.0152,
+       0.0416
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.598,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.008,
+       "p_holm": 0.064
+      }
+     }
+    },
+    "claude-opus-4-8": {
+     "n": 422,
+     "n_pos": 108,
+     "conditions": {
+      "D": {
+       "auprc": 0.319,
+       "auroc": 0.6005
+      },
+      "D+Tm": {
+       "auprc": 0.4103,
+       "auroc": 0.666
+      },
+      "D+T": {
+       "auprc": 0.5227,
+       "auroc": 0.7487
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.1124,
+      "auprc_ci": [
+       0.0622,
+       0.1532
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0827,
+      "auroc_ci": [
+       0.0432,
+       0.1207
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0914,
+      "auprc_ci": [
+       0.0275,
+       0.1631
+      ],
+      "auprc_p_gt_0": 0.996,
+      "auroc": 0.0655,
+      "auroc_ci": [
+       0.0149,
+       0.1201
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0223,
+      "auprc_ci": [
+       -0.0154,
+       0.0607
+      ],
+      "auprc_p_gt_0": 0.869,
+      "auroc": -0.0034,
+      "auroc_ci": [
+       -0.0273,
+       0.0232
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.0039,
+      "auprc_ci": [
+       -0.0295,
+       0.0436
+      ],
+      "auprc_p_gt_0": 0.625,
+      "auroc": 0.0211,
+      "auroc_ci": [
+       -0.0013,
+       0.0453
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.262,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.001,
+       "p_holm": 0.01
+      }
+     }
+    },
+    "claude-opus-5": {
+     "n": 422,
+     "n_pos": 108,
+     "conditions": {
+      "D": {
+       "auprc": 0.2842,
+       "auroc": 0.5621
+      },
+      "D+Tm": {
+       "auprc": 0.4392,
+       "auroc": 0.6881
+      },
+      "D+T": {
+       "auprc": 0.5556,
+       "auroc": 0.7643
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.1163,
+      "auprc_ci": [
+       0.065,
+       0.1634
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0761,
+      "auroc_ci": [
+       0.0332,
+       0.1217
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.155,
+      "auprc_ci": [
+       0.0869,
+       0.2306
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.1261,
+      "auroc_ci": [
+       0.0705,
+       0.1796
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0316,
+      "auprc_ci": [
+       0.0006,
+       0.065
+      ],
+      "auprc_p_gt_0": 0.981,
+      "auroc": 0.027,
+      "auroc_ci": [
+       -0.0017,
+       0.0546
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.0754,
+      "auprc_ci": [
+       0.0307,
+       0.1174
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0274,
+      "auroc_ci": [
+       0.008,
+       0.0441
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.038,
+       "p_holm": 0.228
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.001,
+       "p_holm": 0.01
+      }
+     }
+    },
+    "ollama:llama3.1:8b": {
+     "n": 422,
+     "n_pos": 108,
+     "conditions": {
+      "D": {
+       "auprc": 0.358,
+       "auroc": 0.613
+      },
+      "D+Tm": {
+       "auprc": 0.3043,
+       "auroc": 0.5727
+      },
+      "D+T": {
+       "auprc": 0.3323,
+       "auroc": 0.5729
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0281,
+      "auprc_ci": [
+       -0.024,
+       0.0818
+      ],
+      "auprc_p_gt_0": 0.843,
+      "auroc": 0.0002,
+      "auroc_ci": [
+       -0.0525,
+       0.0532
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": -0.0537,
+      "auprc_ci": [
+       -0.1187,
+       0.0067
+      ],
+      "auprc_p_gt_0": 0.048,
+      "auroc": -0.0402,
+      "auroc_ci": [
+       -0.1001,
+       0.0227
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0036,
+      "auprc_ci": [
+       -0.0465,
+       0.0569
+      ],
+      "auprc_p_gt_0": 0.537,
+      "auroc": 0.0119,
+      "auroc_ci": [
+       -0.039,
+       0.0661
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.0177,
+      "auprc_ci": [
+       -0.0814,
+       0.0523
+      ],
+      "auprc_p_gt_0": 0.345,
+      "auroc": 0.0035,
+      "auroc_ci": [
+       -0.0639,
+       0.0778
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.926,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.314,
+       "p_holm": 1.0
+      }
+     }
+    }
+   }
+  },
+  "e_excl_all_three": {
+   "n_trials": 354,
+   "models": {
+    "claude-haiku-4-5-20251001": {
+     "n": 354,
+     "n_pos": 97,
+     "conditions": {
+      "D": {
+       "auprc": 0.3434,
+       "auroc": 0.554
+      },
+      "D+Tm": {
+       "auprc": 0.3305,
+       "auroc": 0.5899
+      },
+      "D+T": {
+       "auprc": 0.4174,
+       "auroc": 0.6506
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0869,
+      "auprc_ci": [
+       0.0181,
+       0.158
+      ],
+      "auprc_p_gt_0": 0.994,
+      "auroc": 0.0606,
+      "auroc_ci": [
+       -0.005,
+       0.1232
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": -0.0128,
+      "auprc_ci": [
+       -0.0832,
+       0.0577
+      ],
+      "auprc_p_gt_0": 0.387,
+      "auroc": 0.0359,
+      "auroc_ci": [
+       -0.0259,
+       0.0983
+      ]
+     },
+     "D+ID - D": {
+      "auprc": -0.0233,
+      "auprc_ci": [
+       -0.0728,
+       0.0362
+      ],
+      "auprc_p_gt_0": 0.23,
+      "auroc": 0.0203,
+      "auroc_ci": [
+       -0.0347,
+       0.076
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.0016,
+      "auprc_ci": [
+       -0.0611,
+       0.078
+      ],
+      "auprc_p_gt_0": 0.553,
+      "auroc": 0.0101,
+      "auroc_ci": [
+       -0.0523,
+       0.0715
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.46,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.012,
+       "p_holm": 0.084
+      }
+     }
+    },
+    "claude-sonnet-5": {
+     "n": 354,
+     "n_pos": 97,
+     "conditions": {
+      "D": {
+       "auprc": 0.3295,
+       "auroc": 0.59
+      },
+      "D+Tm": {
+       "auprc": 0.3521,
+       "auroc": 0.6314
+      },
+      "D+T": {
+       "auprc": 0.4282,
+       "auroc": 0.7188
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0761,
+      "auprc_ci": [
+       0.0263,
+       0.1218
+      ],
+      "auprc_p_gt_0": 0.999,
+      "auroc": 0.0875,
+      "auroc_ci": [
+       0.0435,
+       0.1305
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0226,
+      "auprc_ci": [
+       -0.0362,
+       0.0912
+      ],
+      "auprc_p_gt_0": 0.796,
+      "auroc": 0.0413,
+      "auroc_ci": [
+       -0.0137,
+       0.1071
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0023,
+      "auprc_ci": [
+       -0.0467,
+       0.0544
+      ],
+      "auprc_p_gt_0": 0.556,
+      "auroc": 0.012,
+      "auroc_ci": [
+       -0.03,
+       0.0519
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.0651,
+      "auprc_ci": [
+       0.0146,
+       0.1099
+      ],
+      "auprc_p_gt_0": 0.996,
+      "auroc": 0.0185,
+      "auroc_ci": [
+       -0.0161,
+       0.0496
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.888,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.002,
+       "p_holm": 0.016
+      }
+     }
+    },
+    "claude-opus-4-8": {
+     "n": 354,
+     "n_pos": 97,
+     "conditions": {
+      "D": {
+       "auprc": 0.3257,
+       "auroc": 0.5891
+      },
+      "D+Tm": {
+       "auprc": 0.4242,
+       "auroc": 0.6609
+      },
+      "D+T": {
+       "auprc": 0.5374,
+       "auroc": 0.7509
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.1131,
+      "auprc_ci": [
+       0.0558,
+       0.1546
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.09,
+      "auroc_ci": [
+       0.053,
+       0.1266
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.0985,
+      "auprc_ci": [
+       0.0297,
+       0.1859
+      ],
+      "auprc_p_gt_0": 0.995,
+      "auroc": 0.0718,
+      "auroc_ci": [
+       0.0187,
+       0.1303
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0201,
+      "auprc_ci": [
+       -0.0178,
+       0.0584
+      ],
+      "auprc_p_gt_0": 0.831,
+      "auroc": 0.0046,
+      "auroc_ci": [
+       -0.0245,
+       0.0328
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.0062,
+      "auprc_ci": [
+       -0.0351,
+       0.0512
+      ],
+      "auprc_p_gt_0": 0.65,
+      "auroc": 0.0227,
+      "auroc_ci": [
+       -0.0022,
+       0.0469
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.338,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.001,
+       "p_holm": 0.01
+      }
+     }
+    },
+    "claude-opus-5": {
+     "n": 354,
+     "n_pos": 97,
+     "conditions": {
+      "D": {
+       "auprc": 0.2898,
+       "auroc": 0.5434
+      },
+      "D+Tm": {
+       "auprc": 0.4511,
+       "auroc": 0.6814
+      },
+      "D+T": {
+       "auprc": 0.5717,
+       "auroc": 0.7673
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.1205,
+      "auprc_ci": [
+       0.0664,
+       0.1672
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0859,
+      "auroc_ci": [
+       0.0405,
+       0.1344
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": 0.1613,
+      "auprc_ci": [
+       0.0887,
+       0.2453
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.138,
+      "auroc_ci": [
+       0.0843,
+       0.195
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0257,
+      "auprc_ci": [
+       -0.0064,
+       0.0595
+      ],
+      "auprc_p_gt_0": 0.94,
+      "auroc": 0.0313,
+      "auroc_ci": [
+       0.0022,
+       0.0639
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": 0.0763,
+      "auprc_ci": [
+       0.0278,
+       0.1205
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0317,
+      "auroc_ci": [
+       0.0102,
+       0.0515
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.12,
+       "p_holm": 0.72
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.001,
+       "p_holm": 0.01
+      }
+     }
+    },
+    "ollama:llama3.1:8b": {
+     "n": 354,
+     "n_pos": 97,
+     "conditions": {
+      "D": {
+       "auprc": 0.3753,
+       "auroc": 0.6061
+      },
+      "D+Tm": {
+       "auprc": 0.328,
+       "auroc": 0.5797
+      },
+      "D+T": {
+       "auprc": 0.3658,
+       "auroc": 0.5772
+      }
+     },
+     "D+T - D+Tm": {
+      "auprc": 0.0379,
+      "auprc_ci": [
+       -0.0264,
+       0.1024
+      ],
+      "auprc_p_gt_0": 0.867,
+      "auroc": -0.0025,
+      "auroc_ci": [
+       -0.0602,
+       0.0578
+      ]
+     },
+     "D+Tm - D": {
+      "auprc": -0.0473,
+      "auprc_ci": [
+       -0.1163,
+       0.0252
+      ],
+      "auprc_p_gt_0": 0.106,
+      "auroc": -0.0265,
+      "auroc_ci": [
+       -0.0879,
+       0.0447
+      ]
+     },
+     "D+ID - D": {
+      "auprc": 0.0026,
+      "auprc_ci": [
+       -0.0599,
+       0.065
+      ],
+      "auprc_p_gt_0": 0.537,
+      "auroc": 0.0164,
+      "auroc_ci": [
+       -0.0402,
+       0.0751
+      ]
+     },
+     "D+T+ID+S - D+T": {
+      "auprc": -0.0367,
+      "auprc_ci": [
+       -0.1178,
+       0.0374
+      ],
+      "auprc_p_gt_0": 0.162,
+      "auroc": -0.0045,
+      "auroc_ci": [
+       -0.0759,
+       0.0721
+      ]
+     },
+     "holm": {
+      "D+ID - D": {
+       "p_two_sided": 0.926,
+       "p_holm": 1.0
+      },
+      "D+T - D+Tm": {
+       "p_two_sided": 0.266,
+       "p_holm": 1.0
+      }
+     }
+    }
+   }
+  }
+ },
+ "chembl_refined": {
+  "definitions": {
+   "established_all_pre": "every matched approved molecule first approved before the start year (misdating corrected), no never-approved/development-code compound, not COVID-19",
+   "established_all_pre_covid": "as above, COVID-19 trials (reported separately)",
+   "mixed": "an approved-before-start drug plus a never-approved/development-code compound or a drug approved after start",
+   "novel_dev_code_only": "a never-approved compound (ChEMBL max_phase < 4 or an unresolved development code) and no approved drug",
+   "approved_after_start_corrected": "approved only in/after the start year, misdated approvals removed",
+   "other": "remaining trials"
+  },
+  "counts": {
+   "established_all_pre": 219,
+   "established_all_pre_covid": 28,
+   "mixed": 79,
+   "novel_dev_code_only": 193,
+   "approved_after_start_corrected": 12,
+   "other": 69
+  },
+  "positives": {
+   "established_all_pre": 44,
+   "established_all_pre_covid": 2,
+   "mixed": 11,
+   "novel_dev_code_only": 32,
+   "approved_after_start_corrected": 6,
+   "other": 13
+  },
+  "crosstab_original_vs_refined": {
+   "approved_after_start_corrected": {
+    "approved_after_start": 12,
+    "approved_before_start": 0,
+    "never_approved_code": 0,
+    "other": 0
+   },
+   "established_all_pre": {
+    "approved_after_start": 3,
+    "approved_before_start": 212,
+    "never_approved_code": 1,
+    "other": 3
+   },
+   "established_all_pre_covid": {
+    "approved_after_start": 2,
+    "approved_before_start": 26,
+    "never_approved_code": 0,
+    "other": 0
+   },
+   "mixed": {
+    "approved_after_start": 1,
+    "approved_before_start": 76,
+    "never_approved_code": 2,
+    "other": 0
+   },
+   "novel_dev_code_only": {
+    "approved_after_start": 0,
+    "approved_before_start": 1,
+    "never_approved_code": 168,
+    "other": 24
+   },
+   "other": {
+    "approved_after_start": 0,
+    "approved_before_start": 1,
+    "never_approved_code": 1,
+    "other": 67
+   }
+  },
+  "L6_of_316_approved_before_start": {
+   "n": 316,
+   "with_dev_or_never_approved_compound_curated": 72,
+   "with_drug_approved_after_start": 6,
+   "covid": 29,
+   "refined_breakdown": {
+    "established_all_pre": 212,
+    "mixed": 76,
+    "established_all_pre_covid": 26,
+    "other": 1,
+    "novel_dev_code_only": 1
+   }
+  },
+  "L6_approved_after_start_18": [
+   {
+    "nct_id": "NCT04320940",
+    "start_year": 2021,
+    "label": 0,
+    "title": "Efficacy and Safety of Intravenous Phenobarbital in Neonatal Seizures",
+    "approved_molecules": [
+     "PHENOBARBITAL (2022)"
+    ],
+    "misdated": {
+     "PHENOBARBITAL": "in clinical use since 1912; ChEMBL 2022 is the first FDA NDA (Sezaby)"
+    },
+    "covid": false,
+    "same_year_only": false,
+    "refined": "established_all_pre"
+   },
+   {
+    "nct_id": "NCT04674761",
+    "start_year": 2021,
+    "label": 1,
+    "title": "Efficacy and Safety of Odevixibat in Patients With Alagille Syndrome",
+    "approved_molecules": [
+     "ODEVIXIBAT (2021)"
+    ],
+    "misdated": {},
+    "covid": false,
+    "same_year_only": true,
+    "refined": "approved_after_start_corrected"
+   },
+   {
+    "nct_id": "NCT04842292",
+    "start_year": 2021,
+    "label": 0,
+    "title": "Nebulized Heparin for COVID19-associated Acute Respiratory Failure",
+    "approved_molecules": [
+     "HEPARIN (2023)"
+    ],
+    "misdated": {
+     "HEPARIN": "in clinical use since the 1930s (US approval 1939); ChEMBL gives 2023"
+    },
+    "covid": true,
+    "same_year_only": false,
+    "refined": "established_all_pre_covid"
+   },
+   {
+    "nct_id": "NCT05556265",
+    "start_year": 2022,
+    "label": 0,
+    "title": "A Study to Evaluate Efficacy and Safety of Deucravacitinib in Participants With Alopecia A",
+    "approved_molecules": [
+     "DEUCRAVACITINIB (2022)"
+    ],
+    "misdated": {},
+    "covid": false,
+    "same_year_only": true,
+    "refined": "approved_after_start_corrected"
+   },
+   {
+    "nct_id": "NCT04760314",
+    "start_year": 2021,
+    "label": 1,
+    "title": "A Study of Lebrikizumab (LY3650150) in Combination With Topical Corticosteroids in Japanes",
+    "approved_molecules": [
+     "LEBRIKIZUMAB (2023)"
+    ],
+    "misdated": {},
+    "covid": false,
+    "same_year_only": false,
+    "refined": "approved_after_start_corrected"
+   },
+   {
+    "nct_id": "NCT04875975",
+    "start_year": 2021,
+    "label": 0,
+    "title": "A Study to Test the Efficacy, Safety, and Pharmacokinetics of Rozanolixizumab in Adult Stu",
+    "approved_molecules": [
+     "ROZANOLIXIZUMAB (2023)"
+    ],
+    "misdated": {},
+    "covid": false,
+    "same_year_only": false,
+    "refined": "approved_after_start_corrected"
+   },
+   {
+    "nct_id": "NCT05205759",
+    "start_year": 2021,
+    "label": 0,
+    "title": "Non-inferiority Trial on Monoclonal Antibodies in COVID-19",
+    "approved_molecules": [
+     "SOTROVIMAB (2021)"
+    ],
+    "misdated": {},
+    "covid": true,
+    "same_year_only": true,
+    "refined": "approved_after_start_corrected"
+   },
+   {
+    "nct_id": "NCT04650854",
+    "start_year": 2021,
+    "label": 1,
+    "title": "A Study to Evaluate Rozanolixizumab in Study Participants With Generalized Myasthenia Grav",
+    "approved_molecules": [
+     "ROZANOLIXIZUMAB (2023)"
+    ],
+    "misdated": {},
+    "covid": false,
+    "same_year_only": false,
+    "refined": "approved_after_start_corrected"
+   },
+   {
+    "nct_id": "NCT05757492",
+    "start_year": 2023,
+    "label": 0,
+    "title": "Study to Evaluate Safety and PK of CHS-006 in Combination With Toripalimab in Patients Wit",
+    "approved_molecules": [
+     "TORIPALIMAB (2023)"
+    ],
+    "misdated": {
+     "TORIPALIMAB": "approved in China Dec 2018; ChEMBL gives the 2023 US approval"
+    },
+    "covid": false,
+    "same_year_only": false,
+    "refined": "mixed"
+   },
+   {
+    "nct_id": "NCT05005910",
+    "start_year": 2021,
+    "label": 1,
+    "title": "Efficacy of Vonoprazan Versus Intravenous Proton Pump Inhibitors for Prevention of Rebleed",
+    "approved_molecules": [
+     "VONOPRAZAN (2022)"
+    ],
+    "misdated": {
+     "VONOPRAZAN": "approved in Japan 2014; ChEMBL gives the 2022 US approval"
+    },
+    "covid": false,
+    "same_year_only": false,
+    "refined": "established_all_pre"
+   },
+   {
+    "nct_id": "NCT03125187",
+    "start_year": 2021,
+    "label": 0,
+    "title": "Study With Heparin Sodium in Intravenous Administration",
+    "approved_molecules": [
+     "HEPARIN (2023)"
+    ],
+    "misdated": {
+     "HEPARIN": "in clinical use since the 1930s (US approval 1939); ChEMBL gives 2023"
+    },
+    "covid": false,
+    "same_year_only": false,
+    "refined": "established_all_pre"
+   },
+   {
+    "nct_id": "NCT05094050",
+    "start_year": 2022,
+    "label": 1,
+    "title": "Study to Assess How ABBV-951 is Absorbed When Administered at Different Subcutaneous Sites",
+    "approved_molecules": [
+     "FOSCARBIDOPA (2024)",
+     "FOSLEVODOPA (2024)"
+    ],
+    "misdated": {},
+    "covid": false,
+    "same_year_only": false,
+    "refined": "approved_after_start_corrected"
+   },
+   {
+    "nct_id": "NCT05038982",
+    "start_year": 2021,
+    "label": 1,
+    "title": "Efficacy of Abrocitinib for Reducing Pruritus in Adults With Prurigo Nodularis and Chronic",
+    "approved_molecules": [
+     "ABROCITINIB (2021)"
+    ],
+    "misdated": {},
+    "covid": false,
+    "same_year_only": true,
+    "refined": "approved_after_start_corrected"
+   },
+   {
+    "nct_id": "NCT04863014",
+    "start_year": 2021,
+    "label": 0,
+    "title": "Efficacy and Safety of Evinacumab in Adult Patients With Severe Hypertriglyceridemia for t",
+    "approved_molecules": [
+     "EVINACUMAB (2021)"
+    ],
+    "misdated": {},
+    "covid": false,
+    "same_year_only": true,
+    "refined": "approved_after_start_corrected"
+   },
+   {
+    "nct_id": "NCT05013385",
+    "start_year": 2021,
+    "label": 0,
+    "title": "A Study to Test Whether Spesolimab Helps People With Crohn's Disease Who Have Symptoms of ",
+    "approved_molecules": [
+     "SPESOLIMAB (2022)"
+    ],
+    "misdated": {},
+    "covid": false,
+    "same_year_only": false,
+    "refined": "approved_after_start_corrected"
+   },
+   {
+    "nct_id": "NCT04804033",
+    "start_year": 2021,
+    "label": 0,
+    "title": "A Study to Evaluate the Efficacy and Safety of Oral Zavegepant in Migraine Prevention",
+    "approved_molecules": [
+     "ZAVEGEPANT (2023)"
+    ],
+    "misdated": {},
+    "covid": false,
+    "same_year_only": false,
+    "refined": "approved_after_start_corrected"
+   },
+   {
+    "nct_id": "NCT04818736",
+    "start_year": 2021,
+    "label": 0,
+    "title": "COVID-19 Vaccine For Indirect Protection",
+    "approved_molecules": [
+     "ELASOMERAN (2021)"
+    ],
+    "misdated": {
+     "ELASOMERAN": "mRNA-1273 authorised (US EUA) Dec 2020, before the 2021 start"
+    },
+    "covid": true,
+    "same_year_only": false,
+    "refined": "established_all_pre_covid"
+   },
+   {
+    "nct_id": "NCT04811040",
+    "start_year": 2021,
+    "label": 1,
+    "title": "Study to Evaluate the Safety and Efficacy of Teropavimab and Zinlirvimab in Combination Wi",
+    "approved_molecules": [
+     "LENACAPAVIR (2022)"
+    ],
+    "misdated": {},
+    "covid": false,
+    "same_year_only": false,
+    "refined": "approved_after_start_corrected"
+   }
+  ],
+  "first_approval_semantics": "ChEMBL MOLECULE_DICTIONARY.FIRST_APPROVAL = 'Earliest known approval year for the drug'; MAX_PHASE is 'across all indications' (ChEMBL schema documentation); the cache stores no indication, so dating is molecule-level.",
+  "models": {
+   "claude-haiku-4-5-20251001": {
+    "established_all_pre": {
+     "D+T - D+Tm": {
+      "n": 219,
+      "n_pos": 44,
+      "auprc": 0.0575,
+      "auprc_ci": [
+       -0.0469,
+       0.1604
+      ],
+      "auprc_p_gt_0": 0.843,
+      "auroc": 0.0548,
+      "auroc_ci": [
+       -0.0389,
+       0.1523
+      ]
+     },
+     "D+Tm - D": {
+      "n": 219,
+      "n_pos": 44,
+      "auprc": -0.0689,
+      "auprc_ci": [
+       -0.1706,
+       0.0418
+      ],
+      "auprc_p_gt_0": 0.128,
+      "auroc": -0.0556,
+      "auroc_ci": [
+       -0.1456,
+       0.0342
+      ]
+     }
+    },
+    "established_all_pre_covid": {
+     "D+T - D+Tm": {
+      "n": 28,
+      "n_pos": 2,
+      "auprc": -0.0595,
+      "auprc_ci": [
+       -0.5,
+       0.2482
+      ],
+      "auprc_p_gt_0": 0.308,
+      "auroc": 0.0192,
+      "auroc_ci": [
+       -0.08,
+       0.16
+      ]
+     },
+     "D+Tm - D": {
+      "n": 28,
+      "n_pos": 2,
+      "auprc": 0.1353,
+      "auprc_ci": [
+       -0.6667,
+       0.8994
+      ],
+      "auprc_p_gt_0": 0.642,
+      "auroc": 0.0865,
+      "auroc_ci": [
+       -0.2222,
+       0.4444
+      ]
+     }
+    },
+    "mixed": {
+     "D+T - D+Tm": {
+      "n": 79,
+      "n_pos": 11,
+      "auprc": 0.242,
+      "auprc_ci": [
+       -0.0157,
+       0.4434
+      ],
+      "auprc_p_gt_0": 0.969,
+      "auroc": 0.0789,
+      "auroc_ci": [
+       -0.0523,
+       0.2128
+      ]
+     },
+     "D+Tm - D": {
+      "n": 79,
+      "n_pos": 11,
+      "auprc": 0.0633,
+      "auprc_ci": [
+       -0.1102,
+       0.2767
+      ],
+      "auprc_p_gt_0": 0.789,
+      "auroc": 0.0862,
+      "auroc_ci": [
+       -0.0397,
+       0.2044
+      ]
+     }
+    },
+    "novel_dev_code_only": {
+     "D+T - D+Tm": {
+      "n": 193,
+      "n_pos": 32,
+      "auprc": 0.0418,
+      "auprc_ci": [
+       -0.0659,
+       0.1352
+      ],
+      "auprc_p_gt_0": 0.766,
+      "auroc": 0.0342,
+      "auroc_ci": [
+       -0.0808,
+       0.145
+      ]
+     },
+     "D+Tm - D": {
+      "n": 193,
+      "n_pos": 32,
+      "auprc": 0.0828,
+      "auprc_ci": [
+       0.0205,
+       0.1898
+      ],
+      "auprc_p_gt_0": 0.994,
+      "auroc": 0.1309,
+      "auroc_ci": [
+       0.0172,
+       0.248
+      ]
+     }
+    },
+    "approved_after_start_corrected": {
+     "D+T - D+Tm": {
+      "n": 12,
+      "n_pos": 6,
+      "auprc": 0.0747,
+      "auprc_ci": [
+       -0.3333,
+       0.5454
+      ],
+      "auprc_p_gt_0": 0.632,
+      "auroc": 0.125,
+      "auroc_ci": [
+       -0.4092,
+       0.6714
+      ]
+     },
+     "D+Tm - D": {
+      "n": 12,
+      "n_pos": 6,
+      "auprc": -0.0118,
+      "auprc_ci": [
+       -0.4167,
+       0.3501
+      ],
+      "auprc_p_gt_0": 0.426,
+      "auroc": -0.0833,
+      "auroc_ci": [
+       -0.572,
+       0.4143
+      ]
+     }
+    },
+    "other": {
+     "D+T - D+Tm": {
+      "n": 69,
+      "n_pos": 13,
+      "auprc": 0.1008,
+      "auprc_ci": [
+       -0.0322,
+       0.2107
+      ],
+      "auprc_p_gt_0": 0.903,
+      "auroc": 0.0343,
+      "auroc_ci": [
+       -0.0846,
+       0.142
+      ]
+     },
+     "D+Tm - D": {
+      "n": 69,
+      "n_pos": 13,
+      "auprc": 0.0938,
+      "auprc_ci": [
+       -0.0308,
+       0.2851
+      ],
+      "auprc_p_gt_0": 0.94,
+      "auroc": 0.1573,
+      "auroc_ci": [
+       0.0112,
+       0.306
+      ]
+     }
+    },
+    "approved_after_start_strict_later_year": {
+     "D+T - D+Tm": {
+      "n": 7,
+      "n_pos": 4,
+      "auprc": 0.0,
+      "auprc_ci": [
+       -0.6792,
+       0.5601
+      ],
+      "auprc_p_gt_0": 0.41,
+      "auroc": 0.0,
+      "auroc_ci": [
+       -0.9087,
+       0.8175
+      ]
+     },
+     "D+Tm - D": {
+      "n": 7,
+      "n_pos": 4,
+      "auprc": 0.0262,
+      "auprc_ci": [
+       -0.4048,
+       0.5
+      ],
+      "auprc_p_gt_0": 0.435,
+      "auroc": -0.0833,
+      "auroc_ci": [
+       -0.6667,
+       0.6
+      ]
+     }
+    },
+    "original_approved_before_start": {
+     "D+T - D+Tm": {
+      "n": 316,
+      "n_pos": 55,
+      "auprc": 0.0761,
+      "auprc_ci": [
+       -0.0082,
+       0.1555
+      ],
+      "auprc_p_gt_0": 0.962,
+      "auroc": 0.0725,
+      "auroc_ci": [
+       -0.009,
+       0.1463
+      ]
+     },
+     "D+Tm - D": {
+      "n": 316,
+      "n_pos": 55,
+      "auprc": -0.0313,
+      "auprc_ci": [
+       -0.1266,
+       0.0665
+      ],
+      "auprc_p_gt_0": 0.26,
+      "auroc": -0.0206,
+      "auroc_ci": [
+       -0.0944,
+       0.0568
+      ]
+     }
+    },
+    "original_never_approved_code": {
+     "D+T - D+Tm": {
+      "n": 172,
+      "n_pos": 28,
+      "auprc": 0.0526,
+      "auprc_ci": [
+       -0.0851,
+       0.1682
+      ],
+      "auprc_p_gt_0": 0.775,
+      "auroc": 0.0425,
+      "auroc_ci": [
+       -0.0762,
+       0.1676
+      ]
+     },
+     "D+Tm - D": {
+      "n": 172,
+      "n_pos": 28,
+      "auprc": 0.1029,
+      "auprc_ci": [
+       0.0224,
+       0.2417
+      ],
+      "auprc_p_gt_0": 0.997,
+      "auroc": 0.1417,
+      "auroc_ci": [
+       0.0074,
+       0.2722
+      ]
+     }
+    }
+   },
+   "claude-sonnet-5": {
+    "established_all_pre": {
+     "D+T - D+Tm": {
+      "n": 219,
+      "n_pos": 44,
+      "auprc": 0.1023,
+      "auprc_ci": [
+       0.0213,
+       0.1801
+      ],
+      "auprc_p_gt_0": 0.995,
+      "auroc": 0.0906,
+      "auroc_ci": [
+       0.0246,
+       0.1624
+      ]
+     },
+     "D+Tm - D": {
+      "n": 219,
+      "n_pos": 44,
+      "auprc": 0.0686,
+      "auprc_ci": [
+       -0.0285,
+       0.1676
+      ],
+      "auprc_p_gt_0": 0.919,
+      "auroc": 0.0254,
+      "auroc_ci": [
+       -0.07,
+       0.1202
+      ]
+     }
+    },
+    "established_all_pre_covid": {
+     "D+T - D+Tm": {
+      "n": 28,
+      "n_pos": 2,
+      "auprc": 0.1833,
+      "auprc_ci": [
+       0.0,
+       0.6667
+      ],
+      "auprc_p_gt_0": 0.96,
+      "auroc": 0.1442,
+      "auroc_ci": [
+       0.0185,
+       0.3509
+      ]
+     },
+     "D+Tm - D": {
+      "n": 28,
+      "n_pos": 2,
+      "auprc": 0.0417,
+      "auprc_ci": [
+       -0.3885,
+       0.549
+      ],
+      "auprc_p_gt_0": 0.557,
+      "auroc": 0.1442,
+      "auroc_ci": [
+       -0.4074,
+       0.6852
+      ]
+     }
+    },
+    "mixed": {
+     "D+T - D+Tm": {
+      "n": 79,
+      "n_pos": 11,
+      "auprc": 0.3015,
+      "auprc_ci": [
+       0.0593,
+       0.4661
+      ],
+      "auprc_p_gt_0": 0.992,
+      "auroc": 0.1557,
+      "auroc_ci": [
+       0.0431,
+       0.2842
+      ]
+     },
+     "D+Tm - D": {
+      "n": 79,
+      "n_pos": 11,
+      "auprc": 0.1338,
+      "auprc_ci": [
+       -0.1129,
+       0.4069
+      ],
+      "auprc_p_gt_0": 0.871,
+      "auroc": 0.0167,
+      "auroc_ci": [
+       -0.1438,
+       0.1457
+      ]
+     }
+    },
+    "novel_dev_code_only": {
+     "D+T - D+Tm": {
+      "n": 193,
+      "n_pos": 32,
+      "auprc": -0.0061,
+      "auprc_ci": [
+       -0.0765,
+       0.0445
+      ],
+      "auprc_p_gt_0": 0.436,
+      "auroc": 0.0373,
+      "auroc_ci": [
+       -0.0309,
+       0.1044
+      ]
+     },
+     "D+Tm - D": {
+      "n": 193,
+      "n_pos": 32,
+      "auprc": 0.0147,
+      "auprc_ci": [
+       -0.088,
+       0.1362
+      ],
+      "auprc_p_gt_0": 0.654,
+      "auroc": 0.0761,
+      "auroc_ci": [
+       -0.0223,
+       0.1716
+      ]
+     }
+    },
+    "approved_after_start_corrected": {
+     "D+T - D+Tm": {
+      "n": 12,
+      "n_pos": 6,
+      "auprc": 0.1769,
+      "auprc_ci": [
+       0.0,
+       0.4446
+      ],
+      "auprc_p_gt_0": 0.961,
+      "auroc": 0.2083,
+      "auroc_ci": [
+       0.0,
+       0.4501
+      ]
+     },
+     "D+Tm - D": {
+      "n": 12,
+      "n_pos": 6,
+      "auprc": -0.0321,
+      "auprc_ci": [
+       -0.3214,
+       0.1818
+      ],
+      "auprc_p_gt_0": 0.356,
+      "auroc": 0.0,
+      "auroc_ci": [
+       -0.243,
+       0.1858
+      ]
+     }
+    },
+    "other": {
+     "D+T - D+Tm": {
+      "n": 69,
+      "n_pos": 13,
+      "auprc": 0.0584,
+      "auprc_ci": [
+       -0.1082,
+       0.2515
+      ],
+      "auprc_p_gt_0": 0.744,
+      "auroc": 0.011,
+      "auroc_ci": [
+       -0.0673,
+       0.0917
+      ]
+     },
+     "D+Tm - D": {
+      "n": 69,
+      "n_pos": 13,
+      "auprc": 0.1564,
+      "auprc_ci": [
+       0.0104,
+       0.3268
+      ],
+      "auprc_p_gt_0": 0.98,
+      "auroc": 0.1628,
+      "auroc_ci": [
+       0.0132,
+       0.3153
+      ]
+     }
+    },
+    "approved_after_start_strict_later_year": {
+     "D+T - D+Tm": {
+      "n": 7,
+      "n_pos": 4,
+      "auprc": 0.1,
+      "auprc_ci": [
+       0.0,
+       0.5
+      ],
+      "auprc_p_gt_0": 0.604,
+      "auroc": 0.1667,
+      "auroc_ci": [
+       0.0,
+       0.6667
+      ]
+     },
+     "D+Tm - D": {
+      "n": 7,
+      "n_pos": 4,
+      "auprc": -0.05,
+      "auprc_ci": [
+       -0.5,
+       0.25
+      ],
+      "auprc_p_gt_0": 0.145,
+      "auroc": -0.125,
+      "auroc_ci": [
+       -0.6667,
+       0.1
+      ]
+     }
+    },
+    "original_approved_before_start": {
+     "D+T - D+Tm": {
+      "n": 316,
+      "n_pos": 55,
+      "auprc": 0.1489,
+      "auprc_ci": [
+       0.0756,
+       0.2169
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.1194,
+      "auroc_ci": [
+       0.0638,
+       0.1802
+      ]
+     },
+     "D+Tm - D": {
+      "n": 316,
+      "n_pos": 55,
+      "auprc": 0.0779,
+      "auprc_ci": [
+       -0.0015,
+       0.1637
+      ],
+      "auprc_p_gt_0": 0.971,
+      "auroc": 0.0345,
+      "auroc_ci": [
+       -0.0427,
+       0.1129
+      ]
+     }
+    },
+    "original_never_approved_code": {
+     "D+T - D+Tm": {
+      "n": 172,
+      "n_pos": 28,
+      "auprc": -0.0203,
+      "auprc_ci": [
+       -0.111,
+       0.0418
+      ],
+      "auprc_p_gt_0": 0.294,
+      "auroc": 0.0103,
+      "auroc_ci": [
+       -0.0507,
+       0.0663
+      ]
+     },
+     "D+Tm - D": {
+      "n": 172,
+      "n_pos": 28,
+      "auprc": 0.0252,
+      "auprc_ci": [
+       -0.0931,
+       0.1635
+      ],
+      "auprc_p_gt_0": 0.727,
+      "auroc": 0.0835,
+      "auroc_ci": [
+       -0.0266,
+       0.1899
+      ]
+     }
+    }
+   },
+   "claude-opus-4-8": {
+    "established_all_pre": {
+     "D+T - D+Tm": {
+      "n": 219,
+      "n_pos": 44,
+      "auprc": 0.0708,
+      "auprc_ci": [
+       0.006,
+       0.141
+      ],
+      "auprc_p_gt_0": 0.985,
+      "auroc": 0.0623,
+      "auroc_ci": [
+       0.0066,
+       0.1259
+      ]
+     },
+     "D+Tm - D": {
+      "n": 219,
+      "n_pos": 44,
+      "auprc": 0.1717,
+      "auprc_ci": [
+       0.0634,
+       0.2713
+      ],
+      "auprc_p_gt_0": 0.999,
+      "auroc": 0.0515,
+      "auroc_ci": [
+       -0.0411,
+       0.1366
+      ]
+     }
+    },
+    "established_all_pre_covid": {
+     "D+T - D+Tm": {
+      "n": 28,
+      "n_pos": 2,
+      "auprc": 0.1333,
+      "auprc_ci": [
+       -0.2667,
+       0.7462
+      ],
+      "auprc_p_gt_0": 0.668,
+      "auroc": 0.0385,
+      "auroc_ci": [
+       -0.0769,
+       0.1481
+      ]
+     },
+     "D+Tm - D": {
+      "n": 28,
+      "n_pos": 2,
+      "auprc": -0.1718,
+      "auprc_ci": [
+       -0.8,
+       0.5925
+      ],
+      "auprc_p_gt_0": 0.458,
+      "auroc": 0.3654,
+      "auroc_ci": [
+       -0.1538,
+       0.8889
+      ]
+     }
+    },
+    "mixed": {
+     "D+T - D+Tm": {
+      "n": 79,
+      "n_pos": 11,
+      "auprc": 0.1453,
+      "auprc_ci": [
+       0.0295,
+       0.2879
+      ],
+      "auprc_p_gt_0": 0.997,
+      "auroc": 0.125,
+      "auroc_ci": [
+       0.0047,
+       0.2786
+      ]
+     },
+     "D+Tm - D": {
+      "n": 79,
+      "n_pos": 11,
+      "auprc": 0.2488,
+      "auprc_ci": [
+       -0.0935,
+       0.5238
+      ],
+      "auprc_p_gt_0": 0.917,
+      "auroc": 0.0795,
+      "auroc_ci": [
+       -0.1356,
+       0.261
+      ]
+     }
+    },
+    "novel_dev_code_only": {
+     "D+T - D+Tm": {
+      "n": 193,
+      "n_pos": 32,
+      "auprc": 0.0781,
+      "auprc_ci": [
+       0.0113,
+       0.1383
+      ],
+      "auprc_p_gt_0": 0.991,
+      "auroc": 0.0842,
+      "auroc_ci": [
+       0.0063,
+       0.1594
+      ]
+     },
+     "D+Tm - D": {
+      "n": 193,
+      "n_pos": 32,
+      "auprc": 0.0275,
+      "auprc_ci": [
+       -0.0328,
+       0.101
+      ],
+      "auprc_p_gt_0": 0.811,
+      "auroc": 0.0383,
+      "auroc_ci": [
+       -0.0376,
+       0.113
+      ]
+     }
+    },
+    "approved_after_start_corrected": {
+     "D+T - D+Tm": {
+      "n": 12,
+      "n_pos": 6,
+      "auprc": 0.1476,
+      "auprc_ci": [
+       0.0,
+       0.4336
+      ],
+      "auprc_p_gt_0": 0.92,
+      "auroc": 0.1667,
+      "auroc_ci": [
+       0.0,
+       0.5
+      ]
+     },
+     "D+Tm - D": {
+      "n": 12,
+      "n_pos": 6,
+      "auprc": -0.0365,
+      "auprc_ci": [
+       -0.2692,
+       0.1333
+      ],
+      "auprc_p_gt_0": 0.352,
+      "auroc": 0.0139,
+      "auroc_ci": [
+       -0.1857,
+       0.2224
+      ]
+     }
+    },
+    "other": {
+     "D+T - D+Tm": {
+      "n": 69,
+      "n_pos": 13,
+      "auprc": 0.0369,
+      "auprc_ci": [
+       -0.0971,
+       0.1561
+      ],
+      "auprc_p_gt_0": 0.691,
+      "auroc": 0.0089,
+      "auroc_ci": [
+       -0.0476,
+       0.0707
+      ]
+     },
+     "D+Tm - D": {
+      "n": 69,
+      "n_pos": 13,
+      "auprc": 0.1745,
+      "auprc_ci": [
+       -0.059,
+       0.3876
+      ],
+      "auprc_p_gt_0": 0.938,
+      "auroc": 0.1758,
+      "auroc_ci": [
+       0.0398,
+       0.3047
+      ]
+     }
+    },
+    "approved_after_start_strict_later_year": {
+     "D+T - D+Tm": {
+      "n": 7,
+      "n_pos": 4,
+      "auprc": 0.05,
+      "auprc_ci": [
+       0.0,
+       0.3
+      ],
+      "auprc_p_gt_0": 0.44,
+      "auroc": 0.0833,
+      "auroc_ci": [
+       0.0,
+       0.4525
+      ]
+     },
+     "D+Tm - D": {
+      "n": 7,
+      "n_pos": 4,
+      "auprc": -0.05,
+      "auprc_ci": [
+       -0.3,
+       0.0
+      ],
+      "auprc_p_gt_0": 0.0,
+      "auroc": -0.0833,
+      "auroc_ci": [
+       -0.4525,
+       0.0
+      ]
+     }
+    },
+    "original_approved_before_start": {
+     "D+T - D+Tm": {
+      "n": 316,
+      "n_pos": 55,
+      "auprc": 0.1013,
+      "auprc_ci": [
+       0.0344,
+       0.1723
+      ],
+      "auprc_p_gt_0": 0.998,
+      "auroc": 0.0936,
+      "auroc_ci": [
+       0.0406,
+       0.1505
+      ]
+     },
+     "D+Tm - D": {
+      "n": 316,
+      "n_pos": 55,
+      "auprc": 0.2047,
+      "auprc_ci": [
+       0.0875,
+       0.3083
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0672,
+      "auroc_ci": [
+       -0.0137,
+       0.1513
+      ]
+     }
+    },
+    "original_never_approved_code": {
+     "D+T - D+Tm": {
+      "n": 172,
+      "n_pos": 28,
+      "auprc": 0.0711,
+      "auprc_ci": [
+       -0.0161,
+       0.1373
+      ],
+      "auprc_p_gt_0": 0.941,
+      "auroc": 0.0496,
+      "auroc_ci": [
+       -0.0105,
+       0.1041
+      ]
+     },
+     "D+Tm - D": {
+      "n": 172,
+      "n_pos": 28,
+      "auprc": 0.0378,
+      "auprc_ci": [
+       -0.0566,
+       0.1395
+      ],
+      "auprc_p_gt_0": 0.849,
+      "auroc": 0.0594,
+      "auroc_ci": [
+       -0.0157,
+       0.1421
+      ]
+     }
+    }
+   },
+   "claude-opus-5": {
+    "established_all_pre": {
+     "D+T - D+Tm": {
+      "n": 219,
+      "n_pos": 44,
+      "auprc": 0.0727,
+      "auprc_ci": [
+       -0.0036,
+       0.1584
+      ],
+      "auprc_p_gt_0": 0.968,
+      "auroc": 0.0668,
+      "auroc_ci": [
+       -0.0019,
+       0.1464
+      ]
+     },
+     "D+Tm - D": {
+      "n": 219,
+      "n_pos": 44,
+      "auprc": 0.1932,
+      "auprc_ci": [
+       0.0823,
+       0.3057
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.1292,
+      "auroc_ci": [
+       0.0321,
+       0.2187
+      ]
+     }
+    },
+    "established_all_pre_covid": {
+     "D+T - D+Tm": {
+      "n": 28,
+      "n_pos": 2,
+      "auprc": -0.0557,
+      "auprc_ci": [
+       -0.3333,
+       0.0
+      ],
+      "auprc_p_gt_0": 0.024,
+      "auroc": -0.0673,
+      "auroc_ci": [
+       -0.2035,
+       0.037
+      ]
+     },
+     "D+Tm - D": {
+      "n": 28,
+      "n_pos": 2,
+      "auprc": 0.11,
+      "auprc_ci": [
+       -0.2677,
+       0.9231
+      ],
+      "auprc_p_gt_0": 0.659,
+      "auroc": 0.2212,
+      "auroc_ci": [
+       -0.4259,
+       0.8519
+      ]
+     }
+    },
+    "mixed": {
+     "D+T - D+Tm": {
+      "n": 79,
+      "n_pos": 11,
+      "auprc": 0.1367,
+      "auprc_ci": [
+       0.0,
+       0.3329
+      ],
+      "auprc_p_gt_0": 0.974,
+      "auroc": 0.115,
+      "auroc_ci": [
+       0.0,
+       0.2605
+      ]
+     },
+     "D+Tm - D": {
+      "n": 79,
+      "n_pos": 11,
+      "auprc": 0.4559,
+      "auprc_ci": [
+       0.161,
+       0.6871
+      ],
+      "auprc_p_gt_0": 0.999,
+      "auroc": 0.143,
+      "auroc_ci": [
+       -0.0203,
+       0.2715
+      ]
+     }
+    },
+    "novel_dev_code_only": {
+     "D+T - D+Tm": {
+      "n": 193,
+      "n_pos": 32,
+      "auprc": 0.078,
+      "auprc_ci": [
+       0.0159,
+       0.1437
+      ],
+      "auprc_p_gt_0": 0.994,
+      "auroc": 0.0504,
+      "auroc_ci": [
+       -0.0225,
+       0.1365
+      ]
+     },
+     "D+Tm - D": {
+      "n": 193,
+      "n_pos": 32,
+      "auprc": 0.0468,
+      "auprc_ci": [
+       -0.0364,
+       0.1333
+      ],
+      "auprc_p_gt_0": 0.878,
+      "auroc": 0.1128,
+      "auroc_ci": [
+       0.041,
+       0.1815
+      ]
+     }
+    },
+    "approved_after_start_corrected": {
+     "D+T - D+Tm": {
+      "n": 12,
+      "n_pos": 6,
+      "auprc": 0.0758,
+      "auprc_ci": [
+       0.0,
+       0.3182
+      ],
+      "auprc_p_gt_0": 0.64,
+      "auroc": 0.1389,
+      "auroc_ci": [
+       0.0,
+       0.5
+      ]
+     },
+     "D+Tm - D": {
+      "n": 12,
+      "n_pos": 6,
+      "auprc": 0.0187,
+      "auprc_ci": [
+       -0.0608,
+       0.125
+      ],
+      "auprc_p_gt_0": 0.455,
+      "auroc": -0.0139,
+      "auroc_ci": [
+       -0.2222,
+       0.0938
+      ]
+     }
+    },
+    "other": {
+     "D+T - D+Tm": {
+      "n": 69,
+      "n_pos": 13,
+      "auprc": 0.0757,
+      "auprc_ci": [
+       -0.0299,
+       0.217
+      ],
+      "auprc_p_gt_0": 0.886,
+      "auroc": 0.0275,
+      "auroc_ci": [
+       -0.0196,
+       0.0828
+      ]
+     },
+     "D+Tm - D": {
+      "n": 69,
+      "n_pos": 13,
+      "auprc": 0.3614,
+      "auprc_ci": [
+       0.1217,
+       0.5276
+      ],
+      "auprc_p_gt_0": 0.999,
+      "auroc": 0.2459,
+      "auroc_ci": [
+       0.0964,
+       0.4128
+      ]
+     }
+    },
+    "approved_after_start_strict_later_year": {
+     "D+T - D+Tm": {
+      "n": 7,
+      "n_pos": 4,
+      "auprc": 0.0,
+      "auprc_ci": [
+       0.0,
+       0.0
+      ],
+      "auprc_p_gt_0": 0.005,
+      "auroc": 0.0,
+      "auroc_ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "D+Tm - D": {
+      "n": 7,
+      "n_pos": 4,
+      "auprc": 0.0,
+      "auprc_ci": [
+       0.0,
+       0.0
+      ],
+      "auprc_p_gt_0": 0.004,
+      "auroc": 0.0,
+      "auroc_ci": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "original_approved_before_start": {
+     "D+T - D+Tm": {
+      "n": 316,
+      "n_pos": 55,
+      "auprc": 0.0998,
+      "auprc_ci": [
+       0.0255,
+       0.1732
+      ],
+      "auprc_p_gt_0": 0.999,
+      "auroc": 0.0881,
+      "auroc_ci": [
+       0.0243,
+       0.1563
+      ]
+     },
+     "D+Tm - D": {
+      "n": 316,
+      "n_pos": 55,
+      "auprc": 0.263,
+      "auprc_ci": [
+       0.1509,
+       0.3683
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.1418,
+      "auroc_ci": [
+       0.0604,
+       0.2256
+      ]
+     }
+    },
+    "original_never_approved_code": {
+     "D+T - D+Tm": {
+      "n": 172,
+      "n_pos": 28,
+      "auprc": 0.0703,
+      "auprc_ci": [
+       0.0047,
+       0.1355
+      ],
+      "auprc_p_gt_0": 0.98,
+      "auroc": -0.0026,
+      "auroc_ci": [
+       -0.0617,
+       0.0538
+      ]
+     },
+     "D+Tm - D": {
+      "n": 172,
+      "n_pos": 28,
+      "auprc": 0.0519,
+      "auprc_ci": [
+       -0.0544,
+       0.1655
+      ],
+      "auprc_p_gt_0": 0.87,
+      "auroc": 0.1143,
+      "auroc_ci": [
+       0.0275,
+       0.1959
+      ]
+     }
+    }
+   },
+   "ollama:llama3.1:8b": {
+    "established_all_pre": {
+     "D+T - D+Tm": {
+      "n": 219,
+      "n_pos": 44,
+      "auprc": 0.0144,
+      "auprc_ci": [
+       -0.0764,
+       0.1074
+      ],
+      "auprc_p_gt_0": 0.611,
+      "auroc": 0.0316,
+      "auroc_ci": [
+       -0.0536,
+       0.1096
+      ]
+     },
+     "D+Tm - D": {
+      "n": 219,
+      "n_pos": 44,
+      "auprc": -0.0525,
+      "auprc_ci": [
+       -0.176,
+       0.0636
+      ],
+      "auprc_p_gt_0": 0.174,
+      "auroc": -0.0715,
+      "auroc_ci": [
+       -0.1717,
+       0.0307
+      ]
+     }
+    },
+    "established_all_pre_covid": {
+     "D+T - D+Tm": {
+      "n": 28,
+      "n_pos": 2,
+      "auprc": 0.2208,
+      "auprc_ci": [
+       0.0,
+       0.6
+      ],
+      "auprc_p_gt_0": 0.888,
+      "auroc": 0.1827,
+      "auroc_ci": [
+       0.0,
+       0.4423
+      ]
+     },
+     "D+Tm - D": {
+      "n": 28,
+      "n_pos": 2,
+      "auprc": -0.3617,
+      "auprc_ci": [
+       -0.8,
+       0.0
+      ],
+      "auprc_p_gt_0": 0.019,
+      "auroc": -0.0769,
+      "auroc_ci": [
+       -0.2778,
+       0.0577
+      ]
+     }
+    },
+    "mixed": {
+     "D+T - D+Tm": {
+      "n": 79,
+      "n_pos": 11,
+      "auprc": 0.0067,
+      "auprc_ci": [
+       -0.1372,
+       0.1607
+      ],
+      "auprc_p_gt_0": 0.54,
+      "auroc": 0.0013,
+      "auroc_ci": [
+       -0.1109,
+       0.1014
+      ]
+     },
+     "D+Tm - D": {
+      "n": 79,
+      "n_pos": 11,
+      "auprc": -0.0596,
+      "auprc_ci": [
+       -0.3093,
+       0.2358
+      ],
+      "auprc_p_gt_0": 0.309,
+      "auroc": -0.113,
+      "auroc_ci": [
+       -0.3205,
+       0.1514
+      ]
+     }
+    },
+    "novel_dev_code_only": {
+     "D+T - D+Tm": {
+      "n": 193,
+      "n_pos": 32,
+      "auprc": -0.0118,
+      "auprc_ci": [
+       -0.085,
+       0.0791
+      ],
+      "auprc_p_gt_0": 0.388,
+      "auroc": -0.0688,
+      "auroc_ci": [
+       -0.1654,
+       0.0213
+      ]
+     },
+     "D+Tm - D": {
+      "n": 193,
+      "n_pos": 32,
+      "auprc": -0.0313,
+      "auprc_ci": [
+       -0.1209,
+       0.063
+      ],
+      "auprc_p_gt_0": 0.29,
+      "auroc": -0.0061,
+      "auroc_ci": [
+       -0.1012,
+       0.1046
+      ]
+     }
+    },
+    "approved_after_start_corrected": {
+     "D+T - D+Tm": {
+      "n": 12,
+      "n_pos": 6,
+      "auprc": 0.0615,
+      "auprc_ci": [
+       -0.1132,
+       0.302
+      ],
+      "auprc_p_gt_0": 0.747,
+      "auroc": 0.0972,
+      "auroc_ci": [
+       -0.2814,
+       0.4429
+      ]
+     },
+     "D+Tm - D": {
+      "n": 12,
+      "n_pos": 6,
+      "auprc": -0.0952,
+      "auprc_ci": [
+       -0.3946,
+       0.077
+      ],
+      "auprc_p_gt_0": 0.139,
+      "auroc": -0.1667,
+      "auroc_ci": [
+       -0.4857,
+       0.1875
+      ]
+     }
+    },
+    "other": {
+     "D+T - D+Tm": {
+      "n": 69,
+      "n_pos": 13,
+      "auprc": -0.1445,
+      "auprc_ci": [
+       -0.2634,
+       -0.0032
+      ],
+      "auprc_p_gt_0": 0.021,
+      "auroc": -0.011,
+      "auroc_ci": [
+       -0.1052,
+       0.0855
+      ]
+     },
+     "D+Tm - D": {
+      "n": 69,
+      "n_pos": 13,
+      "auprc": 0.1353,
+      "auprc_ci": [
+       -0.0508,
+       0.2677
+      ],
+      "auprc_p_gt_0": 0.898,
+      "auroc": 0.1092,
+      "auroc_ci": [
+       -0.0288,
+       0.2668
+      ]
+     }
+    },
+    "approved_after_start_strict_later_year": {
+     "D+T - D+Tm": {
+      "n": 7,
+      "n_pos": 4,
+      "auprc": 0.125,
+      "auprc_ci": [
+       -0.05,
+       0.4643
+      ],
+      "auprc_p_gt_0": 0.839,
+      "auroc": 0.25,
+      "auroc_ci": [
+       0.0,
+       0.6131
+      ]
+     },
+     "D+Tm - D": {
+      "n": 7,
+      "n_pos": 4,
+      "auprc": -0.0667,
+      "auprc_ci": [
+       -0.3733,
+       0.0556
+      ],
+      "auprc_p_gt_0": 0.13,
+      "auroc": -0.25,
+      "auroc_ci": [
+       -0.6667,
+       0.0
+      ]
+     }
+    },
+    "original_approved_before_start": {
+     "D+T - D+Tm": {
+      "n": 316,
+      "n_pos": 55,
+      "auprc": 0.0299,
+      "auprc_ci": [
+       -0.0486,
+       0.111
+      ],
+      "auprc_p_gt_0": 0.787,
+      "auroc": 0.0456,
+      "auroc_ci": [
+       -0.0288,
+       0.1161
+      ]
+     },
+     "D+Tm - D": {
+      "n": 316,
+      "n_pos": 55,
+      "auprc": -0.0514,
+      "auprc_ci": [
+       -0.1456,
+       0.0429
+      ],
+      "auprc_p_gt_0": 0.148,
+      "auroc": -0.0885,
+      "auroc_ci": [
+       -0.1763,
+       0.0056
+      ]
+     }
+    },
+    "original_never_approved_code": {
+     "D+T - D+Tm": {
+      "n": 172,
+      "n_pos": 28,
+      "auprc": -0.0225,
+      "auprc_ci": [
+       -0.0915,
+       0.0779
+      ],
+      "auprc_p_gt_0": 0.314,
+      "auroc": -0.0759,
+      "auroc_ci": [
+       -0.1796,
+       0.0272
+      ]
+     },
+     "D+Tm - D": {
+      "n": 172,
+      "n_pos": 28,
+      "auprc": -0.0289,
+      "auprc_ci": [
+       -0.1207,
+       0.0608
+      ],
+      "auprc_p_gt_0": 0.276,
+      "auroc": -0.0161,
+      "auroc_ci": [
+       -0.1159,
+       0.0832
+      ]
+     }
+    }
+   }
+  }
+ }
+}

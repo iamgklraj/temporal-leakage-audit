@@ -19,6 +19,9 @@ scientific argument testable end-to-end before touching real data. It encodes:
 
   4. NON-INDEPENDENCE. Programs reuse a smaller pool of targets (genes), so
      target-level clustering matters for both splitting and significance.
+     Optionally (``target_effect_sd`` > 0; default 0 = off, output unchanged) each
+     target also gets a random intercept on the outcome logit, so outcomes are
+     correlated within target clusters.
 
 Output schema (identical to the real-data contract in data/connectors.py):
 
@@ -61,6 +64,12 @@ def generate(cfg: Dict) -> Tuple[pd.DataFrame, pd.DataFrame]:
     leak = float(s["leak_strength"])
     leak_count = int(s.get("leak_count", 2))   # extra post-hoc papers attracted by success
     intercept = float(s["base_intercept"])
+    target_sd = float(s.get("target_effect_sd", 0.0))  # target random intercept (0 = off)
+
+    # Optional target-level random intercepts, drawn from a separate stream so that the
+    # default (0) leaves every other draw -- and the output -- exactly unchanged.
+    target_effect = (np.random.default_rng(cfg["seed"] + 2).normal(0.0, target_sd, size=n_targets)
+                     if target_sd > 0 else None)
 
     # Fixed per-area log-odds effects (stable across a run).
     area_rng = np.random.default_rng(cfg["seed"] + 1)
@@ -79,7 +88,8 @@ def generate(cfg: Dict) -> Tuple[pd.DataFrame, pd.DataFrame]:
         year = int(rng.integers(y0, y1 + 1))
         modality = str(rng.choice(MODALITIES, p=[0.6, 0.3, 0.1]))
         phase_from = int(rng.choice([1, 2, 3], p=[0.4, 0.35, 0.25]))
-        target_id = f"T{int(rng.integers(0, n_targets)):04d}"
+        t_idx = int(rng.integers(0, n_targets))
+        target_id = f"T{t_idx:04d}"
 
         # --- Confounded treatment: has_genetic_support depends on tier & area ---
         logit_gen = -0.5 + 0.6 * (tier - 1) + 0.5 * area_effect[area]
@@ -97,6 +107,8 @@ def generate(cfg: Dict) -> Tuple[pd.DataFrame, pd.DataFrame]:
             + true_gen * (1.0 if has_gen else 0.0)
             + rng.normal(0.0, 0.30)
         )
+        if target_effect is not None:
+            logit_y += target_effect[t_idx]
         p_y = float(_sigmoid(logit_y))
         label = int(rng.random() < p_y)
 

@@ -1,0 +1,760 @@
+{
+  "benchmark": "TrialBench approval forecasting (arXiv:2407.00631; Zenodo 14975339)",
+  "script": "scripts/audit_trialbench_v2_lap.py",
+  "settings": {
+    "learner": "audit_trialbench._fit (HGB default, seed 0)",
+    "bootstrap": "trial-level PAIRED percentile bootstrap on the fixed test set, 1000 resamples, seed 0 (same rows for every arm)",
+    "non_start_time_features": [
+      "enrollment",
+      "location/facility/address/city-Aging",
+      "location/facility/address/city-GDP",
+      "location/facility/address/city-Population"
+    ],
+    "arms": {
+      "all_features": "all model features",
+      "ablated_non_start_removed": "enrollment + city Aging/GDP/Population removed",
+      "minus_enrollment_only": "enrollment removed, city covariates kept"
+    },
+    "contrasts": {
+      "LAP_total_all_minus_ablated": "all_features minus ablated_non_start_removed",
+      "LAP_enrollment_all_minus_minus_enrollment": "all_features minus minus_enrollment_only",
+      "LAP_city_minus_enrollment_minus_ablated": "minus_enrollment_only minus ablated_non_start_removed"
+    },
+    "note": "fixed test set, so lift difference == AUPRC difference"
+  },
+  "phases": {
+    "Phase1": {
+      "temporal_split": {
+        "n_train": 3586,
+        "n_test": 896,
+        "test_base_rate": 0.2042,
+        "arms": {
+          "all_features": {
+            "n_features": 53,
+            "auprc": 0.5731,
+            "auprc_ci": [
+              0.5024,
+              0.6438
+            ],
+            "auroc": 0.8417,
+            "auroc_ci": [
+              0.813,
+              0.869
+            ],
+            "lift": 0.3689,
+            "lift_ci": [
+              0.3068,
+              0.4364
+            ]
+          },
+          "ablated_non_start_removed": {
+            "n_features": 49,
+            "auprc": 0.3652,
+            "auprc_ci": [
+              0.2925,
+              0.4393
+            ],
+            "auroc": 0.6483,
+            "auroc_ci": [
+              0.6049,
+              0.6948
+            ],
+            "lift": 0.161,
+            "lift_ci": [
+              0.1035,
+              0.231
+            ]
+          },
+          "minus_enrollment_only": {
+            "n_features": 52,
+            "auprc": 0.3643,
+            "auprc_ci": [
+              0.2997,
+              0.4358
+            ],
+            "auroc": 0.6462,
+            "auroc_ci": [
+              0.6035,
+              0.692
+            ],
+            "lift": 0.1601,
+            "lift_ci": [
+              0.1052,
+              0.2254
+            ]
+          }
+        },
+        "paired_differences": {
+          "LAP_total_all_minus_ablated": {
+            "auprc": {
+              "point": 0.2079,
+              "ci": [
+                0.1474,
+                0.2642
+              ],
+              "p_gt_0": 1.0
+            },
+            "auroc": {
+              "point": 0.1934,
+              "ci": [
+                0.1535,
+                0.2358
+              ],
+              "p_gt_0": 1.0
+            }
+          },
+          "LAP_enrollment_all_minus_minus_enrollment": {
+            "auprc": {
+              "point": 0.2088,
+              "ci": [
+                0.1565,
+                0.2603
+              ],
+              "p_gt_0": 1.0
+            },
+            "auroc": {
+              "point": 0.1955,
+              "ci": [
+                0.1592,
+                0.2313
+              ],
+              "p_gt_0": 1.0
+            }
+          },
+          "LAP_city_minus_enrollment_minus_ablated": {
+            "auprc": {
+              "point": -0.0009,
+              "ci": [
+                -0.0364,
+                0.0344
+              ],
+              "p_gt_0": 0.489
+            },
+            "auroc": {
+              "point": -0.0021,
+              "ci": [
+                -0.0274,
+                0.0225
+              ],
+              "p_gt_0": 0.448
+            }
+          }
+        },
+        "share_of_all_feature_lift_that_is_LAP_total": 0.5637,
+        "matches_trialbench_audit_v2_T2_point_estimates": true
+      },
+      "provided_split": {
+        "n_train": 3586,
+        "n_test": 896,
+        "test_base_rate": 0.4308,
+        "arms": {
+          "all_features": {
+            "n_features": 53,
+            "auprc": 0.723,
+            "auprc_ci": [
+              0.675,
+              0.7686
+            ],
+            "auroc": 0.8127,
+            "auroc_ci": [
+              0.7837,
+              0.8391
+            ],
+            "lift": 0.2922,
+            "lift_ci": [
+              0.2529,
+              0.3332
+            ]
+          },
+          "ablated_non_start_removed": {
+            "n_features": 49,
+            "auprc": 0.6141,
+            "auprc_ci": [
+              0.5649,
+              0.6632
+            ],
+            "auroc": 0.687,
+            "auroc_ci": [
+              0.6541,
+              0.7213
+            ],
+            "lift": 0.1833,
+            "lift_ci": [
+              0.1466,
+              0.2246
+            ]
+          },
+          "minus_enrollment_only": {
+            "n_features": 52,
+            "auprc": 0.6002,
+            "auprc_ci": [
+              0.5502,
+              0.6517
+            ],
+            "auroc": 0.6827,
+            "auroc_ci": [
+              0.6491,
+              0.7172
+            ],
+            "lift": 0.1694,
+            "lift_ci": [
+              0.1308,
+              0.2132
+            ]
+          }
+        },
+        "paired_differences": {
+          "LAP_total_all_minus_ablated": {
+            "auprc": {
+              "point": 0.1089,
+              "ci": [
+                0.0738,
+                0.1413
+              ],
+              "p_gt_0": 1.0
+            },
+            "auroc": {
+              "point": 0.1257,
+              "ci": [
+                0.0937,
+                0.1541
+              ],
+              "p_gt_0": 1.0
+            }
+          },
+          "LAP_enrollment_all_minus_minus_enrollment": {
+            "auprc": {
+              "point": 0.1228,
+              "ci": [
+                0.0896,
+                0.1571
+              ],
+              "p_gt_0": 1.0
+            },
+            "auroc": {
+              "point": 0.13,
+              "ci": [
+                0.1012,
+                0.1585
+              ],
+              "p_gt_0": 1.0
+            }
+          },
+          "LAP_city_minus_enrollment_minus_ablated": {
+            "auprc": {
+              "point": -0.0139,
+              "ci": [
+                -0.0353,
+                0.0071
+              ],
+              "p_gt_0": 0.093
+            },
+            "auroc": {
+              "point": -0.0043,
+              "ci": [
+                -0.0225,
+                0.0136
+              ],
+              "p_gt_0": 0.31
+            }
+          }
+        },
+        "share_of_all_feature_lift_that_is_LAP_total": 0.3726,
+        "matches_trialbench_audit_v2_T2_point_estimates": true
+      }
+    },
+    "Phase2": {
+      "temporal_split": {
+        "n_train": 9980,
+        "n_test": 2514,
+        "test_base_rate": 0.2673,
+        "arms": {
+          "all_features": {
+            "n_features": 54,
+            "auprc": 0.6144,
+            "auprc_ci": [
+              0.5749,
+              0.6552
+            ],
+            "auroc": 0.8586,
+            "auroc_ci": [
+              0.8442,
+              0.872
+            ],
+            "lift": 0.3471,
+            "lift_ci": [
+              0.3131,
+              0.3826
+            ]
+          },
+          "ablated_non_start_removed": {
+            "n_features": 50,
+            "auprc": 0.4591,
+            "auprc_ci": [
+              0.4206,
+              0.4973
+            ],
+            "auroc": 0.6959,
+            "auroc_ci": [
+              0.672,
+              0.7176
+            ],
+            "lift": 0.1918,
+            "lift_ci": [
+              0.1603,
+              0.2243
+            ]
+          },
+          "minus_enrollment_only": {
+            "n_features": 53,
+            "auprc": 0.466,
+            "auprc_ci": [
+              0.4272,
+              0.5047
+            ],
+            "auroc": 0.7184,
+            "auroc_ci": [
+              0.6959,
+              0.7387
+            ],
+            "lift": 0.1987,
+            "lift_ci": [
+              0.1669,
+              0.2328
+            ]
+          }
+        },
+        "paired_differences": {
+          "LAP_total_all_minus_ablated": {
+            "auprc": {
+              "point": 0.1554,
+              "ci": [
+                0.1275,
+                0.1848
+              ],
+              "p_gt_0": 1.0
+            },
+            "auroc": {
+              "point": 0.1627,
+              "ci": [
+                0.1436,
+                0.1833
+              ],
+              "p_gt_0": 1.0
+            }
+          },
+          "LAP_enrollment_all_minus_minus_enrollment": {
+            "auprc": {
+              "point": 0.1485,
+              "ci": [
+                0.1217,
+                0.1772
+              ],
+              "p_gt_0": 1.0
+            },
+            "auroc": {
+              "point": 0.1402,
+              "ci": [
+                0.1224,
+                0.1593
+              ],
+              "p_gt_0": 1.0
+            }
+          },
+          "LAP_city_minus_enrollment_minus_ablated": {
+            "auprc": {
+              "point": 0.0069,
+              "ci": [
+                -0.0062,
+                0.019
+              ],
+              "p_gt_0": 0.838
+            },
+            "auroc": {
+              "point": 0.0225,
+              "ci": [
+                0.0133,
+                0.0313
+              ],
+              "p_gt_0": 1.0
+            }
+          }
+        },
+        "share_of_all_feature_lift_that_is_LAP_total": 0.4475,
+        "matches_trialbench_audit_v2_T2_point_estimates": true
+      },
+      "provided_split": {
+        "n_train": 9980,
+        "n_test": 2514,
+        "test_base_rate": 0.3683,
+        "arms": {
+          "all_features": {
+            "n_features": 54,
+            "auprc": 0.6708,
+            "auprc_ci": [
+              0.6378,
+              0.7013
+            ],
+            "auroc": 0.8109,
+            "auroc_ci": [
+              0.7943,
+              0.825
+            ],
+            "lift": 0.3025,
+            "lift_ci": [
+              0.2764,
+              0.3274
+            ]
+          },
+          "ablated_non_start_removed": {
+            "n_features": 50,
+            "auprc": 0.5664,
+            "auprc_ci": [
+              0.5311,
+              0.6009
+            ],
+            "auroc": 0.6855,
+            "auroc_ci": [
+              0.6633,
+              0.7069
+            ],
+            "lift": 0.1981,
+            "lift_ci": [
+              0.1687,
+              0.2265
+            ]
+          },
+          "minus_enrollment_only": {
+            "n_features": 53,
+            "auprc": 0.5794,
+            "auprc_ci": [
+              0.5433,
+              0.6117
+            ],
+            "auroc": 0.7078,
+            "auroc_ci": [
+              0.6866,
+              0.727
+            ],
+            "lift": 0.2111,
+            "lift_ci": [
+              0.1823,
+              0.238
+            ]
+          }
+        },
+        "paired_differences": {
+          "LAP_total_all_minus_ablated": {
+            "auprc": {
+              "point": 0.1044,
+              "ci": [
+                0.0781,
+                0.1289
+              ],
+              "p_gt_0": 1.0
+            },
+            "auroc": {
+              "point": 0.1254,
+              "ci": [
+                0.1055,
+                0.146
+              ],
+              "p_gt_0": 1.0
+            }
+          },
+          "LAP_enrollment_all_minus_minus_enrollment": {
+            "auprc": {
+              "point": 0.0914,
+              "ci": [
+                0.0659,
+                0.1149
+              ],
+              "p_gt_0": 1.0
+            },
+            "auroc": {
+              "point": 0.1031,
+              "ci": [
+                0.0846,
+                0.1219
+              ],
+              "p_gt_0": 1.0
+            }
+          },
+          "LAP_city_minus_enrollment_minus_ablated": {
+            "auprc": {
+              "point": 0.013,
+              "ci": [
+                0.0022,
+                0.0232
+              ],
+              "p_gt_0": 0.991
+            },
+            "auroc": {
+              "point": 0.0223,
+              "ci": [
+                0.013,
+                0.0318
+              ],
+              "p_gt_0": 1.0
+            }
+          }
+        },
+        "share_of_all_feature_lift_that_is_LAP_total": 0.3452,
+        "matches_trialbench_audit_v2_T2_point_estimates": true
+      }
+    },
+    "Phase3": {
+      "temporal_split": {
+        "n_train": 7248,
+        "n_test": 1913,
+        "test_base_rate": 0.4956,
+        "arms": {
+          "all_features": {
+            "n_features": 54,
+            "auprc": 0.7603,
+            "auprc_ci": [
+              0.7259,
+              0.7954
+            ],
+            "auroc": 0.8176,
+            "auroc_ci": [
+              0.7962,
+              0.838
+            ],
+            "lift": 0.2647,
+            "lift_ci": [
+              0.2368,
+              0.2932
+            ]
+          },
+          "ablated_non_start_removed": {
+            "n_features": 50,
+            "auprc": 0.6372,
+            "auprc_ci": [
+              0.603,
+              0.6744
+            ],
+            "auroc": 0.6911,
+            "auroc_ci": [
+              0.6661,
+              0.7159
+            ],
+            "lift": 0.1417,
+            "lift_ci": [
+              0.1169,
+              0.171
+            ]
+          },
+          "minus_enrollment_only": {
+            "n_features": 53,
+            "auprc": 0.6511,
+            "auprc_ci": [
+              0.6174,
+              0.686
+            ],
+            "auroc": 0.6989,
+            "auroc_ci": [
+              0.6723,
+              0.7231
+            ],
+            "lift": 0.1555,
+            "lift_ci": [
+              0.1294,
+              0.185
+            ]
+          }
+        },
+        "paired_differences": {
+          "LAP_total_all_minus_ablated": {
+            "auprc": {
+              "point": 0.123,
+              "ci": [
+                0.097,
+                0.1482
+              ],
+              "p_gt_0": 1.0
+            },
+            "auroc": {
+              "point": 0.1265,
+              "ci": [
+                0.1073,
+                0.144
+              ],
+              "p_gt_0": 1.0
+            }
+          },
+          "LAP_enrollment_all_minus_minus_enrollment": {
+            "auprc": {
+              "point": 0.1092,
+              "ci": [
+                0.0859,
+                0.1327
+              ],
+              "p_gt_0": 1.0
+            },
+            "auroc": {
+              "point": 0.1187,
+              "ci": [
+                0.0998,
+                0.1359
+              ],
+              "p_gt_0": 1.0
+            }
+          },
+          "LAP_city_minus_enrollment_minus_ablated": {
+            "auprc": {
+              "point": 0.0138,
+              "ci": [
+                0.0006,
+                0.0264
+              ],
+              "p_gt_0": 0.98
+            },
+            "auroc": {
+              "point": 0.0078,
+              "ci": [
+                -0.0021,
+                0.0174
+              ],
+              "p_gt_0": 0.939
+            }
+          }
+        },
+        "share_of_all_feature_lift_that_is_LAP_total": 0.4648,
+        "matches_trialbench_audit_v2_T2_point_estimates": true
+      },
+      "provided_split": {
+        "n_train": 7248,
+        "n_test": 1913,
+        "test_base_rate": 0.5551,
+        "arms": {
+          "all_features": {
+            "n_features": 54,
+            "auprc": 0.8003,
+            "auprc_ci": [
+              0.7731,
+              0.8261
+            ],
+            "auroc": 0.7927,
+            "auroc_ci": [
+              0.7722,
+              0.8129
+            ],
+            "lift": 0.2452,
+            "lift_ci": [
+              0.222,
+              0.2694
+            ]
+          },
+          "ablated_non_start_removed": {
+            "n_features": 50,
+            "auprc": 0.7585,
+            "auprc_ci": [
+              0.7302,
+              0.7877
+            ],
+            "auroc": 0.7378,
+            "auroc_ci": [
+              0.7161,
+              0.7591
+            ],
+            "lift": 0.2033,
+            "lift_ci": [
+              0.1794,
+              0.2287
+            ]
+          },
+          "minus_enrollment_only": {
+            "n_features": 53,
+            "auprc": 0.7603,
+            "auprc_ci": [
+              0.7304,
+              0.7881
+            ],
+            "auroc": 0.7388,
+            "auroc_ci": [
+              0.7172,
+              0.7596
+            ],
+            "lift": 0.2052,
+            "lift_ci": [
+              0.1828,
+              0.2293
+            ]
+          }
+        },
+        "paired_differences": {
+          "LAP_total_all_minus_ablated": {
+            "auprc": {
+              "point": 0.0418,
+              "ci": [
+                0.0239,
+                0.0611
+              ],
+              "p_gt_0": 1.0
+            },
+            "auroc": {
+              "point": 0.0549,
+              "ci": [
+                0.0388,
+                0.0719
+              ],
+              "p_gt_0": 1.0
+            }
+          },
+          "LAP_enrollment_all_minus_minus_enrollment": {
+            "auprc": {
+              "point": 0.04,
+              "ci": [
+                0.0244,
+                0.0568
+              ],
+              "p_gt_0": 1.0
+            },
+            "auroc": {
+              "point": 0.0539,
+              "ci": [
+                0.0385,
+                0.0695
+              ],
+              "p_gt_0": 1.0
+            }
+          },
+          "LAP_city_minus_enrollment_minus_ablated": {
+            "auprc": {
+              "point": 0.0018,
+              "ci": [
+                -0.0099,
+                0.0136
+              ],
+              "p_gt_0": 0.619
+            },
+            "auroc": {
+              "point": 0.001,
+              "ci": [
+                -0.0088,
+                0.0109
+              ],
+              "p_gt_0": 0.575
+            }
+          }
+        },
+        "share_of_all_feature_lift_that_is_LAP_total": 0.1707,
+        "matches_trialbench_audit_v2_T2_point_estimates": true
+      }
+    }
+  },
+  "mean_LAP_total_all_minus_ablated_auprc_temporal_split": 0.1621,
+  "mean_LAP_total_all_minus_ablated_auroc_temporal_split": 0.1609,
+  "mean_LAP_enrollment_all_minus_minus_enrollment_auprc_temporal_split": 0.1555,
+  "mean_LAP_enrollment_all_minus_minus_enrollment_auroc_temporal_split": 0.1515,
+  "mean_LAP_city_minus_enrollment_minus_ablated_auprc_temporal_split": 0.0066,
+  "mean_LAP_city_minus_enrollment_minus_ablated_auroc_temporal_split": 0.0094,
+  "mean_LAP_total_all_minus_ablated_auprc_provided_split": 0.085,
+  "mean_LAP_total_all_minus_ablated_auroc_provided_split": 0.102,
+  "mean_LAP_enrollment_all_minus_minus_enrollment_auprc_provided_split": 0.0847,
+  "mean_LAP_enrollment_all_minus_minus_enrollment_auroc_provided_split": 0.0957,
+  "mean_LAP_city_minus_enrollment_minus_ablated_auprc_provided_split": 0.0003,
+  "mean_LAP_city_minus_enrollment_minus_ablated_auroc_provided_split": 0.0063,
+  "runtime_seconds": 170.8
+}

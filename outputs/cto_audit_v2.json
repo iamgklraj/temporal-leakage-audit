@@ -1,0 +1,2339 @@
+{
+  "benchmark": "CTO (Gao et al.; arXiv:2406.10292v3; Nature Health 2026, doi:10.1038/s44360-026-00081-6)",
+  "script": "scripts/audit_cto_v2.py (reuses scripts/audit_cto.py unchanged)",
+  "settings": {
+    "learner": "audit_cto._fit_predict (HistGradientBoosting, max_depth 3, lr 0.06, 300 iter, l2 1.0, seed 0)",
+    "split": "temporal: train start_year <= 2020 (60th percentile), test later",
+    "bootstrap": "sponsor-clustered percentile, 1000 resamples, seed 0; paired for contrasts",
+    "lift": "AUPRC minus test base rate (per resample for CIs)",
+    "cto_source": "github.com/sunlabuiuc/CTO @ f8fb234 (2026-02-17)"
+  },
+  "D_reproduction_of_published": {
+    "n": 9705,
+    "n_train": 7011,
+    "n_test": 2694,
+    "train_start_year_le": 2020,
+    "test_base_rate": 0.173,
+    "h0_start": {
+      "auprc": 0.2283,
+      "auroc": 0.6364,
+      "auprc_ci": [
+        0.1848,
+        0.2757
+      ]
+    },
+    "h1_during": {
+      "auprc": 0.6859,
+      "auroc": 0.8501,
+      "auprc_ci": [
+        0.6122,
+        0.744
+      ]
+    },
+    "h2_post_naive": {
+      "auprc": 0.9809,
+      "auroc": 0.9965,
+      "auprc_ci": [
+        0.9719,
+        0.9881
+      ]
+    },
+    "LAP_auprc": 0.7526,
+    "LAP_auprc_ci": [
+      0.7066,
+      0.7935
+    ],
+    "exact_match_to_published": true
+  },
+  "claims": {
+    "C1_labels_not_independent_of_LFs": {
+      "verdict": "TRUE",
+      "source_quote_arxiv_2406.10292v3": "\"Automated labeling is not a substitute for human expertise, so we manually annotated over 2,500 challenging cases using our knowledge base to create a high-confidence gold standard set for evaluation. The process for developing this benchmark is illustrated in Figure 1 D. We applied the same rule-based termination criteria and p-value threshold of less than 0.05 as used in the automated labeling step to filter out the easier cases. For the remaining unlabeled trials, we engaged three clinical trial experts to review relevant publications, news articles, and other reported outcomes to accurately determine the trial outcomes.\"",
+      "rule_quote_arxiv_2406.10292v3": "\"First, trials with statuses indicating 'terminated', 'withdrawn', 'suspended', 'no longer available'} were labeled as failures. Trials labeled as 'approved for marketing' were marked as successes. For trials with 'completed' as status, we examined the reported results: if any reported p-value for a primary endpoint was < 0.05, the trial was labeled as a success.\"",
+      "nature_health_version": "Published as 'A large-scale database for clinical trial outcomes and features', Nature Health (04 March 2026), doi:10.1038/s44360-026-00081-6 (the DOI given with 's41360' does not resolve). Methods are paywalled; the public abstract says 'We additionally manually annotated a subset of recent trials from 2020 to 2024', and the author-contributions note says 'Data annotation of the manually curated set was performed by all authors involved in the paper in May 2024, under the advisement of S.T. and J.S.'",
+      "label_by_overall_status": {
+        "train": {
+          "COMPLETED": {
+            "label_0": 237,
+            "label_1": 2681
+          },
+          "SUSPENDED": {
+            "label_0": 127,
+            "label_1": 0
+          },
+          "TERMINATED": {
+            "label_0": 2987,
+            "label_1": 0
+          },
+          "WITHDRAWN": {
+            "label_0": 979,
+            "label_1": 0
+          }
+        },
+        "test": {
+          "COMPLETED": {
+            "label_0": 48,
+            "label_1": 466
+          },
+          "SUSPENDED": {
+            "label_0": 59,
+            "label_1": 0
+          },
+          "TERMINATED": {
+            "label_0": 1271,
+            "label_1": 0
+          },
+          "WITHDRAWN": {
+            "label_0": 850,
+            "label_1": 0
+          }
+        },
+        "all": {
+          "COMPLETED": {
+            "label_0": 285,
+            "label_1": 3147
+          },
+          "SUSPENDED": {
+            "label_0": 186,
+            "label_1": 0
+          },
+          "TERMINATED": {
+            "label_0": 4258,
+            "label_1": 0
+          },
+          "WITHDRAWN": {
+            "label_0": 1829,
+            "label_1": 0
+          }
+        }
+      },
+      "completed_trials_label_by_pvalues_lf": {
+        "train": {
+          "pvalues_lf=-1": {
+            "label_0": 237,
+            "label_1": 976
+          },
+          "pvalues_lf=0": {
+            "label_0": 0,
+            "label_1": 706
+          },
+          "pvalues_lf=1": {
+            "label_0": 0,
+            "label_1": 999
+          }
+        },
+        "test": {
+          "pvalues_lf=-1": {
+            "label_0": 48,
+            "label_1": 254
+          },
+          "pvalues_lf=0": {
+            "label_0": 0,
+            "label_1": 76
+          },
+          "pvalues_lf=1": {
+            "label_0": 0,
+            "label_1": 136
+          }
+        }
+      },
+      "rule_applicable_share": {
+        "all": 0.7633,
+        "train": 0.7263,
+        "test": 0.8597
+      },
+      "label_agrees_with_rule_where_rule_applies": 1.0,
+      "status_lf_equals_stopped_status_indicator": true,
+      "all_positive_labels_are_COMPLETED": true
+    },
+    "C2_duplicate_columns_and_abstention": {
+      "verdict": "TRUE",
+      "pairs_identical_on_all_rows": {
+        "status2==status": true,
+        "gpt2==gpt": true,
+        "linkage2==linkage": true,
+        "hint_train2==hint_train": true,
+        "hint_train3==hint_train": true
+      },
+      "duplicate_groups": [
+        [
+          "hint_train",
+          "hint_train2",
+          "hint_train3"
+        ],
+        [
+          "linkage",
+          "linkage2"
+        ],
+        [
+          "status",
+          "status2"
+        ],
+        [
+          "gpt",
+          "gpt2"
+        ]
+      ],
+      "n_columns_used": 22,
+      "n_distinct_signals": 17,
+      "distinct_per_original_tier": {
+        "start (5 cols)": 3,
+        "start+during (13 cols)": 10,
+        "all (22 cols)": 17
+      },
+      "hint_train_test_abstain_fraction": 1.0,
+      "hint_train_train_abstain_fraction": 0.9705,
+      "abstention_by_lf": {
+        "hint_train": {
+          "train_abstain": 0.9705,
+          "test_abstain": 1.0,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "hint_train2": {
+          "train_abstain": 0.9705,
+          "test_abstain": 1.0,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "hint_train3": {
+          "train_abstain": 0.9705,
+          "test_abstain": 1.0,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "sites": {
+          "train_abstain": 0.0638,
+          "test_abstain": 0.1359,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "num_sponsors": {
+          "train_abstain": 0.0,
+          "test_abstain": 0.0,
+          "train_nan": 0.5782,
+          "test_nan": 0.5939
+        },
+        "linkage": {
+          "train_abstain": 0.1489,
+          "test_abstain": 0.1095,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "linkage2": {
+          "train_abstain": 0.1489,
+          "test_abstain": 0.1095,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "amendments": {
+          "train_abstain": 0.8856,
+          "test_abstain": 0.9417,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "patient_drop": {
+          "train_abstain": 0.5945,
+          "test_abstain": 0.8226,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "num_patients": {
+          "train_abstain": 0.4754,
+          "test_abstain": 0.7565,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "serious_ae": {
+          "train_abstain": 0.4754,
+          "test_abstain": 0.7565,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "death_ae": {
+          "train_abstain": 0.4754,
+          "test_abstain": 0.7565,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "all_ae": {
+          "train_abstain": 0.4754,
+          "test_abstain": 0.7565,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "status": {
+          "train_abstain": 0.4162,
+          "test_abstain": 0.1908,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "status2": {
+          "train_abstain": 0.4162,
+          "test_abstain": 0.1908,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "results_reported": {
+          "train_abstain": 0.0,
+          "test_abstain": 0.0,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "update_more_recent": {
+          "train_abstain": 0.0,
+          "test_abstain": 0.0,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "gpt": {
+          "train_abstain": 0.5433,
+          "test_abstain": 0.8252,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "gpt2": {
+          "train_abstain": 0.5433,
+          "test_abstain": 0.8252,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "stock_price": {
+          "train_abstain": 0.8852,
+          "test_abstain": 0.9417,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "new_headlines": {
+          "train_abstain": 0.903,
+          "test_abstain": 0.9558,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        },
+        "pvalues": {
+          "train_abstain": 0.7183,
+          "test_abstain": 0.9057,
+          "train_nan": 0.0,
+          "test_nan": 0.0
+        }
+      },
+      "source": "CTO labeling/lfs.py get_lfs(): known_lfs_list = [hint_lf,hint_lf,hint_lf, status_lf,status_lf, gpt_lf,gpt_lf, linkage_lf,linkage_lf, ...]"
+    },
+    "C3_vintage_by_public_availability": {
+      "verdict": "TRUE (with refinements, see lf_timing)",
+      "lf_timing": {
+        "num_sponsors": {
+          "tier": "start",
+          "public": "registration (protocol data element)",
+          "definition": "count of sponsor + collaborator names in AACT sponsors.txt > phase-specific quantile (lf_num_sponsors)",
+          "justification": "Lead sponsor and collaborators are protocol-registration data elements (42 CFR 11.10(b)). The value comes from the final record, so it can include collaborators added later. The column exists only in CTO's phase-2 table and is NaN for rows from the phase-1/3 tables."
+        },
+        "sites": {
+          "tier": "start (lenient; variant B3 treats it as post-start)",
+          "public": "registration onward; value used is the FINAL record",
+          "definition": "count of facility names in AACT facilities.txt > phase quantile (lf_sites); paper: 'The number of total sites during the trial'",
+          "justification": "Facilities are listed from registration, but the list changes during recruitment: individual site status must be updated within 30 days (42 CFR 11.64). CTO counts the final-record list, and the LF abstains (-1) when no facility is listed, which happens mostly for withdrawn trials (a post-registration outcome). Kept in the start tier only as a lenient upper bound."
+        },
+        "status": {
+          "tier": "completion_registry",
+          "public": "when the trial stops/ends (status update within 30 days, 42 CFR 11.64)",
+          "definition": "overall_status in {terminated, withdrawn, suspended, withheld, no longer available, temporarily not available} -> 0; 'approved for marketing' -> 1; else abstain (lf_status)",
+          "justification": "A terminal status exists only once the trial has stopped; for a stopped trial that is its end. It is also the rule CTO applied before human review when building the curated labels (C1)."
+        },
+        "results_reported": {
+          "tier": "completion_registry",
+          "public": "after primary completion (results due within 1 year, 42 CFR 11.44)",
+          "definition": "AACT calculated_values.were_results_reported == 't'",
+          "justification": "Results posting happens after primary completion."
+        },
+        "pvalues": {
+          "tier": "completion_registry",
+          "public": "after primary completion (results section)",
+          "definition": "any primary-outcome p < 0.05 in AACT outcome_analyses (lf_pvalues)",
+          "justification": "Statistical analyses are part of the results section (42 CFR 11.48(a)(3)). This is also the rule CTO applied before human review (C1)."
+        },
+        "num_patients": {
+          "tier": "completion_registry",
+          "public": "after primary completion (results section)",
+          "definition": "sum of AACT outcome_counts.count (participants analysed per outcome), not enrollment (lf_num_patients)",
+          "justification": "outcome_counts is results-section data."
+        },
+        "patient_drop": {
+          "tier": "completion_registry",
+          "public": "after primary completion (results: participant flow)",
+          "definition": "sum of AACT drop_withdrawals.count < phase quantile (lf_patient_drop)",
+          "justification": "Participant flow is results-section data (42 CFR 11.48(a)(1))."
+        },
+        "serious_ae": {
+          "tier": "completion_registry",
+          "public": "after primary completion (results: adverse events)",
+          "definition": "sum of subjects_affected for event_type 'serious' in AACT reported_event_totals <= quantile",
+          "justification": "Adverse-event tables are results-section data (42 CFR 11.48(a)(4))."
+        },
+        "death_ae": {
+          "tier": "completion_registry",
+          "public": "after primary completion (results: adverse events)",
+          "definition": "sum of subjects_affected for event_type 'deaths' in reported_event_totals",
+          "justification": "Adverse-event tables are results-section data (42 CFR 11.48(a)(4))."
+        },
+        "all_ae": {
+          "tier": "completion_registry",
+          "public": "after primary completion (results: adverse events)",
+          "definition": "sum of subjects_affected over all event types in reported_event_totals",
+          "justification": "Adverse-event tables are results-section data (42 CFR 11.48(a)(4))."
+        },
+        "update_more_recent": {
+          "tier": "completion_registry",
+          "public": "after completion (by definition)",
+          "definition": "last_update_submitted_date - completion_date < median (lf_update_more_recent)",
+          "justification": "Defined relative to the completion date and the last record update."
+        },
+        "amendments": {
+          "tier": "completion_registry",
+          "public": "as-of-scrape (2024) total of record versions",
+          "definition": "number of versions on the ClinicalTrials.gov history tab (stock_price/scrape_amendments.py: versions_df['Version'].iloc[-2]) > quantile",
+          "justification": "A total over the whole record history at scrape time, including versions posted during and after the trial (e.g. results posting). The count at trial start is not what CTO uses."
+        },
+        "linkage": {
+          "tier": "external_post_completion",
+          "public": "after completion (later-phase trials / FDA approval)",
+          "definition": "Success if a later-phase trial or FDA approval is linked; Failure if none is found and completion was > 6 months before the scrape (clinical_trial_linkage/extract_outcome_from_trial_linkage.py)",
+          "justification": "Paper: 'Is positive if a trial was found to have any later-stage trials linked to it'. It is defined by what happened after the trial."
+        },
+        "gpt": {
+          "tier": "external_post_completion",
+          "public": "after completion (publications)",
+          "definition": "GPT-3.5 verdict on PubMed Derived/Results abstracts published up to 5 years after completion (llm_prediction_on_pubmed/support_functions.py)",
+          "justification": "Uses results publications."
+        },
+        "stock_price": {
+          "tier": "external_post_completion",
+          "public": "after completion",
+          "definition": "sign of the slope of the sponsor's 5-day SMA over the 7 days after completion_date (stock_price/get_stocks.py)",
+          "justification": "The window starts at completion by construction."
+        },
+        "new_headlines": {
+          "tier": "external_post_completion",
+          "public": "after completion (news scraped in 2024)",
+          "definition": "sentiment of Google-News headlines matched to COMPLETED trials (news_headlines/get_news2.py; studies filtered to overall_status == 'COMPLETED')",
+          "justification": "Computed only for completed trials, from news up to the 2024 scrape."
+        },
+        "hint_train": {
+          "tier": "external_post_completion",
+          "public": "after completion (published outcome label)",
+          "definition": "TOP/HINT benchmark outcome label (Fu et al. 2022), phase*_{train,valid,test}.csv 'label' (hint_train_lf); triplicated as hint_train/2/3",
+          "justification": "It is an outcome label from another benchmark, not a start-time covariate (paper: 'We duplicate TOP labels 3 times to obtain high agreement'). audit_cto.py wrongly put it in the start tier. It abstains for every test trial."
+        }
+      },
+      "results_posting_evidence": {
+        "serious_ae": {
+          "n_non_abstaining": 4334,
+          "frac_with_results_posted": 0.9977,
+          "frac_results_posted_after_primary_completion": 0.9928,
+          "median_days_results_posted_after_primary_completion": 448.0,
+          "frac_results_posted_on_or_after_study_completion": 0.8655
+        },
+        "death_ae": {
+          "n_non_abstaining": 4334,
+          "frac_with_results_posted": 0.9977,
+          "frac_results_posted_after_primary_completion": 0.9928,
+          "median_days_results_posted_after_primary_completion": 448.0,
+          "frac_results_posted_on_or_after_study_completion": 0.8655
+        },
+        "all_ae": {
+          "n_non_abstaining": 4334,
+          "frac_with_results_posted": 0.9977,
+          "frac_results_posted_after_primary_completion": 0.9928,
+          "median_days_results_posted_after_primary_completion": 448.0,
+          "frac_results_posted_on_or_after_study_completion": 0.8655
+        },
+        "patient_drop": {
+          "n_non_abstaining": 3321,
+          "frac_with_results_posted": 0.9973,
+          "frac_results_posted_after_primary_completion": 0.9913,
+          "median_days_results_posted_after_primary_completion": 441.0,
+          "frac_results_posted_on_or_after_study_completion": 0.841
+        },
+        "num_patients": {
+          "n_non_abstaining": 4334,
+          "frac_with_results_posted": 0.9977,
+          "frac_results_posted_after_primary_completion": 0.9928,
+          "median_days_results_posted_after_primary_completion": 448.0,
+          "frac_results_posted_on_or_after_study_completion": 0.8655
+        },
+        "pvalues": {
+          "n_non_abstaining": 2229,
+          "frac_with_results_posted": 0.9991,
+          "frac_results_posted_after_primary_completion": 0.9924,
+          "median_days_results_posted_after_primary_completion": 448.0,
+          "frac_results_posted_on_or_after_study_completion": 0.8062
+        }
+      },
+      "original_audit_misassignments": {
+        "hint_train/2/3": "START in audit_cto.py -> external post-completion (outcome label of the TOP benchmark)",
+        "linkage/2": "DURING -> external post-completion (later-phase trials / approvals)",
+        "amendments": "DURING -> as-of-scrape record-history total (available only at/after completion)",
+        "patient_drop, num_patients, serious_ae, death_ae, all_ae": "DURING -> results section, posted after primary completion",
+        "sites": "START -> final-record facility count; start-time only under a lenient reading"
+      },
+      "regulatory_quotes": {
+        "42_CFR_11.10(b)(18)": "\"Enrollment means the estimated total number of human subjects to be enrolled (target number) or the actual total number of human subjects that are enrolled in the clinical trial. Once the trial has reached the primary completion date, the responsible party must update the Enrollment data element to reflect the actual number of human subjects enrolled in the clinical trial.\"",
+        "42_CFR_11.44(a)": "results information \"must be submitted no later than 1 year after the primary completion date of the applicable clinical trial.\"",
+        "42_CFR_11.64": "\"Individual Site Status must be updated not later than 30 calendar days after a change in status for any individual site.\""
+      }
+    },
+    "C4_sites_abstention_and_withdrawn": {
+      "sites_abstain_test": 366,
+      "sites_abstain_test_by_status": {
+        "WITHDRAWN": 365,
+        "TERMINATED": 1
+      },
+      "sites_abstain_test_label_1": 0,
+      "sites_abstain_train": 447,
+      "sites_abstain_train_by_status": {
+        "WITHDRAWN": 362,
+        "COMPLETED": 70,
+        "TERMINATED": 14,
+        "SUSPENDED": 1
+      },
+      "withdrawn_test_n": 850,
+      "withdrawn_test_sites_values": {
+        "-1": 365,
+        "0": 362,
+        "1": 123
+      },
+      "original_start_model_eval_only_excl_withdrawn": {
+        "n_test": 1844,
+        "base_rate": 0.2527,
+        "auprc": 0.2601,
+        "auprc_ci": [
+          0.2141,
+          0.3088
+        ],
+        "auroc": 0.5135,
+        "auroc_ci": [
+          0.4669,
+          0.5531
+        ],
+        "lift": 0.0074,
+        "lift_ci": [
+          -0.0126,
+          0.0293
+        ]
+      },
+      "original_start_model_eval_only_excl_withdrawn_suspended": {
+        "n_test": 1785,
+        "base_rate": 0.2611,
+        "auprc": 0.2659,
+        "auprc_ci": [
+          0.2177,
+          0.3188
+        ],
+        "auroc": 0.5073,
+        "auroc_ci": [
+          0.4643,
+          0.5462
+        ],
+        "lift": 0.0048,
+        "lift_ci": [
+          -0.0144,
+          0.0278
+        ]
+      },
+      "verdict": "TRUE"
+    }
+  },
+  "A_corrected_tiers": {
+    "tier_definitions": {
+      "start": [
+        "num_sponsors",
+        "sites"
+      ],
+      "completion_registry": [
+        "status",
+        "results_reported",
+        "pvalues",
+        "num_patients",
+        "patient_drop",
+        "serious_ae",
+        "death_ae",
+        "all_ae",
+        "update_more_recent",
+        "amendments"
+      ],
+      "external_post_completion": [
+        "linkage",
+        "gpt",
+        "stock_price",
+        "new_headlines",
+        "hint_train"
+      ]
+    },
+    "n_train": 7011,
+    "n_test": 2694,
+    "test_base_rate": 0.173,
+    "n_test_positive": 466,
+    "tiers": {
+      "t0_start": {
+        "auprc": 0.2283,
+        "auprc_ci": [
+          0.1848,
+          0.2757
+        ],
+        "auroc": 0.6364,
+        "auroc_ci": [
+          0.6021,
+          0.6704
+        ],
+        "lift": 0.0554,
+        "lift_ci": [
+          0.0335,
+          0.082
+        ],
+        "n_lfs": 2,
+        "lfs": [
+          "num_sponsors",
+          "sites"
+        ]
+      },
+      "t1_start_plus_completion_registry": {
+        "auprc": 0.9709,
+        "auprc_ci": [
+          0.9568,
+          0.9813
+        ],
+        "auroc": 0.9949,
+        "auroc_ci": [
+          0.9924,
+          0.9969
+        ],
+        "lift": 0.7979,
+        "lift_ci": [
+          0.768,
+          0.8253
+        ],
+        "n_lfs": 12,
+        "lfs": [
+          "num_sponsors",
+          "sites",
+          "status",
+          "results_reported",
+          "pvalues",
+          "num_patients",
+          "patient_drop",
+          "serious_ae",
+          "death_ae",
+          "all_ae",
+          "update_more_recent",
+          "amendments"
+        ]
+      },
+      "t2_all": {
+        "auprc": 0.9809,
+        "auprc_ci": [
+          0.9719,
+          0.9881
+        ],
+        "auroc": 0.9965,
+        "auroc_ci": [
+          0.995,
+          0.9978
+        ],
+        "lift": 0.8079,
+        "lift_ci": [
+          0.7799,
+          0.834
+        ],
+        "n_lfs": 17,
+        "lfs": [
+          "num_sponsors",
+          "sites",
+          "status",
+          "results_reported",
+          "pvalues",
+          "num_patients",
+          "patient_drop",
+          "serious_ae",
+          "death_ae",
+          "all_ae",
+          "update_more_recent",
+          "amendments",
+          "linkage",
+          "gpt",
+          "stock_price",
+          "new_headlines",
+          "hint_train"
+        ]
+      }
+    },
+    "LAP_all_minus_start": {
+      "auprc": {
+        "point": 0.7526,
+        "ci": [
+          0.7066,
+          0.7935
+        ],
+        "p_gt_0": 1.0
+      },
+      "auroc": {
+        "point": 0.3601,
+        "ci": [
+          0.3258,
+          0.3943
+        ],
+        "p_gt_0": 1.0
+      }
+    },
+    "LAP_components": {
+      "t1_start_plus_completion_registry_minus_t0_start": {
+        "auprc": {
+          "point": 0.7426,
+          "ci": [
+            0.6944,
+            0.7846
+          ],
+          "p_gt_0": 1.0
+        },
+        "auroc": {
+          "point": 0.3585,
+          "ci": [
+            0.3244,
+            0.3924
+          ],
+          "p_gt_0": 1.0
+        }
+      },
+      "t2_all_minus_t1_start_plus_completion_registry": {
+        "auprc": {
+          "point": 0.01,
+          "ci": [
+            0.0021,
+            0.019
+          ],
+          "p_gt_0": 0.997
+        },
+        "auroc": {
+          "point": 0.0016,
+          "ci": [
+            0.0002,
+            0.0032
+          ],
+          "p_gt_0": 0.993
+        }
+      }
+    },
+    "share_of_auprc_all_that_is_post_start": 0.7672,
+    "share_of_lift_all_that_is_post_start": 0.9315,
+    "start_lift_over_base": 0.0554,
+    "start_set_status": {
+      "num_sponsors": {
+        "test_abstain": 0.0,
+        "test_nan": 0.5939
+      },
+      "sites": {
+        "test_abstain": 0.1359,
+        "test_nan": 0.0
+      }
+    }
+  },
+  "original_tiering_with_auroc_and_lift": {
+    "n_train": 7011,
+    "n_test": 2694,
+    "test_base_rate": 0.173,
+    "n_test_positive": 466,
+    "tiers": {
+      "h0_start": {
+        "auprc": 0.2283,
+        "auprc_ci": [
+          0.1848,
+          0.2757
+        ],
+        "auroc": 0.6364,
+        "auroc_ci": [
+          0.6021,
+          0.6704
+        ],
+        "lift": 0.0554,
+        "lift_ci": [
+          0.0335,
+          0.082
+        ],
+        "n_lfs": 5,
+        "lfs": [
+          "hint_train",
+          "hint_train2",
+          "hint_train3",
+          "sites",
+          "num_sponsors"
+        ]
+      },
+      "h1_during": {
+        "auprc": 0.6859,
+        "auprc_ci": [
+          0.6122,
+          0.744
+        ],
+        "auroc": 0.8501,
+        "auroc_ci": [
+          0.8216,
+          0.8751
+        ],
+        "lift": 0.5129,
+        "lift_ci": [
+          0.4539,
+          0.5588
+        ],
+        "n_lfs": 13,
+        "lfs": [
+          "hint_train",
+          "hint_train2",
+          "hint_train3",
+          "sites",
+          "num_sponsors",
+          "linkage",
+          "linkage2",
+          "amendments",
+          "patient_drop",
+          "num_patients",
+          "serious_ae",
+          "death_ae",
+          "all_ae"
+        ]
+      },
+      "h2_post_naive": {
+        "auprc": 0.9809,
+        "auprc_ci": [
+          0.9719,
+          0.9881
+        ],
+        "auroc": 0.9965,
+        "auroc_ci": [
+          0.995,
+          0.9978
+        ],
+        "lift": 0.8079,
+        "lift_ci": [
+          0.7799,
+          0.834
+        ],
+        "n_lfs": 22,
+        "lfs": [
+          "hint_train",
+          "hint_train2",
+          "hint_train3",
+          "sites",
+          "num_sponsors",
+          "linkage",
+          "linkage2",
+          "amendments",
+          "patient_drop",
+          "num_patients",
+          "serious_ae",
+          "death_ae",
+          "all_ae",
+          "status",
+          "status2",
+          "results_reported",
+          "update_more_recent",
+          "gpt",
+          "gpt2",
+          "stock_price",
+          "new_headlines",
+          "pvalues"
+        ]
+      }
+    },
+    "LAP_all_minus_start": {
+      "auprc": {
+        "point": 0.7526,
+        "ci": [
+          0.7066,
+          0.7935
+        ],
+        "p_gt_0": 1.0
+      },
+      "auroc": {
+        "point": 0.3601,
+        "ci": [
+          0.3258,
+          0.3943
+        ],
+        "p_gt_0": 1.0
+      }
+    },
+    "LAP_components": {
+      "h1_during_minus_h0_start": {
+        "auprc": {
+          "point": 0.4576,
+          "ci": [
+            0.4028,
+            0.5031
+          ],
+          "p_gt_0": 1.0
+        },
+        "auroc": {
+          "point": 0.2137,
+          "ci": [
+            0.1808,
+            0.2466
+          ],
+          "p_gt_0": 1.0
+        }
+      },
+      "h2_post_naive_minus_h1_during": {
+        "auprc": {
+          "point": 0.295,
+          "ci": [
+            0.2362,
+            0.368
+          ],
+          "p_gt_0": 1.0
+        },
+        "auroc": {
+          "point": 0.1464,
+          "ci": [
+            0.1214,
+            0.1749
+          ],
+          "p_gt_0": 1.0
+        }
+      }
+    },
+    "share_of_auprc_all_that_is_post_start": 0.7672,
+    "share_of_lift_all_that_is_post_start": 0.9315,
+    "start_lift_over_base": 0.0554
+  },
+  "original_tiering_deduplicated": {
+    "n_train": 7011,
+    "n_test": 2694,
+    "test_base_rate": 0.173,
+    "n_test_positive": 466,
+    "tiers": {
+      "h0_start": {
+        "auprc": 0.2283,
+        "auprc_ci": [
+          0.1848,
+          0.2757
+        ],
+        "auroc": 0.6364,
+        "auroc_ci": [
+          0.6021,
+          0.6704
+        ],
+        "lift": 0.0554,
+        "lift_ci": [
+          0.0335,
+          0.082
+        ],
+        "n_lfs": 3,
+        "lfs": [
+          "hint_train",
+          "sites",
+          "num_sponsors"
+        ]
+      },
+      "h1_during": {
+        "auprc": 0.6859,
+        "auprc_ci": [
+          0.6122,
+          0.744
+        ],
+        "auroc": 0.8501,
+        "auroc_ci": [
+          0.8216,
+          0.8751
+        ],
+        "lift": 0.5129,
+        "lift_ci": [
+          0.4539,
+          0.5588
+        ],
+        "n_lfs": 10,
+        "lfs": [
+          "hint_train",
+          "sites",
+          "num_sponsors",
+          "linkage",
+          "amendments",
+          "patient_drop",
+          "num_patients",
+          "serious_ae",
+          "death_ae",
+          "all_ae"
+        ]
+      },
+      "h2_post_naive": {
+        "auprc": 0.9809,
+        "auprc_ci": [
+          0.9719,
+          0.9881
+        ],
+        "auroc": 0.9965,
+        "auroc_ci": [
+          0.995,
+          0.9978
+        ],
+        "lift": 0.8079,
+        "lift_ci": [
+          0.7799,
+          0.834
+        ],
+        "n_lfs": 17,
+        "lfs": [
+          "hint_train",
+          "sites",
+          "num_sponsors",
+          "linkage",
+          "amendments",
+          "patient_drop",
+          "num_patients",
+          "serious_ae",
+          "death_ae",
+          "all_ae",
+          "status",
+          "results_reported",
+          "update_more_recent",
+          "gpt",
+          "stock_price",
+          "new_headlines",
+          "pvalues"
+        ]
+      }
+    },
+    "LAP_all_minus_start": {
+      "auprc": {
+        "point": 0.7526,
+        "ci": [
+          0.7066,
+          0.7935
+        ],
+        "p_gt_0": 1.0
+      },
+      "auroc": {
+        "point": 0.3601,
+        "ci": [
+          0.3258,
+          0.3943
+        ],
+        "p_gt_0": 1.0
+      }
+    },
+    "LAP_components": {
+      "h1_during_minus_h0_start": {
+        "auprc": {
+          "point": 0.4576,
+          "ci": [
+            0.4028,
+            0.5031
+          ],
+          "p_gt_0": 1.0
+        },
+        "auroc": {
+          "point": 0.2137,
+          "ci": [
+            0.1808,
+            0.2466
+          ],
+          "p_gt_0": 1.0
+        }
+      },
+      "h2_post_naive_minus_h1_during": {
+        "auprc": {
+          "point": 0.295,
+          "ci": [
+            0.2362,
+            0.368
+          ],
+          "p_gt_0": 1.0
+        },
+        "auroc": {
+          "point": 0.1464,
+          "ci": [
+            0.1214,
+            0.1749
+          ],
+          "p_gt_0": 1.0
+        }
+      }
+    },
+    "share_of_auprc_all_that_is_post_start": 0.7672,
+    "share_of_lift_all_that_is_post_start": 0.9315,
+    "start_lift_over_base": 0.0554
+  },
+  "original_start_tier_vs_sites_plus_num_sponsors": {
+    "spearman_rho": 1.0,
+    "max_abs_prob_diff": 0.056,
+    "n_distinct_scores": [
+      9,
+      9
+    ],
+    "auprc_auroc_identical": true,
+    "note": "HINT columns abstain for all test trials, so the original 5-LF start tier ranks test trials exactly as sites + num_sponsors does"
+  },
+  "B_sensitivity": {
+    "excl_withdrawn_refit": {
+      "n_train": 6032,
+      "n_test": 1844,
+      "test_base_rate": 0.2527,
+      "n_test_positive": 466,
+      "tiers": {
+        "t0_start": {
+          "auprc": 0.2598,
+          "auprc_ci": [
+            0.2138,
+            0.3087
+          ],
+          "auroc": 0.5128,
+          "auroc_ci": [
+            0.4667,
+            0.5518
+          ],
+          "lift": 0.0071,
+          "lift_ci": [
+            -0.0126,
+            0.0292
+          ],
+          "n_lfs": 2,
+          "lfs": [
+            "num_sponsors",
+            "sites"
+          ]
+        },
+        "t1_start_plus_completion_registry": {
+          "auprc": 0.9704,
+          "auprc_ci": [
+            0.9573,
+            0.9816
+          ],
+          "auroc": 0.9917,
+          "auroc_ci": [
+            0.9878,
+            0.9949
+          ],
+          "lift": 0.7177,
+          "lift_ci": [
+            0.6837,
+            0.7529
+          ],
+          "n_lfs": 12,
+          "lfs": [
+            "num_sponsors",
+            "sites",
+            "status",
+            "results_reported",
+            "pvalues",
+            "num_patients",
+            "patient_drop",
+            "serious_ae",
+            "death_ae",
+            "all_ae",
+            "update_more_recent",
+            "amendments"
+          ]
+        },
+        "t2_all": {
+          "auprc": 0.9809,
+          "auprc_ci": [
+            0.9721,
+            0.9881
+          ],
+          "auroc": 0.9944,
+          "auroc_ci": [
+            0.9919,
+            0.9965
+          ],
+          "lift": 0.7282,
+          "lift_ci": [
+            0.6956,
+            0.7629
+          ],
+          "n_lfs": 17,
+          "lfs": [
+            "num_sponsors",
+            "sites",
+            "status",
+            "results_reported",
+            "pvalues",
+            "num_patients",
+            "patient_drop",
+            "serious_ae",
+            "death_ae",
+            "all_ae",
+            "update_more_recent",
+            "amendments",
+            "linkage",
+            "gpt",
+            "stock_price",
+            "new_headlines",
+            "hint_train"
+          ]
+        }
+      },
+      "LAP_all_minus_start": {
+        "auprc": {
+          "point": 0.7211,
+          "ci": [
+            0.6735,
+            0.7668
+          ],
+          "p_gt_0": 1.0
+        },
+        "auroc": {
+          "point": 0.4816,
+          "ci": [
+            0.4414,
+            0.5285
+          ],
+          "p_gt_0": 1.0
+        }
+      },
+      "LAP_components": {
+        "t1_start_plus_completion_registry_minus_t0_start": {
+          "auprc": {
+            "point": 0.7106,
+            "ci": [
+              0.6635,
+              0.7583
+            ],
+            "p_gt_0": 1.0
+          },
+          "auroc": {
+            "point": 0.4789,
+            "ci": [
+              0.4393,
+              0.5257
+            ],
+            "p_gt_0": 1.0
+          }
+        },
+        "t2_all_minus_t1_start_plus_completion_registry": {
+          "auprc": {
+            "point": 0.0106,
+            "ci": [
+              0.0027,
+              0.0193
+            ],
+            "p_gt_0": 0.993
+          },
+          "auroc": {
+            "point": 0.0027,
+            "ci": [
+              0.0005,
+              0.0051
+            ],
+            "p_gt_0": 0.99
+          }
+        }
+      },
+      "share_of_auprc_all_that_is_post_start": 0.7351,
+      "share_of_lift_all_that_is_post_start": 0.9903,
+      "start_lift_over_base": 0.0071
+    },
+    "excl_withdrawn_suspended_refit": {
+      "n_train": 5905,
+      "n_test": 1785,
+      "test_base_rate": 0.2611,
+      "n_test_positive": 466,
+      "tiers": {
+        "t0_start": {
+          "auprc": 0.2656,
+          "auprc_ci": [
+            0.2176,
+            0.3186
+          ],
+          "auroc": 0.5065,
+          "auroc_ci": [
+            0.4632,
+            0.5452
+          ],
+          "lift": 0.0045,
+          "lift_ci": [
+            -0.0144,
+            0.0274
+          ],
+          "n_lfs": 2,
+          "lfs": [
+            "num_sponsors",
+            "sites"
+          ]
+        },
+        "t1_start_plus_completion_registry": {
+          "auprc": 0.9708,
+          "auprc_ci": [
+            0.9579,
+            0.982
+          ],
+          "auroc": 0.9914,
+          "auroc_ci": [
+            0.9878,
+            0.995
+          ],
+          "lift": 0.7097,
+          "lift_ci": [
+            0.6719,
+            0.7476
+          ],
+          "n_lfs": 12,
+          "lfs": [
+            "num_sponsors",
+            "sites",
+            "status",
+            "results_reported",
+            "pvalues",
+            "num_patients",
+            "patient_drop",
+            "serious_ae",
+            "death_ae",
+            "all_ae",
+            "update_more_recent",
+            "amendments"
+          ]
+        },
+        "t2_all": {
+          "auprc": 0.981,
+          "auprc_ci": [
+            0.9721,
+            0.9882
+          ],
+          "auroc": 0.9942,
+          "auroc_ci": [
+            0.9918,
+            0.9964
+          ],
+          "lift": 0.72,
+          "lift_ci": [
+            0.6817,
+            0.7559
+          ],
+          "n_lfs": 17,
+          "lfs": [
+            "num_sponsors",
+            "sites",
+            "status",
+            "results_reported",
+            "pvalues",
+            "num_patients",
+            "patient_drop",
+            "serious_ae",
+            "death_ae",
+            "all_ae",
+            "update_more_recent",
+            "amendments",
+            "linkage",
+            "gpt",
+            "stock_price",
+            "new_headlines",
+            "hint_train"
+          ]
+        }
+      },
+      "LAP_all_minus_start": {
+        "auprc": {
+          "point": 0.7155,
+          "ci": [
+            0.6644,
+            0.7622
+          ],
+          "p_gt_0": 1.0
+        },
+        "auroc": {
+          "point": 0.4877,
+          "ci": [
+            0.4492,
+            0.5317
+          ],
+          "p_gt_0": 1.0
+        }
+      },
+      "LAP_components": {
+        "t1_start_plus_completion_registry_minus_t0_start": {
+          "auprc": {
+            "point": 0.7052,
+            "ci": [
+              0.6554,
+              0.7525
+            ],
+            "p_gt_0": 1.0
+          },
+          "auroc": {
+            "point": 0.4849,
+            "ci": [
+              0.4458,
+              0.5289
+            ],
+            "p_gt_0": 1.0
+          }
+        },
+        "t2_all_minus_t1_start_plus_completion_registry": {
+          "auprc": {
+            "point": 0.0103,
+            "ci": [
+              0.0024,
+              0.0194
+            ],
+            "p_gt_0": 0.996
+          },
+          "auroc": {
+            "point": 0.0028,
+            "ci": [
+              0.0005,
+              0.0052
+            ],
+            "p_gt_0": 0.99
+          }
+        }
+      },
+      "share_of_auprc_all_that_is_post_start": 0.7293,
+      "share_of_lift_all_that_is_post_start": 0.9937,
+      "start_lift_over_base": 0.0045
+    },
+    "excl_withdrawn_eval_only": {
+      "n_train": 7011,
+      "n_test": 1844,
+      "test_base_rate": 0.2527,
+      "n_test_positive": 466,
+      "tiers": {
+        "t0_start": {
+          "auprc": 0.2601,
+          "auprc_ci": [
+            0.2141,
+            0.3088
+          ],
+          "auroc": 0.5135,
+          "auroc_ci": [
+            0.4669,
+            0.5531
+          ],
+          "lift": 0.0074,
+          "lift_ci": [
+            -0.0126,
+            0.0293
+          ],
+          "n_lfs": 2,
+          "lfs": [
+            "num_sponsors",
+            "sites"
+          ]
+        },
+        "t1_start_plus_completion_registry": {
+          "auprc": 0.9709,
+          "auprc_ci": [
+            0.9575,
+            0.982
+          ],
+          "auroc": 0.9918,
+          "auroc_ci": [
+            0.9879,
+            0.995
+          ],
+          "lift": 0.7182,
+          "lift_ci": [
+            0.6845,
+            0.7532
+          ],
+          "n_lfs": 12,
+          "lfs": [
+            "num_sponsors",
+            "sites",
+            "status",
+            "results_reported",
+            "pvalues",
+            "num_patients",
+            "patient_drop",
+            "serious_ae",
+            "death_ae",
+            "all_ae",
+            "update_more_recent",
+            "amendments"
+          ]
+        },
+        "t2_all": {
+          "auprc": 0.9809,
+          "auprc_ci": [
+            0.9722,
+            0.9879
+          ],
+          "auroc": 0.9944,
+          "auroc_ci": [
+            0.992,
+            0.9965
+          ],
+          "lift": 0.7282,
+          "lift_ci": [
+            0.6956,
+            0.7632
+          ],
+          "n_lfs": 17,
+          "lfs": [
+            "num_sponsors",
+            "sites",
+            "status",
+            "results_reported",
+            "pvalues",
+            "num_patients",
+            "patient_drop",
+            "serious_ae",
+            "death_ae",
+            "all_ae",
+            "update_more_recent",
+            "amendments",
+            "linkage",
+            "gpt",
+            "stock_price",
+            "new_headlines",
+            "hint_train"
+          ]
+        }
+      },
+      "LAP_all_minus_start": {
+        "auprc": {
+          "point": 0.7208,
+          "ci": [
+            0.6731,
+            0.7658
+          ],
+          "p_gt_0": 1.0
+        },
+        "auroc": {
+          "point": 0.4809,
+          "ci": [
+            0.4411,
+            0.5282
+          ],
+          "p_gt_0": 1.0
+        }
+      },
+      "LAP_components": {
+        "t1_start_plus_completion_registry_minus_t0_start": {
+          "auprc": {
+            "point": 0.7108,
+            "ci": [
+              0.6633,
+              0.7591
+            ],
+            "p_gt_0": 1.0
+          },
+          "auroc": {
+            "point": 0.4783,
+            "ci": [
+              0.4392,
+              0.5255
+            ],
+            "p_gt_0": 1.0
+          }
+        },
+        "t2_all_minus_t1_start_plus_completion_registry": {
+          "auprc": {
+            "point": 0.01,
+            "ci": [
+              0.0018,
+              0.019
+            ],
+            "p_gt_0": 0.989
+          },
+          "auroc": {
+            "point": 0.0026,
+            "ci": [
+              0.0004,
+              0.005
+            ],
+            "p_gt_0": 0.985
+          }
+        }
+      },
+      "share_of_auprc_all_that_is_post_start": 0.7349,
+      "share_of_lift_all_that_is_post_start": 0.9899,
+      "start_lift_over_base": 0.0074
+    },
+    "excl_withdrawn_suspended_eval_only": {
+      "n_train": 7011,
+      "n_test": 1785,
+      "test_base_rate": 0.2611,
+      "n_test_positive": 466,
+      "tiers": {
+        "t0_start": {
+          "auprc": 0.2659,
+          "auprc_ci": [
+            0.2177,
+            0.3188
+          ],
+          "auroc": 0.5073,
+          "auroc_ci": [
+            0.4643,
+            0.5462
+          ],
+          "lift": 0.0048,
+          "lift_ci": [
+            -0.0144,
+            0.0278
+          ],
+          "n_lfs": 2,
+          "lfs": [
+            "num_sponsors",
+            "sites"
+          ]
+        },
+        "t1_start_plus_completion_registry": {
+          "auprc": 0.9709,
+          "auprc_ci": [
+            0.9583,
+            0.982
+          ],
+          "auroc": 0.9914,
+          "auroc_ci": [
+            0.9879,
+            0.995
+          ],
+          "lift": 0.7098,
+          "lift_ci": [
+            0.6718,
+            0.7479
+          ],
+          "n_lfs": 12,
+          "lfs": [
+            "num_sponsors",
+            "sites",
+            "status",
+            "results_reported",
+            "pvalues",
+            "num_patients",
+            "patient_drop",
+            "serious_ae",
+            "death_ae",
+            "all_ae",
+            "update_more_recent",
+            "amendments"
+          ]
+        },
+        "t2_all": {
+          "auprc": 0.9809,
+          "auprc_ci": [
+            0.972,
+            0.9883
+          ],
+          "auroc": 0.9942,
+          "auroc_ci": [
+            0.9918,
+            0.9964
+          ],
+          "lift": 0.7198,
+          "lift_ci": [
+            0.6819,
+            0.7559
+          ],
+          "n_lfs": 17,
+          "lfs": [
+            "num_sponsors",
+            "sites",
+            "status",
+            "results_reported",
+            "pvalues",
+            "num_patients",
+            "patient_drop",
+            "serious_ae",
+            "death_ae",
+            "all_ae",
+            "update_more_recent",
+            "amendments",
+            "linkage",
+            "gpt",
+            "stock_price",
+            "new_headlines",
+            "hint_train"
+          ]
+        }
+      },
+      "LAP_all_minus_start": {
+        "auprc": {
+          "point": 0.715,
+          "ci": [
+            0.664,
+            0.7619
+          ],
+          "p_gt_0": 1.0
+        },
+        "auroc": {
+          "point": 0.4869,
+          "ci": [
+            0.4482,
+            0.5307
+          ],
+          "p_gt_0": 1.0
+        }
+      },
+      "LAP_components": {
+        "t1_start_plus_completion_registry_minus_t0_start": {
+          "auprc": {
+            "point": 0.705,
+            "ci": [
+              0.6544,
+              0.7526
+            ],
+            "p_gt_0": 1.0
+          },
+          "auroc": {
+            "point": 0.4842,
+            "ci": [
+              0.4451,
+              0.5282
+            ],
+            "p_gt_0": 1.0
+          }
+        },
+        "t2_all_minus_t1_start_plus_completion_registry": {
+          "auprc": {
+            "point": 0.01,
+            "ci": [
+              0.0021,
+              0.019
+            ],
+            "p_gt_0": 0.996
+          },
+          "auroc": {
+            "point": 0.0027,
+            "ci": [
+              0.0004,
+              0.0052
+            ],
+            "p_gt_0": 0.99
+          }
+        }
+      },
+      "share_of_auprc_all_that_is_post_start": 0.729,
+      "share_of_lift_all_that_is_post_start": 0.9933,
+      "start_lift_over_base": 0.0048
+    },
+    "sites_as_post_start": {
+      "n_train": 7011,
+      "n_test": 2694,
+      "test_base_rate": 0.173,
+      "n_test_positive": 466,
+      "tiers": {
+        "t0_start": {
+          "auprc": 0.1797,
+          "auprc_ci": [
+            0.1481,
+            0.215
+          ],
+          "auroc": 0.5187,
+          "auroc_ci": [
+            0.4912,
+            0.5491
+          ],
+          "lift": 0.0068,
+          "lift_ci": [
+            -0.0021,
+            0.0179
+          ],
+          "n_lfs": 1,
+          "lfs": [
+            "num_sponsors"
+          ]
+        },
+        "t1_start_plus_completion_registry": {
+          "auprc": 0.9709,
+          "auprc_ci": [
+            0.9568,
+            0.9813
+          ],
+          "auroc": 0.9949,
+          "auroc_ci": [
+            0.9924,
+            0.9969
+          ],
+          "lift": 0.7979,
+          "lift_ci": [
+            0.768,
+            0.8253
+          ],
+          "n_lfs": 12,
+          "lfs": [
+            "num_sponsors",
+            "sites",
+            "status",
+            "results_reported",
+            "pvalues",
+            "num_patients",
+            "patient_drop",
+            "serious_ae",
+            "death_ae",
+            "all_ae",
+            "update_more_recent",
+            "amendments"
+          ]
+        },
+        "t2_all": {
+          "auprc": 0.9809,
+          "auprc_ci": [
+            0.9719,
+            0.9881
+          ],
+          "auroc": 0.9965,
+          "auroc_ci": [
+            0.995,
+            0.9978
+          ],
+          "lift": 0.8079,
+          "lift_ci": [
+            0.7799,
+            0.834
+          ],
+          "n_lfs": 17,
+          "lfs": [
+            "num_sponsors",
+            "sites",
+            "status",
+            "results_reported",
+            "pvalues",
+            "num_patients",
+            "patient_drop",
+            "serious_ae",
+            "death_ae",
+            "all_ae",
+            "update_more_recent",
+            "amendments",
+            "linkage",
+            "gpt",
+            "stock_price",
+            "new_headlines",
+            "hint_train"
+          ]
+        }
+      },
+      "LAP_all_minus_start": {
+        "auprc": {
+          "point": 0.8012,
+          "ci": [
+            0.7681,
+            0.8315
+          ],
+          "p_gt_0": 1.0
+        },
+        "auroc": {
+          "point": 0.4778,
+          "ci": [
+            0.4477,
+            0.505
+          ],
+          "p_gt_0": 1.0
+        }
+      },
+      "LAP_components": {
+        "t1_start_plus_completion_registry_minus_t0_start": {
+          "auprc": {
+            "point": 0.7912,
+            "ci": [
+              0.7558,
+              0.8228
+            ],
+            "p_gt_0": 1.0
+          },
+          "auroc": {
+            "point": 0.4762,
+            "ci": [
+              0.446,
+              0.5031
+            ],
+            "p_gt_0": 1.0
+          }
+        },
+        "t2_all_minus_t1_start_plus_completion_registry": {
+          "auprc": {
+            "point": 0.01,
+            "ci": [
+              0.0021,
+              0.019
+            ],
+            "p_gt_0": 0.997
+          },
+          "auroc": {
+            "point": 0.0016,
+            "ci": [
+              0.0002,
+              0.0032
+            ],
+            "p_gt_0": 0.993
+          }
+        }
+      },
+      "share_of_auprc_all_that_is_post_start": 0.8168,
+      "share_of_lift_all_that_is_post_start": 0.9916,
+      "start_lift_over_base": 0.0068
+    },
+    "sites_as_post_start_excl_withdrawn_refit": {
+      "n_train": 6032,
+      "n_test": 1844,
+      "test_base_rate": 0.2527,
+      "n_test_positive": 466,
+      "tiers": {
+        "t0_start": {
+          "auprc": 0.2577,
+          "auprc_ci": [
+            0.2155,
+            0.2988
+          ],
+          "auroc": 0.5095,
+          "auroc_ci": [
+            0.4777,
+            0.5397
+          ],
+          "lift": 0.005,
+          "lift_ci": [
+            -0.0073,
+            0.0192
+          ],
+          "n_lfs": 1,
+          "lfs": [
+            "num_sponsors"
+          ]
+        },
+        "t1_start_plus_completion_registry": {
+          "auprc": 0.9704,
+          "auprc_ci": [
+            0.9573,
+            0.9816
+          ],
+          "auroc": 0.9917,
+          "auroc_ci": [
+            0.9878,
+            0.9949
+          ],
+          "lift": 0.7177,
+          "lift_ci": [
+            0.6837,
+            0.7529
+          ],
+          "n_lfs": 12,
+          "lfs": [
+            "num_sponsors",
+            "sites",
+            "status",
+            "results_reported",
+            "pvalues",
+            "num_patients",
+            "patient_drop",
+            "serious_ae",
+            "death_ae",
+            "all_ae",
+            "update_more_recent",
+            "amendments"
+          ]
+        },
+        "t2_all": {
+          "auprc": 0.9809,
+          "auprc_ci": [
+            0.9721,
+            0.9881
+          ],
+          "auroc": 0.9944,
+          "auroc_ci": [
+            0.9919,
+            0.9965
+          ],
+          "lift": 0.7282,
+          "lift_ci": [
+            0.6956,
+            0.7629
+          ],
+          "n_lfs": 17,
+          "lfs": [
+            "num_sponsors",
+            "sites",
+            "status",
+            "results_reported",
+            "pvalues",
+            "num_patients",
+            "patient_drop",
+            "serious_ae",
+            "death_ae",
+            "all_ae",
+            "update_more_recent",
+            "amendments",
+            "linkage",
+            "gpt",
+            "stock_price",
+            "new_headlines",
+            "hint_train"
+          ]
+        }
+      },
+      "LAP_all_minus_start": {
+        "auprc": {
+          "point": 0.7232,
+          "ci": [
+            0.6835,
+            0.7643
+          ],
+          "p_gt_0": 1.0
+        },
+        "auroc": {
+          "point": 0.4849,
+          "ci": [
+            0.455,
+            0.5165
+          ],
+          "p_gt_0": 1.0
+        }
+      },
+      "LAP_components": {
+        "t1_start_plus_completion_registry_minus_t0_start": {
+          "auprc": {
+            "point": 0.7127,
+            "ci": [
+              0.6722,
+              0.7532
+            ],
+            "p_gt_0": 1.0
+          },
+          "auroc": {
+            "point": 0.4822,
+            "ci": [
+              0.4518,
+              0.5141
+            ],
+            "p_gt_0": 1.0
+          }
+        },
+        "t2_all_minus_t1_start_plus_completion_registry": {
+          "auprc": {
+            "point": 0.0106,
+            "ci": [
+              0.0027,
+              0.0193
+            ],
+            "p_gt_0": 0.993
+          },
+          "auroc": {
+            "point": 0.0027,
+            "ci": [
+              0.0005,
+              0.0051
+            ],
+            "p_gt_0": 0.99
+          }
+        }
+      },
+      "share_of_auprc_all_that_is_post_start": 0.7373,
+      "share_of_lift_all_that_is_post_start": 0.9931,
+      "start_lift_over_base": 0.005
+    }
+  },
+  "C_per_lf_marginal_over_corrected_start_exploratory": {
+    "status": {
+      "tier": "completion_registry",
+      "auprc_with_lf": 0.9149,
+      "marginal_auprc": {
+        "point": 0.6866,
+        "ci": [
+          0.6352,
+          0.7369
+        ],
+        "p_gt_0": 1.0
+      },
+      "marginal_auroc": {
+        "point": 0.3534,
+        "ci": [
+          0.3206,
+          0.3869
+        ],
+        "p_gt_0": 1.0
+      },
+      "test_abstain": 0.1908
+    },
+    "pvalues": {
+      "tier": "completion_registry",
+      "auprc_with_lf": 0.5635,
+      "marginal_auprc": {
+        "point": 0.3352,
+        "ci": [
+          0.2813,
+          0.3942
+        ],
+        "p_gt_0": 1.0
+      },
+      "marginal_auroc": {
+        "point": 0.1616,
+        "ci": [
+          0.1344,
+          0.1911
+        ],
+        "p_gt_0": 1.0
+      },
+      "test_abstain": 0.9057
+    },
+    "num_patients": {
+      "tier": "completion_registry",
+      "auprc_with_lf": 0.5135,
+      "marginal_auprc": {
+        "point": 0.2852,
+        "ci": [
+          0.2427,
+          0.3301
+        ],
+        "p_gt_0": 1.0
+      },
+      "marginal_auroc": {
+        "point": 0.1583,
+        "ci": [
+          0.1227,
+          0.1932
+        ],
+        "p_gt_0": 1.0
+      },
+      "test_abstain": 0.7565
+    },
+    "gpt": {
+      "tier": "external_post_completion",
+      "auprc_with_lf": 0.5079,
+      "marginal_auprc": {
+        "point": 0.2795,
+        "ci": [
+          0.2354,
+          0.3252
+        ],
+        "p_gt_0": 1.0
+      },
+      "marginal_auroc": {
+        "point": 0.1837,
+        "ci": [
+          0.1526,
+          0.2157
+        ],
+        "p_gt_0": 1.0
+      },
+      "test_abstain": 0.8252
+    },
+    "all_ae": {
+      "tier": "completion_registry",
+      "auprc_with_lf": 0.4498,
+      "marginal_auprc": {
+        "point": 0.2214,
+        "ci": [
+          0.1808,
+          0.2661
+        ],
+        "p_gt_0": 1.0
+      },
+      "marginal_auroc": {
+        "point": 0.1445,
+        "ci": [
+          0.1111,
+          0.1774
+        ],
+        "p_gt_0": 1.0
+      },
+      "test_abstain": 0.7565
+    },
+    "stock_price": {
+      "tier": "external_post_completion",
+      "auprc_with_lf": 0.4469,
+      "marginal_auprc": {
+        "point": 0.2185,
+        "ci": [
+          0.1284,
+          0.2924
+        ],
+        "p_gt_0": 1.0
+      },
+      "marginal_auroc": {
+        "point": 0.0858,
+        "ci": [
+          0.0467,
+          0.1242
+        ],
+        "p_gt_0": 1.0
+      },
+      "test_abstain": 0.9417
+    },
+    "amendments": {
+      "tier": "completion_registry",
+      "auprc_with_lf": 0.4444,
+      "marginal_auprc": {
+        "point": 0.2161,
+        "ci": [
+          0.1324,
+          0.286
+        ],
+        "p_gt_0": 1.0
+      },
+      "marginal_auroc": {
+        "point": 0.0858,
+        "ci": [
+          0.0467,
+          0.1236
+        ],
+        "p_gt_0": 1.0
+      },
+      "test_abstain": 0.9417
+    },
+    "new_headlines": {
+      "tier": "external_post_completion",
+      "auprc_with_lf": 0.4176,
+      "marginal_auprc": {
+        "point": 0.1893,
+        "ci": [
+          0.1482,
+          0.2293
+        ],
+        "p_gt_0": 1.0
+      },
+      "marginal_auroc": {
+        "point": 0.0531,
+        "ci": [
+          0.0314,
+          0.0736
+        ],
+        "p_gt_0": 1.0
+      },
+      "test_abstain": 0.9558
+    },
+    "serious_ae": {
+      "tier": "completion_registry",
+      "auprc_with_lf": 0.3976,
+      "marginal_auprc": {
+        "point": 0.1693,
+        "ci": [
+          0.1349,
+          0.2023
+        ],
+        "p_gt_0": 1.0
+      },
+      "marginal_auroc": {
+        "point": 0.1385,
+        "ci": [
+          0.1069,
+          0.1701
+        ],
+        "p_gt_0": 1.0
+      },
+      "test_abstain": 0.7565
+    },
+    "death_ae": {
+      "tier": "completion_registry",
+      "auprc_with_lf": 0.3924,
+      "marginal_auprc": {
+        "point": 0.164,
+        "ci": [
+          0.1305,
+          0.1961
+        ],
+        "p_gt_0": 1.0
+      },
+      "marginal_auroc": {
+        "point": 0.1369,
+        "ci": [
+          0.1059,
+          0.168
+        ],
+        "p_gt_0": 1.0
+      },
+      "test_abstain": 0.7565
+    },
+    "results_reported": {
+      "tier": "completion_registry",
+      "auprc_with_lf": 0.3872,
+      "marginal_auprc": {
+        "point": 0.1589,
+        "ci": [
+          0.1279,
+          0.1882
+        ],
+        "p_gt_0": 1.0
+      },
+      "marginal_auroc": {
+        "point": 0.1362,
+        "ci": [
+          0.1052,
+          0.1676
+        ],
+        "p_gt_0": 1.0
+      },
+      "test_abstain": 0.0
+    },
+    "patient_drop": {
+      "tier": "completion_registry",
+      "auprc_with_lf": 0.3708,
+      "marginal_auprc": {
+        "point": 0.1424,
+        "ci": [
+          0.1084,
+          0.178
+        ],
+        "p_gt_0": 1.0
+      },
+      "marginal_auroc": {
+        "point": 0.0904,
+        "ci": [
+          0.0655,
+          0.1169
+        ],
+        "p_gt_0": 1.0
+      },
+      "test_abstain": 0.8226
+    },
+    "linkage": {
+      "tier": "external_post_completion",
+      "auprc_with_lf": 0.2758,
+      "marginal_auprc": {
+        "point": 0.0474,
+        "ci": [
+          0.0214,
+          0.0763
+        ],
+        "p_gt_0": 1.0
+      },
+      "marginal_auroc": {
+        "point": 0.0359,
+        "ci": [
+          0.0212,
+          0.0521
+        ],
+        "p_gt_0": 1.0
+      },
+      "test_abstain": 0.1095
+    },
+    "update_more_recent": {
+      "tier": "completion_registry",
+      "auprc_with_lf": 0.2726,
+      "marginal_auprc": {
+        "point": 0.0443,
+        "ci": [
+          0.0312,
+          0.0586
+        ],
+        "p_gt_0": 1.0
+      },
+      "marginal_auroc": {
+        "point": 0.0529,
+        "ci": [
+          0.0357,
+          0.0693
+        ],
+        "p_gt_0": 1.0
+      },
+      "test_abstain": 0.0
+    },
+    "hint_train": {
+      "tier": "external_post_completion",
+      "auprc_with_lf": 0.2283,
+      "marginal_auprc": {
+        "point": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ],
+        "p_gt_0": 0.0
+      },
+      "marginal_auroc": {
+        "point": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ],
+        "p_gt_0": 0.0
+      },
+      "test_abstain": 1.0
+    }
+  },
+  "runtime_seconds": 224.0
+}

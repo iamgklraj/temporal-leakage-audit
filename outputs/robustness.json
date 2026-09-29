@@ -1,0 +1,1501 @@
+{
+  "description": "Learner sensitivity of the CTO, TrialBench and 20-disease censored-benchmark audits, and temporal-cutoff sensitivity of the CTO audit. All intervals are 95% percentile bootstrap CIs with the clustering unit and resample count of the original analysis.",
+  "settings": {
+    "learners": {
+      "hgb_default": "HistGradientBoostingClassifier(max_depth=3, learning_rate=0.06, max_iter=300, l2_regularization=1.0, random_state=0) -- the paper's learner",
+      "logreg_l2": "Pipeline(SimpleImputer(median), StandardScaler(), LogisticRegression(C=1.0, L2 penalty, lbfgs, max_iter=10000))",
+      "random_forest": "RandomForestClassifier(n_estimators=500, min_samples_leaf=5, random_state=0, n_jobs=4); missing values handled natively by scikit-learn"
+    },
+    "bootstrap": {
+      "cto": "sponsor-clustered, 1000 resamples, seed 0, paired across tiers",
+      "trialbench": "trial-level, 1000 resamples per test set; provided-minus-temporal from independent bootstraps (seeds 0/1)",
+      "censored_benchmark_20disease": "target-clustered, 500 resamples, seed 0, paired across horizons"
+    },
+    "same_bootstrap_resamples_across_learners": true,
+    "cto_split_rule": "train = start_year <= int(quantile(start_year, q)); test = later",
+    "cto_quantile_note": "start years are integers: q=0.6 and q=0.7 both give 2020 (identical split); q=0.8 (2021) is added as the next distinct later cutoff",
+    "threads": {
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4"
+    },
+    "versions": {
+      "python": "3.13.5",
+      "numpy": "2.5.1",
+      "pandas": "3.0.3",
+      "scikit-learn": "1.9.0"
+    }
+  },
+  "reproduction_check": {
+    "cto": {
+      "reference": "outputs/cto_audit.json",
+      "compared_fields": [
+        "n",
+        "n_train",
+        "n_test",
+        "train_start_year_le",
+        "test_base_rate",
+        "n_sponsors",
+        "tiers",
+        "LAP_auprc",
+        "LAP_auprc_ci",
+        "LAP_p_gt_0",
+        "leakage_fraction_of_auprc",
+        "LAP_components"
+      ],
+      "n_leaf_values_compared": 32,
+      "exact_match": true,
+      "mismatches": []
+    },
+    "trialbench": {
+      "reference": "outputs/trialbench_audit.json",
+      "compared_fields": [
+        "phases",
+        "mean_provided_minus_temporal_auprc",
+        "mean_provided_minus_temporal_auroc",
+        "mean_provided_minus_temporal_auprc_lift"
+      ],
+      "n_leaf_values_compared": 117,
+      "exact_match": true,
+      "mismatches": []
+    },
+    "censored_benchmark_20disease": {
+      "reference": "outputs/censored_benchmark_20disease.json",
+      "compared_fields": [
+        "main_split",
+        "leakage_response_curve"
+      ],
+      "n_leaf_values_compared": 54,
+      "exact_match": true,
+      "mismatches": []
+    }
+  },
+  "learner_sensitivity": {
+    "cto": {
+      "hgb_default": {
+        "split_quantile": 0.6,
+        "n": 9705,
+        "n_train": 7011,
+        "n_test": 2694,
+        "train_start_year_le": 2020,
+        "test_base_rate": 0.173,
+        "n_sponsors": 2457,
+        "n_test_sponsors": 1152,
+        "tiers": {
+          "h0_start": {
+            "auprc": 0.2283,
+            "auroc": 0.6364,
+            "n_lfs": 5,
+            "auprc_ci": [
+              0.1848,
+              0.2757
+            ]
+          },
+          "h1_during": {
+            "auprc": 0.6859,
+            "auroc": 0.8501,
+            "n_lfs": 13,
+            "auprc_ci": [
+              0.6122,
+              0.744
+            ]
+          },
+          "h2_post_naive": {
+            "auprc": 0.9809,
+            "auroc": 0.9965,
+            "n_lfs": 22,
+            "auprc_ci": [
+              0.9719,
+              0.9881
+            ]
+          }
+        },
+        "LAP_auprc": 0.7526,
+        "LAP_auprc_ci": [
+          0.7066,
+          0.7935
+        ],
+        "LAP_p_gt_0": 1.0,
+        "leakage_fraction_of_auprc": 0.7673,
+        "LAP_components": {
+          "during_trial": {
+            "auprc": 0.4576,
+            "ci": [
+              0.4028,
+              0.5031
+            ]
+          },
+          "post_completion": {
+            "auprc": 0.295,
+            "ci": [
+              0.2362,
+              0.368
+            ]
+          }
+        },
+        "n_boot": 1000,
+        "n_boot_valid": 1000
+      },
+      "logreg_l2": {
+        "split_quantile": 0.6,
+        "n": 9705,
+        "n_train": 7011,
+        "n_test": 2694,
+        "train_start_year_le": 2020,
+        "test_base_rate": 0.173,
+        "n_sponsors": 2457,
+        "n_test_sponsors": 1152,
+        "tiers": {
+          "h0_start": {
+            "auprc": 0.2271,
+            "auroc": 0.634,
+            "n_lfs": 5,
+            "auprc_ci": [
+              0.1846,
+              0.2706
+            ]
+          },
+          "h1_during": {
+            "auprc": 0.6406,
+            "auroc": 0.8241,
+            "n_lfs": 13,
+            "auprc_ci": [
+              0.5626,
+              0.7042
+            ]
+          },
+          "h2_post_naive": {
+            "auprc": 0.9796,
+            "auroc": 0.9964,
+            "n_lfs": 22,
+            "auprc_ci": [
+              0.9691,
+              0.9876
+            ]
+          }
+        },
+        "LAP_auprc": 0.7525,
+        "LAP_auprc_ci": [
+          0.7105,
+          0.791
+        ],
+        "LAP_p_gt_0": 1.0,
+        "leakage_fraction_of_auprc": 0.7682,
+        "LAP_components": {
+          "during_trial": {
+            "auprc": 0.4135,
+            "ci": [
+              0.36,
+              0.4593
+            ]
+          },
+          "post_completion": {
+            "auprc": 0.339,
+            "ci": [
+              0.2772,
+              0.412
+            ]
+          }
+        },
+        "n_boot": 1000,
+        "n_boot_valid": 1000
+      },
+      "random_forest": {
+        "split_quantile": 0.6,
+        "n": 9705,
+        "n_train": 7011,
+        "n_test": 2694,
+        "train_start_year_le": 2020,
+        "test_base_rate": 0.173,
+        "n_sponsors": 2457,
+        "n_test_sponsors": 1152,
+        "tiers": {
+          "h0_start": {
+            "auprc": 0.2283,
+            "auroc": 0.6364,
+            "n_lfs": 5,
+            "auprc_ci": [
+              0.1848,
+              0.2757
+            ]
+          },
+          "h1_during": {
+            "auprc": 0.6771,
+            "auroc": 0.8515,
+            "n_lfs": 13,
+            "auprc_ci": [
+              0.6056,
+              0.7322
+            ]
+          },
+          "h2_post_naive": {
+            "auprc": 0.9805,
+            "auroc": 0.9964,
+            "n_lfs": 22,
+            "auprc_ci": [
+              0.9713,
+              0.9878
+            ]
+          }
+        },
+        "LAP_auprc": 0.7522,
+        "LAP_auprc_ci": [
+          0.7055,
+          0.7934
+        ],
+        "LAP_p_gt_0": 1.0,
+        "leakage_fraction_of_auprc": 0.7672,
+        "LAP_components": {
+          "during_trial": {
+            "auprc": 0.4488,
+            "ci": [
+              0.3976,
+              0.4933
+            ]
+          },
+          "post_completion": {
+            "auprc": 0.3034,
+            "ci": [
+              0.25,
+              0.3712
+            ]
+          }
+        },
+        "n_boot": 1000,
+        "n_boot_valid": 1000
+      }
+    },
+    "trialbench": {
+      "hgb_default": {
+        "phases": [
+          {
+            "phase": "Phase1",
+            "n": 4482,
+            "n_test": 896,
+            "base_rate": 0.4255,
+            "overlap_provided_temporal_test": 171,
+            "provided_split": {
+              "n_test": 896,
+              "test_base_rate": 0.4308,
+              "auprc": 0.723,
+              "auroc": 0.8127,
+              "auprc_lift": 0.2922,
+              "auprc_ci": [
+                0.675,
+                0.7686
+              ],
+              "auroc_ci": [
+                0.7837,
+                0.8391
+              ],
+              "auprc_lift_ci": [
+                0.2529,
+                0.3332
+              ],
+              "train_base_rate": 0.4241
+            },
+            "temporal_split": {
+              "n_test": 896,
+              "test_base_rate": 0.2042,
+              "auprc": 0.5731,
+              "auroc": 0.8417,
+              "auprc_lift": 0.3689,
+              "auprc_ci": [
+                0.5024,
+                0.6438
+              ],
+              "auroc_ci": [
+                0.813,
+                0.869
+              ],
+              "auprc_lift_ci": [
+                0.3068,
+                0.4364
+              ],
+              "train_base_rate": 0.4808
+            },
+            "provided_minus_temporal": {
+              "auprc": {
+                "point": 0.1499,
+                "ci": [
+                  0.0628,
+                  0.2355
+                ]
+              },
+              "auroc": {
+                "point": -0.029,
+                "ci": [
+                  -0.0723,
+                  0.0101
+                ]
+              },
+              "auprc_lift": {
+                "point": -0.0767,
+                "ci": [
+                  -0.1538,
+                  -0.0034
+                ]
+              }
+            }
+          },
+          {
+            "phase": "Phase2",
+            "n": 12494,
+            "n_test": 2514,
+            "base_rate": 0.3815,
+            "overlap_provided_temporal_test": 509,
+            "provided_split": {
+              "n_test": 2514,
+              "test_base_rate": 0.3683,
+              "auprc": 0.6708,
+              "auroc": 0.8109,
+              "auprc_lift": 0.3025,
+              "auprc_ci": [
+                0.6378,
+                0.7013
+              ],
+              "auroc_ci": [
+                0.7943,
+                0.825
+              ],
+              "auprc_lift_ci": [
+                0.2764,
+                0.3274
+              ],
+              "train_base_rate": 0.3849
+            },
+            "temporal_split": {
+              "n_test": 2514,
+              "test_base_rate": 0.2673,
+              "auprc": 0.6144,
+              "auroc": 0.8586,
+              "auprc_lift": 0.3471,
+              "auprc_ci": [
+                0.5749,
+                0.6552
+              ],
+              "auroc_ci": [
+                0.8442,
+                0.872
+              ],
+              "auprc_lift_ci": [
+                0.3131,
+                0.3826
+              ],
+              "train_base_rate": 0.4103
+            },
+            "provided_minus_temporal": {
+              "auprc": {
+                "point": 0.0564,
+                "ci": [
+                  0.0001,
+                  0.1038
+                ]
+              },
+              "auroc": {
+                "point": -0.0477,
+                "ci": [
+                  -0.0707,
+                  -0.028
+                ]
+              },
+              "auprc_lift": {
+                "point": -0.0446,
+                "ci": [
+                  -0.0937,
+                  -0.0048
+                ]
+              }
+            }
+          },
+          {
+            "phase": "Phase3",
+            "n": 9161,
+            "n_test": 1913,
+            "base_rate": 0.5617,
+            "overlap_provided_temporal_test": 390,
+            "provided_split": {
+              "n_test": 1913,
+              "test_base_rate": 0.5551,
+              "auprc": 0.8003,
+              "auroc": 0.7927,
+              "auprc_lift": 0.2452,
+              "auprc_ci": [
+                0.7731,
+                0.8261
+              ],
+              "auroc_ci": [
+                0.7722,
+                0.8129
+              ],
+              "auprc_lift_ci": [
+                0.222,
+                0.2694
+              ],
+              "train_base_rate": 0.5635
+            },
+            "temporal_split": {
+              "n_test": 1913,
+              "test_base_rate": 0.4956,
+              "auprc": 0.7603,
+              "auroc": 0.8176,
+              "auprc_lift": 0.2647,
+              "auprc_ci": [
+                0.7259,
+                0.7954
+              ],
+              "auroc_ci": [
+                0.7962,
+                0.838
+              ],
+              "auprc_lift_ci": [
+                0.2368,
+                0.2932
+              ],
+              "train_base_rate": 0.5792
+            },
+            "provided_minus_temporal": {
+              "auprc": {
+                "point": 0.04,
+                "ci": [
+                  -0.0023,
+                  0.0817
+                ]
+              },
+              "auroc": {
+                "point": -0.0249,
+                "ci": [
+                  -0.0533,
+                  0.0045
+                ]
+              },
+              "auprc_lift": {
+                "point": -0.0195,
+                "ci": [
+                  -0.0574,
+                  0.0182
+                ]
+              }
+            }
+          }
+        ],
+        "mean_provided_minus_temporal_auprc": 0.0821,
+        "mean_provided_minus_temporal_auroc": -0.0339,
+        "mean_provided_minus_temporal_auprc_lift": -0.0469
+      },
+      "logreg_l2": {
+        "phases": [
+          {
+            "phase": "Phase1",
+            "n": 4482,
+            "n_test": 896,
+            "base_rate": 0.4255,
+            "overlap_provided_temporal_test": 171,
+            "provided_split": {
+              "n_test": 896,
+              "test_base_rate": 0.4308,
+              "auprc": 0.6588,
+              "auroc": 0.7368,
+              "auprc_lift": 0.228,
+              "auprc_ci": [
+                0.6108,
+                0.7107
+              ],
+              "auroc_ci": [
+                0.7048,
+                0.7702
+              ],
+              "auprc_lift_ci": [
+                0.1868,
+                0.2716
+              ],
+              "train_base_rate": 0.4241
+            },
+            "temporal_split": {
+              "n_test": 896,
+              "test_base_rate": 0.2042,
+              "auprc": 0.4123,
+              "auroc": 0.735,
+              "auprc_lift": 0.208,
+              "auprc_ci": [
+                0.3468,
+                0.4929
+              ],
+              "auroc_ci": [
+                0.6933,
+                0.7756
+              ],
+              "auprc_lift_ci": [
+                0.1518,
+                0.2798
+              ],
+              "train_base_rate": 0.4808
+            },
+            "provided_minus_temporal": {
+              "auprc": {
+                "point": 0.2465,
+                "ci": [
+                  0.1526,
+                  0.3289
+                ]
+              },
+              "auroc": {
+                "point": 0.0018,
+                "ci": [
+                  -0.0558,
+                  0.0541
+                ]
+              },
+              "auprc_lift": {
+                "point": 0.02,
+                "ci": [
+                  -0.0616,
+                  0.0944
+                ]
+              }
+            }
+          },
+          {
+            "phase": "Phase2",
+            "n": 12494,
+            "n_test": 2514,
+            "base_rate": 0.3815,
+            "overlap_provided_temporal_test": 509,
+            "provided_split": {
+              "n_test": 2514,
+              "test_base_rate": 0.3683,
+              "auprc": 0.5749,
+              "auroc": 0.7114,
+              "auprc_lift": 0.2065,
+              "auprc_ci": [
+                0.5415,
+                0.6116
+              ],
+              "auroc_ci": [
+                0.6915,
+                0.7307
+              ],
+              "auprc_lift_ci": [
+                0.1792,
+                0.236
+              ],
+              "train_base_rate": 0.3849
+            },
+            "temporal_split": {
+              "n_test": 2514,
+              "test_base_rate": 0.2673,
+              "auprc": 0.4598,
+              "auroc": 0.7212,
+              "auprc_lift": 0.1925,
+              "auprc_ci": [
+                0.4244,
+                0.4988
+              ],
+              "auroc_ci": [
+                0.6992,
+                0.7418
+              ],
+              "auprc_lift_ci": [
+                0.1624,
+                0.2275
+              ],
+              "train_base_rate": 0.4103
+            },
+            "provided_minus_temporal": {
+              "auprc": {
+                "point": 0.1151,
+                "ci": [
+                  0.0611,
+                  0.1644
+                ]
+              },
+              "auroc": {
+                "point": -0.0098,
+                "ci": [
+                  -0.0389,
+                  0.0185
+                ]
+              },
+              "auprc_lift": {
+                "point": 0.014,
+                "ci": [
+                  -0.0343,
+                  0.0563
+                ]
+              }
+            }
+          },
+          {
+            "phase": "Phase3",
+            "n": 9161,
+            "n_test": 1913,
+            "base_rate": 0.5617,
+            "overlap_provided_temporal_test": 390,
+            "provided_split": {
+              "n_test": 1913,
+              "test_base_rate": 0.5551,
+              "auprc": 0.7507,
+              "auroc": 0.727,
+              "auprc_lift": 0.1956,
+              "auprc_ci": [
+                0.7218,
+                0.7794
+              ],
+              "auroc_ci": [
+                0.7036,
+                0.7491
+              ],
+              "auprc_lift_ci": [
+                0.1724,
+                0.2192
+              ],
+              "train_base_rate": 0.5635
+            },
+            "temporal_split": {
+              "n_test": 1913,
+              "test_base_rate": 0.4956,
+              "auprc": 0.6321,
+              "auroc": 0.6864,
+              "auprc_lift": 0.1365,
+              "auprc_ci": [
+                0.5981,
+                0.6679
+              ],
+              "auroc_ci": [
+                0.6615,
+                0.71
+              ],
+              "auprc_lift_ci": [
+                0.1115,
+                0.1638
+              ],
+              "train_base_rate": 0.5792
+            },
+            "provided_minus_temporal": {
+              "auprc": {
+                "point": 0.1186,
+                "ci": [
+                  0.0737,
+                  0.1601
+                ]
+              },
+              "auroc": {
+                "point": 0.0406,
+                "ci": [
+                  0.0052,
+                  0.0732
+                ]
+              },
+              "auprc_lift": {
+                "point": 0.0591,
+                "ci": [
+                  0.019,
+                  0.0962
+                ]
+              }
+            }
+          }
+        ],
+        "mean_provided_minus_temporal_auprc": 0.1601,
+        "mean_provided_minus_temporal_auroc": 0.0109,
+        "mean_provided_minus_temporal_auprc_lift": 0.031
+      },
+      "random_forest": {
+        "phases": [
+          {
+            "phase": "Phase1",
+            "n": 4482,
+            "n_test": 896,
+            "base_rate": 0.4255,
+            "overlap_provided_temporal_test": 171,
+            "provided_split": {
+              "n_test": 896,
+              "test_base_rate": 0.4308,
+              "auprc": 0.7163,
+              "auroc": 0.812,
+              "auprc_lift": 0.2855,
+              "auprc_ci": [
+                0.6662,
+                0.7643
+              ],
+              "auroc_ci": [
+                0.7833,
+                0.8399
+              ],
+              "auprc_lift_ci": [
+                0.2418,
+                0.331
+              ],
+              "train_base_rate": 0.4241
+            },
+            "temporal_split": {
+              "n_test": 896,
+              "test_base_rate": 0.2042,
+              "auprc": 0.5588,
+              "auroc": 0.8259,
+              "auprc_lift": 0.3546,
+              "auprc_ci": [
+                0.4875,
+                0.6278
+              ],
+              "auroc_ci": [
+                0.7946,
+                0.8554
+              ],
+              "auprc_lift_ci": [
+                0.2932,
+                0.4184
+              ],
+              "train_base_rate": 0.4808
+            },
+            "provided_minus_temporal": {
+              "auprc": {
+                "point": 0.1575,
+                "ci": [
+                  0.0709,
+                  0.2471
+                ]
+              },
+              "auroc": {
+                "point": -0.0139,
+                "ci": [
+                  -0.0577,
+                  0.0293
+                ]
+              },
+              "auprc_lift": {
+                "point": -0.0691,
+                "ci": [
+                  -0.1465,
+                  0.01
+                ]
+              }
+            }
+          },
+          {
+            "phase": "Phase2",
+            "n": 12494,
+            "n_test": 2514,
+            "base_rate": 0.3815,
+            "overlap_provided_temporal_test": 509,
+            "provided_split": {
+              "n_test": 2514,
+              "test_base_rate": 0.3683,
+              "auprc": 0.6886,
+              "auroc": 0.8148,
+              "auprc_lift": 0.3203,
+              "auprc_ci": [
+                0.6562,
+                0.7183
+              ],
+              "auroc_ci": [
+                0.797,
+                0.8293
+              ],
+              "auprc_lift_ci": [
+                0.2918,
+                0.3462
+              ],
+              "train_base_rate": 0.3849
+            },
+            "temporal_split": {
+              "n_test": 2514,
+              "test_base_rate": 0.2673,
+              "auprc": 0.6252,
+              "auroc": 0.8561,
+              "auprc_lift": 0.3579,
+              "auprc_ci": [
+                0.5865,
+                0.6642
+              ],
+              "auroc_ci": [
+                0.8406,
+                0.869
+              ],
+              "auprc_lift_ci": [
+                0.3248,
+                0.3935
+              ],
+              "train_base_rate": 0.4103
+            },
+            "provided_minus_temporal": {
+              "auprc": {
+                "point": 0.0634,
+                "ci": [
+                  0.0091,
+                  0.1126
+                ]
+              },
+              "auroc": {
+                "point": -0.0413,
+                "ci": [
+                  -0.0639,
+                  -0.0203
+                ]
+              },
+              "auprc_lift": {
+                "point": -0.0376,
+                "ci": [
+                  -0.0856,
+                  0.0042
+                ]
+              }
+            }
+          },
+          {
+            "phase": "Phase3",
+            "n": 9161,
+            "n_test": 1913,
+            "base_rate": 0.5617,
+            "overlap_provided_temporal_test": 390,
+            "provided_split": {
+              "n_test": 1913,
+              "test_base_rate": 0.5551,
+              "auprc": 0.8178,
+              "auroc": 0.802,
+              "auprc_lift": 0.2627,
+              "auprc_ci": [
+                0.793,
+                0.8413
+              ],
+              "auroc_ci": [
+                0.7836,
+                0.8212
+              ],
+              "auprc_lift_ci": [
+                0.2403,
+                0.2853
+              ],
+              "train_base_rate": 0.5635
+            },
+            "temporal_split": {
+              "n_test": 1913,
+              "test_base_rate": 0.4956,
+              "auprc": 0.764,
+              "auroc": 0.8096,
+              "auprc_lift": 0.2685,
+              "auprc_ci": [
+                0.7331,
+                0.7962
+              ],
+              "auroc_ci": [
+                0.7887,
+                0.8302
+              ],
+              "auprc_lift_ci": [
+                0.2412,
+                0.2984
+              ],
+              "train_base_rate": 0.5792
+            },
+            "provided_minus_temporal": {
+              "auprc": {
+                "point": 0.0538,
+                "ci": [
+                  0.0148,
+                  0.0931
+                ]
+              },
+              "auroc": {
+                "point": -0.0076,
+                "ci": [
+                  -0.0336,
+                  0.0216
+                ]
+              },
+              "auprc_lift": {
+                "point": -0.0058,
+                "ci": [
+                  -0.0428,
+                  0.0298
+                ]
+              }
+            }
+          }
+        ],
+        "mean_provided_minus_temporal_auprc": 0.0916,
+        "mean_provided_minus_temporal_auroc": -0.0209,
+        "mean_provided_minus_temporal_auprc_lift": -0.0375
+      }
+    },
+    "censored_benchmark_20disease": {
+      "hgb_default": {
+        "main_split": {
+          "n_train": 2425,
+          "n_test": 200,
+          "test_dropped_shared_target": 1365,
+          "train_max_year": 2013,
+          "test_years": [
+            2014,
+            2027
+          ]
+        },
+        "leakage_response_curve": {
+          "curve": [
+            {
+              "horizon": 0,
+              "auprc_mean": 0.3592,
+              "policy_mean": 0.325,
+              "auprc_ci": [
+                0.1875,
+                0.5581
+              ]
+            },
+            {
+              "horizon": 1,
+              "auprc_mean": 0.4069,
+              "policy_mean": 0.325,
+              "auprc_ci": [
+                0.1952,
+                0.5896
+              ]
+            },
+            {
+              "horizon": 2,
+              "auprc_mean": 0.4317,
+              "policy_mean": 0.3,
+              "auprc_ci": [
+                0.2106,
+                0.6071
+              ]
+            },
+            {
+              "horizon": 3,
+              "auprc_mean": 0.3977,
+              "policy_mean": 0.275,
+              "auprc_ci": [
+                0.1874,
+                0.5757
+              ]
+            },
+            {
+              "horizon": 5,
+              "auprc_mean": 0.4454,
+              "policy_mean": 0.35,
+              "auprc_ci": [
+                0.2294,
+                0.6239
+              ]
+            },
+            {
+              "horizon": 10,
+              "auprc_mean": 0.3975,
+              "policy_mean": 0.325,
+              "auprc_ci": [
+                0.2079,
+                0.6013
+              ]
+            },
+            {
+              "horizon": null,
+              "auprc_mean": 0.4335,
+              "policy_mean": 0.375,
+              "auprc_ci": [
+                0.1857,
+                0.619
+              ]
+            }
+          ],
+          "test_base_rate": 0.16,
+          "deployable_auprc": 0.3592,
+          "deployable_lift_over_base": 0.1992,
+          "naive_auprc": 0.4335,
+          "total_LAP_auprc": 0.0743,
+          "total_LAP_auprc_ci": [
+            -0.0741,
+            0.1602
+          ],
+          "total_LAP_auprc_p_gt_0": 0.768,
+          "peak_LAP_auprc": 0.0862,
+          "peak_horizon": 5,
+          "leakage_half_life_years": 1,
+          "n_boot": 500,
+          "interpretation": "AUPRC vs. hindsight horizon h (years of post-freeze evidence admitted). h=0 is the deployable estimate; the rise toward h=inf is temporal leakage. total_LAP_auprc is the point leakage bias and total_LAP_auprc_ci its target-clustered 95% bootstrap CI; total_LAP_auprc_p_gt_0 is the bootstrap probability that LAP>0. AUPRC is read against test_base_rate."
+        }
+      },
+      "logreg_l2": {
+        "main_split": {
+          "n_train": 2425,
+          "n_test": 200,
+          "test_dropped_shared_target": 1365,
+          "train_max_year": 2013,
+          "test_years": [
+            2014,
+            2027
+          ]
+        },
+        "leakage_response_curve": {
+          "curve": [
+            {
+              "horizon": 0,
+              "auprc_mean": 0.3692,
+              "policy_mean": 0.425,
+              "auprc_ci": [
+                0.2406,
+                0.4776
+              ]
+            },
+            {
+              "horizon": 1,
+              "auprc_mean": 0.3684,
+              "policy_mean": 0.425,
+              "auprc_ci": [
+                0.2235,
+                0.4783
+              ]
+            },
+            {
+              "horizon": 2,
+              "auprc_mean": 0.3697,
+              "policy_mean": 0.425,
+              "auprc_ci": [
+                0.2399,
+                0.4761
+              ]
+            },
+            {
+              "horizon": 3,
+              "auprc_mean": 0.3594,
+              "policy_mean": 0.375,
+              "auprc_ci": [
+                0.217,
+                0.4639
+              ]
+            },
+            {
+              "horizon": 5,
+              "auprc_mean": 0.3474,
+              "policy_mean": 0.375,
+              "auprc_ci": [
+                0.2174,
+                0.4807
+              ]
+            },
+            {
+              "horizon": 10,
+              "auprc_mean": 0.5063,
+              "policy_mean": 0.425,
+              "auprc_ci": [
+                0.2716,
+                0.6736
+              ]
+            },
+            {
+              "horizon": null,
+              "auprc_mean": 0.4781,
+              "policy_mean": 0.5,
+              "auprc_ci": [
+                0.3238,
+                0.6729
+              ]
+            }
+          ],
+          "test_base_rate": 0.16,
+          "deployable_auprc": 0.3692,
+          "deployable_lift_over_base": 0.2092,
+          "naive_auprc": 0.4781,
+          "total_LAP_auprc": 0.1089,
+          "total_LAP_auprc_ci": [
+            0.0259,
+            0.2605
+          ],
+          "total_LAP_auprc_p_gt_0": 0.994,
+          "peak_LAP_auprc": 0.1371,
+          "peak_horizon": 10,
+          "leakage_half_life_years": 10,
+          "n_boot": 500,
+          "interpretation": "AUPRC vs. hindsight horizon h (years of post-freeze evidence admitted). h=0 is the deployable estimate; the rise toward h=inf is temporal leakage. total_LAP_auprc is the point leakage bias and total_LAP_auprc_ci its target-clustered 95% bootstrap CI; total_LAP_auprc_p_gt_0 is the bootstrap probability that LAP>0. AUPRC is read against test_base_rate."
+        }
+      },
+      "random_forest": {
+        "main_split": {
+          "n_train": 2425,
+          "n_test": 200,
+          "test_dropped_shared_target": 1365,
+          "train_max_year": 2013,
+          "test_years": [
+            2014,
+            2027
+          ]
+        },
+        "leakage_response_curve": {
+          "curve": [
+            {
+              "horizon": 0,
+              "auprc_mean": 0.4944,
+              "policy_mean": 0.475,
+              "auprc_ci": [
+                0.2949,
+                0.668
+              ]
+            },
+            {
+              "horizon": 1,
+              "auprc_mean": 0.4969,
+              "policy_mean": 0.45,
+              "auprc_ci": [
+                0.2799,
+                0.6749
+              ]
+            },
+            {
+              "horizon": 2,
+              "auprc_mean": 0.5147,
+              "policy_mean": 0.425,
+              "auprc_ci": [
+                0.2967,
+                0.694
+              ]
+            },
+            {
+              "horizon": 3,
+              "auprc_mean": 0.513,
+              "policy_mean": 0.4,
+              "auprc_ci": [
+                0.254,
+                0.6896
+              ]
+            },
+            {
+              "horizon": 5,
+              "auprc_mean": 0.5086,
+              "policy_mean": 0.425,
+              "auprc_ci": [
+                0.268,
+                0.678
+              ]
+            },
+            {
+              "horizon": 10,
+              "auprc_mean": 0.419,
+              "policy_mean": 0.35,
+              "auprc_ci": [
+                0.2202,
+                0.6162
+              ]
+            },
+            {
+              "horizon": null,
+              "auprc_mean": 0.4505,
+              "policy_mean": 0.375,
+              "auprc_ci": [
+                0.2372,
+                0.6231
+              ]
+            }
+          ],
+          "test_base_rate": 0.16,
+          "deployable_auprc": 0.4944,
+          "deployable_lift_over_base": 0.3344,
+          "naive_auprc": 0.4505,
+          "total_LAP_auprc": -0.0439,
+          "total_LAP_auprc_ci": [
+            -0.1476,
+            0.0598
+          ],
+          "total_LAP_auprc_p_gt_0": 0.18,
+          "peak_LAP_auprc": 0.0203,
+          "peak_horizon": 2,
+          "leakage_half_life_years": null,
+          "n_boot": 500,
+          "interpretation": "AUPRC vs. hindsight horizon h (years of post-freeze evidence admitted). h=0 is the deployable estimate; the rise toward h=inf is temporal leakage. total_LAP_auprc is the point leakage bias and total_LAP_auprc_ci its target-clustered 95% bootstrap CI; total_LAP_auprc_p_gt_0 is the bootstrap probability that LAP>0. AUPRC is read against test_base_rate."
+        }
+      }
+    }
+  },
+  "cto_cutoff_sensitivity": [
+    {
+      "split_quantile": 0.5,
+      "n": 9705,
+      "n_train": 5244,
+      "n_test": 4461,
+      "train_start_year_le": 2019,
+      "test_base_rate": 0.2192,
+      "n_sponsors": 2457,
+      "n_test_sponsors": 1634,
+      "tiers": {
+        "h0_start": {
+          "auprc": 0.2812,
+          "auroc": 0.6312,
+          "n_lfs": 5,
+          "auprc_ci": [
+            0.2454,
+            0.3199
+          ]
+        },
+        "h1_during": {
+          "auprc": 0.6865,
+          "auroc": 0.8401,
+          "n_lfs": 13,
+          "auprc_ci": [
+            0.6353,
+            0.7281
+          ]
+        },
+        "h2_post_naive": {
+          "auprc": 0.9758,
+          "auroc": 0.9941,
+          "n_lfs": 22,
+          "auprc_ci": [
+            0.9689,
+            0.9817
+          ]
+        }
+      },
+      "LAP_auprc": 0.6946,
+      "LAP_auprc_ci": [
+        0.6577,
+        0.7284
+      ],
+      "LAP_p_gt_0": 1.0,
+      "leakage_fraction_of_auprc": 0.7118,
+      "LAP_components": {
+        "during_trial": {
+          "auprc": 0.4053,
+          "ci": [
+            0.3703,
+            0.4364
+          ]
+        },
+        "post_completion": {
+          "auprc": 0.2893,
+          "ci": [
+            0.25,
+            0.3371
+          ]
+        }
+      },
+      "n_boot": 1000,
+      "n_boot_valid": 1000,
+      "train_fraction": 0.5403,
+      "requested": true,
+      "same_split_as_paper_default": false
+    },
+    {
+      "split_quantile": 0.6,
+      "n": 9705,
+      "n_train": 7011,
+      "n_test": 2694,
+      "train_start_year_le": 2020,
+      "test_base_rate": 0.173,
+      "n_sponsors": 2457,
+      "n_test_sponsors": 1152,
+      "tiers": {
+        "h0_start": {
+          "auprc": 0.2283,
+          "auroc": 0.6364,
+          "n_lfs": 5,
+          "auprc_ci": [
+            0.1848,
+            0.2757
+          ]
+        },
+        "h1_during": {
+          "auprc": 0.6859,
+          "auroc": 0.8501,
+          "n_lfs": 13,
+          "auprc_ci": [
+            0.6122,
+            0.744
+          ]
+        },
+        "h2_post_naive": {
+          "auprc": 0.9809,
+          "auroc": 0.9965,
+          "n_lfs": 22,
+          "auprc_ci": [
+            0.9719,
+            0.9881
+          ]
+        }
+      },
+      "LAP_auprc": 0.7526,
+      "LAP_auprc_ci": [
+        0.7066,
+        0.7935
+      ],
+      "LAP_p_gt_0": 1.0,
+      "leakage_fraction_of_auprc": 0.7673,
+      "LAP_components": {
+        "during_trial": {
+          "auprc": 0.4576,
+          "ci": [
+            0.4028,
+            0.5031
+          ]
+        },
+        "post_completion": {
+          "auprc": 0.295,
+          "ci": [
+            0.2362,
+            0.368
+          ]
+        }
+      },
+      "n_boot": 1000,
+      "n_boot_valid": 1000,
+      "train_fraction": 0.7224,
+      "requested": true,
+      "same_split_as_paper_default": true
+    },
+    {
+      "split_quantile": 0.7,
+      "n": 9705,
+      "n_train": 7011,
+      "n_test": 2694,
+      "train_start_year_le": 2020,
+      "test_base_rate": 0.173,
+      "n_sponsors": 2457,
+      "n_test_sponsors": 1152,
+      "tiers": {
+        "h0_start": {
+          "auprc": 0.2283,
+          "auroc": 0.6364,
+          "n_lfs": 5,
+          "auprc_ci": [
+            0.1848,
+            0.2757
+          ]
+        },
+        "h1_during": {
+          "auprc": 0.6859,
+          "auroc": 0.8501,
+          "n_lfs": 13,
+          "auprc_ci": [
+            0.6122,
+            0.744
+          ]
+        },
+        "h2_post_naive": {
+          "auprc": 0.9809,
+          "auroc": 0.9965,
+          "n_lfs": 22,
+          "auprc_ci": [
+            0.9719,
+            0.9881
+          ]
+        }
+      },
+      "LAP_auprc": 0.7526,
+      "LAP_auprc_ci": [
+        0.7066,
+        0.7935
+      ],
+      "LAP_p_gt_0": 1.0,
+      "leakage_fraction_of_auprc": 0.7673,
+      "LAP_components": {
+        "during_trial": {
+          "auprc": 0.4576,
+          "ci": [
+            0.4028,
+            0.5031
+          ]
+        },
+        "post_completion": {
+          "auprc": 0.295,
+          "ci": [
+            0.2362,
+            0.368
+          ]
+        }
+      },
+      "n_boot": 1000,
+      "n_boot_valid": 1000,
+      "train_fraction": 0.7224,
+      "requested": true,
+      "same_split_as_paper_default": true
+    },
+    {
+      "split_quantile": 0.8,
+      "n": 9705,
+      "n_train": 8497,
+      "n_test": 1208,
+      "train_start_year_le": 2021,
+      "test_base_rate": 0.1084,
+      "n_sponsors": 2457,
+      "n_test_sponsors": 661,
+      "tiers": {
+        "h0_start": {
+          "auprc": 0.1519,
+          "auroc": 0.6409,
+          "n_lfs": 5,
+          "auprc_ci": [
+            0.1052,
+            0.2076
+          ]
+        },
+        "h1_during": {
+          "auprc": 0.631,
+          "auroc": 0.8568,
+          "n_lfs": 13,
+          "auprc_ci": [
+            0.5235,
+            0.7222
+          ]
+        },
+        "h2_post_naive": {
+          "auprc": 0.9849,
+          "auroc": 0.9984,
+          "n_lfs": 22,
+          "auprc_ci": [
+            0.969,
+            0.9951
+          ]
+        }
+      },
+      "LAP_auprc": 0.833,
+      "LAP_auprc_ci": [
+        0.7774,
+        0.8795
+      ],
+      "LAP_p_gt_0": 1.0,
+      "leakage_fraction_of_auprc": 0.8458,
+      "LAP_components": {
+        "during_trial": {
+          "auprc": 0.4791,
+          "ci": [
+            0.3845,
+            0.5592
+          ]
+        },
+        "post_completion": {
+          "auprc": 0.3539,
+          "ci": [
+            0.2649,
+            0.4629
+          ]
+        }
+      },
+      "n_boot": 1000,
+      "n_boot_valid": 1000,
+      "train_fraction": 0.8755,
+      "requested": false,
+      "same_split_as_paper_default": false
+    }
+  ],
+  "convergence_warnings": {
+    "hgb_default/cto": 0,
+    "hgb_default/trialbench": 0,
+    "hgb_default/censored_benchmark_20disease": 0,
+    "logreg_l2/cto": 0,
+    "logreg_l2/trialbench": 0,
+    "logreg_l2/censored_benchmark_20disease": 0,
+    "random_forest/cto": 0,
+    "random_forest/trialbench": 0,
+    "random_forest/censored_benchmark_20disease": 0
+  },
+  "runtime_seconds": {
+    "hgb_default/cto": 1.9,
+    "hgb_default/trialbench": 17.8,
+    "hgb_default/censored_benchmark_20disease": 4.2,
+    "logreg_l2/cto": 1.7,
+    "logreg_l2/trialbench": 18.8,
+    "logreg_l2/censored_benchmark_20disease": 2.2,
+    "random_forest/cto": 3.8,
+    "random_forest/trialbench": 23.9,
+    "random_forest/censored_benchmark_20disease": 6.1,
+    "cto_cutoff/q0.5": 7.5,
+    "cto_cutoff/q0.6": 6.3,
+    "cto_cutoff/q0.8": 5.1,
+    "total": 99.8
+  }
+}

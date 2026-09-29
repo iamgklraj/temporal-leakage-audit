@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22907786.svg)](https://doi.org/10.5281/zenodo.22907786)
 
-Code for the paper *Auditing temporal leakage in clinical trial outcome prediction*. It
+Code for the paper *Foresight or hindsight? Auditing temporal leakage in clinical trial outcome prediction*. It
 provides a **temporal leakage-response instrument** for machine-learning models
 that predict clinical-trial outcomes and drug phase advancement, audits of two public benchmarks
 (CTO and TrialBench), a study of memorization and knowledge leakage in language-model predictors, an
@@ -20,11 +20,11 @@ All intervals are 95% percentile bootstrap CIs; the clustering unit is given per
 
 | Analysis | Result | Output |
 |---|---|---|
-| **Instrument validation** (synthetic data, known leakage) | Two mechanisms (post-decision literature scores; extra post-decision papers), 100 replicates per level: without leakage the CI lies above 0 in 2–3% of replicates (nominal 2.5%); LAP rises monotonically with true leakage; detection 55% at LAP ≈ 0.06 and 96% at ≈ 0.11 under both mechanisms; CI coverage 83–95%. | `outputs/instrument_validation.json` |
-| **CTO labeling signals** (Gao et al., *Nature Health* 2026) | CTO distributes its labeling-function outputs with its labels. Used as features against curated human labels on a temporal split (*n* = 9,705; test base rate 0.17), all signals reach AUPRC 0.98 but start-time signals only 0.23 (AUROC 0.64). LAP = +0.75 [0.71, 0.79] (sponsor-clustered): ~77% depends on information unavailable at trial start (during-trial +0.46, post-completion +0.30). CTO's own baselines use design-time text features only (AUROC 0.55–0.62) and avoid this hazard; the start-time estimate corroborates them. | `outputs/cto_audit.json` |
-| **TrialBench** (Chen et al., *Sci. Data* 2025) | The provided split is not temporal (median start year 2011 in both train and test; one-sided Mann–Whitney *P* = 0.60, *n* = 25,972). A temporal split lowers AUPRC (mean −0.08) but *raises* AUROC (mean +0.03): the drop tracks a lower approval rate among recent trials (outcome immaturity), not inflated discrimination (trial-level CIs). | `outputs/trialbench_audit.json` |
-| **Language models** (4 Claude models + Llama 3.1 8B; *n* = 600 CTO trials, 108 successes; tools disabled) | Five nested prompts. Design only: AUPRC 0.20–0.29 (base rate 0.18). Registry identifier alone adds ≤ +0.03. Masked title (design semantics) adds +0.02 → +0.16 with model tier; the named intervention adds a further +0.07 to +0.13 per Claude model (pre-specified primary contrast; significant after Holm correction for 3 of 4 Claude models). Dated against ChEMBL approval histories, that gain concerns mostly drugs approved before trial start; only Opus 5 shows a residual on never-approved compounds (+0.07 [0.005, 0.14]). Llama 3.1 8B gains nothing. | `outputs/llm_memorization_study.json`, `outputs/llm_predictions.csv`, `outputs/llm_raw/` |
-| **Censored drug-program benchmark** (negative control) | Built with strict as-of-time censoring (3,990 programs, 20 diseases): LAP = +0.074 [−0.07, 0.16] (target-clustered), at the instrument's detection limit for 200 test programs. At 41 diseases (8,357 programs), the two largest rolling-origin test blocks give +0.09 and +0.08 (CIs exclude 0). | `outputs/censored_benchmark_{20,41}disease.json` |
+| **Instrument validation** (synthetic data, known leakage) | Default setting (≈245 test programs, prevalence ≈0.5; 500 replicates): without leakage the CI lies above 0 in 3.4% and below 0 in 2.6% of replicates; detection 96% at LAP ≈ 0.11; coverage 89–94% (a variance-inflated interval restores 94–99%). Setting matched to the 20-disease benchmark (≈205 programs, prevalence 0.15; 3,000 null replicates): 2.8% / 3.2%; coverage 92–95%; 50% detection needs LAP ≈ 0.13. | `outputs/instrument_validation*.json` |
+| **CTO labeling signals** — positive control (Gao et al., *Nature Health* 2026) | CTO's curated labels are largely defined by the same status and *P*-value rule as its labeling functions (76% of trials). The 22 columns hold 17 distinct signals, tiered by when they become public. All signals reach AUPRC 0.98; LAP = +0.75 [0.71, 0.79] (sponsor-clustered), almost all from registry fields available at completion (+0.74). Start-time signals are uninformative once withdrawn trials are excluded (AUROC 0.51). | `outputs/cto_audit_v2.json` |
+| **TrialBench** (Chen et al., *Sci. Data* 2025) | Features include **actual enrollment** (updated at trial completion) and final-record city covariates: on the temporal test set they add +0.21, +0.16, +0.12 AUPRC (Phases I–III; paired CIs exclude 0). The provided split is not temporal, but holding the test set fixed it adds only 0.005–0.017 AUROC; gaps between splits reflect prevalence and immature labels. | `outputs/trialbench_audit_v2.json`, `outputs/trialbench_lap_poststart.json` |
+| **Language models** (4 Claude models + Llama 3.1 8B; *n* = 600 CTO trials, 108 successes; tools disabled) | Five nested prompts (the design condition includes an actual-enrollment bin). Identifier alone adds ≤ +0.03. Masked title adds +0.02 → +0.16 with model tier; the named intervention adds +0.07 to +0.13 per Claude model (Holm-significant for 3 of 4 with trial-level and 2 of 4 with batch-level bootstrap), robust to excluding COVID-19, imperfectly masked and withdrawn trials. The gain appears for drugs approved before trial start and, for both Opus models, for never-approved development-code compounds (+0.08). All trials completed before every documented training cutoff. Llama 3.1 8B gains nothing. | `outputs/llm_memorization_study.json`, `outputs/llm_validity_checks.json`, `outputs/llm_raw/` |
+| **Censored drug-program benchmark** — negative control | Strict as-of-time censoring (3,990 programs, 20 diseases): LAP = +0.074 [−0.07, 0.16] (target-clustered); post-decision evidence adds at most ≈0.16 AUPRC. Learner-dependent (logistic regression +0.11, random forest −0.04) and stable to label maturity; at 41 diseases only the two largest rolling-origin blocks exclude 0. | `outputs/censored_benchmark_{20,41}disease.json`, `outputs/sensitivity_reviewer.json`, `outputs/robustness.json` |
 | **Dating-rule sensitivity** | Same 20-disease programs re-dated by Open Targets publication year instead of earliest PubMed year: LAP +0.074 → +0.050 (both CIs span 0). | `outputs/dating_rule_sensitivity.json` |
 | **Causal layer** (genetic support → advancement) | Naive difference +0.14; the ATE is not identified (positivity violation; AIPW ATE −0.005 [−0.21, 0.15]). Overlap-weighted ATO = +0.12 [0.01, 0.23] (target-clustered), max \|SMD\| 0.53 → 0.01, outcome-permutation *P* = 0.014, E-value 1.9 (CI limit 1.2). At 41 diseases: ATO = +0.10 [0.02, 0.18]. | `outputs/censored_benchmark_20disease.json` |
 
@@ -96,7 +96,14 @@ from those files. Run times were measured on the test machine above.
 | Build the drug-program benchmarks | `python -m temporal_leakage_audit.data.connectors config/benchmark_20disease.yaml` (likewise `benchmark_41disease.yaml`) | hours (API-bound; cached in `data/api_cache/`) |
 | Censored benchmark, Extended Data Fig. 1 | `python scripts/audit_censored_benchmark.py --config config/benchmark_20disease.yaml --out outputs/censored_benchmark_20disease.json` (likewise 41) | ~10–30 s each |
 | Dating-rule sensitivity | `python scripts/dating_rule_sensitivity.py --build data/benchmark_20disease data/benchmark_20disease_otyear` then `--compare data/benchmark_20disease data/benchmark_20disease_otyear` | ~30 s (compare) |
-| All figures | `python scripts/make_figures.py --out figures` | ~5 s |
+| Revised CTO audit (availability tiers, exclusions) | `python scripts/audit_cto_v2.py` | ~4 min |
+| Revised TrialBench audit (post-start features, joint and fixed-test comparisons) | `python scripts/audit_trialbench_v2.py` then `python scripts/audit_trialbench_v2_lap.py` (fetches enrollment type and site data from ClinicalTrials.gov on first run, cached in `data/trialbench/`) | ~11 min + 3 min |
+| Learner and split-point sensitivity | `python scripts/robustness.py --out outputs/robustness.json` | ~2 min |
+| Reviewer checks (rolling origin, label maturity, fixed-test split, batch bootstrap) | `python scripts/sensitivity_reviewer.py` | ~2 min |
+| Language-model validity checks (masking audit, exclusions, curated approval strata; no model queries) | `python scripts/llm_validity_checks.py` | ~2 min |
+| Interval comparison (fixed-model vs variance-inflated) | `python scripts/validate_refit_bootstrap.py` | ~45 min (6 workers) |
+| Validation matched to the 20-disease benchmark | `python scripts/validate_matched.py` | ~35 min (4 workers) |
+| All figures | `python scripts/make_figures.py --out figures` and `python scripts/make_figures_v2.py --out figures` | ~10 s |
 
 **Data provenance.** Open Targets Platform release 26.06 (the connector warns if the live
 release differs), ClinicalTrials.gov API v2, NCBI PubMed E-utilities; CTO from Hugging Face
@@ -138,9 +145,9 @@ print(curve["total_LAP_auprc"], curve["total_LAP_auprc_ci"])
 ## Citation
 
 Archived on Zenodo: [10.5281/zenodo.22907786](https://doi.org/10.5281/zenodo.22907786) (all
-versions); v1.2.0, which produced the paper's results, is
-[10.5281/zenodo.22923231](https://doi.org/10.5281/zenodo.22923231). See `CITATION.cff` (GitHub
-renders it as a "Cite this repository" button).
+versions; resolves to the latest). v1.3.0 adds the revised analyses reported in the JAMIA
+submission; v1.2.0 ([10.5281/zenodo.22923231](https://doi.org/10.5281/zenodo.22923231)) produced the
+earlier version. See `CITATION.cff` (GitHub renders it as a "Cite this repository" button).
 
 ## License
 
