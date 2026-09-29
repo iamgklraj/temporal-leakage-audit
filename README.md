@@ -25,6 +25,9 @@ All intervals are 95% percentile bootstrap CIs; the clustering unit is given per
 | **TrialBench** (Chen et al., *Sci. Data* 2025) | Features include **actual enrollment** (updated at trial completion) and final-record city covariates: on the temporal test set they add +0.21, +0.16, +0.12 AUPRC (Phases I–III; paired CIs exclude 0). The provided split is not temporal, but holding the test set fixed it adds only 0.005–0.017 AUROC; gaps between splits reflect prevalence and immature labels. | `outputs/trialbench_audit_v2.json`, `outputs/trialbench_lap_poststart.json` |
 | **Language models** (4 Claude models + Llama 3.1 8B; *n* = 600 CTO trials, 108 successes; tools disabled) | Five nested prompts (the design condition includes an actual-enrollment bin). Identifier alone adds ≤ +0.03. Masked title adds +0.02 → +0.16 with model tier; the named intervention adds +0.07 to +0.13 per Claude model (Holm-significant for 3 of 4 with trial-level and 2 of 4 with batch-level bootstrap), robust to excluding COVID-19, imperfectly masked and withdrawn trials. The gain appears for drugs approved before trial start and, for both Opus models, for never-approved development-code compounds (+0.08). All trials completed before every documented training cutoff. Llama 3.1 8B gains nothing. | `outputs/llm_memorization_study.json`, `outputs/llm_validity_checks.json`, `outputs/llm_raw/` |
 | **Censored drug-program benchmark** — negative control | Strict as-of-time censoring (3,990 programs, 20 diseases): LAP = +0.074 [−0.07, 0.16] (target-clustered); post-decision evidence adds at most ≈0.16 AUPRC. Learner-dependent (logistic regression +0.11, random forest −0.04) and stable to label maturity; at 41 diseases only the two largest rolling-origin blocks exclude 0. | `outputs/censored_benchmark_{20,41}disease.json`, `outputs/sensitivity_reviewer.json`, `outputs/robustness.json` |
+| **ICU records** — patient-level demonstration (PhysioNet/CinC Challenge 2012, 12,000 stays) | For a mortality model meant for use 24 h after ICU admission, admitting hours 24–48 raises test AUPRC from 0.487 to 0.594: LAP = +0.107 [0.079, 0.135] (patient-level), mostly from later measured values (+0.093; Glasgow Coma Scale +0.049) rather than measurement counts (+0.015). Decision at 12 h: LAP = +0.148 [0.114, 0.181]. | `outputs/physionet2012_audit.json` |
+| **TOP** (HINT; Fu et al., *Patterns* 2022) | The provided split is temporal by start date (every test trial starts after the last training trial; dates for 99.8% of 12,477 trials), but the files distribute final status and reasons for stopping with the labels. | `outputs/top_audit.json` |
+| **Decision-level impact** | Precision among the top-ranked 10%: TrialBench +7 to +21 percentage points with actual enrollment (Phase I 0.67 vs 0.46); ICU mortality 0.61 vs 0.55 with 48 vs 24 hours of data. | `outputs/decision_impact.json` |
 | **Dating-rule sensitivity** | Same 20-disease programs re-dated by Open Targets publication year instead of earliest PubMed year: LAP +0.074 → +0.050 (both CIs span 0). | `outputs/dating_rule_sensitivity.json` |
 | **Causal layer** (genetic support → advancement) | Naive difference +0.14; the ATE is not identified (positivity violation; AIPW ATE −0.005 [−0.21, 0.15]). Overlap-weighted ATO = +0.12 [0.01, 0.23] (target-clustered), max \|SMD\| 0.53 → 0.01, outcome-permutation *P* = 0.014, E-value 1.9 (CI limit 1.2). At 41 diseases: ATO = +0.10 [0.02, 0.18]. | `outputs/censored_benchmark_20disease.json` |
 
@@ -103,10 +106,14 @@ from those files. Run times were measured on the test machine above.
 | Language-model validity checks (masking audit, exclusions, curated approval strata; no model queries) | `python scripts/llm_validity_checks.py` | ~2 min |
 | Interval comparison (fixed-model vs variance-inflated) | `python scripts/validate_refit_bootstrap.py` | ~45 min (6 workers) |
 | Validation matched to the 20-disease benchmark | `python scripts/validate_matched.py` | ~35 min (4 workers) |
+| Patient-level demonstration (ICU records) | `python scripts/audit_physionet2012.py` (downloads the open PhysioNet 2012 challenge files on first run) | ~4 min |
+| TOP chronology | `python scripts/audit_top.py` (fetches dates from ClinicalTrials.gov on first run, cached in `data/top/`) | ~2 min |
+| Decision-level impact | `python scripts/decision_impact.py` | ~5 min |
 | All figures | `python scripts/make_figures.py --out figures` and `python scripts/make_figures_v2.py --out figures` | ~10 s |
 
 **Data provenance.** Open Targets Platform release 26.06 (the connector warns if the live
-release differs), ClinicalTrials.gov API v2, NCBI PubMed E-utilities; CTO from Hugging Face
+release differs), ClinicalTrials.gov API v2, NCBI PubMed E-utilities, the PhysioNet/Computing in
+Cardiology Challenge 2012 (Open Data Commons Attribution License v1.0); CTO from Hugging Face
 (`chufangao/CTO`); TrialBench features from Zenodo (doi:10.5281/zenodo.14975339) and labels from
 `ML2Health/ML2ClinicalTrials` at commit `0694eba`. Because the live APIs change, the processed
 tables used for the paper are deposited on Zenodo

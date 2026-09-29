@@ -1,0 +1,1278 @@
+{
+  "dataset": "PhysioNet/CinC Challenge 2012 (physionet.org/content/challenge-2012/1.0.0; ODC-By 1.0)",
+  "script": "scripts/audit_physionet2012.py",
+  "outcome": "in-hospital death",
+  "split": "train = sets A and B; test = set C",
+  "n_train": 8000,
+  "n_test": 4000,
+  "n_train_deaths": 1122,
+  "n_test_deaths": 585,
+  "n_variables": 37,
+  "variables": [
+    "ALP",
+    "ALT",
+    "AST",
+    "Albumin",
+    "BUN",
+    "Bilirubin",
+    "Cholesterol",
+    "Creatinine",
+    "DiasABP",
+    "FiO2",
+    "GCS",
+    "Glucose",
+    "HCO3",
+    "HCT",
+    "HR",
+    "K",
+    "Lactate",
+    "MAP",
+    "MechVent",
+    "Mg",
+    "NIDiasABP",
+    "NIMAP",
+    "NISysABP",
+    "Na",
+    "PaCO2",
+    "PaO2",
+    "Platelets",
+    "RespRate",
+    "SaO2",
+    "SysABP",
+    "Temp",
+    "TroponinI",
+    "TroponinT",
+    "Urine",
+    "WBC",
+    "Weight",
+    "pH"
+  ],
+  "features": "per variable: last, min, max, mean, count of measurements recorded by the cutoff; admission age, gender, height, ICU type and weight",
+  "learner": "models.fit_gbdt (HistGradientBoosting, max_depth 3, lr 0.06, 300 iter, l2 1.0, seed 0)",
+  "bootstrap": "patient-level paired percentile bootstrap, 1000 resamples, seed 0",
+  "t24": {
+    "decision_time_hours": 24,
+    "horizons_hours": [
+      0,
+      6,
+      12,
+      18,
+      24
+    ],
+    "test_base_rate": 0.1462,
+    "curve": [
+      {
+        "h_hours": 0,
+        "data_up_to_hours": 24,
+        "auprc": 0.4872,
+        "auprc_ci": [
+          0.447,
+          0.5338
+        ],
+        "auroc": 0.843,
+        "auroc_ci": [
+          0.8261,
+          0.8585
+        ],
+        "lift": 0.3409
+      },
+      {
+        "h_hours": 6,
+        "data_up_to_hours": 30,
+        "auprc": 0.5479,
+        "auprc_ci": [
+          0.5071,
+          0.5922
+        ],
+        "auroc": 0.8607,
+        "auroc_ci": [
+          0.8445,
+          0.8755
+        ],
+        "lift": 0.4016
+      },
+      {
+        "h_hours": 12,
+        "data_up_to_hours": 36,
+        "auprc": 0.5563,
+        "auprc_ci": [
+          0.5153,
+          0.5994
+        ],
+        "auroc": 0.8677,
+        "auroc_ci": [
+          0.8525,
+          0.8823
+        ],
+        "lift": 0.4101
+      },
+      {
+        "h_hours": 18,
+        "data_up_to_hours": 42,
+        "auprc": 0.5657,
+        "auprc_ci": [
+          0.5253,
+          0.6073
+        ],
+        "auroc": 0.871,
+        "auroc_ci": [
+          0.8565,
+          0.8848
+        ],
+        "lift": 0.4195
+      },
+      {
+        "h_hours": 24,
+        "data_up_to_hours": 48,
+        "auprc": 0.594,
+        "auprc_ci": [
+          0.5539,
+          0.6334
+        ],
+        "auroc": 0.8792,
+        "auroc_ci": [
+          0.866,
+          0.892
+        ],
+        "lift": 0.4477
+      }
+    ],
+    "LAP": {
+      "auprc": 0.1068,
+      "auprc_ci": [
+        0.0787,
+        0.1349
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0363,
+      "auroc_ci": [
+        0.0265,
+        0.0464
+      ]
+    },
+    "per_source_placebo": {
+      "measurement_counts": {
+        "auprc": 0.0153,
+        "auprc_ci": [
+          0.0053,
+          0.025
+        ],
+        "auprc_p_gt_0": 0.999,
+        "auroc": 0.006,
+        "auroc_ci": [
+          0.002,
+          0.01
+        ]
+      },
+      "measured_values": {
+        "auprc": 0.0926,
+        "auprc_ci": [
+          0.0642,
+          0.1204
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.033,
+        "auroc_ci": [
+          0.0238,
+          0.043
+        ]
+      }
+    },
+    "per_variable_placebo_exploratory": {
+      "GCS": {
+        "auprc": 0.0485,
+        "auprc_ci": [
+          0.0294,
+          0.0672
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.021,
+        "auroc_ci": [
+          0.0143,
+          0.0284
+        ]
+      },
+      "Urine": {
+        "auprc": 0.0254,
+        "auprc_ci": [
+          0.012,
+          0.0375
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0055,
+        "auroc_ci": [
+          0.0004,
+          0.0104
+        ]
+      },
+      "Lactate": {
+        "auprc": 0.02,
+        "auprc_ci": [
+          0.0066,
+          0.033
+        ],
+        "auprc_p_gt_0": 0.998,
+        "auroc": 0.0049,
+        "auroc_ci": [
+          0.0006,
+          0.0094
+        ]
+      },
+      "HR": {
+        "auprc": 0.0154,
+        "auprc_ci": [
+          0.0036,
+          0.027
+        ],
+        "auprc_p_gt_0": 0.995,
+        "auroc": 0.0061,
+        "auroc_ci": [
+          0.0022,
+          0.01
+        ]
+      },
+      "BUN": {
+        "auprc": 0.0139,
+        "auprc_ci": [
+          0.0032,
+          0.0242
+        ],
+        "auprc_p_gt_0": 0.994,
+        "auroc": 0.0043,
+        "auroc_ci": [
+          0.0005,
+          0.0082
+        ]
+      },
+      "pH": {
+        "auprc": 0.0125,
+        "auprc_ci": [
+          -0.0006,
+          0.0252
+        ],
+        "auprc_p_gt_0": 0.968,
+        "auroc": 0.0014,
+        "auroc_ci": [
+          -0.0021,
+          0.0051
+        ]
+      },
+      "PaO2": {
+        "auprc": 0.0109,
+        "auprc_ci": [
+          0.0014,
+          0.0196
+        ],
+        "auprc_p_gt_0": 0.988,
+        "auroc": 0.0024,
+        "auroc_ci": [
+          -0.0006,
+          0.0052
+        ]
+      },
+      "SysABP": {
+        "auprc": 0.0104,
+        "auprc_ci": [
+          -0.0005,
+          0.0204
+        ],
+        "auprc_p_gt_0": 0.97,
+        "auroc": 0.0009,
+        "auroc_ci": [
+          -0.0023,
+          0.004
+        ]
+      },
+      "K": {
+        "auprc": 0.0072,
+        "auprc_ci": [
+          -0.0014,
+          0.0163
+        ],
+        "auprc_p_gt_0": 0.942,
+        "auroc": 0.0008,
+        "auroc_ci": [
+          -0.0017,
+          0.0035
+        ]
+      },
+      "Bilirubin": {
+        "auprc": 0.007,
+        "auprc_ci": [
+          -0.0032,
+          0.0159
+        ],
+        "auprc_p_gt_0": 0.907,
+        "auroc": 0.0013,
+        "auroc_ci": [
+          -0.0018,
+          0.0043
+        ]
+      },
+      "FiO2": {
+        "auprc": 0.0067,
+        "auprc_ci": [
+          -0.0046,
+          0.0168
+        ],
+        "auprc_p_gt_0": 0.903,
+        "auroc": 0.0012,
+        "auroc_ci": [
+          -0.0021,
+          0.0044
+        ]
+      },
+      "Na": {
+        "auprc": 0.0046,
+        "auprc_ci": [
+          -0.0051,
+          0.0128
+        ],
+        "auprc_p_gt_0": 0.833,
+        "auroc": 0.0003,
+        "auroc_ci": [
+          -0.0026,
+          0.0029
+        ]
+      },
+      "Albumin": {
+        "auprc": 0.0039,
+        "auprc_ci": [
+          -0.0047,
+          0.0117
+        ],
+        "auprc_p_gt_0": 0.813,
+        "auroc": -0.0008,
+        "auroc_ci": [
+          -0.0036,
+          0.0018
+        ]
+      },
+      "MAP": {
+        "auprc": 0.0036,
+        "auprc_ci": [
+          -0.0055,
+          0.0136
+        ],
+        "auprc_p_gt_0": 0.781,
+        "auroc": -0.001,
+        "auroc_ci": [
+          -0.004,
+          0.0022
+        ]
+      },
+      "Cholesterol": {
+        "auprc": 0.0034,
+        "auprc_ci": [
+          -0.0015,
+          0.0079
+        ],
+        "auprc_p_gt_0": 0.909,
+        "auroc": -0.0006,
+        "auroc_ci": [
+          -0.0023,
+          0.0011
+        ]
+      },
+      "NIMAP": {
+        "auprc": 0.0032,
+        "auprc_ci": [
+          -0.0059,
+          0.0123
+        ],
+        "auprc_p_gt_0": 0.754,
+        "auroc": 0.0002,
+        "auroc_ci": [
+          -0.0028,
+          0.0031
+        ]
+      },
+      "SaO2": {
+        "auprc": 0.0032,
+        "auprc_ci": [
+          -0.0051,
+          0.0116
+        ],
+        "auprc_p_gt_0": 0.748,
+        "auroc": -0.0011,
+        "auroc_ci": [
+          -0.0037,
+          0.0014
+        ]
+      },
+      "WBC": {
+        "auprc": 0.003,
+        "auprc_ci": [
+          -0.0049,
+          0.0113
+        ],
+        "auprc_p_gt_0": 0.765,
+        "auroc": -0.0001,
+        "auroc_ci": [
+          -0.0031,
+          0.0026
+        ]
+      },
+      "Glucose": {
+        "auprc": 0.0026,
+        "auprc_ci": [
+          -0.0087,
+          0.0129
+        ],
+        "auprc_p_gt_0": 0.685,
+        "auroc": 0.0012,
+        "auroc_ci": [
+          -0.0025,
+          0.0048
+        ]
+      },
+      "PaCO2": {
+        "auprc": 0.0018,
+        "auprc_ci": [
+          -0.008,
+          0.0112
+        ],
+        "auprc_p_gt_0": 0.653,
+        "auroc": 0.0021,
+        "auroc_ci": [
+          -0.0009,
+          0.005
+        ]
+      },
+      "Weight": {
+        "auprc": 0.0016,
+        "auprc_ci": [
+          -0.0056,
+          0.0085
+        ],
+        "auprc_p_gt_0": 0.656,
+        "auroc": -0.0006,
+        "auroc_ci": [
+          -0.0031,
+          0.0017
+        ]
+      },
+      "NISysABP": {
+        "auprc": 0.0012,
+        "auprc_ci": [
+          -0.0072,
+          0.0097
+        ],
+        "auprc_p_gt_0": 0.593,
+        "auroc": -0.002,
+        "auroc_ci": [
+          -0.0052,
+          0.0012
+        ]
+      },
+      "TroponinI": {
+        "auprc": 0.0007,
+        "auprc_ci": [
+          -0.0059,
+          0.0065
+        ],
+        "auprc_p_gt_0": 0.566,
+        "auroc": -0.0005,
+        "auroc_ci": [
+          -0.0027,
+          0.0014
+        ]
+      },
+      "TroponinT": {
+        "auprc": 0.0007,
+        "auprc_ci": [
+          -0.0071,
+          0.0079
+        ],
+        "auprc_p_gt_0": 0.544,
+        "auroc": 0.0004,
+        "auroc_ci": [
+          -0.002,
+          0.0028
+        ]
+      },
+      "HCT": {
+        "auprc": 0.0004,
+        "auprc_ci": [
+          -0.0074,
+          0.0079
+        ],
+        "auprc_p_gt_0": 0.547,
+        "auroc": -0.0009,
+        "auroc_ci": [
+          -0.0032,
+          0.0014
+        ]
+      },
+      "DiasABP": {
+        "auprc": -0.0003,
+        "auprc_ci": [
+          -0.0099,
+          0.0085
+        ],
+        "auprc_p_gt_0": 0.456,
+        "auroc": -0.0001,
+        "auroc_ci": [
+          -0.0028,
+          0.003
+        ]
+      },
+      "AST": {
+        "auprc": -0.0004,
+        "auprc_ci": [
+          -0.0086,
+          0.0071
+        ],
+        "auprc_p_gt_0": 0.411,
+        "auroc": -0.0014,
+        "auroc_ci": [
+          -0.0044,
+          0.0015
+        ]
+      },
+      "Temp": {
+        "auprc": -0.0014,
+        "auprc_ci": [
+          -0.0134,
+          0.0095
+        ],
+        "auprc_p_gt_0": 0.377,
+        "auroc": 0.0009,
+        "auroc_ci": [
+          -0.0031,
+          0.0048
+        ]
+      },
+      "MechVent": {
+        "auprc": -0.0017,
+        "auprc_ci": [
+          -0.009,
+          0.0049
+        ],
+        "auprc_p_gt_0": 0.285,
+        "auroc": 0.001,
+        "auroc_ci": [
+          -0.001,
+          0.0032
+        ]
+      },
+      "Platelets": {
+        "auprc": -0.0017,
+        "auprc_ci": [
+          -0.0104,
+          0.0069
+        ],
+        "auprc_p_gt_0": 0.344,
+        "auroc": 0.0006,
+        "auroc_ci": [
+          -0.0024,
+          0.0032
+        ]
+      },
+      "NIDiasABP": {
+        "auprc": -0.0021,
+        "auprc_ci": [
+          -0.0102,
+          0.0064
+        ],
+        "auprc_p_gt_0": 0.294,
+        "auroc": -0.0011,
+        "auroc_ci": [
+          -0.0037,
+          0.0018
+        ]
+      },
+      "ALP": {
+        "auprc": -0.0024,
+        "auprc_ci": [
+          -0.0114,
+          0.0051
+        ],
+        "auprc_p_gt_0": 0.267,
+        "auroc": -0.0017,
+        "auroc_ci": [
+          -0.0048,
+          0.0012
+        ]
+      },
+      "RespRate": {
+        "auprc": -0.0024,
+        "auprc_ci": [
+          -0.0116,
+          0.0062
+        ],
+        "auprc_p_gt_0": 0.279,
+        "auroc": 0.0002,
+        "auroc_ci": [
+          -0.0027,
+          0.0033
+        ]
+      },
+      "ALT": {
+        "auprc": -0.0029,
+        "auprc_ci": [
+          -0.0107,
+          0.0041
+        ],
+        "auprc_p_gt_0": 0.205,
+        "auroc": -0.0002,
+        "auroc_ci": [
+          -0.0029,
+          0.0024
+        ]
+      },
+      "Creatinine": {
+        "auprc": -0.0033,
+        "auprc_ci": [
+          -0.0105,
+          0.0041
+        ],
+        "auprc_p_gt_0": 0.201,
+        "auroc": 0.0005,
+        "auroc_ci": [
+          -0.0021,
+          0.0035
+        ]
+      },
+      "Mg": {
+        "auprc": -0.0043,
+        "auprc_ci": [
+          -0.0121,
+          0.0027
+        ],
+        "auprc_p_gt_0": 0.141,
+        "auroc": 0.002,
+        "auroc_ci": [
+          -0.0008,
+          0.005
+        ]
+      },
+      "HCO3": {
+        "auprc": -0.0047,
+        "auprc_ci": [
+          -0.0151,
+          0.0056
+        ],
+        "auprc_p_gt_0": 0.197,
+        "auroc": -0.0002,
+        "auroc_ci": [
+          -0.0035,
+          0.0032
+        ]
+      }
+    }
+  },
+  "t12": {
+    "decision_time_hours": 12,
+    "horizons_hours": [
+      0,
+      6,
+      12,
+      24,
+      36
+    ],
+    "test_base_rate": 0.1462,
+    "curve": [
+      {
+        "h_hours": 0,
+        "data_up_to_hours": 12,
+        "auprc": 0.4459,
+        "auprc_ci": [
+          0.4071,
+          0.4901
+        ],
+        "auroc": 0.825,
+        "auroc_ci": [
+          0.8082,
+          0.8404
+        ],
+        "lift": 0.2997
+      },
+      {
+        "h_hours": 6,
+        "data_up_to_hours": 18,
+        "auprc": 0.4605,
+        "auprc_ci": [
+          0.4203,
+          0.5035
+        ],
+        "auroc": 0.832,
+        "auroc_ci": [
+          0.8149,
+          0.8479
+        ],
+        "lift": 0.3142
+      },
+      {
+        "h_hours": 12,
+        "data_up_to_hours": 24,
+        "auprc": 0.4872,
+        "auprc_ci": [
+          0.447,
+          0.5338
+        ],
+        "auroc": 0.843,
+        "auroc_ci": [
+          0.8261,
+          0.8585
+        ],
+        "lift": 0.3409
+      },
+      {
+        "h_hours": 24,
+        "data_up_to_hours": 36,
+        "auprc": 0.5563,
+        "auprc_ci": [
+          0.5153,
+          0.5994
+        ],
+        "auroc": 0.8677,
+        "auroc_ci": [
+          0.8525,
+          0.8823
+        ],
+        "lift": 0.4101
+      },
+      {
+        "h_hours": 36,
+        "data_up_to_hours": 48,
+        "auprc": 0.594,
+        "auprc_ci": [
+          0.5539,
+          0.6334
+        ],
+        "auroc": 0.8792,
+        "auroc_ci": [
+          0.866,
+          0.892
+        ],
+        "lift": 0.4477
+      }
+    ],
+    "LAP": {
+      "auprc": 0.1481,
+      "auprc_ci": [
+        0.1142,
+        0.1809
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.0543,
+      "auroc_ci": [
+        0.0409,
+        0.068
+      ]
+    },
+    "per_source_placebo": {
+      "measurement_counts": {
+        "auprc": 0.0136,
+        "auprc_ci": [
+          -0.0024,
+          0.0296
+        ],
+        "auprc_p_gt_0": 0.957,
+        "auroc": 0.0135,
+        "auroc_ci": [
+          0.0071,
+          0.0202
+        ]
+      },
+      "measured_values": {
+        "auprc": 0.1337,
+        "auprc_ci": [
+          0.101,
+          0.1665
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0487,
+        "auroc_ci": [
+          0.0363,
+          0.0626
+        ]
+      }
+    },
+    "per_variable_placebo_exploratory": {
+      "GCS": {
+        "auprc": 0.077,
+        "auprc_ci": [
+          0.0509,
+          0.1037
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0276,
+        "auroc_ci": [
+          0.018,
+          0.0373
+        ]
+      },
+      "Lactate": {
+        "auprc": 0.028,
+        "auprc_ci": [
+          0.0081,
+          0.0476
+        ],
+        "auprc_p_gt_0": 0.998,
+        "auroc": 0.0108,
+        "auroc_ci": [
+          0.005,
+          0.0171
+        ]
+      },
+      "Urine": {
+        "auprc": 0.0195,
+        "auprc_ci": [
+          0.0029,
+          0.0363
+        ],
+        "auprc_p_gt_0": 0.988,
+        "auroc": 0.0079,
+        "auroc_ci": [
+          0.0009,
+          0.0151
+        ]
+      },
+      "FiO2": {
+        "auprc": 0.0127,
+        "auprc_ci": [
+          -0.002,
+          0.029
+        ],
+        "auprc_p_gt_0": 0.95,
+        "auroc": 0.0042,
+        "auroc_ci": [
+          -0.0008,
+          0.0092
+        ]
+      },
+      "pH": {
+        "auprc": 0.0126,
+        "auprc_ci": [
+          -0.0028,
+          0.0294
+        ],
+        "auprc_p_gt_0": 0.935,
+        "auroc": 0.0009,
+        "auroc_ci": [
+          -0.0042,
+          0.0061
+        ]
+      },
+      "ALP": {
+        "auprc": 0.0098,
+        "auprc_ci": [
+          -0.0011,
+          0.021
+        ],
+        "auprc_p_gt_0": 0.963,
+        "auroc": 0.0035,
+        "auroc_ci": [
+          -0.0002,
+          0.0077
+        ]
+      },
+      "BUN": {
+        "auprc": 0.0093,
+        "auprc_ci": [
+          -0.0032,
+          0.0243
+        ],
+        "auprc_p_gt_0": 0.913,
+        "auroc": 0.0033,
+        "auroc_ci": [
+          -0.0022,
+          0.009
+        ]
+      },
+      "Bilirubin": {
+        "auprc": 0.0089,
+        "auprc_ci": [
+          -0.0037,
+          0.0218
+        ],
+        "auprc_p_gt_0": 0.898,
+        "auroc": 0.0024,
+        "auroc_ci": [
+          -0.002,
+          0.0072
+        ]
+      },
+      "SaO2": {
+        "auprc": 0.0076,
+        "auprc_ci": [
+          -0.0036,
+          0.0178
+        ],
+        "auprc_p_gt_0": 0.904,
+        "auroc": 0.0018,
+        "auroc_ci": [
+          -0.0014,
+          0.0052
+        ]
+      },
+      "WBC": {
+        "auprc": 0.007,
+        "auprc_ci": [
+          -0.0045,
+          0.0175
+        ],
+        "auprc_p_gt_0": 0.891,
+        "auroc": 0.0041,
+        "auroc_ci": [
+          -0.0002,
+          0.008
+        ]
+      },
+      "PaO2": {
+        "auprc": 0.0069,
+        "auprc_ci": [
+          -0.0062,
+          0.0207
+        ],
+        "auprc_p_gt_0": 0.865,
+        "auroc": 0.0024,
+        "auroc_ci": [
+          -0.0018,
+          0.0068
+        ]
+      },
+      "K": {
+        "auprc": 0.0055,
+        "auprc_ci": [
+          -0.0048,
+          0.0163
+        ],
+        "auprc_p_gt_0": 0.849,
+        "auroc": 0.0017,
+        "auroc_ci": [
+          -0.0021,
+          0.0056
+        ]
+      },
+      "HR": {
+        "auprc": 0.0052,
+        "auprc_ci": [
+          -0.0098,
+          0.0204
+        ],
+        "auprc_p_gt_0": 0.776,
+        "auroc": 0.0041,
+        "auroc_ci": [
+          -0.001,
+          0.0097
+        ]
+      },
+      "SysABP": {
+        "auprc": 0.005,
+        "auprc_ci": [
+          -0.0081,
+          0.0188
+        ],
+        "auprc_p_gt_0": 0.773,
+        "auroc": -0.0006,
+        "auroc_ci": [
+          -0.005,
+          0.0042
+        ]
+      },
+      "HCO3": {
+        "auprc": 0.0044,
+        "auprc_ci": [
+          -0.0108,
+          0.0193
+        ],
+        "auprc_p_gt_0": 0.727,
+        "auroc": 0.0035,
+        "auroc_ci": [
+          -0.0023,
+          0.0092
+        ]
+      },
+      "NIMAP": {
+        "auprc": 0.0042,
+        "auprc_ci": [
+          -0.0073,
+          0.0151
+        ],
+        "auprc_p_gt_0": 0.753,
+        "auroc": -0.0016,
+        "auroc_ci": [
+          -0.0056,
+          0.0029
+        ]
+      },
+      "MAP": {
+        "auprc": 0.0039,
+        "auprc_ci": [
+          -0.008,
+          0.0164
+        ],
+        "auprc_p_gt_0": 0.759,
+        "auroc": -0.0001,
+        "auroc_ci": [
+          -0.0041,
+          0.0042
+        ]
+      },
+      "NISysABP": {
+        "auprc": 0.0028,
+        "auprc_ci": [
+          -0.0093,
+          0.013
+        ],
+        "auprc_p_gt_0": 0.694,
+        "auroc": 0.0002,
+        "auroc_ci": [
+          -0.0039,
+          0.0043
+        ]
+      },
+      "Na": {
+        "auprc": 0.0024,
+        "auprc_ci": [
+          -0.009,
+          0.0138
+        ],
+        "auprc_p_gt_0": 0.671,
+        "auroc": 0.0006,
+        "auroc_ci": [
+          -0.0029,
+          0.0046
+        ]
+      },
+      "Glucose": {
+        "auprc": 0.0021,
+        "auprc_ci": [
+          -0.0112,
+          0.0162
+        ],
+        "auprc_p_gt_0": 0.626,
+        "auroc": 0.0023,
+        "auroc_ci": [
+          -0.0028,
+          0.0078
+        ]
+      },
+      "AST": {
+        "auprc": 0.0003,
+        "auprc_ci": [
+          -0.0108,
+          0.0123
+        ],
+        "auprc_p_gt_0": 0.5,
+        "auroc": 0.0008,
+        "auroc_ci": [
+          -0.0036,
+          0.0055
+        ]
+      },
+      "Albumin": {
+        "auprc": -0.0004,
+        "auprc_ci": [
+          -0.0097,
+          0.0092
+        ],
+        "auprc_p_gt_0": 0.471,
+        "auroc": 0.001,
+        "auroc_ci": [
+          -0.0024,
+          0.0048
+        ]
+      },
+      "TroponinT": {
+        "auprc": -0.0005,
+        "auprc_ci": [
+          -0.0074,
+          0.0074
+        ],
+        "auprc_p_gt_0": 0.481,
+        "auroc": 0.0002,
+        "auroc_ci": [
+          -0.0025,
+          0.0029
+        ]
+      },
+      "HCT": {
+        "auprc": -0.0006,
+        "auprc_ci": [
+          -0.0093,
+          0.0079
+        ],
+        "auprc_p_gt_0": 0.45,
+        "auroc": 0.0019,
+        "auroc_ci": [
+          -0.0014,
+          0.0055
+        ]
+      },
+      "ALT": {
+        "auprc": -0.0007,
+        "auprc_ci": [
+          -0.0104,
+          0.0089
+        ],
+        "auprc_p_gt_0": 0.405,
+        "auroc": 0.0014,
+        "auroc_ci": [
+          -0.002,
+          0.0052
+        ]
+      },
+      "MechVent": {
+        "auprc": -0.0009,
+        "auprc_ci": [
+          -0.0111,
+          0.0086
+        ],
+        "auprc_p_gt_0": 0.423,
+        "auroc": 0.0033,
+        "auroc_ci": [
+          -0.0006,
+          0.0075
+        ]
+      },
+      "Weight": {
+        "auprc": -0.001,
+        "auprc_ci": [
+          -0.0085,
+          0.0067
+        ],
+        "auprc_p_gt_0": 0.395,
+        "auroc": 0.0011,
+        "auroc_ci": [
+          -0.0013,
+          0.0038
+        ]
+      },
+      "RespRate": {
+        "auprc": -0.0018,
+        "auprc_ci": [
+          -0.0105,
+          0.0074
+        ],
+        "auprc_p_gt_0": 0.331,
+        "auroc": 0.0034,
+        "auroc_ci": [
+          -0.0002,
+          0.0069
+        ]
+      },
+      "DiasABP": {
+        "auprc": -0.0024,
+        "auprc_ci": [
+          -0.0139,
+          0.0092
+        ],
+        "auprc_p_gt_0": 0.338,
+        "auroc": 0.0002,
+        "auroc_ci": [
+          -0.004,
+          0.0047
+        ]
+      },
+      "Cholesterol": {
+        "auprc": -0.0025,
+        "auprc_ci": [
+          -0.0064,
+          0.0014
+        ],
+        "auprc_p_gt_0": 0.11,
+        "auroc": -0.0005,
+        "auroc_ci": [
+          -0.0019,
+          0.001
+        ]
+      },
+      "Creatinine": {
+        "auprc": -0.0031,
+        "auprc_ci": [
+          -0.0136,
+          0.0086
+        ],
+        "auprc_p_gt_0": 0.35,
+        "auroc": 0.001,
+        "auroc_ci": [
+          -0.0035,
+          0.0064
+        ]
+      },
+      "Temp": {
+        "auprc": -0.0059,
+        "auprc_ci": [
+          -0.0209,
+          0.0093
+        ],
+        "auprc_p_gt_0": 0.223,
+        "auroc": 0.0002,
+        "auroc_ci": [
+          -0.0046,
+          0.005
+        ]
+      },
+      "TroponinI": {
+        "auprc": -0.0069,
+        "auprc_ci": [
+          -0.0139,
+          0.0001
+        ],
+        "auprc_p_gt_0": 0.026,
+        "auroc": 0.0001,
+        "auroc_ci": [
+          -0.0022,
+          0.0024
+        ]
+      },
+      "Platelets": {
+        "auprc": -0.0071,
+        "auprc_ci": [
+          -0.0173,
+          0.0031
+        ],
+        "auprc_p_gt_0": 0.095,
+        "auroc": 0.0018,
+        "auroc_ci": [
+          -0.0022,
+          0.006
+        ]
+      },
+      "NIDiasABP": {
+        "auprc": -0.0083,
+        "auprc_ci": [
+          -0.0172,
+          0.001
+        ],
+        "auprc_p_gt_0": 0.044,
+        "auroc": -0.0026,
+        "auroc_ci": [
+          -0.0061,
+          0.0009
+        ]
+      },
+      "Mg": {
+        "auprc": -0.0093,
+        "auprc_ci": [
+          -0.0191,
+          0.0006
+        ],
+        "auprc_p_gt_0": 0.041,
+        "auroc": -0.001,
+        "auroc_ci": [
+          -0.005,
+          0.0028
+        ]
+      },
+      "PaCO2": {
+        "auprc": -0.0104,
+        "auprc_ci": [
+          -0.0211,
+          0.002
+        ],
+        "auprc_p_gt_0": 0.056,
+        "auroc": 0.0002,
+        "auroc_ci": [
+          -0.0042,
+          0.0048
+        ]
+      }
+    }
+  },
+  "runtime_seconds": 209.3
+}

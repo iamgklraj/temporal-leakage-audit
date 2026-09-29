@@ -11,6 +11,7 @@ TrueType text, timestamp-free PDFs):
                                     and the effect of training on test-era trials (c)
   fig_llm_memorization_v2.pdf       LLM nested prompts (a), paired contrasts (b) and the
                                     named-intervention gain by curated approval history (c)
+  fig_physionet2012_v2.pdf          patient-level demonstration on ICU records (PhysioNet 2012)
 
 Usage:  python scripts/make_figures_v2.py [--out figures]
 """
@@ -259,6 +260,65 @@ def fig_llm(out):
     plt.close(fig)
 
 
+EHR_PRETTY = {"GCS": "Glasgow Coma Scale", "Urine": "Urine output", "Lactate": "Lactate", "HR": "Heart rate",
+              "BUN": "Blood urea nitrogen", "pH": "pH", "PaO2": "PaO2", "SysABP": "Systolic BP (invasive)",
+              "FiO2": "FiO2", "ALP": "Alkaline phosphatase", "Bilirubin": "Bilirubin"}
+
+
+def fig_physionet(out):
+    d = mf._load("physionet2012_audit.json")
+    fig, axes = plt.subplots(1, 2, figsize=(mf.DOUBLE * 0.82, 60 * mf.MM),
+                             gridspec_kw={"width_ratios": [1.0, 1.15]})
+    ax = axes[0]
+    # both designs refit the same learner on the same data at shared cut-offs, so one curve
+    # (the union of their points) shows both; the decision times mark the deployable ends
+    pts = {}
+    for key in ("t12", "t24"):
+        for v in d[key]["curve"]:
+            pts[v["data_up_to_hours"]] = v
+    x = sorted(pts)
+    y = [pts[h]["auprc"] for h in x]
+    ax.errorbar(x, y, yerr=mf._err(y, [pts[h]["auprc_ci"] for h in x]), fmt="o-", color=BLUE, ms=3,
+                lw=0.9, capsize=2, elinewidth=0.7)
+    naive = pts[48]["auprc"]
+    for key, color, dx in (("t12", VERMILION, -1.6), ("t24", GREEN, -1.6)):
+        t_h = d[key]["decision_time_hours"]
+        dep = pts[t_h]["auprc"]
+        ax.axvline(t_h, color=color, lw=0.7, ls=":")
+        ax.annotate("", xy=(t_h + dx, naive), xytext=(t_h + dx, dep),
+                    arrowprops=dict(arrowstyle="<->", lw=0.7, color=color))
+        ax.text(t_h + 0.8, dep - (0.12 if key == "t12" else 0.10),
+                f"decision at {t_h} h:\nLAP {d[key]['LAP']['auprc']:+.3f}", fontsize=5.2, color=color,
+                ha="left", va="top")
+        ax.hlines(naive, t_h + dx - 0.5, 48, colors=GREY, linestyles=":", lw=0.5)
+    ax.axhline(d["t24"]["test_base_rate"], ls="--", color=GREY, lw=0.8)
+    ax.text(47.5, d["t24"]["test_base_rate"] + 0.012, "test base rate", fontsize=5.2, color=GREY, ha="right")
+    ax.set_xlabel("Hours of ICU data admitted")
+    ax.set_ylabel("AUPRC, in-hospital death (test set)")
+    ax.set_xticks([12, 18, 24, 30, 36, 42, 48])
+    ax.set_xlim(4, 50)
+    ax.set_ylim(0, 0.7)
+    mf._panel_label(ax, "a")
+    ax = axes[1]
+    r = d["t24"]
+    items = [("All measured values", r["per_source_placebo"]["measured_values"], BLUE),
+             ("All measurement counts", r["per_source_placebo"]["measurement_counts"], SKY)]
+    top = list(r["per_variable_placebo_exploratory"].items())[:8]
+    items += [(EHR_PRETTY.get(k, k), v, GREY) for k, v in top]
+    y = np.arange(len(items))[::-1]
+    pts = [v["auprc"] for _, v, _ in items]
+    ax.barh(y, pts, xerr=mf._err(pts, [v["auprc_ci"] for _, v, _ in items]), color=[c for *_, c in items],
+            height=0.7, capsize=1.5, error_kw={"lw": 0.6})
+    ax.set_yticks(y)
+    ax.set_yticklabels([n for n, _, _ in items], fontsize=5.6)
+    ax.axvline(0, color="black", lw=0.6)
+    ax.set_xlabel("AUPRC gain from admitting hours 24-48\n(one group or variable; decision at 24 h)")
+    mf._panel_label(ax, "b", y=1.02)
+    fig.tight_layout()
+    mf._save(fig, os.path.join(out, "fig_physionet2012_v2.pdf"))
+    plt.close(fig)
+
+
 def main():
     ap = argparse.ArgumentParser(description="Regenerate the revised (v2) figures.")
     ap.add_argument("--out", default="figures", help="output directory for the PDFs")
@@ -268,7 +328,8 @@ def main():
     fig_cto(args.out)
     fig_trialbench(args.out)
     fig_llm(args.out)
-    print("wrote 4 figures to", args.out)
+    fig_physionet(args.out)
+    print("wrote 5 figures to", args.out)
 
 
 if __name__ == "__main__":

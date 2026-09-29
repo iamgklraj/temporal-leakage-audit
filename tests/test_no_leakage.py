@@ -67,7 +67,29 @@ def test_leakage_is_detectable():
     print(f"OK: leakage detectable (naive AUPRC={ap_n:.3f} >= censored AUPRC={ap_c:.3f})")
 
 
+
+
+def test_icu_features_respect_the_cutoff():
+    """ICU features at a cut-off must ignore measurements recorded after it."""
+    import pandas as pd
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts"))
+    import audit_physionet2012 as E
+
+    long = pd.DataFrame({"record_id": [1, 1, 1, 2, 2],
+                         "minute": [60, 1440, 1500, 30, 2000],
+                         "param": ["HR", "HR", "HR", "HR", "HR"],
+                         "value": [80.0, 100.0, 150.0, 70.0, 200.0]})
+    static = pd.DataFrame({"Age": [60, 70], "Gender": [1, 0], "Height": [170, 160], "ICUType": [1, 2],
+                           "Weight_admission": [80, 60]}, index=pd.Index([1, 2], name="record_id"))
+    X = E.features(long, static, 24 * 60, ["HR"])
+    assert X.loc[1, "HR_max"] == 100.0 and X.loc[1, "HR_count"] == 2   # the 150 at minute 1500 is excluded
+    assert X.loc[2, "HR_max"] == 70.0 and X.loc[2, "HR_count"] == 1    # the 200 at minute 2000 is excluded
+    X48 = E.features(long, static, 48 * 60, ["HR"])
+    assert X48.loc[1, "HR_last"] == 150.0 and X48.loc[2, "HR_count"] == 2
+
+
 if __name__ == "__main__":
     test_censoring_matches_manual_counts()
     test_leakage_is_detectable()
+    test_icu_features_respect_the_cutoff()
     print("all tests passed")

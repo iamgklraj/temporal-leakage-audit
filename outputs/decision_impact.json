@@ -1,0 +1,87 @@
+{
+  "metric": "precision (positive predictive value) among the top-ranked 10% of the test set",
+  "bootstrap": "paired percentile bootstrap, 1000 resamples, seed 0",
+  "trialbench": {
+    "Phase1": {
+      "ppv_top10_with_leakage": 0.6667,
+      "ci_with_leakage": [
+        0.5444,
+        0.7556
+      ],
+      "ppv_top10_deployable": 0.4556,
+      "ci_deployable": [
+        0.3444,
+        0.5667
+      ],
+      "difference": 0.2111,
+      "difference_ci": [
+        0.0889,
+        0.3111
+      ],
+      "base_rate": 0.2042,
+      "n_test": 896,
+      "n_top": 90
+    },
+    "Phase2": {
+      "ppv_top10_with_leakage": 0.6587,
+      "ci_with_leakage": [
+        0.6032,
+        0.7144
+      ],
+      "ppv_top10_deployable": 0.5913,
+      "ci_deployable": [
+        0.5159,
+        0.6429
+      ],
+      "difference": 0.0675,
+      "difference_ci": [
+        0.0238,
+        0.1389
+      ],
+      "base_rate": 0.2673,
+      "n_test": 2514,
+      "n_top": 252
+    },
+    "Phase3": {
+      "ppv_top10_with_leakage": 0.8125,
+      "ci_with_leakage": [
+        0.7552,
+        0.8698
+      ],
+      "ppv_top10_deployable": 0.6719,
+      "ci_deployable": [
+        0.6042,
+        0.7396
+      ],
+      "difference": 0.1406,
+      "difference_ci": [
+        0.0729,
+        0.2083
+      ],
+      "base_rate": 0.4956,
+      "n_test": 1913,
+      "n_top": 192
+    }
+  },
+  "icu_physionet2012_decision_24h": {
+    "ppv_top10_with_leakage": 0.61,
+    "ci_with_leakage": [
+      0.5599,
+      0.6675
+    ],
+    "ppv_top10_deployable": 0.55,
+    "ci_deployable": [
+      0.4999,
+      0.6001
+    ],
+    "difference": 0.06,
+    "difference_ci": [
+      0.02,
+      0.105
+    ],
+    "base_rate": 0.1462,
+    "n_test": 4000,
+    "n_top": 400
+  },
+  "runtime_seconds": 26.8
+}

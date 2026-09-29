@@ -1,0 +1,255 @@
+{
+  "benchmark": "TOP (HINT; github.com/futianfan/clinical-trial-outcome-prediction; snapshot 2021-02-20)",
+  "script": "scripts/audit_top.py",
+  "n_trials": 12477,
+  "dates_found_fraction": 0.9978,
+  "phases": {
+    "I": {
+      "train": {
+        "n": 1044,
+        "label_rate": 0.567,
+        "median_start_year": 2008.08,
+        "median_completion_year": 2011.02,
+        "start_year_range": [
+          1995.16,
+          2013.62
+        ],
+        "completion_year_range": [
+          2000.5,
+          2018.79
+        ]
+      },
+      "valid": {
+        "n": 117,
+        "label_rate": 0.5726,
+        "median_start_year": 2008.21,
+        "median_completion_year": 2011.16,
+        "start_year_range": [
+          1999.33,
+          2013.33
+        ],
+        "completion_year_range": [
+          2002.16,
+          2014.0
+        ]
+      },
+      "test": {
+        "n": 627,
+        "label_rate": 0.5534,
+        "median_start_year": 2015.58,
+        "median_completion_year": 2017.6,
+        "start_year_range": [
+          2014.0,
+          2020.83
+        ],
+        "completion_year_range": [
+          2014.16,
+          2028.42
+        ]
+      },
+      "mannwhitney_train_earlier_start_year_p": 2.4428395612479158e-257,
+      "mannwhitney_train_earlier_completion_year_p": 3.7842028949188206e-253,
+      "test_start_before_latest_train_start_fraction": 0.0,
+      "test_completion_after_latest_train_completion_fraction": 0.2057,
+      "train_completion_after_first_test_start_fraction": 0.001,
+      "label_by_status": {
+        "active, not recruiting": {
+          "n": 56,
+          "label_1": 47
+        },
+        "completed": {
+          "n": 1109,
+          "label_1": 891
+        },
+        "recruiting": {
+          "n": 7,
+          "label_1": 5
+        },
+        "suspended": {
+          "n": 3,
+          "label_1": 0
+        },
+        "terminated": {
+          "n": 489,
+          "label_1": 23
+        },
+        "unknown status": {
+          "n": 48,
+          "label_1": 39
+        },
+        "withdrawn": {
+          "n": 76,
+          "label_1": 1
+        }
+      },
+      "why_stop_nonempty_label_1": 20,
+      "why_stop_nonempty_n": 515
+    },
+    "II": {
+      "train": {
+        "n": 4005,
+        "label_rate": 0.4779,
+        "median_start_year": 2007.5,
+        "median_completion_year": 2010.33,
+        "start_year_range": [
+          1995.25,
+          2013.58
+        ],
+        "completion_year_range": [
+          1997.25,
+          2023.25
+        ]
+      },
+      "valid": {
+        "n": 446,
+        "label_rate": 0.4664,
+        "median_start_year": 2007.58,
+        "median_completion_year": 2010.41,
+        "start_year_range": [
+          1995.41,
+          2013.5
+        ],
+        "completion_year_range": [
+          2000.58,
+          2015.01
+        ]
+      },
+      "test": {
+        "n": 1654,
+        "label_rate": 0.555,
+        "median_start_year": 2015.58,
+        "median_completion_year": 2017.67,
+        "start_year_range": [
+          2013.98,
+          2022.59
+        ],
+        "completion_year_range": [
+          2014.16,
+          2028.42
+        ]
+      },
+      "mannwhitney_train_earlier_start_year_p": 0.0,
+      "mannwhitney_train_earlier_completion_year_p": 0.0,
+      "test_start_before_latest_train_start_fraction": 0.0,
+      "test_completion_after_latest_train_completion_fraction": 0.0103,
+      "train_completion_after_first_test_start_fraction": 0.0012,
+      "label_by_status": {
+        "active, not recruiting": {
+          "n": 175,
+          "label_1": 138
+        },
+        "completed": {
+          "n": 4122,
+          "label_1": 2718
+        },
+        "not yet recruiting": {
+          "n": 1,
+          "label_1": 0
+        },
+        "recruiting": {
+          "n": 13,
+          "label_1": 11
+        },
+        "suspended": {
+          "n": 8,
+          "label_1": 0
+        },
+        "terminated": {
+          "n": 1439,
+          "label_1": 42
+        },
+        "unknown status": {
+          "n": 197,
+          "label_1": 130
+        },
+        "withdrawn": {
+          "n": 150,
+          "label_1": 1
+        }
+      },
+      "why_stop_nonempty_label_1": 36,
+      "why_stop_nonempty_n": 1450
+    },
+    "III": {
+      "train": {
+        "n": 3094,
+        "label_rate": 0.6532,
+        "median_start_year": 2007.1,
+        "median_completion_year": 2009.83,
+        "start_year_range": [
+          1993.25,
+          2013.66
+        ],
+        "completion_year_range": [
+          1997.25,
+          2023.91
+        ]
+      },
+      "valid": {
+        "n": 344,
+        "label_rate": 0.6657,
+        "median_start_year": 2006.91,
+        "median_completion_year": 2009.82,
+        "start_year_range": [
+          1995.1,
+          2013.67
+        ],
+        "completion_year_range": [
+          1999.25,
+          2013.91
+        ]
+      },
+      "test": {
+        "n": 1146,
+        "label_rate": 0.7496,
+        "median_start_year": 2015.5,
+        "median_completion_year": 2017.52,
+        "start_year_range": [
+          2014.0,
+          2020.53
+        ],
+        "completion_year_range": [
+          2014.25,
+          2027.0
+        ]
+      },
+      "mannwhitney_train_earlier_start_year_p": 0.0,
+      "mannwhitney_train_earlier_completion_year_p": 0.0,
+      "test_start_before_latest_train_start_fraction": 0.0,
+      "test_completion_after_latest_train_completion_fraction": 0.0017,
+      "train_completion_after_first_test_start_fraction": 0.0006,
+      "label_by_status": {
+        "active, not recruiting": {
+          "n": 146,
+          "label_1": 114
+        },
+        "completed": {
+          "n": 3747,
+          "label_1": 2902
+        },
+        "recruiting": {
+          "n": 2,
+          "label_1": 2
+        },
+        "suspended": {
+          "n": 4,
+          "label_1": 1
+        },
+        "terminated": {
+          "n": 542,
+          "label_1": 23
+        },
+        "unknown status": {
+          "n": 117,
+          "label_1": 67
+        },
+        "withdrawn": {
+          "n": 26,
+          "label_1": 0
+        }
+      },
+      "why_stop_nonempty_label_1": 19,
+      "why_stop_nonempty_n": 513
+    }
+  }
+}
