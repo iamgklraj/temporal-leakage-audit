@@ -433,7 +433,8 @@ def analyze(preds, run_meta):
                   f"full-gap {c['D+T+ID+S - D']['auprc']:+.3f} {c['D+T+ID+S - D']['auprc_ci']}",
                   flush=True)
     out["primary_tests"] = primary_tests(out["models"])
-    out["primary_note"] = ("Primary contrasts pre-specified: identifier recall (D+ID - D) and "
+    out["primary_note"] = ("Primary contrasts (designated after the responses were collected; Holm adjustment is a "
+                           "robustness check): identifier recall (D+ID - D) and "
                            "named-intervention knowledge (D+T - D+Tm) per model; two-sided "
                            "bootstrap p-values (floor 1/1000), Holm-adjusted across all primary "
                            "tests. Other contrasts and strata are exploratory.")

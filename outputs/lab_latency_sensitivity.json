@@ -1,0 +1,753 @@
+{
+  "script": "scripts/audit_lab_latency.py",
+  "latency_source": "MIMIC-IV Clinical Database Demo v2.2 (doi:10.13026/dp1f-ex47; ODbL 1.0): storetime - charttime; blood laboratory values from hosp/labevents, bedside values from icu/chartevents, urine from icu/outputevents; negative latencies set to zero",
+  "latency_by_variable": {
+    "ALP": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Alkaline Phosphatase"
+      ],
+      "n": 1138,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 1.317,
+      "q1_hours": 1.017,
+      "q3_hours": 1.867,
+      "share_over_1h": 0.7504,
+      "share_over_6h": 0.0404
+    },
+    "ALT": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Alanine Aminotransferase (ALT)"
+      ],
+      "n": 1163,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 1.35,
+      "q1_hours": 1.033,
+      "q3_hours": 1.917,
+      "share_over_1h": 0.7601,
+      "share_over_6h": 0.049
+    },
+    "AST": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Asparate Aminotransferase (AST)"
+      ],
+      "n": 1165,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 1.333,
+      "q1_hours": 1.033,
+      "q3_hours": 1.917,
+      "share_over_1h": 0.7597,
+      "share_over_6h": 0.0498
+    },
+    "Albumin": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Albumin"
+      ],
+      "n": 625,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 1.317,
+      "q1_hours": 0.967,
+      "q3_hours": 2.0,
+      "share_over_1h": 0.7152,
+      "share_over_6h": 0.0656
+    },
+    "BUN": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Urea Nitrogen"
+      ],
+      "n": 2974,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 1.3,
+      "q1_hours": 1.0,
+      "q3_hours": 1.817,
+      "share_over_1h": 0.7334,
+      "share_over_6h": 0.0208
+    },
+    "Bilirubin": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Bilirubin, Total"
+      ],
+      "n": 1164,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 1.308,
+      "q1_hours": 1.012,
+      "q3_hours": 1.867,
+      "share_over_1h": 0.75,
+      "share_over_6h": 0.0421
+    },
+    "Cholesterol": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Cholesterol, Total"
+      ],
+      "n": 61,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 5.75,
+      "q1_hours": 4.45,
+      "q3_hours": 7.8,
+      "share_over_1h": 0.9672,
+      "share_over_6h": 0.4918
+    },
+    "Creatinine": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Creatinine"
+      ],
+      "n": 3003,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 1.3,
+      "q1_hours": 0.983,
+      "q3_hours": 1.833,
+      "share_over_1h": 0.7319,
+      "share_over_6h": 0.0206
+    },
+    "Glucose": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Glucose"
+      ],
+      "n": 2973,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 1.217,
+      "q1_hours": 0.9,
+      "q3_hours": 1.7,
+      "share_over_1h": 0.6704,
+      "share_over_6h": 0.0071
+    },
+    "HCO3": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Bicarbonate"
+      ],
+      "n": 2863,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 1.317,
+      "q1_hours": 1.017,
+      "q3_hours": 1.833,
+      "share_over_1h": 0.752,
+      "share_over_6h": 0.0178
+    },
+    "HCT": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Hematocrit"
+      ],
+      "n": 2913,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 0.767,
+      "q1_hours": 0.483,
+      "q3_hours": 1.25,
+      "share_over_1h": 0.3447,
+      "share_over_6h": 0.0141
+    },
+    "K": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Potassium"
+      ],
+      "n": 3022,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 1.317,
+      "q1_hours": 1.0,
+      "q3_hours": 1.817,
+      "share_over_1h": 0.7485,
+      "share_over_6h": 0.0199
+    },
+    "Lactate": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Lactate"
+      ],
+      "n": 758,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 0.05,
+      "q1_hours": 0.033,
+      "q3_hours": 0.067,
+      "share_over_1h": 0.004,
+      "share_over_6h": 0.0
+    },
+    "Mg": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Magnesium"
+      ],
+      "n": 2470,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 1.317,
+      "q1_hours": 1.033,
+      "q3_hours": 1.8,
+      "share_over_1h": 0.7623,
+      "share_over_6h": 0.0097
+    },
+    "Na": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Sodium"
+      ],
+      "n": 3007,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 1.317,
+      "q1_hours": 1.017,
+      "q3_hours": 1.833,
+      "share_over_1h": 0.7509,
+      "share_over_6h": 0.0196
+    },
+    "PaCO2": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "pCO2"
+      ],
+      "n": 889,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 0.05,
+      "q1_hours": 0.033,
+      "q3_hours": 0.067,
+      "share_over_1h": 0.0022,
+      "share_over_6h": 0.0
+    },
+    "PaO2": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "pO2"
+      ],
+      "n": 889,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 0.05,
+      "q1_hours": 0.033,
+      "q3_hours": 0.067,
+      "share_over_1h": 0.0022,
+      "share_over_6h": 0.0
+    },
+    "Platelets": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Platelet Count"
+      ],
+      "n": 2827,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 0.783,
+      "q1_hours": 0.5,
+      "q3_hours": 1.283,
+      "share_over_1h": 0.359,
+      "share_over_6h": 0.0141
+    },
+    "SaO2": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Oxygen Saturation"
+      ],
+      "n": 223,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 0.05,
+      "q1_hours": 0.033,
+      "q3_hours": 0.067,
+      "share_over_1h": 0.0045,
+      "share_over_6h": 0.0045
+    },
+    "TroponinI": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Troponin T"
+      ],
+      "n": 278,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 1.483,
+      "q1_hours": 1.017,
+      "q3_hours": 2.183,
+      "share_over_1h": 0.7518,
+      "share_over_6h": 0.0432,
+      "note": "Troponin T latency used (no Troponin I in the demo)"
+    },
+    "TroponinT": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "Troponin T"
+      ],
+      "n": 278,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 1.483,
+      "q1_hours": 1.017,
+      "q3_hours": 2.183,
+      "share_over_1h": 0.7518,
+      "share_over_6h": 0.0432
+    },
+    "WBC": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "White Blood Cells"
+      ],
+      "n": 2760,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 0.783,
+      "q1_hours": 0.5,
+      "q3_hours": 1.3,
+      "share_over_1h": 0.3594,
+      "share_over_6h": 0.0141
+    },
+    "pH": {
+      "source": "hosp/labevents (blood)",
+      "labels": [
+        "pH"
+      ],
+      "n": 966,
+      "share_negative_set_to_zero": 0.0,
+      "median_hours": 0.033,
+      "q1_hours": 0.033,
+      "q3_hours": 0.067,
+      "share_over_1h": 0.0021,
+      "share_over_6h": 0.0
+    },
+    "HR": {
+      "source": "icu/chartevents",
+      "labels": [
+        "Heart Rate"
+      ],
+      "n": 13913,
+      "share_negative_set_to_zero": 0.0073,
+      "median_hours": 0.4,
+      "q1_hours": 0.133,
+      "q3_hours": 0.917,
+      "share_over_1h": 0.2245,
+      "share_over_6h": 0.0053
+    },
+    "RespRate": {
+      "source": "icu/chartevents",
+      "labels": [
+        "Respiratory Rate"
+      ],
+      "n": 13913,
+      "share_negative_set_to_zero": 0.0063,
+      "median_hours": 0.4,
+      "q1_hours": 0.133,
+      "q3_hours": 0.933,
+      "share_over_1h": 0.2274,
+      "share_over_6h": 0.0059
+    },
+    "MAP": {
+      "source": "icu/chartevents",
+      "labels": [
+        "Arterial Blood Pressure mean"
+      ],
+      "n": 5560,
+      "share_negative_set_to_zero": 0.0065,
+      "median_hours": 0.333,
+      "q1_hours": 0.117,
+      "q3_hours": 0.783,
+      "share_over_1h": 0.1883,
+      "share_over_6h": 0.0085
+    },
+    "SysABP": {
+      "source": "icu/chartevents",
+      "labels": [
+        "Arterial Blood Pressure systolic"
+      ],
+      "n": 5525,
+      "share_negative_set_to_zero": 0.0069,
+      "median_hours": 0.333,
+      "q1_hours": 0.117,
+      "q3_hours": 0.8,
+      "share_over_1h": 0.1902,
+      "share_over_6h": 0.0085
+    },
+    "DiasABP": {
+      "source": "icu/chartevents",
+      "labels": [
+        "Arterial Blood Pressure diastolic"
+      ],
+      "n": 5524,
+      "share_negative_set_to_zero": 0.0069,
+      "median_hours": 0.333,
+      "q1_hours": 0.117,
+      "q3_hours": 0.8,
+      "share_over_1h": 0.1901,
+      "share_over_6h": 0.0085
+    },
+    "NIMAP": {
+      "source": "icu/chartevents",
+      "labels": [
+        "Non Invasive Blood Pressure mean"
+      ],
+      "n": 8342,
+      "share_negative_set_to_zero": 0.0032,
+      "median_hours": 0.417,
+      "q1_hours": 0.15,
+      "q3_hours": 0.967,
+      "share_over_1h": 0.2389,
+      "share_over_6h": 0.0023
+    },
+    "NISysABP": {
+      "source": "icu/chartevents",
+      "labels": [
+        "Non Invasive Blood Pressure systolic"
+      ],
+      "n": 8347,
+      "share_negative_set_to_zero": 0.0032,
+      "median_hours": 0.417,
+      "q1_hours": 0.15,
+      "q3_hours": 0.983,
+      "share_over_1h": 0.2407,
+      "share_over_6h": 0.0028
+    },
+    "NIDiasABP": {
+      "source": "icu/chartevents",
+      "labels": [
+        "Non Invasive Blood Pressure diastolic"
+      ],
+      "n": 8349,
+      "share_negative_set_to_zero": 0.0032,
+      "median_hours": 0.417,
+      "q1_hours": 0.15,
+      "q3_hours": 0.983,
+      "share_over_1h": 0.2401,
+      "share_over_6h": 0.0029
+    },
+    "Temp": {
+      "source": "icu/chartevents",
+      "labels": [
+        "Temperature Fahrenheit",
+        "Temperature Celsius"
+      ],
+      "n": 3770,
+      "share_negative_set_to_zero": 0.1249,
+      "median_hours": 0.383,
+      "q1_hours": 0.067,
+      "q3_hours": 0.85,
+      "share_over_1h": 0.2013,
+      "share_over_6h": 0.0053
+    },
+    "GCS": {
+      "source": "icu/chartevents",
+      "labels": [
+        "GCS - Eye Opening",
+        "GCS - Verbal Response",
+        "GCS - Motor Response"
+      ],
+      "n": 9791,
+      "share_negative_set_to_zero": 0.1113,
+      "median_hours": 0.45,
+      "q1_hours": 0.017,
+      "q3_hours": 1.267,
+      "share_over_1h": 0.3192,
+      "share_over_6h": 0.0108
+    },
+    "FiO2": {
+      "source": "icu/chartevents",
+      "labels": [
+        "Inspired O2 Fraction"
+      ],
+      "n": 1746,
+      "share_negative_set_to_zero": 0.118,
+      "median_hours": 0.367,
+      "q1_hours": 0.067,
+      "q3_hours": 0.683,
+      "share_over_1h": 0.0882,
+      "share_over_6h": 0.0029
+    },
+    "Weight": {
+      "source": "icu/chartevents",
+      "labels": [
+        "Daily Weight"
+      ],
+      "n": 441,
+      "share_negative_set_to_zero": 0.0907,
+      "median_hours": 0.333,
+      "q1_hours": 0.017,
+      "q3_hours": 0.883,
+      "share_over_1h": 0.2063,
+      "share_over_6h": 0.0363
+    },
+    "Urine": {
+      "source": "icu/outputevents (urine)",
+      "labels": [
+        "urine"
+      ],
+      "n": 7362,
+      "share_negative_set_to_zero": 0.1535,
+      "median_hours": 0.317,
+      "q1_hours": 0.017,
+      "q3_hours": 0.85,
+      "share_over_1h": 0.205,
+      "share_over_6h": 0.0022
+    },
+    "MechVent": {
+      "source": "pooled bedside latencies (no direct item)",
+      "n": 85221,
+      "median_hours": 0.4,
+      "share_over_1h": 0.2297
+    }
+  },
+  "design": "deployable matrices censored by observation time (valid time) or by availability time (observation + sampled latency); naive = full 48-hour record; learner, features, split and patient-level paired bootstrap as audit_physionet2012.py",
+  "n_latency_seeds": 20,
+  "t24": {
+    "decision_time_hours": 24,
+    "test_base_rate": 0.1462,
+    "share_of_measurements_observed_by_t_but_available_after_t": {
+      "overall": 0.0267,
+      "by_variable": {
+        "ALP": 0.0377,
+        "ALT": 0.0393,
+        "AST": 0.0405,
+        "Albumin": 0.0358,
+        "BUN": 0.0401,
+        "Bilirubin": 0.0416,
+        "Cholesterol": 0.0989,
+        "Creatinine": 0.0388,
+        "DiasABP": 0.0252,
+        "FiO2": 0.0179,
+        "GCS": 0.0361,
+        "Glucose": 0.0358,
+        "HCO3": 0.0406,
+        "HCT": 0.0292,
+        "HR": 0.0258,
+        "K": 0.0469,
+        "Lactate": 0.0018,
+        "MAP": 0.0252,
+        "MechVent": 0.0256,
+        "Mg": 0.0424,
+        "NIDiasABP": 0.0247,
+        "NIMAP": 0.0252,
+        "NISysABP": 0.0247,
+        "Na": 0.0425,
+        "PaCO2": 0.0017,
+        "PaO2": 0.0016,
+        "Platelets": 0.0245,
+        "RespRate": 0.0276,
+        "SaO2": 0.0078,
+        "SysABP": 0.0254,
+        "Temp": 0.0242,
+        "TroponinI": 0.0463,
+        "TroponinT": 0.0528,
+        "Urine": 0.0261,
+        "WBC": 0.024,
+        "Weight": 0.0473,
+        "pH": 0.002
+      }
+    },
+    "valid_time_deployable": {
+      "auprc": 0.4872,
+      "auprc_ci": [
+        0.447,
+        0.5338
+      ],
+      "auroc": 0.843,
+      "auroc_ci": [
+        0.8261,
+        0.8585
+      ]
+    },
+    "availability_time_deployable": {
+      "auprc": 0.4813,
+      "auprc_ci": [
+        0.4416,
+        0.5282
+      ],
+      "auroc": 0.8406,
+      "auroc_ci": [
+        0.8235,
+        0.8573
+      ]
+    },
+    "naive_48h": {
+      "auprc": 0.594,
+      "auprc_ci": [
+        0.5539,
+        0.6334
+      ],
+      "auroc": 0.8792,
+      "auroc_ci": [
+        0.866,
+        0.892
+      ]
+    },
+    "LAP_valid_time": {
+      "auprc": 0.1068,
+      "auprc_ci": [
+        0.0787,
+        0.1349
+      ],
+      "auprc_p_gt_0": 1.0
+    },
+    "LAP_availability_time": {
+      "auprc": 0.1127,
+      "auprc_ci": [
+        0.084,
+        0.1404
+      ],
+      "auprc_p_gt_0": 1.0
+    },
+    "valid_minus_availability_deployable": {
+      "auprc": 0.0059,
+      "auprc_ci": [
+        -0.0082,
+        0.0186
+      ],
+      "auprc_p_gt_0": 0.803
+    },
+    "valid_minus_availability_over_latency_seeds": {
+      "mean": 0.0005,
+      "min": -0.0054,
+      "max": 0.0081,
+      "values": [
+        0.0059,
+        -0.0009,
+        0.0021,
+        0.0067,
+        -0.0039,
+        0.0021,
+        0.0052,
+        0.0034,
+        -0.0038,
+        -0.0045,
+        -0.0054,
+        -0.0024,
+        -0.0011,
+        -0.0037,
+        0.0005,
+        0.0017,
+        0.0007,
+        -0.0036,
+        0.0033,
+        0.0081
+      ]
+    }
+  },
+  "t12": {
+    "decision_time_hours": 12,
+    "test_base_rate": 0.1462,
+    "share_of_measurements_observed_by_t_but_available_after_t": {
+      "overall": 0.0557,
+      "by_variable": {
+        "ALP": 0.0931,
+        "ALT": 0.1028,
+        "AST": 0.1024,
+        "Albumin": 0.0979,
+        "BUN": 0.1094,
+        "Bilirubin": 0.0978,
+        "Cholesterol": 0.4464,
+        "Creatinine": 0.1092,
+        "DiasABP": 0.0534,
+        "FiO2": 0.0376,
+        "GCS": 0.073,
+        "Glucose": 0.0986,
+        "HCO3": 0.1118,
+        "HCT": 0.076,
+        "HR": 0.0522,
+        "K": 0.1244,
+        "Lactate": 0.0026,
+        "MAP": 0.0524,
+        "MechVent": 0.0553,
+        "Mg": 0.1168,
+        "NIDiasABP": 0.0475,
+        "NIMAP": 0.0474,
+        "NISysABP": 0.0475,
+        "Na": 0.1223,
+        "PaCO2": 0.0031,
+        "PaO2": 0.0032,
+        "Platelets": 0.0652,
+        "RespRate": 0.0536,
+        "SaO2": 0.0107,
+        "SysABP": 0.0536,
+        "Temp": 0.0522,
+        "TroponinI": 0.1599,
+        "TroponinT": 0.1538,
+        "Urine": 0.0556,
+        "WBC": 0.0711,
+        "Weight": 0.0756,
+        "pH": 0.0035
+      }
+    },
+    "valid_time_deployable": {
+      "auprc": 0.4459,
+      "auprc_ci": [
+        0.4071,
+        0.4901
+      ],
+      "auroc": 0.825,
+      "auroc_ci": [
+        0.8082,
+        0.8404
+      ]
+    },
+    "availability_time_deployable": {
+      "auprc": 0.448,
+      "auprc_ci": [
+        0.4094,
+        0.4908
+      ],
+      "auroc": 0.822,
+      "auroc_ci": [
+        0.804,
+        0.8389
+      ]
+    },
+    "naive_48h": {
+      "auprc": 0.594,
+      "auprc_ci": [
+        0.5539,
+        0.6334
+      ],
+      "auroc": 0.8792,
+      "auroc_ci": [
+        0.866,
+        0.892
+      ]
+    },
+    "LAP_valid_time": {
+      "auprc": 0.1481,
+      "auprc_ci": [
+        0.1142,
+        0.1809
+      ],
+      "auprc_p_gt_0": 1.0
+    },
+    "LAP_availability_time": {
+      "auprc": 0.146,
+      "auprc_ci": [
+        0.1121,
+        0.1807
+      ],
+      "auprc_p_gt_0": 1.0
+    },
+    "valid_minus_availability_deployable": {
+      "auprc": -0.0021,
+      "auprc_ci": [
+        -0.0171,
+        0.0143
+      ],
+      "auprc_p_gt_0": 0.408
+    },
+    "valid_minus_availability_over_latency_seeds": {
+      "mean": 0.0039,
+      "min": -0.0054,
+      "max": 0.0113,
+      "values": [
+        -0.0021,
+        0.0072,
+        0.0074,
+        0.0007,
+        -0.0002,
+        0.0076,
+        -0.0054,
+        0.0018,
+        0.01,
+        0.0111,
+        0.0078,
+        -0.0004,
+        -0.0017,
+        0.0113,
+        0.0002,
+        -0.0017,
+        0.006,
+        0.0056,
+        0.0101,
+        0.003
+      ]
+    }
+  },
+  "runtime_seconds": 276.6
+}

@@ -11,8 +11,8 @@ abstract: >-
   validation of the instrument, and a positivity-aware causal layer.
 type: software
 license: MIT
-version: 1.3.0
-date-released: "2026-09-28"
+version: 1.4.0
+date-released: "2026-10-04"
 # Concept DOI (resolves to the latest release); per-version DOIs are listed on Zenodo.
 doi: 10.5281/zenodo.22907786
 repository-code: "https://github.com/iamgklraj/temporal-leakage-audit"

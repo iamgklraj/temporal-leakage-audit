@@ -11,7 +11,12 @@ TrueType text, timestamp-free PDFs):
                                     and the effect of training on test-era trials (c)
   fig_llm_memorization_v2.pdf       LLM nested prompts (a), paired contrasts (b) and the
                                     named-intervention gain by curated approval history (c)
-  fig_physionet2012_v2.pdf          patient-level demonstration on ICU records (PhysioNet 2012)
+  fig_physionet2012_v2.pdf          patient-level demonstration on ICU records (PhysioNet 2012): the
+                                    leakage-response curve (a), per-source and per-variable gains (b)
+                                    and the decision curve of the 24-hour model (c)
+  fig_method_comparison.pdf         the method against permutation importance and a univariate screen
+  fig_physionet2019_sepsis.pdf      sepsis onset in the ICU (PhysioNet 2019; train hospital A, test B):
+                                    leakage-response curves (a) and per-source and per-variable gains (b)
 
 Usage:  python scripts/make_figures_v2.py [--out figures]
 """
@@ -46,11 +51,12 @@ def fig_validation(out):
     mf._panel_label(ax, "a")
 
     def _detcov(ax, series, title):
-        for label, levels, color, marker in series:
+        for label, levels, color, marker, *joined in series:
             mx = [v["mean_lap"] for v in levels]
-            ax.plot(mx, [v["detection_rate"] for v in levels], marker + "-", color=color, ms=2.6,
+            ls_d, ls_c = ("-", ":") if (not joined or joined[0]) else ("", "")
+            ax.plot(mx, [v["detection_rate"] for v in levels], marker + ls_d, color=color, ms=2.6,
                     lw=0.9, label=f"{label}: detection")
-            ax.plot(mx, [v["coverage_of_mean_lap"] for v in levels], marker + ":", color=color,
+            ax.plot(mx, [v["coverage_of_mean_lap"] for v in levels], marker + ls_c, color=color,
                     ms=2.6, lw=0.8, mfc="white", label=f"{label}: coverage")
         ax.axhline(0.025, ls=":", color="black", lw=0.6)
         ax.axhline(0.95, ls=":", color="black", lw=0.6)
@@ -62,7 +68,7 @@ def fig_validation(out):
     # b: default setting (about 245 test programs, prevalence about 0.5)
     series = [("Score", lv, VERMILION, "o")]
     if d.get("count_levels"):
-        series.append(("Count", d["count_levels"], BLUE, "s"))
+        series.append(("Count", d["count_levels"], BLUE, "s", False))   # no levels between 0 and 0.11
     _detcov(axes[1], series, "Default setting")
     axes[1].legend(frameon=False, loc="center right", fontsize=5)
     mf._panel_label(axes[1], "b")
@@ -118,6 +124,8 @@ def fig_cto(out):
     ax.set_xticklabels(labels, fontsize=6)
     ax.set_ylabel("AUPRC (curated human labels)")
     ax.set_ylim(0, 1.32)
+    ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
+    ax.spines["left"].set_bounds(0, 1.0)
     ax.legend(frameon=False, loc="upper left", fontsize=5.2)
     mf._panel_label(ax, "a")
     # b: gain from each post-start signal added alone to the start-time set
@@ -267,8 +275,8 @@ EHR_PRETTY = {"GCS": "Glasgow Coma Scale", "Urine": "Urine output", "Lactate": "
 
 def fig_physionet(out):
     d = mf._load("physionet2012_audit.json")
-    fig, axes = plt.subplots(1, 2, figsize=(mf.DOUBLE * 0.82, 60 * mf.MM),
-                             gridspec_kw={"width_ratios": [1.0, 1.15]})
+    fig, axes = plt.subplots(1, 3, figsize=(mf.DOUBLE, 60 * mf.MM),
+                             gridspec_kw={"width_ratios": [1.0, 1.15, 0.95]})
     ax = axes[0]
     # both designs refit the same learner on the same data at shared cut-offs, so one curve
     # (the union of their points) shows both; the decision times mark the deployable ends
@@ -288,7 +296,7 @@ def fig_physionet(out):
         ax.annotate("", xy=(t_h + dx, naive), xytext=(t_h + dx, dep),
                     arrowprops=dict(arrowstyle="<->", lw=0.7, color=color))
         ax.text(t_h + 0.8, dep - (0.12 if key == "t12" else 0.10),
-                f"decision at {t_h} h:\nLAP {d[key]['LAP']['auprc']:+.3f}", fontsize=5.2, color=color,
+                f"decision\nat {t_h} h:\nLAP\n{d[key]['LAP']['auprc']:+.3f}", fontsize=5.0, color=color,
                 ha="left", va="top")
         ax.hlines(naive, t_h + dx - 0.5, 48, colors=GREY, linestyles=":", lw=0.5)
     ax.axhline(d["t24"]["test_base_rate"], ls="--", color=GREY, lw=0.8)
@@ -314,9 +322,163 @@ def fig_physionet(out):
     ax.axvline(0, color="black", lw=0.6)
     ax.set_xlabel("AUPRC gain from admitting hours 24-48\n(one group or variable; decision at 24 h)")
     mf._panel_label(ax, "b", y=1.02)
+    # c: decision curve of the 24-hour model, deployable versus evaluated with the 48-hour record
+    ax = axes[2]
+    dc = mf._load("decision_curve_icu.json")
+    th = [c["threshold"] for c in dc["curve"]]
+    for key, ci_key, color, label in (("net_benefit_naive", "ci_naive", VERMILION, "Evaluated with 48 h"),
+                                      ("net_benefit_deployable", "ci_deployable", BLUE, "Deployable (24 h)")):
+        yv = [c[key] for c in dc["curve"]]
+        ax.fill_between(th, [c[ci_key][0] for c in dc["curve"]], [c[ci_key][1] for c in dc["curve"]],
+                        color=color, alpha=0.15, lw=0)
+        ax.plot(th, yv, "o-", color=color, ms=2.5, lw=0.9, label=label)
+    ax.plot(th, [c["net_benefit_treat_all"] for c in dc["curve"]], color=GREY, lw=0.8, ls="--", label="Treat all")
+    ax.axhline(0, color="black", lw=0.6)
+    ax.set_ylim(-0.02, 0.14)
+    ax.set_xlim(0.03, 0.52)
+    ax.set_xlabel("Risk threshold")
+    ax.set_ylabel("Net benefit")
+    ax.legend(frameon=False, loc="upper right", fontsize=5.4, handlelength=1.6)
+    mf._panel_label(ax, "c")
     fig.tight_layout()
     mf._save(fig, os.path.join(out, "fig_physionet2012_v2.pdf"))
     plt.close(fig)
+
+
+def fig_method_comparison(out):
+    mc = mf._load("method_comparison.json")
+    lapj = mf._load("trialbench_lap_poststart.json")["phases"]
+    fig, axes = plt.subplots(1, 2, figsize=(mf.DOUBLE * 0.9, 62 * mf.MM),
+                             gridspec_kw={"width_ratios": [1.25, 1.0]})
+    # a: LAP, joint permutation importance and LAP left after removing the top-ranked feature
+    ax = axes[0]
+    rows = [("CTO", mc["cto"]["LAP"], mc["cto"]["LAP_ci_published"],
+             mc["cto"]["permutation_importance"]["joint_drop"],
+             mc["cto"]["after_dropping_the_flagged_feature"]["residual_LAP"],
+             mc["cto"]["after_dropping_the_flagged_feature"]["residual_LAP_ci"], "final status")]
+    for ph, name in (("Phase1", "TrialBench I"), ("Phase2", "TrialBench II"), ("Phase3", "TrialBench III")):
+        v = mc["trialbench"][ph]
+        res = lapj[ph]["temporal_split"]["paired_differences"]["LAP_city_minus_enrollment_minus_ablated"]["auprc"]
+        rows.append((name, v["LAP"], v["LAP_ci_published"], v["permutation_importance"]["joint_drop"],
+                     res["point"], res["ci"], "enrollment"))
+    ypos = np.arange(len(rows))[::-1] * 1.0
+    hgt = 0.26
+    ax.barh(ypos + hgt, [r[1] for r in rows], height=hgt, color=BLUE,
+            xerr=mf._err([r[1] for r in rows], [r[2] for r in rows]), capsize=1.5, error_kw={"lw": 0.6},
+            label="LAP (this method)")
+    ax.barh(ypos, [r[3] for r in rows], height=hgt, color=VERMILION, label="Joint permutation importance")
+    ax.barh(ypos - hgt, [r[4] for r in rows], height=hgt, color=SKY,
+            xerr=mf._err([r[4] for r in rows], [r[5] for r in rows]), capsize=1.5, error_kw={"lw": 0.6},
+            label="LAP after removing the top-ranked feature")
+    for yy, r in zip(ypos, rows):
+        ax.text(max(r[5][1], 0) + 0.02, yy - hgt, f"({r[6]} removed)",
+                fontsize=4.8, va="center", color="#333333")
+    ax.set_yticks(ypos)
+    ax.set_yticklabels([r[0] for r in rows])
+    ax.axvline(0, color="black", lw=0.6)
+    ax.set_xlim(-0.05, 1.0)
+    ax.set_xlabel("AUPRC attributed to post-decision information")
+    ax.legend(frameon=False, loc="lower right", fontsize=5.2, handlelength=1.2)
+    mf._panel_label(ax, "a")
+    # b: what a univariate screen sees versus the leakage the method measures
+    ax = axes[1]
+    cto = mf._load("cto_audit_v2.json")["A_corrected_tiers"]
+    share = {"CTO": mc["cto"]["LAP"] / (cto["tiers"]["t2_all"]["auprc"] - cto["test_base_rate"])}
+    for ph, name in (("Phase1", "TB I"), ("Phase2", "TB II"), ("Phase3", "TB III")):
+        s_ = lapj[ph]["temporal_split"]
+        share[name] = mc["trialbench"][ph]["LAP"] / (s_["arms"]["all_features"]["auprc"] - s_["test_base_rate"])
+    p12 = mf._load("physionet2012_audit.json")["t24"]
+    share["ICU"] = mc["icu_physionet2012_decision_24h"]["LAP"] / (p12["curve"][-1]["auprc"] - p12["test_base_rate"])
+    cb = mf._load("censored_benchmark_20disease.json")["leakage_response_curve"]
+    share["Censored"] = mc["censored_benchmark_20disease"]["LAP"] / (cb["naive_auprc"] - cb["test_base_rate"])
+    pts = [("CTO", mc["cto"]["univariate_screen"]["post_decision_max_auroc"], share["CTO"], BLUE)]
+    for ph, name in (("Phase1", "TB I"), ("Phase2", "TB II"), ("Phase3", "TB III")):
+        v = mc["trialbench"][ph]
+        pts.append((name, v["univariate_screen"]["post_decision_max_auroc"], share[name], BLUE))
+    icu = mc["icu_physionet2012_decision_24h"]
+    cen = mc["censored_benchmark_20disease"]
+    pts.append(("ICU", icu["univariate_screen_naive_48h"]["max_auroc"], share["ICU"], GREEN))
+    pts.append(("Censored", cen["univariate_screen_naive"]["max_auroc"], share["Censored"], GREEN))
+    offsets = {"CTO": (-0.008, -0.06, "right"), "TB I": (0.006, 0.025, "left"), "TB II": (-0.006, 0.03, "right"),
+               "TB III": (0.006, 0.025, "left"), "ICU": (0.006, -0.06, "left"),
+               "Censored": (-0.004, 0.035, "left")}
+    for name, xv, yv, color in pts:
+        ax.scatter([xv], [yv], s=14, color=color, zorder=3)
+        dx, dy, ha = offsets[name]
+        ax.text(xv + dx, yv + dy, name, fontsize=5.4, ha=ha)
+    ax.scatter([], [], s=14, color=BLUE, label="post-decision information\nin separate columns")
+    ax.scatter([], [], s=14, color=GREEN, label="post-decision information\nin aggregate columns")
+    ax.legend(frameon=False, loc="upper left", fontsize=5.0, handletextpad=0.3, borderaxespad=0.2)
+    for thr, lab in ((0.80, "0.80"), (0.90, "0.90")):
+        ax.axvline(thr, color=GREY, lw=0.7, ls="--")
+        ax.text(thr + 0.004, 1.02, f"flag at {lab}", fontsize=5.0, color=GREY, rotation=90, va="top")
+    ax.set_xlim(0.6, 1.0)
+    ax.set_ylim(0, 1.05)
+    ax.set_xlabel("Largest single-feature AUROC\n(training block)")
+    ax.set_ylabel("LAP as a share of the naive\nmodel's lift over the base rate")
+    mf._panel_label(ax, "b")
+    fig.tight_layout()
+    mf._save(fig, os.path.join(out, "fig_method_comparison.pdf"))
+    plt.close(fig)
+
+
+SEPSIS_PRETTY = {"Lactate": "Lactate", "HR": "Heart rate", "Resp": "Respiratory rate", "Temp": "Temperature",
+                 "WBC": "White cell count", "MAP": "Mean arterial pressure", "SBP": "Systolic BP",
+                 "O2Sat": "Oxygen saturation", "Creatinine": "Creatinine", "BUN": "Blood urea nitrogen",
+                 "Platelets": "Platelets", "FiO2": "FiO2", "Glucose": "Glucose", "HCO3": "Bicarbonate",
+                 "pH": "pH", "PaCO2": "PaCO2", "Bilirubin_total": "Bilirubin", "Hct": "Haematocrit",
+                 "Hgb": "Haemoglobin", "Potassium": "Potassium", "Chloride": "Chloride", "DBP": "Diastolic BP",
+                 "Magnesium": "Magnesium", "Phosphate": "Phosphate", "Calcium": "Calcium", "PTT": "PTT",
+                 "BaseExcess": "Base excess", "AST": "AST", "Alkalinephos": "Alkaline phosphatase",
+                 "Fibrinogen": "Fibrinogen", "SaO2": "SaO2", "TroponinI": "Troponin I",
+                 "Bilirubin_direct": "Direct bilirubin", "EtCO2": "EtCO2"}
+
+
+def fig_sepsis(out):
+    path = os.path.join(mf.RES, "physionet2019_sepsis_audit.json")
+    if not os.path.exists(path):
+        return False
+    d = mf._load("physionet2019_sepsis_audit.json")
+    fig, axes = plt.subplots(1, 2, figsize=(mf.DOUBLE * 0.82, 60 * mf.MM),
+                             gridspec_kw={"width_ratios": [1.0, 1.15]})
+    ax = axes[0]
+    # each decision time defines its own cohort and outcome window, so the two curves are separate
+    for key, color, marker in (("t12", VERMILION, "s"), ("t24", BLUE, "o")):
+        r = d[key]
+        x = [v["data_up_to_hours"] for v in r["curve"]]
+        y = [v["auprc"] for v in r["curve"]]
+        ax.errorbar(x, y, yerr=mf._err(y, [v["auprc_ci"] for v in r["curve"]]), fmt=marker + "-", color=color,
+                    ms=3, lw=0.9, capsize=2, elinewidth=0.7,
+                    label=f"decision at {r['decision_time_hours']} h (LAP {r['LAP']['auprc']:+.3f})")
+        ax.axhline(r["test_base_rate"], ls="--", color=color, lw=0.6, alpha=0.7)
+        ax.axvline(r["decision_time_hours"], color=color, lw=0.6, ls=":")
+    ax.set_xlabel("Hours of ICU data admitted")
+    ax.set_ylabel("AUPRC, sepsis onset within 24 h\n(external test hospital)")
+    ax.set_xticks([12, 18, 24, 30, 36, 42, 48])
+    ax.set_ylim(0, None)
+    ax.legend(frameon=False, loc="upper left", fontsize=5.4)
+    ax.text(47.5, max(d["t24"]["test_base_rate"], d["t12"]["test_base_rate"]) + 0.004, "test base rates (dashed)",
+            fontsize=5.0, color=GREY, ha="right")
+    mf._panel_label(ax, "a")
+    ax = axes[1]
+    r = d["t24"]
+    items = [("All measured values", r["per_source_placebo"]["measured_values"], BLUE),
+             ("All measurement counts", r["per_source_placebo"]["measurement_counts"], SKY)]
+    top = list(r["per_variable_placebo_exploratory"].items())[:8]
+    items += [(SEPSIS_PRETTY.get(k, k), v, GREY) for k, v in top]
+    yy = np.arange(len(items))[::-1]
+    pts = [v["auprc"] for _, v, _ in items]
+    ax.barh(yy, pts, xerr=mf._err(pts, [v["auprc_ci"] for _, v, _ in items]), color=[c for *_, c in items],
+            height=0.7, capsize=1.5, error_kw={"lw": 0.6})
+    ax.set_yticks(yy)
+    ax.set_yticklabels([n for n, _, _ in items], fontsize=5.6)
+    ax.axvline(0, color="black", lw=0.6)
+    ax.set_xlabel("AUPRC gain from admitting hours 24-48\n(one group or variable; decision at 24 h)")
+    mf._panel_label(ax, "b", y=1.02)
+    fig.tight_layout()
+    mf._save(fig, os.path.join(out, "fig_physionet2019_sepsis.pdf"))
+    plt.close(fig)
+    return True
 
 
 def main():
@@ -329,7 +491,9 @@ def main():
     fig_trialbench(args.out)
     fig_llm(args.out)
     fig_physionet(args.out)
-    print("wrote 5 figures to", args.out)
+    fig_method_comparison(args.out)
+    n = 6 + int(fig_sepsis(args.out))
+    print(f"wrote {n} figures to", args.out)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,1766 @@
+{
+  "dataset": "PhysioNet/CinC Challenge 2019, Early Prediction of Sepsis from Clinical Data (physionet.org/content/challenge-2019/1.0.0; CC BY 4.0)",
+  "script": "scripts/audit_physionet2019_sepsis.py",
+  "outcome": "Sepsis-3 onset within 24 h after the decision: t_d < t_sepsis <= t_d + 24, t_sepsis = first ICULOS with SepsisLabel = 1, plus 6",
+  "split": "train = hospital system A (training_setA); test = hospital system B (training_setB), external and fixed",
+  "design": {
+    "pre_specified": "fixed before any model was fitted; not changed after seeing results",
+    "unit": "ICU stay",
+    "decision_times_hours": {
+      "primary": 24,
+      "sensitivity": 12
+    },
+    "hour_alignment": "the row with ICULOS = k summarises hour k after ICU admission; rows with ICULOS <= c are recorded by hour c (by the decision when c = t_d)",
+    "eligibility": "a row at ICULOS >= t_d (still in the ICU at the decision) and t_sepsis > t_d (never-septic stays eligible); exclusions counted in this order",
+    "outcome": "y = 1 if t_d < t_sepsis <= t_d + 24, else 0",
+    "horizons_hours": "cut-off t_d + h, h in {0, 6, 12, 24}; h = 0 deployable, h = 24 naive",
+    "LAP": "AUPRC(h = 24) - AUPRC(h = 0) on the same test stays",
+    "per_source_placebo": "measured values (last, min, max, mean) at h = 24 with counts at h = 0, and counts at h = 24 with values at h = 0",
+    "per_variable_placebo": "exploratory: one variable's five features at h = 24",
+    "decision_level": "precision among the top 10% of test stays; net benefit at thresholds [0.02, 0.05, 0.1, 0.15, 0.2] (TP/n - FP/n * pt/(1-pt))"
+  },
+  "label_documentation": {
+    "sepsislabel": "1 for t >= t_sepsis - 6 in septic patients, 0 otherwise (shifted 6 h ahead)",
+    "t_sepsis": "min(t_suspicion, t_SOFA) if t_suspicion - 24 <= t_SOFA <= t_suspicion + 12 (Sepsis-3)",
+    "cohort_rules": "stays with fewer than 8 hourly windows and patients with t_sepsis < 4 h after ICU admission not included; records truncated at ICU discharge and after 2 weeks (Reyna et al., Crit Care Med 2020, Section 2.2)",
+    "hourly_bins": "several values within an hour summarised by their median",
+    "observed_in_files_not_in_documentation": "every septic record ends at most 3 h after t_sepsis (the end of the challenge scoring window); non-septic records rarely extend past ICU hour 60 (counts under data_checks); measurement counts admitted after the decision therefore partly encode the outcome"
+  },
+  "n_stays_A": 20336,
+  "n_stays_B": 20000,
+  "n_variables": 34,
+  "variables": [
+    "HR",
+    "O2Sat",
+    "Temp",
+    "SBP",
+    "MAP",
+    "DBP",
+    "Resp",
+    "EtCO2",
+    "BaseExcess",
+    "HCO3",
+    "FiO2",
+    "pH",
+    "PaCO2",
+    "SaO2",
+    "AST",
+    "BUN",
+    "Alkalinephos",
+    "Calcium",
+    "Chloride",
+    "Creatinine",
+    "Bilirubin_direct",
+    "Glucose",
+    "Lactate",
+    "Magnesium",
+    "Phosphate",
+    "Potassium",
+    "Bilirubin_total",
+    "TroponinI",
+    "Hct",
+    "Hgb",
+    "PTT",
+    "WBC",
+    "Fibrinogen",
+    "Platelets"
+  ],
+  "features": "per variable: last, min, max, mean and number of hours with a value recorded by the cut-off; Age, Gender, Unit1, Unit2 and HospAdmTime as recorded (missing left to the learner); ICULOS, record length and SepsisLabel are not features",
+  "learner": "models.fit_gbdt (HistGradientBoosting, max_depth 3, lr 0.06, 300 iter, l2 1.0, seed 0); scikit-learn's early_stopping='auto' is active because n_train > 10,000 (iterations used reported per design); columns never observed in training are dropped before fitting",
+  "bootstrap": "patient-level paired percentile bootstrap, 1000 resamples, seed 0",
+  "data_checks": {
+    "A": {
+      "n_stays": 20336,
+      "n_hourly_rows": 790215,
+      "n_hourly_rows_with_a_vital_or_lab_value": 739663,
+      "n_vital_and_lab_entries": 5536849,
+      "variables_never_recorded": [
+        "EtCO2"
+      ],
+      "n_septic": 1790,
+      "septic_share": 0.088,
+      "min_rows_per_stay": 8,
+      "records_starting_after_icu_hour_1": 7497,
+      "max_first_iculos": 304,
+      "share_contiguous_hours": 1.0,
+      "stays_with_varying_descriptors": 0,
+      "unit_missing_share": 0.4682,
+      "share_unit1_plus_unit2_equal_1_when_both_recorded": 1.0,
+      "record_hours_non_septic": {
+        "min": 8.0,
+        "p05": 17.0,
+        "p25": 26.0,
+        "median": 40.0,
+        "p75": 47.0,
+        "p95": 57.0,
+        "max": 336.0
+      },
+      "non_septic_records_longer_than_60h": 8,
+      "t_sepsis_hours": {
+        "min": 7.0,
+        "p05": 7.0,
+        "p25": 14.0,
+        "median": 35.5,
+        "p75": 79.0,
+        "p95": 186.0,
+        "max": 337.0
+      },
+      "record_hours_after_t_sepsis": {
+        "min": -1.0,
+        "p05": 1.0,
+        "p25": 2.0,
+        "median": 3.0,
+        "p75": 3.0,
+        "p95": 3.0,
+        "max": 3.0
+      },
+      "septic_records_ending_1_to_3h_after_t_sepsis": 1786,
+      "septic_records_ending_more_than_3h_after_t_sepsis": 0,
+      "septic_stays_labelled_from_first_row": 203
+    },
+    "B": {
+      "n_stays": 20000,
+      "n_hourly_rows": 761995,
+      "n_hourly_rows_with_a_vital_or_lab_value": 684508,
+      "n_vital_and_lab_entries": 4950064,
+      "variables_never_recorded": [],
+      "n_septic": 1142,
+      "septic_share": 0.0571,
+      "min_rows_per_stay": 8,
+      "records_starting_after_icu_hour_1": 1296,
+      "max_first_iculos": 26,
+      "share_contiguous_hours": 1.0,
+      "stays_with_varying_descriptors": 0,
+      "unit_missing_share": 0.3048,
+      "share_unit1_plus_unit2_equal_1_when_both_recorded": 1.0,
+      "record_hours_non_septic": {
+        "min": 8.0,
+        "p05": 15.0,
+        "p25": 24.0,
+        "median": 39.0,
+        "p75": 46.0,
+        "p95": 57.0,
+        "max": 336.0
+      },
+      "non_septic_records_longer_than_60h": 218,
+      "t_sepsis_hours": {
+        "min": 7.0,
+        "p05": 7.0,
+        "p25": 10.2,
+        "median": 34.5,
+        "p75": 80.0,
+        "p95": 198.0,
+        "max": 337.0
+      },
+      "record_hours_after_t_sepsis": {
+        "min": -6.0,
+        "p05": 1.0,
+        "p25": 2.0,
+        "median": 3.0,
+        "p75": 3.0,
+        "p95": 3.0,
+        "max": 3.0
+      },
+      "septic_records_ending_1_to_3h_after_t_sepsis": 1127,
+      "septic_records_ending_more_than_3h_after_t_sepsis": 0,
+      "septic_stays_labelled_from_first_row": 223
+    }
+  },
+  "t24": {
+    "decision_time_hours": 24,
+    "horizons_hours": [
+      0,
+      6,
+      12,
+      24
+    ],
+    "outcome_window_hours": [
+      24,
+      48
+    ],
+    "cohort": {
+      "train": {
+        "hospital_system": "A",
+        "n_stays": 20336,
+        "excluded_not_in_icu_at_decision": 4083,
+        "excluded_septic_by_decision": 78,
+        "septic_by_decision_any_length": 717,
+        "n_eligible": 16175,
+        "n_events": 345,
+        "base_rate": 0.0213,
+        "eligible_with_no_row_by_decision": 13,
+        "events_labelled_from_first_row": 0
+      },
+      "test": {
+        "hospital_system": "B",
+        "n_stays": 20000,
+        "excluded_not_in_icu_at_decision": 5137,
+        "excluded_septic_by_decision": 40,
+        "septic_by_decision_any_length": 478,
+        "n_eligible": 14823,
+        "n_events": 212,
+        "base_rate": 0.0143,
+        "eligible_with_no_row_by_decision": 2,
+        "events_labelled_from_first_row": 0
+      }
+    },
+    "n_train": 16175,
+    "n_test": 14823,
+    "n_train_events": 345,
+    "n_test_events": 212,
+    "train_base_rate": 0.0213,
+    "test_base_rate": 0.0143,
+    "n_features": 175,
+    "features_never_observed_in_training_dropped": {
+      "0": [
+        "EtCO2_last",
+        "EtCO2_min",
+        "EtCO2_max",
+        "EtCO2_mean"
+      ],
+      "6": [
+        "EtCO2_last",
+        "EtCO2_min",
+        "EtCO2_max",
+        "EtCO2_mean"
+      ],
+      "12": [
+        "EtCO2_last",
+        "EtCO2_min",
+        "EtCO2_max",
+        "EtCO2_mean"
+      ],
+      "24": [
+        "EtCO2_last",
+        "EtCO2_min",
+        "EtCO2_max",
+        "EtCO2_mean"
+      ]
+    },
+    "boosting_iterations_used": {
+      "0": 49,
+      "6": 57,
+      "12": 66,
+      "24": 101
+    },
+    "curve": [
+      {
+        "h_hours": 0,
+        "data_up_to_hours": 24,
+        "auprc": 0.0346,
+        "auprc_ci": [
+          0.0276,
+          0.047
+        ],
+        "auroc": 0.7161,
+        "auroc_ci": [
+          0.6851,
+          0.7479
+        ],
+        "lift": 0.0203
+      },
+      {
+        "h_hours": 6,
+        "data_up_to_hours": 30,
+        "auprc": 0.057,
+        "auprc_ci": [
+          0.0425,
+          0.0829
+        ],
+        "auroc": 0.766,
+        "auroc_ci": [
+          0.7364,
+          0.7963
+        ],
+        "lift": 0.0427
+      },
+      {
+        "h_hours": 12,
+        "data_up_to_hours": 36,
+        "auprc": 0.0689,
+        "auprc_ci": [
+          0.0538,
+          0.0961
+        ],
+        "auroc": 0.8203,
+        "auroc_ci": [
+          0.796,
+          0.8439
+        ],
+        "lift": 0.0546
+      },
+      {
+        "h_hours": 24,
+        "data_up_to_hours": 48,
+        "auprc": 0.1235,
+        "auprc_ci": [
+          0.095,
+          0.1694
+        ],
+        "auroc": 0.8597,
+        "auroc_ci": [
+          0.8333,
+          0.8819
+        ],
+        "lift": 0.1092
+      }
+    ],
+    "LAP": {
+      "auprc": 0.0889,
+      "auprc_ci": [
+        0.0632,
+        0.1277
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.1436,
+      "auroc_ci": [
+        0.1133,
+        0.1726
+      ]
+    },
+    "per_source_placebo": {
+      "measurement_counts": {
+        "auprc": 0.0325,
+        "auprc_ci": [
+          0.019,
+          0.0533
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0556,
+        "auroc_ci": [
+          0.0307,
+          0.0789
+        ]
+      },
+      "measured_values": {
+        "auprc": 0.0496,
+        "auprc_ci": [
+          0.031,
+          0.0791
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.1192,
+        "auroc_ci": [
+          0.0905,
+          0.147
+        ]
+      }
+    },
+    "per_variable_placebo_exploratory": {
+      "Temp": {
+        "auprc": 0.0363,
+        "auprc_ci": [
+          0.0188,
+          0.0677
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0472,
+        "auroc_ci": [
+          0.0209,
+          0.0729
+        ]
+      },
+      "SBP": {
+        "auprc": 0.0268,
+        "auprc_ci": [
+          0.0158,
+          0.0469
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0412,
+        "auroc_ci": [
+          0.0175,
+          0.0655
+        ]
+      },
+      "HR": {
+        "auprc": 0.0242,
+        "auprc_ci": [
+          0.0135,
+          0.0445
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.043,
+        "auroc_ci": [
+          0.0233,
+          0.064
+        ]
+      },
+      "MAP": {
+        "auprc": 0.0239,
+        "auprc_ci": [
+          0.0145,
+          0.0417
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0355,
+        "auroc_ci": [
+          0.016,
+          0.0554
+        ]
+      },
+      "Resp": {
+        "auprc": 0.0211,
+        "auprc_ci": [
+          0.0122,
+          0.037
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0307,
+        "auroc_ci": [
+          0.0092,
+          0.0519
+        ]
+      },
+      "O2Sat": {
+        "auprc": 0.0197,
+        "auprc_ci": [
+          0.0103,
+          0.0382
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0228,
+        "auroc_ci": [
+          0.0026,
+          0.0413
+        ]
+      },
+      "DBP": {
+        "auprc": 0.0137,
+        "auprc_ci": [
+          0.0082,
+          0.0233
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0247,
+        "auroc_ci": [
+          0.0061,
+          0.0421
+        ]
+      },
+      "Lactate": {
+        "auprc": 0.0115,
+        "auprc_ci": [
+          0.0051,
+          0.0219
+        ],
+        "auprc_p_gt_0": 0.998,
+        "auroc": 0.0376,
+        "auroc_ci": [
+          0.0183,
+          0.0583
+        ]
+      },
+      "WBC": {
+        "auprc": 0.0083,
+        "auprc_ci": [
+          0.0027,
+          0.0151
+        ],
+        "auprc_p_gt_0": 0.998,
+        "auroc": 0.0218,
+        "auroc_ci": [
+          0.0051,
+          0.037
+        ]
+      },
+      "pH": {
+        "auprc": 0.0068,
+        "auprc_ci": [
+          0.0021,
+          0.0113
+        ],
+        "auprc_p_gt_0": 0.999,
+        "auroc": 0.0333,
+        "auroc_ci": [
+          0.0166,
+          0.0485
+        ]
+      },
+      "HCO3": {
+        "auprc": 0.0058,
+        "auprc_ci": [
+          0.0011,
+          0.0124
+        ],
+        "auprc_p_gt_0": 0.989,
+        "auroc": 0.0141,
+        "auroc_ci": [
+          -0.0012,
+          0.0285
+        ]
+      },
+      "FiO2": {
+        "auprc": 0.0052,
+        "auprc_ci": [
+          -0.0018,
+          0.0136
+        ],
+        "auprc_p_gt_0": 0.932,
+        "auroc": 0.0233,
+        "auroc_ci": [
+          0.003,
+          0.043
+        ]
+      },
+      "Alkalinephos": {
+        "auprc": 0.0042,
+        "auprc_ci": [
+          -0.0009,
+          0.0133
+        ],
+        "auprc_p_gt_0": 0.951,
+        "auroc": 0.0224,
+        "auroc_ci": [
+          0.0092,
+          0.0362
+        ]
+      },
+      "Phosphate": {
+        "auprc": 0.004,
+        "auprc_ci": [
+          0.0011,
+          0.0085
+        ],
+        "auprc_p_gt_0": 0.994,
+        "auroc": 0.0114,
+        "auroc_ci": [
+          0.0002,
+          0.0239
+        ]
+      },
+      "Glucose": {
+        "auprc": 0.0037,
+        "auprc_ci": [
+          0.0008,
+          0.0076
+        ],
+        "auprc_p_gt_0": 0.991,
+        "auroc": 0.0183,
+        "auroc_ci": [
+          0.0062,
+          0.0298
+        ]
+      },
+      "AST": {
+        "auprc": 0.0027,
+        "auprc_ci": [
+          -0.0021,
+          0.0123
+        ],
+        "auprc_p_gt_0": 0.887,
+        "auroc": 0.0188,
+        "auroc_ci": [
+          0.0059,
+          0.0316
+        ]
+      },
+      "Creatinine": {
+        "auprc": 0.0027,
+        "auprc_ci": [
+          -0.0005,
+          0.0081
+        ],
+        "auprc_p_gt_0": 0.948,
+        "auroc": 0.0131,
+        "auroc_ci": [
+          0.0028,
+          0.0232
+        ]
+      },
+      "PTT": {
+        "auprc": 0.0024,
+        "auprc_ci": [
+          -0.0004,
+          0.0064
+        ],
+        "auprc_p_gt_0": 0.952,
+        "auroc": 0.0099,
+        "auroc_ci": [
+          -0.0021,
+          0.022
+        ]
+      },
+      "BUN": {
+        "auprc": 0.002,
+        "auprc_ci": [
+          -0.0026,
+          0.0051
+        ],
+        "auprc_p_gt_0": 0.859,
+        "auroc": 0.0108,
+        "auroc_ci": [
+          0.0006,
+          0.0201
+        ]
+      },
+      "Bilirubin_total": {
+        "auprc": 0.0015,
+        "auprc_ci": [
+          -0.0036,
+          0.0048
+        ],
+        "auprc_p_gt_0": 0.786,
+        "auroc": 0.0118,
+        "auroc_ci": [
+          -0.0002,
+          0.0234
+        ]
+      },
+      "Platelets": {
+        "auprc": 0.0015,
+        "auprc_ci": [
+          -0.0018,
+          0.0043
+        ],
+        "auprc_p_gt_0": 0.863,
+        "auroc": 0.0062,
+        "auroc_ci": [
+          -0.0047,
+          0.0167
+        ]
+      },
+      "Calcium": {
+        "auprc": 0.0012,
+        "auprc_ci": [
+          -0.0046,
+          0.0073
+        ],
+        "auprc_p_gt_0": 0.68,
+        "auroc": 0.0116,
+        "auroc_ci": [
+          -0.0016,
+          0.025
+        ]
+      },
+      "PaCO2": {
+        "auprc": 0.0006,
+        "auprc_ci": [
+          -0.0037,
+          0.0034
+        ],
+        "auprc_p_gt_0": 0.637,
+        "auroc": 0.0095,
+        "auroc_ci": [
+          -0.0025,
+          0.0217
+        ]
+      },
+      "Chloride": {
+        "auprc": 0.0004,
+        "auprc_ci": [
+          -0.001,
+          0.0017
+        ],
+        "auprc_p_gt_0": 0.763,
+        "auroc": 0.0034,
+        "auroc_ci": [
+          -0.0022,
+          0.0093
+        ]
+      },
+      "Magnesium": {
+        "auprc": 0.0004,
+        "auprc_ci": [
+          -0.0032,
+          0.0033
+        ],
+        "auprc_p_gt_0": 0.595,
+        "auroc": 0.0043,
+        "auroc_ci": [
+          -0.0068,
+          0.0154
+        ]
+      },
+      "SaO2": {
+        "auprc": 0.0002,
+        "auprc_ci": [
+          -0.005,
+          0.0047
+        ],
+        "auprc_p_gt_0": 0.568,
+        "auroc": 0.0106,
+        "auroc_ci": [
+          -0.0009,
+          0.0214
+        ]
+      },
+      "Hgb": {
+        "auprc": 0.0001,
+        "auprc_ci": [
+          -0.0048,
+          0.0026
+        ],
+        "auprc_p_gt_0": 0.506,
+        "auroc": 0.0067,
+        "auroc_ci": [
+          -0.0079,
+          0.0214
+        ]
+      },
+      "EtCO2": {
+        "auprc": 0.0,
+        "auprc_ci": [
+          0.0,
+          0.0
+        ],
+        "auprc_p_gt_0": 0.0,
+        "auroc": 0.0,
+        "auroc_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "Bilirubin_direct": {
+        "auprc": 0.0,
+        "auprc_ci": [
+          0.0,
+          0.0
+        ],
+        "auprc_p_gt_0": 0.0,
+        "auroc": 0.0,
+        "auroc_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "TroponinI": {
+        "auprc": 0.0,
+        "auprc_ci": [
+          0.0,
+          0.0
+        ],
+        "auprc_p_gt_0": 0.0,
+        "auroc": 0.0,
+        "auroc_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "Fibrinogen": {
+        "auprc": -0.0004,
+        "auprc_ci": [
+          -0.0014,
+          0.0011
+        ],
+        "auprc_p_gt_0": 0.231,
+        "auroc": -0.0032,
+        "auroc_ci": [
+          -0.0064,
+          0.0003
+        ]
+      },
+      "Hct": {
+        "auprc": -0.0006,
+        "auprc_ci": [
+          -0.0045,
+          0.0018
+        ],
+        "auprc_p_gt_0": 0.277,
+        "auroc": 0.0021,
+        "auroc_ci": [
+          -0.0068,
+          0.0104
+        ]
+      },
+      "BaseExcess": {
+        "auprc": -0.0008,
+        "auprc_ci": [
+          -0.0061,
+          0.0019
+        ],
+        "auprc_p_gt_0": 0.28,
+        "auroc": -0.0017,
+        "auroc_ci": [
+          -0.0158,
+          0.0118
+        ]
+      },
+      "Potassium": {
+        "auprc": -0.0008,
+        "auprc_ci": [
+          -0.0053,
+          0.0022
+        ],
+        "auprc_p_gt_0": 0.274,
+        "auroc": -0.0034,
+        "auroc_ci": [
+          -0.0126,
+          0.0055
+        ]
+      }
+    },
+    "decision_level_impact": {
+      "ppv_top10": {
+        "ppv_top10_with_leakage": 0.0836,
+        "ci_with_leakage": [
+          0.0695,
+          0.0985
+        ],
+        "ppv_top10_deployable": 0.0418,
+        "ci_deployable": [
+          0.0324,
+          0.0519
+        ],
+        "difference": 0.0418,
+        "difference_ci": [
+          0.0303,
+          0.0539
+        ],
+        "base_rate": 0.0143,
+        "n_test": 14823,
+        "n_top": 1483
+      },
+      "net_benefit": [
+        {
+          "threshold": 0.02,
+          "net_benefit_deployable": 0.0017,
+          "ci_deployable": [
+            0.0008,
+            0.0027
+          ],
+          "net_benefit_naive": 0.0052,
+          "ci_naive": [
+            0.0039,
+            0.0065
+          ],
+          "net_benefit_treat_all": -0.0058,
+          "overstatement": 0.0035,
+          "overstatement_ci": [
+            0.0024,
+            0.0046
+          ],
+          "overstatement_per_100_patients": 0.35,
+          "deployable_minus_treat_all": 0.0075,
+          "deployable_minus_treat_all_ci": [
+            0.0057,
+            0.0091
+          ],
+          "share_flagged_deployable": 0.0758,
+          "share_flagged_naive": 0.0594
+        },
+        {
+          "threshold": 0.05,
+          "net_benefit_deployable": 0.0001,
+          "ci_deployable": [
+            -0.0001,
+            0.0005
+          ],
+          "net_benefit_naive": 0.002,
+          "ci_naive": [
+            0.0012,
+            0.0029
+          ],
+          "net_benefit_treat_all": -0.0376,
+          "overstatement": 0.0019,
+          "overstatement_ci": [
+            0.0011,
+            0.0028
+          ],
+          "overstatement_per_100_patients": 0.19,
+          "deployable_minus_treat_all": 0.0377,
+          "deployable_minus_treat_all_ci": [
+            0.0356,
+            0.0396
+          ],
+          "share_flagged_deployable": 0.0044,
+          "share_flagged_naive": 0.0105
+        },
+        {
+          "threshold": 0.1,
+          "net_benefit_deployable": -0.0,
+          "ci_deployable": [
+            -0.0001,
+            -0.0
+          ],
+          "net_benefit_naive": 0.0003,
+          "ci_naive": [
+            -0.0,
+            0.0007
+          ],
+          "net_benefit_treat_all": -0.0952,
+          "overstatement": 0.0003,
+          "overstatement_ci": [
+            -0.0,
+            0.0008
+          ],
+          "overstatement_per_100_patients": 0.03,
+          "deployable_minus_treat_all": 0.0952,
+          "deployable_minus_treat_all_ci": [
+            0.093,
+            0.0972
+          ],
+          "share_flagged_deployable": 0.0003,
+          "share_flagged_naive": 0.0026
+        },
+        {
+          "threshold": 0.15,
+          "net_benefit_deployable": 0.0,
+          "ci_deployable": [
+            0.0,
+            0.0
+          ],
+          "net_benefit_naive": 0.0002,
+          "ci_naive": [
+            -0.0,
+            0.0006
+          ],
+          "net_benefit_treat_all": -0.1596,
+          "overstatement": 0.0002,
+          "overstatement_ci": [
+            -0.0,
+            0.0006
+          ],
+          "overstatement_per_100_patients": 0.02,
+          "deployable_minus_treat_all": 0.1596,
+          "deployable_minus_treat_all_ci": [
+            0.1573,
+            0.1618
+          ],
+          "share_flagged_deployable": 0.0,
+          "share_flagged_naive": 0.001
+        },
+        {
+          "threshold": 0.2,
+          "net_benefit_deployable": 0.0,
+          "ci_deployable": [
+            0.0,
+            0.0
+          ],
+          "net_benefit_naive": 0.0002,
+          "ci_naive": [
+            -0.0001,
+            0.0005
+          ],
+          "net_benefit_treat_all": -0.2321,
+          "overstatement": 0.0002,
+          "overstatement_ci": [
+            -0.0001,
+            0.0005
+          ],
+          "overstatement_per_100_patients": 0.02,
+          "deployable_minus_treat_all": 0.2321,
+          "deployable_minus_treat_all_ci": [
+            0.2297,
+            0.2344
+          ],
+          "share_flagged_deployable": 0.0,
+          "share_flagged_naive": 0.0007
+        }
+      ]
+    },
+    "record_end_check": {
+      "events": {
+        "n": 212,
+        "share_record_ends_before_naive_cutoff": 0.8679,
+        "median_hours_recorded_after_decision": 15.0,
+        "mean_hours_recorded_after_decision": 14.9
+      },
+      "non_events": {
+        "n": 14611,
+        "share_record_ends_before_naive_cutoff": 0.682,
+        "median_hours_recorded_after_decision": 19.0,
+        "mean_hours_recorded_after_decision": 16.85
+      }
+    }
+  },
+  "t12": {
+    "decision_time_hours": 12,
+    "horizons_hours": [
+      0,
+      6,
+      12,
+      24
+    ],
+    "outcome_window_hours": [
+      12,
+      36
+    ],
+    "cohort": {
+      "train": {
+        "hospital_system": "A",
+        "n_stays": 20336,
+        "excluded_not_in_icu_at_decision": 371,
+        "excluded_septic_by_decision": 142,
+        "septic_by_decision_any_length": 380,
+        "n_eligible": 19823,
+        "n_events": 526,
+        "base_rate": 0.0265,
+        "eligible_with_no_row_by_decision": 47,
+        "events_labelled_from_first_row": 3
+      },
+      "test": {
+        "hospital_system": "B",
+        "n_stays": 20000,
+        "excluded_not_in_icu_at_decision": 525,
+        "excluded_septic_by_decision": 75,
+        "septic_by_decision_any_length": 326,
+        "n_eligible": 19400,
+        "n_events": 260,
+        "base_rate": 0.0134,
+        "eligible_with_no_row_by_decision": 7,
+        "events_labelled_from_first_row": 0
+      }
+    },
+    "n_train": 19823,
+    "n_test": 19400,
+    "n_train_events": 526,
+    "n_test_events": 260,
+    "train_base_rate": 0.0265,
+    "test_base_rate": 0.0134,
+    "n_features": 175,
+    "features_never_observed_in_training_dropped": {
+      "0": [
+        "EtCO2_last",
+        "EtCO2_min",
+        "EtCO2_max",
+        "EtCO2_mean"
+      ],
+      "6": [
+        "EtCO2_last",
+        "EtCO2_min",
+        "EtCO2_max",
+        "EtCO2_mean"
+      ],
+      "12": [
+        "EtCO2_last",
+        "EtCO2_min",
+        "EtCO2_max",
+        "EtCO2_mean"
+      ],
+      "24": [
+        "EtCO2_last",
+        "EtCO2_min",
+        "EtCO2_max",
+        "EtCO2_mean"
+      ]
+    },
+    "boosting_iterations_used": {
+      "0": 76,
+      "6": 79,
+      "12": 132,
+      "24": 162
+    },
+    "curve": [
+      {
+        "h_hours": 0,
+        "data_up_to_hours": 12,
+        "auprc": 0.0374,
+        "auprc_ci": [
+          0.0282,
+          0.0548
+        ],
+        "auroc": 0.6934,
+        "auroc_ci": [
+          0.6598,
+          0.7253
+        ],
+        "lift": 0.024
+      },
+      {
+        "h_hours": 6,
+        "data_up_to_hours": 18,
+        "auprc": 0.0513,
+        "auprc_ci": [
+          0.0402,
+          0.0718
+        ],
+        "auroc": 0.7664,
+        "auroc_ci": [
+          0.739,
+          0.7943
+        ],
+        "lift": 0.0379
+      },
+      {
+        "h_hours": 12,
+        "data_up_to_hours": 24,
+        "auprc": 0.0678,
+        "auprc_ci": [
+          0.0523,
+          0.0944
+        ],
+        "auroc": 0.7898,
+        "auroc_ci": [
+          0.7611,
+          0.8171
+        ],
+        "lift": 0.0544
+      },
+      {
+        "h_hours": 24,
+        "data_up_to_hours": 36,
+        "auprc": 0.1762,
+        "auprc_ci": [
+          0.138,
+          0.2272
+        ],
+        "auroc": 0.8726,
+        "auroc_ci": [
+          0.8495,
+          0.894
+        ],
+        "lift": 0.1628
+      }
+    ],
+    "LAP": {
+      "auprc": 0.1388,
+      "auprc_ci": [
+        0.0998,
+        0.1824
+      ],
+      "auprc_p_gt_0": 1.0,
+      "auroc": 0.1793,
+      "auroc_ci": [
+        0.1483,
+        0.2112
+      ]
+    },
+    "per_source_placebo": {
+      "measurement_counts": {
+        "auprc": 0.0757,
+        "auprc_ci": [
+          0.0516,
+          0.1067
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.1282,
+        "auroc_ci": [
+          0.0951,
+          0.1611
+        ]
+      },
+      "measured_values": {
+        "auprc": 0.0381,
+        "auprc_ci": [
+          0.0197,
+          0.0601
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.1218,
+        "auroc_ci": [
+          0.0927,
+          0.1534
+        ]
+      }
+    },
+    "per_variable_placebo_exploratory": {
+      "SBP": {
+        "auprc": 0.0581,
+        "auprc_ci": [
+          0.0334,
+          0.0861
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0986,
+        "auroc_ci": [
+          0.0691,
+          0.1254
+        ]
+      },
+      "HR": {
+        "auprc": 0.057,
+        "auprc_ci": [
+          0.0322,
+          0.0853
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0963,
+        "auroc_ci": [
+          0.0662,
+          0.1275
+        ]
+      },
+      "DBP": {
+        "auprc": 0.0406,
+        "auprc_ci": [
+          0.0227,
+          0.0618
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0861,
+        "auroc_ci": [
+          0.0593,
+          0.112
+        ]
+      },
+      "O2Sat": {
+        "auprc": 0.0404,
+        "auprc_ci": [
+          0.02,
+          0.0653
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0944,
+        "auroc_ci": [
+          0.0649,
+          0.1242
+        ]
+      },
+      "Temp": {
+        "auprc": 0.0395,
+        "auprc_ci": [
+          0.0215,
+          0.0649
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0772,
+        "auroc_ci": [
+          0.0458,
+          0.1067
+        ]
+      },
+      "MAP": {
+        "auprc": 0.034,
+        "auprc_ci": [
+          0.0164,
+          0.0553
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0862,
+        "auroc_ci": [
+          0.0548,
+          0.1148
+        ]
+      },
+      "FiO2": {
+        "auprc": 0.02,
+        "auprc_ci": [
+          0.011,
+          0.033
+        ],
+        "auprc_p_gt_0": 1.0,
+        "auroc": 0.0651,
+        "auroc_ci": [
+          0.0451,
+          0.0871
+        ]
+      },
+      "Resp": {
+        "auprc": 0.0187,
+        "auprc_ci": [
+          0.0058,
+          0.0357
+        ],
+        "auprc_p_gt_0": 0.997,
+        "auroc": 0.0926,
+        "auroc_ci": [
+          0.0682,
+          0.1179
+        ]
+      },
+      "Lactate": {
+        "auprc": 0.0132,
+        "auprc_ci": [
+          0.0058,
+          0.0208
+        ],
+        "auprc_p_gt_0": 0.999,
+        "auroc": 0.0486,
+        "auroc_ci": [
+          0.0283,
+          0.0668
+        ]
+      },
+      "PaCO2": {
+        "auprc": 0.0095,
+        "auprc_ci": [
+          0.0021,
+          0.0169
+        ],
+        "auprc_p_gt_0": 0.994,
+        "auroc": 0.0545,
+        "auroc_ci": [
+          0.0381,
+          0.0702
+        ]
+      },
+      "pH": {
+        "auprc": 0.0079,
+        "auprc_ci": [
+          0.001,
+          0.0153
+        ],
+        "auprc_p_gt_0": 0.991,
+        "auroc": 0.0384,
+        "auroc_ci": [
+          0.0247,
+          0.0524
+        ]
+      },
+      "SaO2": {
+        "auprc": 0.0059,
+        "auprc_ci": [
+          -0.0001,
+          0.0109
+        ],
+        "auprc_p_gt_0": 0.972,
+        "auroc": 0.01,
+        "auroc_ci": [
+          0.0002,
+          0.0189
+        ]
+      },
+      "Magnesium": {
+        "auprc": 0.0046,
+        "auprc_ci": [
+          -0.0069,
+          0.0147
+        ],
+        "auprc_p_gt_0": 0.716,
+        "auroc": -0.0026,
+        "auroc_ci": [
+          -0.0165,
+          0.011
+        ]
+      },
+      "Bilirubin_total": {
+        "auprc": 0.0044,
+        "auprc_ci": [
+          -0.0014,
+          0.0123
+        ],
+        "auprc_p_gt_0": 0.929,
+        "auroc": 0.0188,
+        "auroc_ci": [
+          0.0027,
+          0.0349
+        ]
+      },
+      "AST": {
+        "auprc": 0.0023,
+        "auprc_ci": [
+          -0.0045,
+          0.0069
+        ],
+        "auprc_p_gt_0": 0.677,
+        "auroc": 0.0192,
+        "auroc_ci": [
+          0.0024,
+          0.0353
+        ]
+      },
+      "PTT": {
+        "auprc": 0.0023,
+        "auprc_ci": [
+          -0.0035,
+          0.0098
+        ],
+        "auprc_p_gt_0": 0.761,
+        "auroc": 0.0006,
+        "auroc_ci": [
+          -0.0118,
+          0.0139
+        ]
+      },
+      "BaseExcess": {
+        "auprc": 0.0017,
+        "auprc_ci": [
+          -0.0049,
+          0.0076
+        ],
+        "auprc_p_gt_0": 0.727,
+        "auroc": 0.0249,
+        "auroc_ci": [
+          0.0095,
+          0.0412
+        ]
+      },
+      "Calcium": {
+        "auprc": 0.0014,
+        "auprc_ci": [
+          -0.0048,
+          0.0078
+        ],
+        "auprc_p_gt_0": 0.69,
+        "auroc": 0.0062,
+        "auroc_ci": [
+          -0.0057,
+          0.0177
+        ]
+      },
+      "Alkalinephos": {
+        "auprc": 0.0012,
+        "auprc_ci": [
+          -0.0043,
+          0.0082
+        ],
+        "auprc_p_gt_0": 0.684,
+        "auroc": 0.0165,
+        "auroc_ci": [
+          -0.0008,
+          0.0333
+        ]
+      },
+      "Phosphate": {
+        "auprc": 0.0005,
+        "auprc_ci": [
+          -0.009,
+          0.0073
+        ],
+        "auprc_p_gt_0": 0.54,
+        "auroc": 0.0128,
+        "auroc_ci": [
+          -0.0017,
+          0.027
+        ]
+      },
+      "Creatinine": {
+        "auprc": 0.0003,
+        "auprc_ci": [
+          -0.0122,
+          0.0133
+        ],
+        "auprc_p_gt_0": 0.488,
+        "auroc": -0.002,
+        "auroc_ci": [
+          -0.0233,
+          0.0218
+        ]
+      },
+      "EtCO2": {
+        "auprc": 0.0,
+        "auprc_ci": [
+          0.0,
+          0.0
+        ],
+        "auprc_p_gt_0": 0.0,
+        "auroc": 0.0,
+        "auroc_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "Bilirubin_direct": {
+        "auprc": 0.0,
+        "auprc_ci": [
+          0.0,
+          0.0
+        ],
+        "auprc_p_gt_0": 0.0,
+        "auroc": 0.0,
+        "auroc_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "Fibrinogen": {
+        "auprc": -0.0001,
+        "auprc_ci": [
+          -0.0022,
+          0.0011
+        ],
+        "auprc_p_gt_0": 0.458,
+        "auroc": 0.0013,
+        "auroc_ci": [
+          -0.0031,
+          0.0056
+        ]
+      },
+      "WBC": {
+        "auprc": -0.0003,
+        "auprc_ci": [
+          -0.0076,
+          0.0099
+        ],
+        "auprc_p_gt_0": 0.454,
+        "auroc": -0.0235,
+        "auroc_ci": [
+          -0.0392,
+          -0.0077
+        ]
+      },
+      "HCO3": {
+        "auprc": -0.0008,
+        "auprc_ci": [
+          -0.0071,
+          0.0051
+        ],
+        "auprc_p_gt_0": 0.373,
+        "auroc": -0.0156,
+        "auroc_ci": [
+          -0.0331,
+          0.0021
+        ]
+      },
+      "Hgb": {
+        "auprc": -0.0012,
+        "auprc_ci": [
+          -0.0105,
+          0.0075
+        ],
+        "auprc_p_gt_0": 0.349,
+        "auroc": -0.0125,
+        "auroc_ci": [
+          -0.0284,
+          0.0039
+        ]
+      },
+      "Hct": {
+        "auprc": -0.0013,
+        "auprc_ci": [
+          -0.0117,
+          0.0073
+        ],
+        "auprc_p_gt_0": 0.315,
+        "auroc": -0.0271,
+        "auroc_ci": [
+          -0.0449,
+          -0.0073
+        ]
+      },
+      "TroponinI": {
+        "auprc": -0.0014,
+        "auprc_ci": [
+          -0.0059,
+          0.0022
+        ],
+        "auprc_p_gt_0": 0.183,
+        "auroc": 0.0028,
+        "auroc_ci": [
+          -0.0038,
+          0.009
+        ]
+      },
+      "BUN": {
+        "auprc": -0.0035,
+        "auprc_ci": [
+          -0.0147,
+          0.0047
+        ],
+        "auprc_p_gt_0": 0.178,
+        "auroc": -0.0106,
+        "auroc_ci": [
+          -0.0313,
+          0.0106
+        ]
+      },
+      "Glucose": {
+        "auprc": -0.0036,
+        "auprc_ci": [
+          -0.0112,
+          0.0025
+        ],
+        "auprc_p_gt_0": 0.12,
+        "auroc": -0.0262,
+        "auroc_ci": [
+          -0.0431,
+          -0.0097
+        ]
+      },
+      "Chloride": {
+        "auprc": -0.0052,
+        "auprc_ci": [
+          -0.014,
+          0.0001
+        ],
+        "auprc_p_gt_0": 0.03,
+        "auroc": -0.0254,
+        "auroc_ci": [
+          -0.048,
+          -0.0025
+        ]
+      },
+      "Potassium": {
+        "auprc": -0.0052,
+        "auprc_ci": [
+          -0.014,
+          -0.0005
+        ],
+        "auprc_p_gt_0": 0.015,
+        "auroc": -0.0239,
+        "auroc_ci": [
+          -0.0377,
+          -0.009
+        ]
+      },
+      "Platelets": {
+        "auprc": -0.0076,
+        "auprc_ci": [
+          -0.0192,
+          0.0005
+        ],
+        "auprc_p_gt_0": 0.032,
+        "auroc": -0.0279,
+        "auroc_ci": [
+          -0.0484,
+          -0.0056
+        ]
+      }
+    },
+    "decision_level_impact": {
+      "ppv_top10": {
+        "ppv_top10_with_leakage": 0.0861,
+        "ci_with_leakage": [
+          0.0727,
+          0.0985
+        ],
+        "ppv_top10_deployable": 0.0387,
+        "ci_deployable": [
+          0.0299,
+          0.0474
+        ],
+        "difference": 0.0474,
+        "difference_ci": [
+          0.0356,
+          0.0583
+        ],
+        "base_rate": 0.0134,
+        "n_test": 19400,
+        "n_top": 1940
+      },
+      "net_benefit": [
+        {
+          "threshold": 0.02,
+          "net_benefit_deployable": 0.002,
+          "ci_deployable": [
+            0.0009,
+            0.0031
+          ],
+          "net_benefit_naive": 0.0067,
+          "ci_naive": [
+            0.0054,
+            0.008
+          ],
+          "net_benefit_treat_all": -0.0067,
+          "overstatement": 0.0047,
+          "overstatement_ci": [
+            0.0037,
+            0.0057
+          ],
+          "overstatement_per_100_patients": 0.47,
+          "deployable_minus_treat_all": 0.0087,
+          "deployable_minus_treat_all_ci": [
+            0.0075,
+            0.0099
+          ],
+          "share_flagged_deployable": 0.1976,
+          "share_flagged_naive": 0.1154
+        },
+        {
+          "threshold": 0.05,
+          "net_benefit_deployable": 0.0003,
+          "ci_deployable": [
+            -0.0001,
+            0.0009
+          ],
+          "net_benefit_naive": 0.004,
+          "ci_naive": [
+            0.003,
+            0.0051
+          ],
+          "net_benefit_treat_all": -0.0385,
+          "overstatement": 0.0037,
+          "overstatement_ci": [
+            0.0028,
+            0.0047
+          ],
+          "overstatement_per_100_patients": 0.37,
+          "deployable_minus_treat_all": 0.0389,
+          "deployable_minus_treat_all_ci": [
+            0.0371,
+            0.0404
+          ],
+          "share_flagged_deployable": 0.0182,
+          "share_flagged_naive": 0.0318
+        },
+        {
+          "threshold": 0.1,
+          "net_benefit_deployable": -0.0001,
+          "ci_deployable": [
+            -0.0003,
+            0.0001
+          ],
+          "net_benefit_naive": 0.0021,
+          "ci_naive": [
+            0.0014,
+            0.0029
+          ],
+          "net_benefit_treat_all": -0.0962,
+          "overstatement": 0.0022,
+          "overstatement_ci": [
+            0.0015,
+            0.003
+          ],
+          "overstatement_per_100_patients": 0.22,
+          "deployable_minus_treat_all": 0.0961,
+          "deployable_minus_treat_all_ci": [
+            0.0943,
+            0.0979
+          ],
+          "share_flagged_deployable": 0.0021,
+          "share_flagged_naive": 0.0113
+        },
+        {
+          "threshold": 0.15,
+          "net_benefit_deployable": 0.0,
+          "ci_deployable": [
+            -0.0001,
+            0.0002
+          ],
+          "net_benefit_naive": 0.0008,
+          "ci_naive": [
+            0.0003,
+            0.0014
+          ],
+          "net_benefit_treat_all": -0.1607,
+          "overstatement": 0.0008,
+          "overstatement_ci": [
+            0.0002,
+            0.0014
+          ],
+          "overstatement_per_100_patients": 0.08,
+          "deployable_minus_treat_all": 0.1608,
+          "deployable_minus_treat_all_ci": [
+            0.1589,
+            0.1626
+          ],
+          "share_flagged_deployable": 0.0004,
+          "share_flagged_naive": 0.0056
+        },
+        {
+          "threshold": 0.2,
+          "net_benefit_deployable": 0.0,
+          "ci_deployable": [
+            0.0,
+            0.0
+          ],
+          "net_benefit_naive": 0.0005,
+          "ci_naive": [
+            0.0,
+            0.001
+          ],
+          "net_benefit_treat_all": -0.2332,
+          "overstatement": 0.0005,
+          "overstatement_ci": [
+            0.0,
+            0.001
+          ],
+          "overstatement_per_100_patients": 0.05,
+          "deployable_minus_treat_all": 0.2332,
+          "deployable_minus_treat_all_ci": [
+            0.2313,
+            0.2351
+          ],
+          "share_flagged_deployable": 0.0,
+          "share_flagged_naive": 0.0033
+        }
+      ]
+    },
+    "record_end_check": {
+      "events": {
+        "n": 260,
+        "share_record_ends_before_naive_cutoff": 0.8615,
+        "median_hours_recorded_after_decision": 13.0,
+        "mean_hours_recorded_after_decision": 14.11
+      },
+      "non_events": {
+        "n": 19140,
+        "share_record_ends_before_naive_cutoff": 0.3795,
+        "median_hours_recorded_after_decision": 24.0,
+        "mean_hours_recorded_after_decision": 18.86
+      }
+    }
+  },
+  "runtime_seconds": 1091.3
+}

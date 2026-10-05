@@ -1,6 +1,6 @@
 {
   "run": {
-    "analyzed": "2026-09-23",
+    "analyzed": "2026-10-01",
     "claude_cli_version": "2.1.280 (Claude Code)",
     "n_sample": 600,
     "sample_seed": 0,
@@ -3443,5 +3443,5 @@
       "significant_holm_0.05": false
     }
   ],
-  "primary_note": "Primary contrasts pre-specified: identifier recall (D+ID - D) and named-intervention knowledge (D+T - D+Tm) per model; two-sided bootstrap p-values (floor 1/1000), Holm-adjusted across all primary tests. Other contrasts and strata are exploratory."
+  "primary_note": "Primary contrasts (designated after the responses were collected; Holm adjustment is a robustness check): identifier recall (D+ID - D) and named-intervention knowledge (D+T - D+Tm) per model; two-sided bootstrap p-values (floor 1/1000), Holm-adjusted across all primary tests. Other contrasts and strata are exploratory."
 }

@@ -1,0 +1,134 @@
+{
+  "script": "scripts/variance_inflated_intervals.py",
+  "method": "LAP +/- 1.96 sqrt(v_test + v_train); v_test from the fixed-model paired cluster bootstrap of the main analyses, v_train from refits of both learners on training clusters resampled with replacement, evaluated on the full fixed test set",
+  "n_refits": {
+    "cto": 100,
+    "trialbench": 100,
+    "censored": 100,
+    "icu": 50
+  },
+  "seed": 0,
+  "cto": {
+    "LAP": 0.7526,
+    "fixed_model_ci_published": [
+      0.7066,
+      0.7935
+    ],
+    "fixed_model_ci_recomputed": [
+      0.7066,
+      0.7935
+    ],
+    "sd_test": 0.0223,
+    "sd_train": 0.0048,
+    "n_refits": 100,
+    "refit_mean_LAP": 0.7535,
+    "variance_inflated_ci": [
+      0.7078,
+      0.7973
+    ],
+    "variance_inflated_excludes_zero": true
+  },
+  "trialbench": {
+    "Phase1": {
+      "LAP": 0.2079,
+      "fixed_model_ci_published": [
+        0.1474,
+        0.2642
+      ],
+      "fixed_model_ci_recomputed": [
+        0.1474,
+        0.2642
+      ],
+      "sd_test": 0.0299,
+      "sd_train": 0.0202,
+      "n_refits": 100,
+      "refit_mean_LAP": 0.1946,
+      "variance_inflated_ci": [
+        0.1372,
+        0.2787
+      ],
+      "variance_inflated_excludes_zero": true
+    },
+    "Phase2": {
+      "LAP": 0.1554,
+      "fixed_model_ci_published": [
+        0.1275,
+        0.1848
+      ],
+      "fixed_model_ci_recomputed": [
+        0.1275,
+        0.1848
+      ],
+      "sd_test": 0.0149,
+      "sd_train": 0.0095,
+      "n_refits": 100,
+      "refit_mean_LAP": 0.1615,
+      "variance_inflated_ci": [
+        0.1208,
+        0.19
+      ],
+      "variance_inflated_excludes_zero": true
+    },
+    "Phase3": {
+      "LAP": 0.123,
+      "fixed_model_ci_published": [
+        0.097,
+        0.1482
+      ],
+      "fixed_model_ci_recomputed": [
+        0.097,
+        0.1482
+      ],
+      "sd_test": 0.0128,
+      "sd_train": 0.0077,
+      "n_refits": 100,
+      "refit_mean_LAP": 0.1158,
+      "variance_inflated_ci": [
+        0.0938,
+        0.1523
+      ],
+      "variance_inflated_excludes_zero": true
+    }
+  },
+  "censored_benchmark_20disease": {
+    "LAP": 0.0744,
+    "fixed_model_ci_published": [
+      -0.0741,
+      0.1602
+    ],
+    "fixed_model_ci_recomputed": [
+      -0.0741,
+      0.1602
+    ],
+    "sd_test": 0.0634,
+    "sd_train": 0.0688,
+    "n_refits": 100,
+    "refit_mean_LAP": 0.0104,
+    "variance_inflated_ci": [
+      -0.109,
+      0.2577
+    ],
+    "variance_inflated_excludes_zero": false
+  },
+  "icu_physionet2012_decision_24h": {
+    "LAP": 0.1068,
+    "fixed_model_ci_published": [
+      0.0787,
+      0.1349
+    ],
+    "fixed_model_ci_recomputed": [
+      0.0787,
+      0.1349
+    ],
+    "sd_test": 0.014,
+    "sd_train": 0.0118,
+    "n_refits": 50,
+    "refit_mean_LAP": 0.0931,
+    "variance_inflated_ci": [
+      0.0709,
+      0.1427
+    ],
+    "variance_inflated_excludes_zero": true
+  },
+  "runtime_seconds": 1146.9
+}

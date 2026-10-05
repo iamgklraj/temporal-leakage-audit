@@ -1,0 +1,86 @@
+{
+  "script": "scripts/learner_sensitivity_clinical.py",
+  "learners": {
+    "hgb_default": "models.fit_gbdt (the paper's learner)",
+    "logreg_l2": "SimpleImputer(median) + StandardScaler + LogisticRegression(C=1)",
+    "random_forest": "RandomForestClassifier(500 trees, min_samples_leaf=5, seed 0)"
+  },
+  "bootstrap": "patient-level paired percentile bootstrap, 1,000 resamples, seed 0",
+  "icu_mortality_decision_24h": {
+    "hgb_default": {
+      "deployable_auprc": 0.4872,
+      "naive_auprc": 0.594,
+      "deployable_auroc": 0.843,
+      "naive_auroc": 0.8792,
+      "LAP": 0.1068,
+      "LAP_ci": [
+        0.0787,
+        0.1349
+      ],
+      "LAP_p_gt_0": 1.0
+    },
+    "logreg_l2": {
+      "deployable_auprc": 0.4606,
+      "naive_auprc": 0.5529,
+      "deployable_auroc": 0.8274,
+      "naive_auroc": 0.8668,
+      "LAP": 0.0922,
+      "LAP_ci": [
+        0.0649,
+        0.1189
+      ],
+      "LAP_p_gt_0": 1.0
+    },
+    "random_forest": {
+      "deployable_auprc": 0.4637,
+      "naive_auprc": 0.5441,
+      "deployable_auroc": 0.8261,
+      "naive_auroc": 0.8589,
+      "LAP": 0.0803,
+      "LAP_ci": [
+        0.0622,
+        0.1006
+      ],
+      "LAP_p_gt_0": 1.0
+    }
+  },
+  "sepsis_onset_decision_24h": {
+    "hgb_default": {
+      "deployable_auprc": 0.0346,
+      "naive_auprc": 0.1235,
+      "deployable_auroc": 0.7161,
+      "naive_auroc": 0.8597,
+      "LAP": 0.0889,
+      "LAP_ci": [
+        0.0632,
+        0.1277
+      ],
+      "LAP_p_gt_0": 1.0
+    },
+    "logreg_l2": {
+      "deployable_auprc": 0.023,
+      "naive_auprc": 0.0395,
+      "deployable_auroc": 0.6181,
+      "naive_auroc": 0.6928,
+      "LAP": 0.0164,
+      "LAP_ci": [
+        0.0092,
+        0.0289
+      ],
+      "LAP_p_gt_0": 1.0
+    },
+    "random_forest": {
+      "deployable_auprc": 0.0342,
+      "naive_auprc": 0.1045,
+      "deployable_auroc": 0.7125,
+      "naive_auroc": 0.8449,
+      "LAP": 0.0703,
+      "LAP_ci": [
+        0.0508,
+        0.1
+      ],
+      "LAP_p_gt_0": 1.0
+    }
+  },
+  "runtime_seconds": 145.8
+}

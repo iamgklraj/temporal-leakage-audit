@@ -1,0 +1,356 @@
+{
+  "dataset": "PhysioNet/CinC Challenge 2012, test set C",
+  "script": "scripts/decision_curve_icu.py",
+  "decision_time_hours": 24,
+  "n_test": 4000,
+  "test_base_rate": 0.1462,
+  "method": "net benefit = TP/n - FP/n * pt/(1-pt); paired patient-level percentile bootstrap, 1000 resamples, seed 0",
+  "curve": [
+    {
+      "threshold": 0.05,
+      "net_benefit_deployable": 0.1152,
+      "ci_deployable": [
+        0.1038,
+        0.126
+      ],
+      "net_benefit_naive": 0.1194,
+      "ci_naive": [
+        0.1082,
+        0.1298
+      ],
+      "net_benefit_treat_all": 0.1013,
+      "overstatement": 0.0042,
+      "overstatement_ci": [
+        0.0016,
+        0.0069
+      ],
+      "overstatement_per_100_patients": 0.42,
+      "deployable_minus_treat_all": 0.0139,
+      "deployable_minus_treat_all_ci": [
+        0.0108,
+        0.0168
+      ],
+      "share_flagged_deployable": 0.5707,
+      "share_flagged_naive": 0.5118
+    },
+    {
+      "threshold": 0.1,
+      "net_benefit_deployable": 0.0924,
+      "ci_deployable": [
+        0.082,
+        0.1028
+      ],
+      "net_benefit_naive": 0.1007,
+      "ci_naive": [
+        0.0895,
+        0.111
+      ],
+      "net_benefit_treat_all": 0.0514,
+      "overstatement": 0.0082,
+      "overstatement_ci": [
+        0.0043,
+        0.0121
+      ],
+      "overstatement_per_100_patients": 0.82,
+      "deployable_minus_treat_all": 0.0411,
+      "deployable_minus_treat_all_ci": [
+        0.0354,
+        0.0463
+      ],
+      "share_flagged_deployable": 0.3905,
+      "share_flagged_naive": 0.359
+    },
+    {
+      "threshold": 0.15,
+      "net_benefit_deployable": 0.0747,
+      "ci_deployable": [
+        0.0644,
+        0.0846
+      ],
+      "net_benefit_naive": 0.0857,
+      "ci_naive": [
+        0.0755,
+        0.0961
+      ],
+      "net_benefit_treat_all": -0.0044,
+      "overstatement": 0.011,
+      "overstatement_ci": [
+        0.0064,
+        0.016
+      ],
+      "overstatement_per_100_patients": 1.1,
+      "deployable_minus_treat_all": 0.0791,
+      "deployable_minus_treat_all_ci": [
+        0.0713,
+        0.0865
+      ],
+      "share_flagged_deployable": 0.2903,
+      "share_flagged_naive": 0.2762
+    },
+    {
+      "threshold": 0.2,
+      "net_benefit_deployable": 0.0633,
+      "ci_deployable": [
+        0.0535,
+        0.0731
+      ],
+      "net_benefit_naive": 0.0723,
+      "ci_naive": [
+        0.0627,
+        0.0821
+      ],
+      "net_benefit_treat_all": -0.0672,
+      "overstatement": 0.009,
+      "overstatement_ci": [
+        0.0036,
+        0.0149
+      ],
+      "overstatement_per_100_patients": 0.9,
+      "deployable_minus_treat_all": 0.1305,
+      "deployable_minus_treat_all_ci": [
+        0.1213,
+        0.1388
+      ],
+      "share_flagged_deployable": 0.2293,
+      "share_flagged_naive": 0.2233
+    },
+    {
+      "threshold": 0.25,
+      "net_benefit_deployable": 0.052,
+      "ci_deployable": [
+        0.0426,
+        0.0616
+      ],
+      "net_benefit_naive": 0.0604,
+      "ci_naive": [
+        0.0511,
+        0.0699
+      ],
+      "net_benefit_treat_all": -0.1383,
+      "overstatement": 0.0084,
+      "overstatement_ci": [
+        0.003,
+        0.0143
+      ],
+      "overstatement_per_100_patients": 0.84,
+      "deployable_minus_treat_all": 0.1903,
+      "deployable_minus_treat_all_ci": [
+        0.1796,
+        0.2004
+      ],
+      "share_flagged_deployable": 0.172,
+      "share_flagged_naive": 0.1847
+    },
+    {
+      "threshold": 0.3,
+      "net_benefit_deployable": 0.0427,
+      "ci_deployable": [
+        0.0342,
+        0.0516
+      ],
+      "net_benefit_naive": 0.0536,
+      "ci_naive": [
+        0.0444,
+        0.0633
+      ],
+      "net_benefit_treat_all": -0.2196,
+      "overstatement": 0.011,
+      "overstatement_ci": [
+        0.0051,
+        0.0172
+      ],
+      "overstatement_per_100_patients": 1.1,
+      "deployable_minus_treat_all": 0.2623,
+      "deployable_minus_treat_all_ci": [
+        0.2496,
+        0.2744
+      ],
+      "share_flagged_deployable": 0.1388,
+      "share_flagged_naive": 0.154
+    },
+    {
+      "threshold": 0.35,
+      "net_benefit_deployable": 0.0335,
+      "ci_deployable": [
+        0.0257,
+        0.0417
+      ],
+      "net_benefit_naive": 0.0446,
+      "ci_naive": [
+        0.0357,
+        0.0534
+      ],
+      "net_benefit_treat_all": -0.3135,
+      "overstatement": 0.0111,
+      "overstatement_ci": [
+        0.005,
+        0.0173
+      ],
+      "overstatement_per_100_patients": 1.11,
+      "deployable_minus_treat_all": 0.3469,
+      "deployable_minus_treat_all_ci": [
+        0.3328,
+        0.3608
+      ],
+      "share_flagged_deployable": 0.11,
+      "share_flagged_naive": 0.1315
+    },
+    {
+      "threshold": 0.4,
+      "net_benefit_deployable": 0.0243,
+      "ci_deployable": [
+        0.016,
+        0.0323
+      ],
+      "net_benefit_naive": 0.0336,
+      "ci_naive": [
+        0.0247,
+        0.0423
+      ],
+      "net_benefit_treat_all": -0.4229,
+      "overstatement": 0.0092,
+      "overstatement_ci": [
+        0.0029,
+        0.016
+      ],
+      "overstatement_per_100_patients": 0.92,
+      "deployable_minus_treat_all": 0.4472,
+      "deployable_minus_treat_all_ci": [
+        0.4309,
+        0.4631
+      ],
+      "share_flagged_deployable": 0.0885,
+      "share_flagged_naive": 0.1128
+    },
+    {
+      "threshold": 0.45,
+      "net_benefit_deployable": 0.0161,
+      "ci_deployable": [
+        0.0083,
+        0.0239
+      ],
+      "net_benefit_naive": 0.0312,
+      "ci_naive": [
+        0.0225,
+        0.04
+      ],
+      "net_benefit_treat_all": -0.5523,
+      "overstatement": 0.0151,
+      "overstatement_ci": [
+        0.0087,
+        0.0218
+      ],
+      "overstatement_per_100_patients": 1.51,
+      "deployable_minus_treat_all": 0.5684,
+      "deployable_minus_treat_all_ci": [
+        0.5501,
+        0.586
+      ],
+      "share_flagged_deployable": 0.072,
+      "share_flagged_naive": 0.0935
+    },
+    {
+      "threshold": 0.5,
+      "net_benefit_deployable": 0.0125,
+      "ci_deployable": [
+        0.005,
+        0.02
+      ],
+      "net_benefit_naive": 0.0285,
+      "ci_naive": [
+        0.02,
+        0.0372
+      ],
+      "net_benefit_treat_all": -0.7075,
+      "overstatement": 0.016,
+      "overstatement_ci": [
+        0.0093,
+        0.0233
+      ],
+      "overstatement_per_100_patients": 1.6,
+      "deployable_minus_treat_all": 0.72,
+      "deployable_minus_treat_all_ci": [
+        0.6995,
+        0.741
+      ],
+      "share_flagged_deployable": 0.0575,
+      "share_flagged_naive": 0.078
+    }
+  ],
+  "brier_deployable": 0.0966,
+  "brier_deployable_ci": [
+    0.0899,
+    0.1032
+  ],
+  "brier_naive": 0.0861,
+  "brier_naive_ci": [
+    0.0804,
+    0.0925
+  ],
+  "brier_difference_naive_minus_deployable": -0.0105,
+  "brier_difference_ci": [
+    -0.0135,
+    -0.0078
+  ],
+  "calibration_in_the_large_deployable": -0.0089,
+  "calibration_in_the_large_naive": -0.0064,
+  "calibration_intercept_slope_deployable": [
+    0.0421,
+    0.9605
+  ],
+  "calibration_intercept_slope_naive": [
+    0.1037,
+    1.0215
+  ],
+  "lap_by_icu_type_exploratory": {
+    "coronary care": {
+      "n": 602,
+      "deaths": 71,
+      "base_rate": 0.1179,
+      "deployable_auprc": 0.366,
+      "naive_auprc": 0.469,
+      "LAP": 0.1029,
+      "LAP_ci": [
+        0.028,
+        0.1672
+      ]
+    },
+    "cardiac surgery recovery": {
+      "n": 874,
+      "deaths": 46,
+      "base_rate": 0.0526,
+      "deployable_auprc": 0.3803,
+      "naive_auprc": 0.5926,
+      "LAP": 0.2124,
+      "LAP_ci": [
+        0.1144,
+        0.2992
+      ]
+    },
+    "medical": {
+      "n": 1376,
+      "deaths": 291,
+      "base_rate": 0.2115,
+      "deployable_auprc": 0.5271,
+      "naive_auprc": 0.6299,
+      "LAP": 0.1028,
+      "LAP_ci": [
+        0.0614,
+        0.1404
+      ]
+    },
+    "surgical": {
+      "n": 1148,
+      "deaths": 177,
+      "base_rate": 0.1542,
+      "deployable_auprc": 0.494,
+      "naive_auprc": 0.594,
+      "LAP": 0.1,
+      "LAP_ci": [
+        0.0474,
+        0.1472
+      ]
+    }
+  },
+  "runtime_seconds": 207.6
+}

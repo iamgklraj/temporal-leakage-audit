@@ -1,0 +1,560 @@
+{
+  "script": "scripts/compare_methods.py",
+  "settings": {
+    "learner": "HistGradientBoosting (max_depth 3, lr 0.06, 300 iter, l2 1.0, seed 0)",
+    "univariate_screen": "direction-free training-block AUROC of each naive feature; flag >= 0.9 (sensitivity >= 0.8)",
+    "permutation": "mean drop in test AUPRC of the naive model over 20 permutations, seed 0; single columns and joint",
+    "random_split_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "cto": {
+    "n_train": 7011,
+    "n_test": 2694,
+    "post_decision_columns": [
+      "status",
+      "results_reported",
+      "pvalues",
+      "num_patients",
+      "patient_drop",
+      "serious_ae",
+      "death_ae",
+      "all_ae",
+      "update_more_recent",
+      "amendments",
+      "linkage",
+      "gpt",
+      "stock_price",
+      "new_headlines",
+      "hint_train"
+    ],
+    "LAP": 0.7526,
+    "LAP_ci_published": [
+      0.7066,
+      0.7935
+    ],
+    "matches_cto_audit_v2": true,
+    "split_comparison": {
+      "temporal_split": {
+        "test_base_rate": 0.173,
+        "auprc_all": 0.9809,
+        "auroc_all": 0.9965,
+        "LAP": 0.7526
+      },
+      "random_splits": [
+        {
+          "seed": 0,
+          "test_base_rate": 0.3259,
+          "auprc_all": 0.9865,
+          "auroc_all": 0.9941,
+          "auprc_start": 0.4186,
+          "LAP": 0.5679
+        },
+        {
+          "seed": 1,
+          "test_base_rate": 0.3252,
+          "auprc_all": 0.9856,
+          "auroc_all": 0.9938,
+          "auprc_start": 0.4073,
+          "LAP": 0.5783
+        },
+        {
+          "seed": 2,
+          "test_base_rate": 0.3215,
+          "auprc_all": 0.9846,
+          "auroc_all": 0.9935,
+          "auprc_start": 0.4018,
+          "LAP": 0.5828
+        },
+        {
+          "seed": 3,
+          "test_base_rate": 0.317,
+          "auprc_all": 0.9848,
+          "auroc_all": 0.9937,
+          "auprc_start": 0.4021,
+          "LAP": 0.5827
+        },
+        {
+          "seed": 4,
+          "test_base_rate": 0.3352,
+          "auprc_all": 0.9848,
+          "auroc_all": 0.993,
+          "auprc_start": 0.4161,
+          "LAP": 0.5687
+        }
+      ],
+      "random_mean_auprc_all": 0.9853,
+      "random_mean_auroc_all": 0.9936,
+      "random_mean_LAP": 0.5761,
+      "random_minus_temporal_auprc_all": 0.0044
+    },
+    "univariate_screen": {
+      "n_features": 17,
+      "top5": [
+        {
+          "feature": "status",
+          "auroc": 0.9726
+        },
+        {
+          "feature": "pvalues",
+          "auroc": 0.793
+        },
+        {
+          "feature": "gpt",
+          "auroc": 0.783
+        },
+        {
+          "feature": "num_patients",
+          "auroc": 0.7732
+        },
+        {
+          "feature": "results_reported",
+          "auroc": 0.7091
+        }
+      ],
+      "max_auroc": 0.9726,
+      "n_flagged_ge_0.9": 1,
+      "n_flagged_ge_0.8": 1,
+      "post_decision_n": 15,
+      "post_decision_max_auroc": 0.9726,
+      "post_decision_n_flagged_ge_0.9": 1,
+      "post_decision_n_flagged_ge_0.8": 1,
+      "deployable_n": 2,
+      "deployable_max_auroc": 0.6307,
+      "deployable_n_flagged_ge_0.9": 0,
+      "deployable_n_flagged_ge_0.8": 0,
+      "post_decision_flagged_ge_0.9": [
+        "status"
+      ],
+      "post_decision_flagged_ge_0.8": [
+        "status"
+      ]
+    },
+    "permutation_importance": {
+      "naive_auprc": 0.9809,
+      "joint_drop": 0.7979,
+      "joint_drop_sd": 0.008,
+      "largest_single_drop": 0.6155,
+      "largest_single_feature": "status",
+      "sum_of_single_drops": 0.6807,
+      "single_drops": {
+        "status": 0.6155,
+        "pvalues": 0.0536,
+        "gpt": 0.0069,
+        "new_headlines": 0.0027,
+        "patient_drop": 0.0014,
+        "amendments": 0.0011,
+        "death_ae": 0.0006,
+        "num_patients": 0.0004,
+        "linkage": 0.0002,
+        "all_ae": 0.0,
+        "hint_train": 0.0,
+        "serious_ae": -0.0002,
+        "update_more_recent": -0.0003,
+        "results_reported": -0.0006,
+        "stock_price": -0.0006
+      }
+    },
+    "after_dropping_the_flagged_feature": {
+      "dropped_feature": "status",
+      "auprc": 0.8768,
+      "residual_LAP": 0.6485,
+      "residual_LAP_ci": [
+        0.6094,
+        0.6852
+      ],
+      "LAP_ci_recomputed": [
+        0.7066,
+        0.7935
+      ]
+    }
+  },
+  "trialbench": {
+    "Phase1": {
+      "n_train": 3586,
+      "n_test": 896,
+      "test_base_rate": 0.2042,
+      "post_decision_columns": [
+        "enrollment",
+        "location/facility/address/city-Aging",
+        "location/facility/address/city-GDP",
+        "location/facility/address/city-Population"
+      ],
+      "LAP": 0.2079,
+      "LAP_ci_published": [
+        0.1474,
+        0.2642
+      ],
+      "matches_trialbench_lap_poststart": true,
+      "split_comparison": {
+        "provided_split": {
+          "auprc_all": 0.723,
+          "auroc_all": 0.8127
+        },
+        "temporal_split": {
+          "auprc_all": 0.5731,
+          "auroc_all": 0.8417
+        },
+        "provided_minus_temporal_auprc_all": 0.1499,
+        "note": "provided split is non-temporal; see trialbench_audit_v2.json T2 and T3"
+      },
+      "univariate_screen": {
+        "n_features": 53,
+        "top5": [
+          {
+            "feature": "enrollment",
+            "auroc": 0.7889
+          },
+          {
+            "feature": "agency_cla_Other",
+            "auroc": 0.6418
+          },
+          {
+            "feature": "agency_cla_Industry",
+            "auroc": 0.6395
+          },
+          {
+            "feature": "number_of_arms",
+            "auroc": 0.5724
+          },
+          {
+            "feature": "Experimental Arm Number",
+            "auroc": 0.5711
+          }
+        ],
+        "max_auroc": 0.7889,
+        "n_flagged_ge_0.9": 0,
+        "n_flagged_ge_0.8": 0,
+        "post_decision_n": 4,
+        "post_decision_max_auroc": 0.7889,
+        "post_decision_n_flagged_ge_0.9": 0,
+        "post_decision_n_flagged_ge_0.8": 0,
+        "deployable_n": 49,
+        "deployable_max_auroc": 0.6418,
+        "deployable_n_flagged_ge_0.9": 0,
+        "deployable_n_flagged_ge_0.8": 0,
+        "post_decision_flagged_ge_0.9": [],
+        "post_decision_flagged_ge_0.8": []
+      },
+      "permutation_importance": {
+        "naive_auprc": 0.5731,
+        "joint_drop": 0.3085,
+        "joint_drop_sd": 0.024,
+        "largest_single_drop": 0.2958,
+        "largest_single_feature": "enrollment",
+        "sum_of_single_drops": 0.3379,
+        "single_drops": {
+          "enrollment": 0.2958,
+          "location/facility/address/city-Aging": 0.0236,
+          "location/facility/address/city-GDP": 0.0133,
+          "location/facility/address/city-Population": 0.0053
+        }
+      }
+    },
+    "Phase2": {
+      "n_train": 9980,
+      "n_test": 2514,
+      "test_base_rate": 0.2673,
+      "post_decision_columns": [
+        "enrollment",
+        "location/facility/address/city-Aging",
+        "location/facility/address/city-GDP",
+        "location/facility/address/city-Population"
+      ],
+      "LAP": 0.1554,
+      "LAP_ci_published": [
+        0.1275,
+        0.1848
+      ],
+      "matches_trialbench_lap_poststart": true,
+      "split_comparison": {
+        "provided_split": {
+          "auprc_all": 0.6708,
+          "auroc_all": 0.8109
+        },
+        "temporal_split": {
+          "auprc_all": 0.6144,
+          "auroc_all": 0.8586
+        },
+        "provided_minus_temporal_auprc_all": 0.0564,
+        "note": "provided split is non-temporal; see trialbench_audit_v2.json T2 and T3"
+      },
+      "univariate_screen": {
+        "n_features": 54,
+        "top5": [
+          {
+            "feature": "enrollment",
+            "auroc": 0.7372
+          },
+          {
+            "feature": "agency_cla_Industry",
+            "auroc": 0.6366
+          },
+          {
+            "feature": "agency_cla_Other",
+            "auroc": 0.6145
+          },
+          {
+            "feature": "number_of_arms",
+            "auroc": 0.5947
+          },
+          {
+            "feature": "Experimental Arm Number",
+            "auroc": 0.5913
+          }
+        ],
+        "max_auroc": 0.7372,
+        "n_flagged_ge_0.9": 0,
+        "n_flagged_ge_0.8": 0,
+        "post_decision_n": 4,
+        "post_decision_max_auroc": 0.7372,
+        "post_decision_n_flagged_ge_0.9": 0,
+        "post_decision_n_flagged_ge_0.8": 0,
+        "deployable_n": 50,
+        "deployable_max_auroc": 0.6366,
+        "deployable_n_flagged_ge_0.9": 0,
+        "deployable_n_flagged_ge_0.8": 0,
+        "post_decision_flagged_ge_0.9": [],
+        "post_decision_flagged_ge_0.8": []
+      },
+      "permutation_importance": {
+        "naive_auprc": 0.6144,
+        "joint_drop": 0.2939,
+        "joint_drop_sd": 0.012,
+        "largest_single_drop": 0.2938,
+        "largest_single_feature": "enrollment",
+        "sum_of_single_drops": 0.3197,
+        "single_drops": {
+          "enrollment": 0.2938,
+          "location/facility/address/city-Aging": 0.0135,
+          "location/facility/address/city-GDP": 0.0072,
+          "location/facility/address/city-Population": 0.0052
+        }
+      }
+    },
+    "Phase3": {
+      "n_train": 7248,
+      "n_test": 1913,
+      "test_base_rate": 0.4956,
+      "post_decision_columns": [
+        "enrollment",
+        "location/facility/address/city-Aging",
+        "location/facility/address/city-GDP",
+        "location/facility/address/city-Population"
+      ],
+      "LAP": 0.123,
+      "LAP_ci_published": [
+        0.097,
+        0.1482
+      ],
+      "matches_trialbench_lap_poststart": true,
+      "split_comparison": {
+        "provided_split": {
+          "auprc_all": 0.8003,
+          "auroc_all": 0.7927
+        },
+        "temporal_split": {
+          "auprc_all": 0.7603,
+          "auroc_all": 0.8176
+        },
+        "provided_minus_temporal_auprc_all": 0.04,
+        "note": "provided split is non-temporal; see trialbench_audit_v2.json T2 and T3"
+      },
+      "univariate_screen": {
+        "n_features": 54,
+        "top5": [
+          {
+            "feature": "agency_cla_Industry",
+            "auroc": 0.6555
+          },
+          {
+            "feature": "enrollment",
+            "auroc": 0.6479
+          },
+          {
+            "feature": "agency_cla_Other",
+            "auroc": 0.6471
+          },
+          {
+            "feature": "Experimental Arm Number",
+            "auroc": 0.5813
+          },
+          {
+            "feature": "allocation_Randomized",
+            "auroc": 0.5426
+          }
+        ],
+        "max_auroc": 0.6555,
+        "n_flagged_ge_0.9": 0,
+        "n_flagged_ge_0.8": 0,
+        "post_decision_n": 4,
+        "post_decision_max_auroc": 0.6479,
+        "post_decision_n_flagged_ge_0.9": 0,
+        "post_decision_n_flagged_ge_0.8": 0,
+        "deployable_n": 50,
+        "deployable_max_auroc": 0.6555,
+        "deployable_n_flagged_ge_0.9": 0,
+        "deployable_n_flagged_ge_0.8": 0,
+        "post_decision_flagged_ge_0.9": [],
+        "post_decision_flagged_ge_0.8": []
+      },
+      "permutation_importance": {
+        "naive_auprc": 0.7603,
+        "joint_drop": 0.18,
+        "joint_drop_sd": 0.006,
+        "largest_single_drop": 0.1736,
+        "largest_single_feature": "enrollment",
+        "sum_of_single_drops": 0.2022,
+        "single_drops": {
+          "enrollment": 0.1736,
+          "location/facility/address/city-Aging": 0.0171,
+          "location/facility/address/city-GDP": 0.008,
+          "location/facility/address/city-Population": 0.0035
+        }
+      }
+    }
+  },
+  "censored_benchmark_20disease": {
+    "n_train": 2425,
+    "n_test": 200,
+    "LAP": 0.0744,
+    "LAP_ci_published": [
+      -0.0741,
+      0.1602
+    ],
+    "matches_censored_benchmark_20disease": true,
+    "columns_carrying_post_decision_information": 13,
+    "columns_total": 30,
+    "note": "post-decision evidence enters the same count and score columns as pre-decision evidence; no separate column to permute",
+    "univariate_screen_naive": {
+      "n_features": 30,
+      "top5": [
+        {
+          "feature": "ev_literature_count",
+          "auroc": 0.6457
+        },
+        {
+          "feature": "ev_literature_score",
+          "auroc": 0.6454
+        },
+        {
+          "feature": "phase_from",
+          "auroc": 0.579
+        },
+        {
+          "feature": "info_time",
+          "auroc": 0.5646
+        },
+        {
+          "feature": "sponsor_tier",
+          "auroc": 0.5609
+        }
+      ],
+      "max_auroc": 0.6457,
+      "n_flagged_ge_0.9": 0,
+      "n_flagged_ge_0.8": 0
+    },
+    "univariate_screen_deployable": {
+      "n_features": 30,
+      "top5": [
+        {
+          "feature": "ev_literature_count",
+          "auroc": 0.5921
+        },
+        {
+          "feature": "ev_literature_score",
+          "auroc": 0.5908
+        },
+        {
+          "feature": "phase_from",
+          "auroc": 0.579
+        },
+        {
+          "feature": "info_time",
+          "auroc": 0.5646
+        },
+        {
+          "feature": "sponsor_tier",
+          "auroc": 0.5609
+        }
+      ],
+      "max_auroc": 0.5921,
+      "n_flagged_ge_0.9": 0,
+      "n_flagged_ge_0.8": 0
+    }
+  },
+  "icu_physionet2012_decision_24h": {
+    "n_train": 8000,
+    "n_test": 4000,
+    "LAP": 0.1068,
+    "LAP_ci_published": [
+      0.0787,
+      0.1349
+    ],
+    "matches_physionet2012_audit": true,
+    "columns_carrying_post_decision_information": 185,
+    "columns_total": 190,
+    "note": "measurements after 24 h enter the same last/min/max/mean/count columns as earlier measurements; no separate column to permute; no calendar dates for a temporal split",
+    "univariate_screen_naive_48h": {
+      "n_features": 190,
+      "top5": [
+        {
+          "feature": "GCS_last",
+          "auroc": 0.7382
+        },
+        {
+          "feature": "BUN_last",
+          "auroc": 0.6933
+        },
+        {
+          "feature": "GCS_mean",
+          "auroc": 0.6871
+        },
+        {
+          "feature": "BUN_min",
+          "auroc": 0.6842
+        },
+        {
+          "feature": "BUN_mean",
+          "auroc": 0.6841
+        }
+      ],
+      "max_auroc": 0.7382,
+      "n_flagged_ge_0.9": 0,
+      "n_flagged_ge_0.8": 0
+    },
+    "univariate_screen_deployable_24h": {
+      "n_features": 190,
+      "top5": [
+        {
+          "feature": "GCS_last",
+          "auroc": 0.6875
+        },
+        {
+          "feature": "BUN_last",
+          "auroc": 0.678
+        },
+        {
+          "feature": "BUN_mean",
+          "auroc": 0.6722
+        },
+        {
+          "feature": "BUN_max",
+          "auroc": 0.6717
+        },
+        {
+          "feature": "BUN_min",
+          "auroc": 0.6704
+        }
+      ],
+      "max_auroc": 0.6875,
+      "n_flagged_ge_0.9": 0,
+      "n_flagged_ge_0.8": 0
+    }
+  },
+  "runtime_seconds": 68.9
+}
